@@ -9,5 +9,3 @@
     </el-container>
   </el-container>
 </template>
-
-<style scoped lang="scss"></style>
