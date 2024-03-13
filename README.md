@@ -1,4 +1,4 @@
-# vue-kun-admin1
+# vue-kun-admin
 
 This template should help get you started developing with Vue 3 in Vite.
 
