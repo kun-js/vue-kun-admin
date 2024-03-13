@@ -11,5 +11,3 @@ import SideBar from "@/components/SideBar/index.vue";
     </el-container>
   </el-container>
 </template>
-
-<style scoped lang="scss"></style>
