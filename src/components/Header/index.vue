@@ -20,8 +20,8 @@
       <div class="message">
         <el-icon :size="20"><Message /></el-icon>
       </div>
-      <div class="fullscreen">
-        <el-icon :size="20"><FullScreen /></el-icon>
+      <div class="fullscreen" @click="toggleFullScreen">
+        <el-icon :size="20"> <component :is="isFullScreen ? 'Crop' : 'FullScreen'" /></el-icon>
       </div>
       <div class="user">
         <div class="user-avatar">
@@ -39,15 +39,23 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+
+const isFullScreen = ref(false);
+
+const toggleFullScreen = () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+    isFullScreen.value = false;
+  } else {
+    document.documentElement.requestFullscreen();
+    isFullScreen.value = true;
+  }
+};
+</script>
 
 <style lang="scss" scoped>
-// @mixin header-action {
-//   height: 100%;
-//   display: flex;
-//   align-items: center;
-//   padding: 0 10px;
-// }
 .header {
   display: flex;
   justify-content: space-between;
@@ -60,7 +68,6 @@
     .fold {
       display: flex;
       align-items: center;
-      //   @include header-action;
       height: 100%;
       padding: 0 10px;
     }
@@ -74,7 +81,6 @@
     .search {
       display: flex;
       align-items: center;
-      //   @include header-action;
       height: 100%;
       padding: 0 10px;
     }
@@ -82,7 +88,6 @@
     .message {
       display: flex;
       align-items: center;
-      //   @include header-action;
       height: 100%;
       padding: 0 10px;
     }
@@ -90,15 +95,18 @@
     .fullscreen {
       display: flex;
       align-items: center;
-      //   @include header-action;
       height: 100%;
       padding: 0 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
     }
 
     .user {
       display: flex;
       align-items: center;
-      //   @include header-action;
       height: 100%;
       padding: 0 10px;
 
@@ -114,7 +122,6 @@
     .setting {
       display: flex;
       align-items: center;
-      //   @include header-action;
       height: 100%;
       padding: 0 10px;
     }
