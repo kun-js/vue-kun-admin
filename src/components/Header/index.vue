@@ -6,10 +6,9 @@
       </div>
       <div class="breadcrumb">
         <el-breadcrumb separator="/">
-          <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
-          <el-breadcrumb-item><a href="/">promotion management</a></el-breadcrumb-item>
-          <el-breadcrumb-item>promotion list</el-breadcrumb-item>
-          <el-breadcrumb-item>promotion detail</el-breadcrumb-item>
+          <template v-for="(item, index) in breadList">
+            <el-breadcrumb-item v-if="item.name" :key="index" :to="item.path">{{ item.meta.title }}</el-breadcrumb-item>
+          </template>
         </el-breadcrumb>
       </div>
     </div>
@@ -20,9 +19,11 @@
       <div class="message">
         <el-icon :size="20"><Message /></el-icon>
       </div>
-      <div class="fullscreen" @click="toggleFullScreen">
-        <el-icon :size="20"> <component :is="isFullScreen ? 'Crop' : 'FullScreen'" /></el-icon>
-      </div>
+      <el-tooltip placement="bottom" effect="dark" trigger="hover" :content="fullScreenTooltip">
+        <div class="fullscreen" @click="toggleFullScreen">
+          <el-icon :size="20"> <component :is="isFullScreen ? 'Crop' : 'FullScreen'" /></el-icon>
+        </div>
+      </el-tooltip>
       <div class="user">
         <div class="user-avatar">
           <el-avatar
@@ -40,9 +41,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 
+import { useRoute, useRouter } from "vue-router";
+
+const breadList = ref();
 const isFullScreen = ref(false);
+
+const router = useRouter();
+const route = useRoute();
+
+const fullScreenTooltip = computed(() => {
+  return isFullScreen.value ? "退出全屏" : "全屏";
+});
+
+const getMatched = () => {
+  console.log(route.matched);
+  breadList.value = route.matched.filter((item) => item.meta && item.meta.title);
+};
 
 const toggleFullScreen = () => {
   if (document.fullscreenElement) {
@@ -53,17 +69,28 @@ const toggleFullScreen = () => {
     isFullScreen.value = true;
   }
 };
+
+watch(
+  () => route.path,
+  (newValue, oldValue) => {
+    //监听路由路径是否发生变化，之后更改面包屑
+    breadList.value = route.matched.filter((item) => item.meta && item.meta.title);
+  }
+);
+onMounted(() => {
+  getMatched();
+});
 </script>
 
 <style lang="scss" scoped>
 .header {
   display: flex;
   justify-content: space-between;
+  height: 48px;
 
   &-left {
     display: flex;
     align-items: center;
-    height: 60px;
 
     .fold {
       display: flex;
@@ -76,7 +103,6 @@ const toggleFullScreen = () => {
   &-right {
     display: flex;
     align-items: center;
-    height: 60px;
 
     .search {
       display: flex;

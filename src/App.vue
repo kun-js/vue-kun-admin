@@ -8,7 +8,7 @@ import Header from "@/components/Header/index.vue";
     <el-aside width="200px"><SideBar /></el-aside>
     <el-container>
       <el-header><Header /></el-header>
-      <el-main>Main</el-main>
+      <el-main><Router-view /></el-main>
     </el-container>
   </el-container>
 </template>
@@ -17,5 +17,7 @@ import Header from "@/components/Header/index.vue";
 .el-header {
   padding: 0;
   border-bottom: 1px solid #eee;
+
+  --el-header-height: 48px;
 }
 </style>
