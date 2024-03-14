@@ -27,7 +27,7 @@
     &-title {
       margin-left: 8px;
       font-size: 16px;
-      // font-weight: 600;
+      font-weight: 600;
       color: #fff;
     }
   }
