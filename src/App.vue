@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import SideBar from "@/components/SideBar/index.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <el-container>

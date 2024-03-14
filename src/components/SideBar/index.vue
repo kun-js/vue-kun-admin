@@ -13,19 +13,22 @@
 .container {
   height: 100vh;
   background-color: #001529;
+
   .logo {
     display: flex;
-    padding: 8px;
     align-items: center;
+    padding: 8px;
+
     &-pic {
       width: 32px;
       height: 32px;
     }
+
     &-title {
       margin-left: 8px;
-      color: #ffffff;
       font-size: 16px;
       font-weight: 800;
+      color: #fff;
     }
   }
 }
