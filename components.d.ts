@@ -5,14 +5,19 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 export {}
 
-declare module 'vue' {
+declare module "vue" {
   export interface GlobalComponents {
-    ElAside: typeof import('element-plus/es')['ElAside']
-    ElContainer: typeof import('element-plus/es')['ElContainer']
-    ElHeader: typeof import('element-plus/es')['ElHeader']
-    ElMain: typeof import('element-plus/es')['ElMain']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
-    SideBar: typeof import('./src/components/SideBar/index.vue')['default']
+    ElAside: (typeof import("element-plus/es"))["ElAside"];
+    ElAvatar: (typeof import("element-plus/es"))["ElAvatar"];
+    ElBreadcrumb: (typeof import("element-plus/es"))["ElBreadcrumb"];
+    ElBreadcrumbItem: (typeof import("element-plus/es"))["ElBreadcrumbItem"];
+    ElContainer: (typeof import("element-plus/es"))["ElContainer"];
+    ElHeader: (typeof import("element-plus/es"))["ElHeader"];
+    ElIcon: (typeof import("element-plus/es"))["ElIcon"];
+    ElMain: (typeof import("element-plus/es"))["ElMain"];
+    Header: (typeof import("./src/components/Header/index.vue"))["default"];
+    RouterLink: (typeof import("vue-router"))["RouterLink"];
+    RouterView: (typeof import("vue-router"))["RouterView"];
+    SideBar: (typeof import("./src/components/SideBar/index.vue"))["default"];
   }
 }
