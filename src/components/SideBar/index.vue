@@ -1,12 +1,13 @@
 <template>
-  <div class="container">
-    <div class="logo">
+  <div class="sidebar">
+    <div class="logo" :style="{ width: sideBarWidth }">
       <img class="logo-pic" src="@/assets/imgs/KunLogo.jpg" />
       <div class="logo-title">Kun Admin</div>
     </div>
     <div class="menu">
       <el-menu
         :default-active="activePath"
+        :collapse="isCollapse"
         router="true"
         class="el-menu-vertical-demo"
         text-color="#b7bdc3"
@@ -28,14 +29,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
+
+const props = defineProps({
+  isCollapse: Boolean,
+});
 
 const router = useRouter();
 const currentPath = ref();
 
 const currentIndex = sessionStorage.getItem("currentIndex");
-let activePath = currentIndex ? currentIndex : "analysis";
+const activePath = currentIndex ? currentIndex : "analysis";
+
+const sideBarWidth = computed(() => {
+  return props.isCollapse ? "64px" : "200px";
+});
 
 // 保存当前激活的路径
 const saveDefaultPath = (index: string) => {
@@ -47,28 +56,31 @@ router.afterEach((to, from) => {
   currentPath.value = to.path;
   const path = currentPath.value.split("/");
   const currentIndex = path.slice(-1);
-  // console.log("currentIndex: ", currentIndex);
   saveDefaultPath(currentIndex);
 });
 </script>
 
 <style lang="scss" scoped>
-.container {
+.sidebar {
   height: 100vh;
   background-color: #001529;
 
   .logo {
     display: flex;
     align-items: center;
+    height: 48px;
     padding: 8px;
 
     &-pic {
       width: 32px;
       height: 32px;
+      margin-left: 6px;
     }
 
     &-title {
-      margin-left: 8px;
+      width: 100px;
+      margin-left: 24px;
+      overflow: hidden;
       font-size: 16px;
       font-weight: 600;
       color: #fff;

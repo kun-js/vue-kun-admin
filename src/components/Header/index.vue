@@ -1,8 +1,10 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <div class="fold">
-        <el-icon :size="20"><Fold /></el-icon>
+      <div class="fold" @click="handleToCollapse">
+        <el-icon :size="20">
+          <component :is="isCollapse ? 'Expand' : 'Fold'" />
+        </el-icon>
       </div>
       <div class="breadcrumb">
         <el-breadcrumb separator="/">
@@ -20,7 +22,7 @@
         <el-icon :size="20"><Message /></el-icon>
       </div>
       <el-tooltip placement="bottom" effect="dark" trigger="hover" :content="fullScreenTooltip">
-        <div class="fullscreen" @click="toggleFullScreen">
+        <div class="fullscreen" @click="handleToFullScreen">
           <el-icon :size="20"> <component :is="isFullScreen ? 'Crop' : 'FullScreen'" /></el-icon>
         </div>
       </el-tooltip>
@@ -45,11 +47,20 @@ import { ref, computed, watch, onMounted } from "vue";
 
 import { useRoute, useRouter } from "vue-router";
 
+const props = defineProps({
+  isCollapse: Boolean,
+  changeSideBarCollapse: Function,
+});
+
 const breadList = ref();
 const isFullScreen = ref(false);
 
 const router = useRouter();
 const route = useRoute();
+
+const handleToCollapse = () => {
+  props.changeSideBarCollapse();
+};
 
 const fullScreenTooltip = computed(() => {
   return isFullScreen.value ? "退出全屏" : "全屏";
@@ -60,7 +71,7 @@ const getMatched = () => {
   breadList.value = route.matched.filter((item) => item.meta && item.meta.title);
 };
 
-const toggleFullScreen = () => {
+const handleToFullScreen = () => {
   if (document.fullscreenElement) {
     document.exitFullscreen();
     isFullScreen.value = false;
@@ -97,6 +108,11 @@ onMounted(() => {
       align-items: center;
       height: 100%;
       padding: 0 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
     }
   }
 

@@ -7,6 +7,7 @@ export {}
 
 declare module "vue" {
   export interface GlobalComponents {
+    Components: (typeof import("./src/components/index.vue"))["default"];
     ElAside: (typeof import("element-plus/es"))["ElAside"];
     ElAvatar: (typeof import("element-plus/es"))["ElAvatar"];
     ElBreadcrumb: (typeof import("element-plus/es"))["ElBreadcrumb"];
