@@ -13,6 +13,7 @@ declare module "vue" {
     ElBreadcrumb: (typeof import("element-plus/es"))["ElBreadcrumb"];
     ElBreadcrumbItem: (typeof import("element-plus/es"))["ElBreadcrumbItem"];
     ElButton: (typeof import("element-plus/es"))["ElButton"];
+    ElCard: (typeof import("element-plus/es"))["ElCard"];
     ElContainer: (typeof import("element-plus/es"))["ElContainer"];
     ElHeader: (typeof import("element-plus/es"))["ElHeader"];
     ElIcon: (typeof import("element-plus/es"))["ElIcon"];
@@ -22,6 +23,7 @@ declare module "vue" {
     ElMenuItemGroup: (typeof import("element-plus/es"))["ElMenuItemGroup"];
     ElPopover: (typeof import("element-plus/es"))["ElPopover"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
+    ElTag: (typeof import("element-plus/es"))["ElTag"];
     ElTooltip: (typeof import("element-plus/es"))["ElTooltip"];
     Header: (typeof import("./src/components/Header/index.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];

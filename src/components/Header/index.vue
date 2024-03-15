@@ -47,10 +47,10 @@ import { ref, computed, watch, onMounted } from "vue";
 
 import { useRoute, useRouter } from "vue-router";
 
-const props = defineProps({
-  isCollapse: Boolean,
-  changeSideBarCollapse: Function,
-});
+const props = defineProps<{
+  isCollapse: Boolean;
+  changeSideBarCollapse: Function;
+}>();
 
 const breadList = ref();
 const isFullScreen = ref(false);

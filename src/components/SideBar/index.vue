@@ -32,9 +32,9 @@
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 
-const props = defineProps({
-  isCollapse: Boolean,
-});
+const props = defineProps<{
+  isCollapse: Boolean;
+}>();
 
 const router = useRouter();
 const currentPath = ref();
