@@ -23,6 +23,13 @@
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment"
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "src/typings/**/*.d.ts", "mock/**/*.ts", "vite.config.ts"],
-  "exclude": ["node_modules", "dist", "**/*.js"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "src/typings/**/*.d.ts",
+    "mock/**/*.ts",
+    "vite.config.ts",
+    "src/api/index.js"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js", "src/api/index.js"]
 }

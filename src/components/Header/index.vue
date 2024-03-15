@@ -33,7 +33,7 @@
             src="https://img1.baidu.com/it/u=3105572522,2684938522&fm=253&fmt=auto&app=120&f=JPEG?w=802&h=500"
           />
         </div>
-        <div class="user-name">CXKun</div>
+        <div class="user-name">坤哥</div>
       </div>
       <div class="setting">
         <el-icon :size="20"><Setting /></el-icon>
@@ -67,7 +67,7 @@ const fullScreenTooltip = computed(() => {
 });
 
 const getMatched = () => {
-  console.log(route.matched);
+  // console.log(route.matched);
   breadList.value = route.matched.filter((item) => item.meta && item.meta.title);
 };
 

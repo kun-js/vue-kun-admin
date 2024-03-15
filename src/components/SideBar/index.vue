@@ -9,7 +9,6 @@
         :default-active="activePath"
         :collapse="isCollapse"
         router="true"
-        class="el-menu-vertical-demo"
         text-color="#b7bdc3"
         active-text-color="#fff"
         background-color="#001529"
@@ -23,6 +22,10 @@
           <el-menu-item index="analysis">分析页</el-menu-item>
           <el-menu-item index="workbench">工作台</el-menu-item>
         </el-sub-menu>
+        <el-menu-item index="about">
+          <el-icon><User /></el-icon>
+          <span>关于</span>
+        </el-menu-item>
       </el-menu>
     </div>
   </div>

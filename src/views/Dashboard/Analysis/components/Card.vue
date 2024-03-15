@@ -1,29 +1,61 @@
 <template>
   <div class="card">
-    <el-card style="width: 25%">
+    <el-card>
       <template #header>
         <div class="card-header">
-          <span class="card-header-title">访问数</span>
-          <el-tag>周</el-tag>
+          <span class="card-header-title">{{ item.title }}</span>
+          <el-tag :type="tagType[item.time]">{{ item.time }}</el-tag>
         </div>
       </template>
       <div class="card-body">
-        <div class="card-body-text">$2000</div>
+        <div class="card-body-text">{{ item.text }}</div>
         <div class="card-body-icon">
-          <img class="icon" src="@/assets/imgs/VisitNumber.png" alt="" />
+          <img class="icon" :src="images[item.iconType]" alt="" />
         </div>
       </div>
       <template #footer>
         <div class="card-footer">
-          <div class="card-footer-total">总访问数</div>
-          <div class="card-footer-number">$100000</div>
+          <div class="card-footer-total">{{ item.total }}</div>
+          <div class="card-footer-number">{{ item.number }}</div>
         </div>
       </template>
     </el-card>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import VisitNumber from "@/assets/imgs/VisitNumber.png";
+import Download from "@/assets/imgs/Download.png";
+import DealAmount from "@/assets/imgs/DealAmount.png";
+import DealNumber from "@/assets/imgs/DealNumber.png";
+
+interface DataItem {
+  id: number;
+  title: string;
+  time: string;
+  text: string;
+  iconType: string;
+  total: string;
+  number: string;
+}
+
+const props = defineProps<{
+  item: DataItem;
+}>();
+
+const tagType: { [key: string]: string } = {
+  周: "primary",
+  月: "success",
+  年: "danger",
+};
+
+const images: { [key: string]: string } = {
+  "1": VisitNumber,
+  "2": Download,
+  "3": DealAmount,
+  "4": DealNumber,
+};
+</script>
 
 <style lang="scss" scoped>
 .el-card {
@@ -34,16 +66,19 @@
 }
 
 .card {
+  width: 20%;
+
   &-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 38px;
-    padding: 0 12px;
+    padding: 0 16px;
 
     &-title {
       font-size: 14px;
       font-weight: 600;
+      white-space: nowrap;
     }
   }
 
@@ -75,6 +110,7 @@
 
     &-total {
       font-size: 14px;
+      white-space: nowrap;
     }
 
     &-number {
