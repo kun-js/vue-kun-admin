@@ -26,6 +26,7 @@ declare module "vue" {
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
     ElTag: (typeof import("element-plus/es"))["ElTag"];
     ElTooltip: (typeof import("element-plus/es"))["ElTooltip"];
+    ElUpload: (typeof import("element-plus/es"))["ElUpload"];
     ElWatermark: (typeof import("element-plus/es"))["ElWatermark"];
     Header: (typeof import("./src/components/Header/index.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];

@@ -28,6 +28,7 @@
             <el-icon><SetUp /></el-icon>
             <span>功能</span>
           </template>
+          <el-menu-item index="download">文件下载</el-menu-item>
           <el-menu-item index="watermark">水印</el-menu-item>
         </el-sub-menu>
         <el-sub-menu index="pagedemo">

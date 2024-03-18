@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Login from "@/views/Login/index.vue";
+// import Login from "@/views/Login/index.vue";
 import Analysis from "@/views/Dashboard/Analysis/index.vue";
 import Workbench from "@/views/Dashboard/Workbench/index.vue";
+import Download from "@/views/Feature/Download/index.vue";
 import Watermark from "@/views/Feature/WaterMark/index.vue";
 import Form from "@/views/Pagedemo/Form/index.vue";
 import About from "@/views/About/index.vue";
@@ -49,6 +50,14 @@ const router = createRouter({
         title: "功能",
       },
       children: [
+        {
+          path: "/download",
+          name: "download",
+          component: Download,
+          meta: {
+            title: "文件下载",
+          },
+        },
         {
           path: "/watermark",
           name: "watermark",
