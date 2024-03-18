@@ -9,6 +9,7 @@
         :default-active="activePath"
         :collapse="isCollapse"
         router="true"
+        unique-opened="true"
         text-color="#b7bdc3"
         active-text-color="#fff"
         background-color="#001529"
@@ -21,6 +22,33 @@
           </template>
           <el-menu-item index="analysis">分析页</el-menu-item>
           <el-menu-item index="workbench">工作台</el-menu-item>
+        </el-sub-menu>
+        <el-sub-menu index="feature">
+          <template #title>
+            <el-icon><SetUp /></el-icon>
+            <span>功能</span>
+          </template>
+          <el-menu-item index="watermark">水印</el-menu-item>
+        </el-sub-menu>
+        <el-sub-menu index="pagedemo">
+          <template #title>
+            <el-icon><Picture /></el-icon>
+            <span>页面</span>
+          </template>
+          <el-menu-item index="form">表单页</el-menu-item>
+          <el-menu-item index="list" disabled="true">列表页</el-menu-item>
+          <el-menu-item index="detail" disabled="true">详情页</el-menu-item>
+          <el-menu-item index="result" disabled="true">结果页</el-menu-item>
+          <el-menu-item index="exception" disabled="true">异常页</el-menu-item>
+        </el-sub-menu>
+        <el-sub-menu index="chart" disabled="true">
+          <template #title
+            ><el-icon><PieChart /></el-icon>
+            <span>图表</span>
+          </template>
+          <el-menu-item index="barchart">柱状图</el-menu-item>
+          <el-menu-item index="linechart">折线图</el-menu-item>
+          <el-menu-item index="piechart">饼图</el-menu-item>
         </el-sub-menu>
         <el-menu-item index="about">
           <el-icon><User /></el-icon>
@@ -51,6 +79,7 @@ const sideBarWidth = computed(() => {
 
 // 保存当前激活的路径
 const saveDefaultPath = (index: string) => {
+  // console.log("index: ", index);
   sessionStorage.setItem("currentIndex", index);
 };
 
@@ -59,13 +88,14 @@ router.afterEach((to, from) => {
   currentPath.value = to.path;
   const path = currentPath.value.split("/");
   const currentIndex = path.slice(-1);
+  // console.log("currentIndex: ", currentIndex);
   saveDefaultPath(currentIndex);
 });
 </script>
 
 <style lang="scss" scoped>
 .sidebar {
-  height: 100vh;
+  height: 100%;
   background-color: #001529;
 
   .logo {

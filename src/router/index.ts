@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+import Login from "@/views/Login/index.vue";
 import Analysis from "@/views/Dashboard/Analysis/index.vue";
 import Workbench from "@/views/Dashboard/Workbench/index.vue";
+import Watermark from "@/views/Feature/WaterMark/index.vue";
+import Form from "@/views/Pagedemo/Form/index.vue";
 import About from "@/views/About/index.vue";
 
 const router = createRouter({
@@ -23,7 +26,6 @@ const router = createRouter({
         {
           path: "/analysis",
           name: "analysis",
-          // 懒加载
           component: Analysis,
           meta: {
             title: "分析页",
@@ -32,10 +34,45 @@ const router = createRouter({
         {
           path: "/workbench",
           name: "workbench",
-          // 懒加载
           component: Workbench,
           meta: {
             title: "工作台",
+          },
+        },
+      ],
+    },
+    {
+      path: "/feature",
+      name: "feature",
+      redirect: "/watermark",
+      meta: {
+        title: "功能",
+      },
+      children: [
+        {
+          path: "/watermark",
+          name: "watermark",
+          component: Watermark,
+          meta: {
+            title: "水印",
+          },
+        },
+      ],
+    },
+    {
+      path: "/pagedemo",
+      name: "pagedemo",
+      redirect: "/form",
+      meta: {
+        title: "页面",
+      },
+      children: [
+        {
+          path: "/form",
+          name: "form",
+          component: Form,
+          meta: {
+            title: "表单页",
           },
         },
       ],

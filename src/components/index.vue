@@ -22,10 +22,20 @@ const changeSideBarCollapse = () => {
 </script>
 
 <style lang="scss" scoped>
+.el-container {
+  min-height: 100%;
+}
+
 .el-header {
   padding: 0;
   border-bottom: 1px solid #eee;
 
   --el-header-height: 48px;
+}
+
+.el-aside {
+  min-height: 100%;
+  padding-top: 0.1px;
+  margin-top: -0.1px;
 }
 </style>

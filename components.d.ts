@@ -22,9 +22,11 @@ declare module "vue" {
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
     ElMenuItemGroup: (typeof import("element-plus/es"))["ElMenuItemGroup"];
     ElPopover: (typeof import("element-plus/es"))["ElPopover"];
+    ElSubItem: (typeof import("element-plus/es"))["ElSubItem"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
     ElTag: (typeof import("element-plus/es"))["ElTag"];
     ElTooltip: (typeof import("element-plus/es"))["ElTooltip"];
+    ElWatermark: (typeof import("element-plus/es"))["ElWatermark"];
     Header: (typeof import("./src/components/Header/index.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
