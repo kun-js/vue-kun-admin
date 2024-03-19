@@ -8,71 +8,71 @@
       <el-menu
         :default-active="activePath"
         :collapse="isCollapse"
-        router="true"
-        unique-opened="true"
+        unique-opened
+        router
         text-color="#b7bdc3"
         active-text-color="#fff"
         background-color="#001529"
         @select="saveDefaultPath"
       >
-        <el-sub-menu index="dashboard">
-          <template #title>
-            <el-icon><Menu /></el-icon>
-            <span>Dashboard</span>
+        <template v-for="route in menuList">
+          <template v-if="route.children">
+            <el-sub-menu :index="route.path" :key="route.path">
+              <template #title>
+                <el-icon><component :is="route.icon" /></el-icon>
+                <span>{{ route.name }}</span>
+              </template>
+              <el-menu-item
+                v-for="child in route.children"
+                :index="route.path + child.path"
+                :key="route.path + child.path"
+              >
+                {{ child.name }}
+              </el-menu-item>
+            </el-sub-menu>
           </template>
-          <el-menu-item index="analysis">分析页</el-menu-item>
-          <el-menu-item index="workbench">工作台</el-menu-item>
-        </el-sub-menu>
-        <el-sub-menu index="feature">
-          <template #title>
-            <el-icon><SetUp /></el-icon>
-            <span>功能</span>
+          <template v-else>
+            <el-menu-item :index="route.path" :key="route.path" style="background-color: #001529">
+              <el-icon><component :is="route.icon" /></el-icon>
+              <span>{{ route.name }}</span>
+            </el-menu-item>
           </template>
-          <el-menu-item index="download">文件下载</el-menu-item>
-          <el-menu-item index="watermark">水印</el-menu-item>
-        </el-sub-menu>
-        <el-sub-menu index="pagedemo">
-          <template #title>
-            <el-icon><Picture /></el-icon>
-            <span>页面</span>
-          </template>
-          <el-menu-item index="form">表单页</el-menu-item>
-          <el-menu-item index="list" disabled="true">列表页</el-menu-item>
-          <el-menu-item index="detail" disabled="true">详情页</el-menu-item>
-          <el-menu-item index="result" disabled="true">结果页</el-menu-item>
-          <el-menu-item index="exception" disabled="true">异常页</el-menu-item>
-        </el-sub-menu>
-        <el-sub-menu index="chart" disabled="true">
-          <template #title
-            ><el-icon><PieChart /></el-icon>
-            <span>图表</span>
-          </template>
-          <el-menu-item index="barchart">柱状图</el-menu-item>
-          <el-menu-item index="linechart">折线图</el-menu-item>
-          <el-menu-item index="piechart">饼图</el-menu-item>
-        </el-sub-menu>
-        <el-menu-item index="about">
-          <el-icon><User /></el-icon>
-          <span>关于</span>
-        </el-menu-item>
+        </template>
       </el-menu>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import { getMenuList } from "@/api/index";
+
+const menuList = ref();
+
+const fetchData = async () => {
+  try {
+    const result = await getMenuList();
+    console.log("result: ", result);
+    menuList.value = result;
+  } catch (error) {
+    console.log("error: ", error);
+  }
+};
+
+onMounted(() => {
+  fetchData();
+});
 
 const props = defineProps<{
   isCollapse: Boolean;
 }>();
 
 const router = useRouter();
-const currentPath = ref();
+// const currentPath = ref();
 
 const currentIndex = sessionStorage.getItem("currentIndex");
-const activePath = currentIndex ? currentIndex : "analysis";
+const activePath = currentIndex ? currentIndex : "/";
 
 const sideBarWidth = computed(() => {
   return props.isCollapse ? "64px" : "200px";
@@ -80,17 +80,14 @@ const sideBarWidth = computed(() => {
 
 // 保存当前激活的路径
 const saveDefaultPath = (index: string) => {
-  // console.log("index: ", index);
+  console.log("index: ", index);
   sessionStorage.setItem("currentIndex", index);
 };
 
 // 监听路由变化(点击面包屑发生改变)
 router.afterEach((to, from) => {
-  currentPath.value = to.path;
-  const path = currentPath.value.split("/");
-  const currentIndex = path.slice(-1);
-  // console.log("currentIndex: ", currentIndex);
-  saveDefaultPath(currentIndex);
+  const currentPath = to.path;
+  saveDefaultPath(currentPath);
 });
 </script>
 
