@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="header-right">
-      <div class="search">
+      <div class="search" @click="openMess">
         <el-icon :size="20"><Search /></el-icon>
       </div>
       <div class="message">
@@ -26,15 +26,22 @@
           <el-icon :size="20"> <component :is="isFullScreen ? 'Crop' : 'FullScreen'" /></el-icon>
         </div>
       </el-tooltip>
-      <div class="user">
-        <div class="user-avatar">
-          <el-avatar
-            :size="30"
-            src="https://img1.baidu.com/it/u=3105572522,2684938522&fm=253&fmt=auto&app=120&f=JPEG?w=802&h=500"
-          />
+      <el-tooltip placement="bottom" effect="light" trigger="hover">
+        <div class="user">
+          <div class="user-avatar">
+            <el-avatar
+              :size="30"
+              src="https://img1.baidu.com/it/u=3105572522,2684938522&fm=253&fmt=auto&app=120&f=JPEG?w=802&h=500"
+            />
+          </div>
+          <div class="user-name">坤哥</div>
         </div>
-        <div class="user-name">坤哥</div>
-      </div>
+        <template #content>
+          <div class="logout" @click="handleToLogout">
+            <span class="text">退出</span>
+          </div>
+        </template>
+      </el-tooltip>
       <div class="setting">
         <el-icon :size="20"><Setting /></el-icon>
       </div>
@@ -58,6 +65,10 @@ const isFullScreen = ref(false);
 const router = useRouter();
 const route = useRoute();
 
+const openMess = () => {
+  ElMessage("This is a message.");
+};
+
 const handleToCollapse = () => {
   props.changeSideBarCollapse();
 };
@@ -79,6 +90,11 @@ const handleToFullScreen = () => {
     document.documentElement.requestFullscreen();
     isFullScreen.value = true;
   }
+};
+
+const handleToLogout = () => {
+  window.sessionStorage.clear();
+  router.push("/login");
 };
 
 watch(
@@ -151,6 +167,11 @@ onMounted(() => {
       align-items: center;
       height: 100%;
       padding: 0 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
 
       &-avatar {
         margin-right: 12px;
@@ -158,6 +179,21 @@ onMounted(() => {
 
       &-name {
         color: gray;
+      }
+    }
+
+    .logout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f4f4f4;
+      }
+
+      .text {
+        margin-left: 8px;
       }
     }
 

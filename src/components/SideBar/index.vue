@@ -53,7 +53,7 @@ const menuList = ref();
 const fetchData = async () => {
   try {
     const result = await getMenuList();
-    console.log("result: ", result);
+    // console.log("result: ", result);
     menuList.value = result;
   } catch (error) {
     console.log("error: ", error);
@@ -72,7 +72,7 @@ const router = useRouter();
 // const currentPath = ref();
 
 const currentIndex = sessionStorage.getItem("currentIndex");
-const activePath = currentIndex ? currentIndex : "/";
+const activePath = currentIndex ? currentIndex : "/dashboard/analysis";
 
 const sideBarWidth = computed(() => {
   return props.isCollapse ? "64px" : "200px";
@@ -80,7 +80,7 @@ const sideBarWidth = computed(() => {
 
 // 保存当前激活的路径
 const saveDefaultPath = (index: string) => {
-  console.log("index: ", index);
+  // console.log("index: ", index);
   sessionStorage.setItem("currentIndex", index);
 };
 

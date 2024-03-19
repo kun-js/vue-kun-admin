@@ -1,8 +1,14 @@
 import axios from "axios";
 
 const Api = {
+  loginInfo: "/api/login",
   analysisCardInfo: "/api/analysisCardList",
   MenuInfo: "/api/menuList",
+};
+
+export const getLoginInfo = async (username, password) => {
+  const { data } = await axios.post(Api.loginInfo);
+  if (username === data.loginInfo.username && password === data.loginInfo.password) return data.loginInfo;
 };
 
 export const getMenuList = async () => {

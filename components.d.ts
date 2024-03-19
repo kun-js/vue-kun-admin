@@ -14,9 +14,15 @@ declare module "vue" {
     ElBreadcrumbItem: (typeof import("element-plus/es"))["ElBreadcrumbItem"];
     ElButton: (typeof import("element-plus/es"))["ElButton"];
     ElCard: (typeof import("element-plus/es"))["ElCard"];
+    ElCheckbox: (typeof import("element-plus/es"))["ElCheckbox"];
     ElContainer: (typeof import("element-plus/es"))["ElContainer"];
+    ElDivider: (typeof import("element-plus/es"))["ElDivider"];
+    ElForm: (typeof import("element-plus/es"))["ElForm"];
+    ElFormItem: (typeof import("element-plus/es"))["ElFormItem"];
     ElHeader: (typeof import("element-plus/es"))["ElHeader"];
     ElIcon: (typeof import("element-plus/es"))["ElIcon"];
+    ElInput: (typeof import("element-plus/es"))["ElInput"];
+    ElLink: (typeof import("element-plus/es"))["ElLink"];
     ElMain: (typeof import("element-plus/es"))["ElMain"];
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
@@ -25,6 +31,8 @@ declare module "vue" {
     ElSubItem: (typeof import("element-plus/es"))["ElSubItem"];
     ElSubmenu: (typeof import("element-plus/es"))["ElSubmenu"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
+    ElTabPane: (typeof import("element-plus/es"))["ElTabPane"];
+    ElTabs: (typeof import("element-plus/es"))["ElTabs"];
     ElTag: (typeof import("element-plus/es"))["ElTag"];
     ElTooltip: (typeof import("element-plus/es"))["ElTooltip"];
     ElUpload: (typeof import("element-plus/es"))["ElUpload"];

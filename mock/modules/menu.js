@@ -82,6 +82,16 @@ export const menuList = Mock.mock({
       name: "关于",
       path: "/about",
       icon: "User",
+      children: [
+        {
+          name: "关于我们",
+          path: "/me",
+        },
+        // {
+        //     name: "技术栈",
+        //     path: "/skill",
+        // },
+      ],
     },
   ],
 });

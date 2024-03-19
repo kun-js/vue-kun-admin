@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-// import Login from "@/views/Login/index.vue";
+import Login from "@/views/Login/index.vue";
+import Layout from "@/components/index.vue";
 import Analysis from "@/views/Dashboard/Analysis/index.vue";
 import Workbench from "@/views/Dashboard/Workbench/index.vue";
 import Download from "@/views/Feature/Download/index.vue";
@@ -13,6 +14,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: "/login",
+      name: "login",
+      component: Login,
+    },
+    {
       path: "/",
       name: "home",
       redirect: "/dashboard",
@@ -20,6 +26,7 @@ const router = createRouter({
     {
       path: "/dashboard",
       name: "dashboard",
+      component: Layout,
       redirect: "/dashboard/analysis",
       meta: {
         title: "Dashboard",
@@ -46,6 +53,7 @@ const router = createRouter({
     {
       path: "/feature",
       name: "feature",
+      component: Layout,
       redirect: "/feature/watermark",
       meta: {
         title: "功能",
@@ -72,6 +80,7 @@ const router = createRouter({
     {
       path: "/page",
       name: "page",
+      component: Layout,
       redirect: "/page/form",
       meta: {
         title: "页面",
@@ -122,6 +131,7 @@ const router = createRouter({
     {
       path: "/chart",
       name: "pagedemo",
+      component: Layout,
       redirect: "/chart/barchart",
       meta: {
         title: "页面",
@@ -156,12 +166,37 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
-      component: About,
+      component: Layout,
       meta: {
         title: "关于",
       },
+      children: [
+        {
+          path: "/about/me",
+          name: "me",
+          component: About,
+          meta: {
+            title: "我们",
+          },
+        },
+        {
+          path: "/about/skill",
+          name: "skill",
+          component: About,
+          meta: {
+            title: "技术栈",
+          },
+        },
+      ],
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.path === "/login") return next(); // 如果是访问登录页，直接放行
+  const token = window.sessionStorage.getItem("token");
+  if (!token) return next("/login"); // 如果未登录，则跳转到登录页
+  next(); // 已登录则放行
 });
 
 export default router;
