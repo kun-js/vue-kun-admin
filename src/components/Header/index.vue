@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="header-right">
-      <div class="search" @click="openMess">
+      <div class="search" @click="handleToLog">
         <el-icon :size="20"><Search /></el-icon>
       </div>
       <div class="message">
@@ -29,12 +29,9 @@
       <el-tooltip placement="bottom" effect="light" trigger="hover">
         <div class="user">
           <div class="user-avatar">
-            <el-avatar
-              :size="30"
-              src="https://img1.baidu.com/it/u=3105572522,2684938522&fm=253&fmt=auto&app=120&f=JPEG?w=802&h=500"
-            />
+            <el-avatar :size="30" :src="store.userInfo.avatar" />
           </div>
-          <div class="user-name">坤哥</div>
+          <div class="user-name">{{ store.userInfo.name }}</div>
         </div>
         <template #content>
           <div class="logout" @click="handleToLogout">
@@ -51,8 +48,10 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from "vue";
-
 import { useRoute, useRouter } from "vue-router";
+import { useUserStore } from "@/stores/user";
+
+const store = useUserStore();
 
 const props = defineProps<{
   isCollapse: Boolean;
@@ -65,8 +64,8 @@ const isFullScreen = ref(false);
 const router = useRouter();
 const route = useRoute();
 
-const openMess = () => {
-  ElMessage("This is a message.");
+const handleToLog = () => {
+  console.log(123);
 };
 
 const handleToCollapse = () => {
@@ -93,7 +92,7 @@ const handleToFullScreen = () => {
 };
 
 const handleToLogout = () => {
-  window.sessionStorage.clear();
+  localStorage.removeItem("pinia-user");
   router.push("/login");
 };
 
@@ -104,6 +103,7 @@ watch(
     breadList.value = route.matched.filter((item) => item.meta && item.meta.title);
   }
 );
+
 onMounted(() => {
   getMatched();
 });

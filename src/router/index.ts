@@ -5,6 +5,7 @@ import Layout from "@/components/index.vue";
 import Analysis from "@/views/Dashboard/Analysis/index.vue";
 import Workbench from "@/views/Dashboard/Workbench/index.vue";
 import Download from "@/views/Feature/Download/index.vue";
+import Clipboard from "@/views/Feature/Clipboard/index.vue";
 import Watermark from "@/views/Feature/WaterMark/index.vue";
 import Form from "@/views/Pagedemo/Form/index.vue";
 import List from "@/views/Pagedemo/List/index.vue";
@@ -65,6 +66,14 @@ const router = createRouter({
           component: Download,
           meta: {
             title: "文件下载",
+          },
+        },
+        {
+          path: "/feature/clipboard",
+          name: "clipboard",
+          component: Clipboard,
+          meta: {
+            title: "剪贴板",
           },
         },
         {
@@ -194,9 +203,17 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.path === "/login") return next(); // 如果是访问登录页，直接放行
-  const token = window.sessionStorage.getItem("token");
-  if (!token) return next("/login"); // 如果未登录，则跳转到登录页
-  next(); // 已登录则放行
+  const result = localStorage.getItem("pinia-user");
+  if (result) {
+    const token = JSON.parse(result);
+    if (token) {
+      next(); // 已登录则放行
+    } else {
+      next("/login"); // 如果未登录，则跳转到登录页
+    }
+  } else {
+    next("/login"); // 如果未登录，则跳转到登录页
+  }
 });
 
 export default router;

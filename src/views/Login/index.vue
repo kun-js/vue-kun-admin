@@ -41,6 +41,9 @@ import { User, Lock } from "@element-plus/icons-vue";
 import { type FormInstance, type FormRules } from "element-plus";
 import { getLoginInfo } from "@/api/index";
 import { useRouter } from "vue-router";
+import { useUserStore } from "@/stores/user";
+
+const store = useUserStore();
 
 const router = useRouter();
 
@@ -61,12 +64,15 @@ const submitForm = async () => {
     const valid = await loginFormRef.value?.validate();
     if (valid) {
       const result = await getLoginInfo(loginForm.username, loginForm.password);
+      console.log("result: ", result);
       if (result) {
-        window.sessionStorage.setItem("token", result.token);
+        store.getUserInfo(result.userInfo);
+        store.getToken(result.token);
+        // window.sessionStorage.setItem("token", result.token);
         router.push("/");
-        ElMessage.success("登陆成功!欢迎回来!");
+        ElMessage({ message: "登录成功!欢迎回来", type: "success" });
       } else {
-        ElMessage.error("用户名或密码错误！");
+        ElMessage({ message: "用户名或密码错误", type: "error" });
       }
     }
   } catch (error) {
@@ -86,9 +92,9 @@ const resetForm = () => {
   width: 100%;
   height: 100%;
   background-image: url("@/assets/imgs/kunkunbg.png");
-  background-repeat: no-repeat; /* 防止背景图片重复 */
-  background-position: center; /* 将背景图片居中 */
-  background-size: cover; /* 让背景图片尽可能覆盖整个容器 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   .form-container {
     position: absolute;

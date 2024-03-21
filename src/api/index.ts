@@ -6,7 +6,7 @@ const Api = {
   MenuInfo: "/api/menuList",
 };
 
-export const getLoginInfo = async (username, password) => {
+export const getLoginInfo = async (username: string, password: string) => {
   const { data } = await axios.post(Api.loginInfo);
   if (username === data.loginInfo.username && password === data.loginInfo.password) return data.loginInfo;
 };

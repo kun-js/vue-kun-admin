@@ -27,6 +27,10 @@ export const menuList = Mock.mock({
           path: "/download",
         },
         {
+          name: "剪贴板",
+          path: "/clipboard",
+        },
+        {
           name: "水印",
           path: "/watermark",
         },

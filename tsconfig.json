@@ -31,5 +31,5 @@
     "vite.config.ts",
     "src/api/index.js"
   ],
-  "exclude": ["node_modules", "dist", "**/*.js", "src/api/index.js"]
+  "exclude": ["node_modules", "dist", "**/*.js"]
 }
