@@ -39,11 +39,14 @@
           </div>
         </template>
       </el-tooltip>
-      <div class="setting">
+      <div class="setting" @click="handleToShowDrawer">
         <el-icon :size="20"><Setting /></el-icon>
       </div>
     </div>
   </div>
+  <el-drawer v-model="drawer" title="项目设置" direction="rtl">
+    <span>无</span>
+  </el-drawer>
 </template>
 
 <script setup lang="ts">
@@ -60,9 +63,14 @@ const props = defineProps<{
 
 const breadList = ref();
 const isFullScreen = ref(false);
+const drawer = ref(false);
 
 const router = useRouter();
 const route = useRoute();
+
+const fullScreenTooltip = computed(() => {
+  return isFullScreen.value ? "退出全屏" : "全屏";
+});
 
 const handleToLog = () => {
   console.log(123);
@@ -72,9 +80,9 @@ const handleToCollapse = () => {
   props.changeSideBarCollapse();
 };
 
-const fullScreenTooltip = computed(() => {
-  return isFullScreen.value ? "退出全屏" : "全屏";
-});
+const handleToShowDrawer = () => {
+  drawer.value = !drawer.value;
+};
 
 const getMatched = () => {
   // console.log(route.matched);
@@ -202,6 +210,11 @@ onMounted(() => {
       align-items: center;
       height: 100%;
       padding: 0 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
     }
   }
 }
