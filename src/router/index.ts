@@ -10,6 +10,9 @@ import Watermark from "@/views/Feature/WaterMark/index.vue";
 import Form from "@/views/Pagedemo/Form/index.vue";
 import List from "@/views/Pagedemo/List/index.vue";
 import About from "@/views/About/index.vue";
+import BarChart from "@/views/Chart/BarChart/index.vue";
+import LineChart from "@/views/Chart/LineChart/index.vue";
+import PieChart from "@/views/Chart/PieChart/index.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -148,24 +151,24 @@ const router = createRouter({
       children: [
         {
           path: "/chart/barchart",
-          name: "barchart",
-          component: Form,
+          name: "BarChart",
+          component: BarChart,
           meta: {
             title: "柱状图",
           },
         },
         {
           path: "/chart/linechart",
-          name: "linechart",
-          component: Form,
+          name: "LineChart",
+          component: LineChart,
           meta: {
             title: "折线图",
           },
         },
         {
           path: "/chart/piechart",
-          name: "piechart",
-          component: Form,
+          name: "PieChart",
+          component: PieChart,
           meta: {
             title: "饼图",
           },

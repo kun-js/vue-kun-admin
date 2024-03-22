@@ -72,14 +72,14 @@ export const menuList = Mock.mock({
           name: "柱状图",
           path: "/barchart",
         },
-        // {
-        //     name: "折线图",
-        //     path: "/linechart",
-        // },
-        // {
-        //     name: "饼图",
-        //     path: "/piechart",
-        // },
+        {
+          name: "折线图",
+          path: "/linechart",
+        },
+        {
+          name: "饼图",
+          path: "/piechart",
+        },
       ],
     },
     {
