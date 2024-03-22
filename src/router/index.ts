@@ -5,6 +5,7 @@ import Layout from "@/components/index.vue";
 import Analysis from "@/views/Dashboard/Analysis/index.vue";
 import Workbench from "@/views/Dashboard/Workbench/index.vue";
 import Download from "@/views/Feature/Download/index.vue";
+import Excel from "@/views/Feature/Excel/index.vue";
 import Clipboard from "@/views/Feature/Clipboard/index.vue";
 import Watermark from "@/views/Feature/WaterMark/index.vue";
 import Form from "@/views/Pagedemo/Form/index.vue";
@@ -69,6 +70,14 @@ const router = createRouter({
           component: Download,
           meta: {
             title: "文件下载",
+          },
+        },
+        {
+          path: "/feature/excel",
+          name: "excel",
+          component: Excel,
+          meta: {
+            title: "Excel导入/导出",
           },
         },
         {
