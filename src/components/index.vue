@@ -3,7 +3,9 @@
     <el-aside width="collapse"><SideBar :isCollapse="isCollapse" /></el-aside>
     <el-container>
       <el-header><Header :changeSideBarCollapse="changeSideBarCollapse" :isCollapse="isCollapse" /></el-header>
-      <el-main><Router-view /></el-main>
+      <el-main>
+        <Router-view />
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -35,7 +37,5 @@ const changeSideBarCollapse = () => {
 
 .el-aside {
   min-height: 100%;
-  padding-top: 0.1px;
-  margin-top: -0.1px;
 }
 </style>

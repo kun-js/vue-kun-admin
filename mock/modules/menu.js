@@ -27,6 +27,10 @@ export const menuList = Mock.mock({
           path: "/download",
         },
         {
+          name: "PDF预览",
+          path: "/pdf",
+        },
+        {
           name: "Excel导入/导出",
           path: "/excel",
         },
