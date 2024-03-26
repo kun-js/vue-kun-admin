@@ -164,7 +164,7 @@ const router = createRouter({
       component: Layout,
       redirect: "/chart/barchart",
       meta: {
-        title: "页面",
+        title: "图表",
       },
       children: [
         {
