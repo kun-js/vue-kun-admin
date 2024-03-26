@@ -26,19 +26,35 @@
           <el-icon :size="20"> <component :is="isFullScreen ? 'Crop' : 'FullScreen'" /></el-icon>
         </div>
       </el-tooltip>
-      <el-tooltip placement="bottom" effect="light" trigger="hover">
+      <el-dropdown trigger="click">
+        <div class="language">
+          <img class="language-icon" src="@/assets/imgs/SwitchLang.png" alt="切换语言" />
+        </div>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item @click="handleToChangeLangZhCn">简体中文</el-dropdown-item>
+            <el-dropdown-item @click="handleToChangeLangEnUs">English</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+
+      <el-dropdown>
         <div class="user">
           <div class="user-avatar">
-            <el-avatar :size="30" :src="store.userInfo.avatar" />
+            <el-avatar :size="30" :src="userStore.userInfo.avatar" />
           </div>
-          <div class="user-name">{{ store.userInfo.name }}</div>
+          <div class="user-name">{{ userStore.userInfo.name }}</div>
         </div>
-        <template #content>
-          <div class="logout" @click="handleToLogout">
-            <span class="text">退出</span>
-          </div>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item>
+              <div class="logout" @click="handleToLogout">
+                <span class="text">退出</span>
+              </div>
+            </el-dropdown-item>
+          </el-dropdown-menu>
         </template>
-      </el-tooltip>
+      </el-dropdown>
       <div class="setting" @click="handleToShowDrawer">
         <el-icon :size="20"><Setting /></el-icon>
       </div>
@@ -53,8 +69,10 @@
 import { ref, computed, watch, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useUserStore } from "@/stores/user";
+import { useLocaleStore } from "@/stores/locale";
 
-const store = useUserStore();
+const userStore = useUserStore();
+const localeStore = useLocaleStore();
 
 const props = defineProps<{
   isCollapse: Boolean;
@@ -73,7 +91,15 @@ const fullScreenTooltip = computed(() => {
 });
 
 const handleToLog = () => {
-  console.log(123);
+  console.log(localeStore.locale);
+};
+
+const handleToChangeLangZhCn = () => {
+  localeStore.getLocale("zh-CN");
+};
+
+const handleToChangeLangEnUs = () => {
+  localeStore.getLocale("en-US");
 };
 
 const handleToCollapse = () => {
@@ -158,6 +184,23 @@ onMounted(() => {
       padding: 0 10px;
     }
 
+    .language {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+
+      &-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
     .fullscreen {
       display: flex;
       align-items: center;
@@ -217,5 +260,11 @@ onMounted(() => {
       }
     }
   }
+}
+
+.el-dropdown {
+  // display: flex;
+  // align-items: center;
+  height: 100%;
 }
 </style>

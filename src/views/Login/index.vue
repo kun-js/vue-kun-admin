@@ -64,11 +64,10 @@ const submitForm = async () => {
     const valid = await loginFormRef.value?.validate();
     if (valid) {
       const result = await getLoginInfo(loginForm.username, loginForm.password);
-      console.log("result: ", result);
+      // console.log("result: ", result);
       if (result) {
         store.getUserInfo(result.userInfo);
         store.getToken(result.token);
-        // window.sessionStorage.setItem("token", result.token);
         router.push("/");
         ElMessage({ message: "登录成功!欢迎回来", type: "success" });
       } else {

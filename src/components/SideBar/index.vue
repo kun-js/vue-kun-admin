@@ -20,14 +20,14 @@
             <el-sub-menu :index="route.path" :key="route.path">
               <template #title>
                 <el-icon><component :is="route.icon" /></el-icon>
-                <span>{{ route.name }}</span>
+                <span>{{ $t("menu." + route.name) }}</span>
               </template>
               <el-menu-item
                 v-for="child in route.children"
                 :index="route.path + child.path"
                 :key="route.path + child.path"
               >
-                {{ child.name }}
+                {{ $t("menu." + child.name) }}
               </el-menu-item>
             </el-sub-menu>
           </template>

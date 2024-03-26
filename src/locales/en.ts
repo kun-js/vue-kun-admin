@@ -1,0 +1,22 @@
+export default {
+  menu: {
+    dashboard: "Dashboard",
+    analysis: "Analysis",
+    workbench: "Workbench",
+    feature: "Feature",
+    download: "Download",
+    pdf: "PDF",
+    excel: "Excel",
+    clipboard: "Clipboard",
+    watermark: "Watermark",
+    page: "Page",
+    form: "Form",
+    list: "List",
+    chart: "Chart",
+    barchart: "BarChart",
+    linechart: "LineChart",
+    piechart: "PieChart",
+    about: "About",
+    me: "About Me",
+  },
+};

@@ -35,7 +35,7 @@ const router = createRouter({
       component: Layout,
       redirect: "/dashboard/analysis",
       meta: {
-        title: "Dashboard",
+        title: "首页",
       },
       children: [
         {
@@ -226,7 +226,8 @@ router.beforeEach((to, from, next) => {
   if (to.path === "/login") return next(); // 如果是访问登录页，直接放行
   const result = localStorage.getItem("pinia-user");
   if (result) {
-    const token = JSON.parse(result);
+    const { token } = JSON.parse(result);
+    // console.log("token: ", token);
     if (token) {
       next(); // 已登录则放行
     } else {
