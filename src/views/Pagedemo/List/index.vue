@@ -27,7 +27,7 @@ const border = ref(false);
 const fetchData = async () => {
   try {
     const result = await getUserList();
-    console.log("result: ", result);
+    // console.log("result: ", result);
     tableData.value = result;
   } catch (error) {
     console.log("error: ", error);
