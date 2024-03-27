@@ -74,21 +74,21 @@ export const menuList = Mock.mock({
           title: "列表页",
           path: "/list",
         },
-        // {
-        //   name: "detail",
-        //   title: "详情页",
-        //   path: "/detail",
-        // },
-        // {
-        //   name: "result",
-        //   title: "结果页",
-        //   path: "/result",
-        // },
-        // {
-        //   name: "exception",
-        //   title: "异常页",
-        //   path: "/exception",
-        // },
+        {
+          name: "detail",
+          title: "详情页",
+          path: "/detail",
+        },
+        {
+          name: "result",
+          title: "结果页",
+          path: "/result",
+        },
+        {
+          name: "exception",
+          title: "异常页",
+          path: "/exception",
+        },
       ],
     },
     {

@@ -2,6 +2,9 @@ import { RouteRecordRaw } from "vue-router";
 import Layout from "@/components/index.vue";
 import Form from "@/views/Pagedemo/Form/index.vue";
 import List from "@/views/Pagedemo/List/index.vue";
+import Detail from "@/views/Pagedemo/Detail/index.vue";
+import Result from "@/views/Pagedemo/Result/index.vue";
+import Exception from "@/views/Pagedemo/Exception/index.vue";
 
 const pageRoutes: RouteRecordRaw[] = [
   {
@@ -32,7 +35,7 @@ const pageRoutes: RouteRecordRaw[] = [
       {
         path: "/page/detail",
         name: "detail",
-        component: Form,
+        component: Detail,
         meta: {
           title: "detail",
         },
@@ -40,7 +43,7 @@ const pageRoutes: RouteRecordRaw[] = [
       {
         path: "/page/result",
         name: "result",
-        component: Form,
+        component: Result,
         meta: {
           title: "result",
         },
@@ -48,7 +51,7 @@ const pageRoutes: RouteRecordRaw[] = [
       {
         path: "/page/exception",
         name: "exception",
-        component: Form,
+        component: Exception,
         meta: {
           title: "exception",
         },
