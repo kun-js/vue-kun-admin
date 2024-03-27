@@ -5,6 +5,7 @@ import Layout from "@/components/index.vue";
 import Analysis from "@/views/Dashboard/Analysis/index.vue";
 import Workbench from "@/views/Dashboard/Workbench/index.vue";
 import Download from "@/views/Feature/Download/index.vue";
+import CodeEditor from "@/views/Feature/CodeEditor/index.vue";
 import Excel from "@/views/Feature/Excel/index.vue";
 import Pdf from "@/views/Feature/Pdf/index.vue";
 import Clipboard from "@/views/Feature/Clipboard/index.vue";
@@ -73,6 +74,14 @@ const router = createRouter({
           component: Download,
           meta: {
             title: "download",
+          },
+        },
+        {
+          path: "/feature/codeeditor",
+          name: "codeeditor",
+          component: CodeEditor,
+          meta: {
+            title: "codeeditor",
           },
         },
         {

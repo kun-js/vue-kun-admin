@@ -2,7 +2,7 @@
   <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '100%', padding: 0 }">
     <template #header>高德地图示例 </template>
     <!-- 地图容器 -->
-    <div ref="mapContainer" style=" position: relative;width: 100%; height: 100%"></div>
+    <div ref="mapContainer" style="width: 100%; height: 100%"></div>
   </el-card>
 </template>
 

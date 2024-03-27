@@ -5,6 +5,7 @@ export default {
     workbench: "工作台",
     feature: "功能",
     download: "文件下载",
+    codeeditor: "代码编辑器",
     pdf: "PDF预览",
     excel: "Excel操作",
     clipboard: "剪贴板",

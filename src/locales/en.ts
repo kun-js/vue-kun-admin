@@ -5,6 +5,7 @@ export default {
     workbench: "Workbench",
     feature: "Feature",
     download: "Download",
+    codeeditor: "CodeEditor",
     pdf: "PDF",
     excel: "Excel",
     clipboard: "Clipboard",
