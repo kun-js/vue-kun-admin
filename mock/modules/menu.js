@@ -93,6 +93,11 @@ export const menuList = Mock.mock({
       icon: "PieChart",
       children: [
         {
+          name: "gaodemap",
+          title: "高德地图",
+          path: "/gaodemap",
+        },
+        {
           name: "barchart",
           title: "柱状图",
           path: "/barchart",
@@ -120,10 +125,11 @@ export const menuList = Mock.mock({
           title: "关于我们",
           path: "/me",
         },
-        // {
-        //     name: "技术栈",
-        //     path: "/skill",
-        // },
+        {
+          name: "skill",
+          title: "技术栈",
+          path: "/skill",
+        },
       ],
     },
   ],

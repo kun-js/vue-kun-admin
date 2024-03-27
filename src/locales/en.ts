@@ -13,10 +13,12 @@ export default {
     form: "Form",
     list: "List",
     chart: "Chart",
+    gaodemap: "GaoDeMap",
     barchart: "BarChart",
     linechart: "LineChart",
     piechart: "PieChart",
     about: "About",
     me: "About Me",
+    skill: "About Skill",
   },
 };

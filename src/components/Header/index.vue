@@ -9,7 +9,9 @@
       <div class="breadcrumb">
         <el-breadcrumb separator="/">
           <template v-for="(item, index) in breadList">
-            <el-breadcrumb-item v-if="item.name" :key="index" :to="item.path">{{ item.meta.title }}</el-breadcrumb-item>
+            <el-breadcrumb-item v-if="item.name" :key="index" :to="item.path">
+              {{ $t("menu." + item.meta.title) }}
+            </el-breadcrumb-item>
           </template>
         </el-breadcrumb>
       </div>

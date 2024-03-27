@@ -11,7 +11,9 @@ import Clipboard from "@/views/Feature/Clipboard/index.vue";
 import Watermark from "@/views/Feature/WaterMark/index.vue";
 import Form from "@/views/Pagedemo/Form/index.vue";
 import List from "@/views/Pagedemo/List/index.vue";
-import About from "@/views/About/index.vue";
+import About from "@/views/About/Me/index.vue";
+import Skill from "@/views/About/Skill/index.vue";
+import GaoDeMap from "@/views/Chart/GaoDeMap/index.vue";
 import BarChart from "@/views/Chart/BarChart/index.vue";
 import LineChart from "@/views/Chart/LineChart/index.vue";
 import PieChart from "@/views/Chart/PieChart/index.vue";
@@ -35,7 +37,7 @@ const router = createRouter({
       component: Layout,
       redirect: "/dashboard/analysis",
       meta: {
-        title: "首页",
+        title: "dashboard",
       },
       children: [
         {
@@ -43,7 +45,7 @@ const router = createRouter({
           name: "analysis",
           component: Analysis,
           meta: {
-            title: "分析页",
+            title: "analysis",
           },
         },
         {
@@ -51,7 +53,7 @@ const router = createRouter({
           name: "workbench",
           component: Workbench,
           meta: {
-            title: "工作台",
+            title: "workbench",
           },
         },
       ],
@@ -62,7 +64,7 @@ const router = createRouter({
       component: Layout,
       redirect: "/feature/watermark",
       meta: {
-        title: "功能",
+        title: "feature",
       },
       children: [
         {
@@ -70,7 +72,7 @@ const router = createRouter({
           name: "download",
           component: Download,
           meta: {
-            title: "文件下载",
+            title: "download",
           },
         },
         {
@@ -78,7 +80,7 @@ const router = createRouter({
           name: "pdf",
           component: Pdf,
           meta: {
-            title: "PDF预览",
+            title: "pdf",
           },
         },
         {
@@ -86,7 +88,7 @@ const router = createRouter({
           name: "excel",
           component: Excel,
           meta: {
-            title: "Excel导入/导出",
+            title: "excel",
           },
         },
         {
@@ -94,7 +96,7 @@ const router = createRouter({
           name: "clipboard",
           component: Clipboard,
           meta: {
-            title: "剪贴板",
+            title: "clipboard",
           },
         },
         {
@@ -102,7 +104,7 @@ const router = createRouter({
           name: "watermark",
           component: Watermark,
           meta: {
-            title: "水印",
+            title: "watermark",
           },
         },
       ],
@@ -113,7 +115,7 @@ const router = createRouter({
       component: Layout,
       redirect: "/page/form",
       meta: {
-        title: "页面",
+        title: "page",
       },
       children: [
         {
@@ -121,7 +123,7 @@ const router = createRouter({
           name: "form",
           component: Form,
           meta: {
-            title: "表单页",
+            title: "form",
           },
         },
         {
@@ -129,7 +131,7 @@ const router = createRouter({
           name: "list",
           component: List,
           meta: {
-            title: "列表页",
+            title: "list",
           },
         },
         {
@@ -137,7 +139,7 @@ const router = createRouter({
           name: "detail",
           component: Form,
           meta: {
-            title: "详情页",
+            title: "detail",
           },
         },
         {
@@ -145,7 +147,7 @@ const router = createRouter({
           name: "result",
           component: Form,
           meta: {
-            title: "结果页",
+            title: "result",
           },
         },
         {
@@ -153,7 +155,7 @@ const router = createRouter({
           name: "exception",
           component: Form,
           meta: {
-            title: "异常页",
+            title: "exception",
           },
         },
       ],
@@ -164,15 +166,23 @@ const router = createRouter({
       component: Layout,
       redirect: "/chart/barchart",
       meta: {
-        title: "图表",
+        title: "chart",
       },
       children: [
+        {
+          path: "/chart/gaodemap",
+          name: "GaoDeMap",
+          component: GaoDeMap,
+          meta: {
+            title: "gaodemap",
+          },
+        },
         {
           path: "/chart/barchart",
           name: "BarChart",
           component: BarChart,
           meta: {
-            title: "柱状图",
+            title: "barchart",
           },
         },
         {
@@ -180,7 +190,7 @@ const router = createRouter({
           name: "LineChart",
           component: LineChart,
           meta: {
-            title: "折线图",
+            title: "linechart",
           },
         },
         {
@@ -188,7 +198,7 @@ const router = createRouter({
           name: "PieChart",
           component: PieChart,
           meta: {
-            title: "饼图",
+            title: "piechart",
           },
         },
       ],
@@ -198,7 +208,7 @@ const router = createRouter({
       name: "about",
       component: Layout,
       meta: {
-        title: "关于",
+        title: "about",
       },
       children: [
         {
@@ -206,15 +216,15 @@ const router = createRouter({
           name: "me",
           component: About,
           meta: {
-            title: "我们",
+            title: "me",
           },
         },
         {
           path: "/about/skill",
           name: "skill",
-          component: About,
+          component: Skill,
           meta: {
-            title: "技术栈",
+            title: "skill",
           },
         },
       ],
