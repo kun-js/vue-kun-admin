@@ -3,11 +3,15 @@
     <div class="icon"><img class="img" src="@/assets/imgs/networkerror.png" alt="" /></div>
     <div class="text">网络错误</div>
     <div class="tip-text">抱歉,你的网络已断开,请检查你的网络!</div>
-    <div class="action"><el-button type="primary">刷新</el-button></div>
+    <div class="action"><el-button type="primary" @click="handleToReload">刷新</el-button></div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const handleToReload = () => {
+  location.reload();
+};
+</script>
 
 <style lang="scss" scoped>
 .container {

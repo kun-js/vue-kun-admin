@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <el-card>
+    <el-card shadow="hover">
       <template #header>
         <div class="card-header">
           <span class="card-header-title">{{ item.title }}</span>
@@ -66,7 +66,7 @@ const images: { [key: string]: string } = {
 }
 
 .card {
-  width: 20%;
+  width: 23%;
 
   &-header {
     display: flex;
