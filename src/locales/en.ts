@@ -1,4 +1,16 @@
 export default {
+  login: {
+    title: "Login Window",
+    submit: "Login",
+    reset: "Reset",
+    usernametip: "Please enter username!",
+    passwordtip: "Please enter password",
+    register: "Register",
+    forget: "Forget password?",
+    otherloginway: "Other login way",
+    loginseccess: "Login successful! Welcome back!",
+    loginfail: "Login failed! Incorrect username or password!",
+  },
   menu: {
     dashboard: "Dashboard",
     analysis: "Analysis",

@@ -1,4 +1,16 @@
 export default {
+  login: {
+    title: "登录",
+    submit: "登录",
+    reset: "重置",
+    usernametip: "用户名提示",
+    passwordtip: "密码提示",
+    register: "注册账号",
+    forget: "忘记密码?",
+    otherloginway: "其他登录方式",
+    loginseccess: "登陆成功!欢迎回来!",
+    loginfail: "登录失败!用户名或密码错误!",
+  },
   menu: {
     dashboard: "首页",
     analysis: "分析页",
