@@ -6,6 +6,7 @@ export default {
     feature: "Feature",
     download: "Download",
     codeeditor: "CodeEditor",
+    print: "Print",
     pdf: "PDF",
     excel: "Excel",
     clipboard: "Clipboard",

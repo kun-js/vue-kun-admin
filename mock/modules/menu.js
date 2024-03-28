@@ -37,6 +37,11 @@ export const menuList = Mock.mock({
           path: "/codeeditor",
         },
         {
+          name: "print",
+          title: "打印",
+          path: "/print",
+        },
+        {
           name: "pdf",
           title: "PDF预览",
           path: "/pdf",
