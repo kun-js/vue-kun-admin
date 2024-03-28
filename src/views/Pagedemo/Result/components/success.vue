@@ -1,13 +1,11 @@
 <template>
-  <div class="a">
-    <div class="container">
-      <div class="icon"><img class="success-icon" src="@/assets/imgs/successicon.png" alt="" /></div>
-      <div class="text">提交成功</div>
-      <div class="tip-text">你的请求已被接受，我们将尽快处理。</div>
-      <div class="action">
-        <el-button type="primary">查看</el-button>
-        <el-button>打印</el-button>
-      </div>
+  <div class="container">
+    <div class="icon"><img class="success-icon" src="@/assets/imgs/successicon.png" alt="" /></div>
+    <div class="text">提交成功</div>
+    <div class="tip-text">你的请求已被接受，我们将尽快处理。</div>
+    <div class="action">
+      <el-button type="primary">查看</el-button>
+      <el-button>打印</el-button>
     </div>
   </div>
 </template>

@@ -5,6 +5,7 @@ import CodeEditor from "@/views/Feature/CodeEditor/index.vue";
 import Print from "@/views/Feature/Print/index.vue";
 import Excel from "@/views/Feature/Excel/index.vue";
 import Pdf from "@/views/Feature/Pdf/index.vue";
+import Barcode from "@/views/Feature/Barcode/index.vue";
 import Clipboard from "@/views/Feature/Clipboard/index.vue";
 import Watermark from "@/views/Feature/WaterMark/index.vue";
 
@@ -48,6 +49,14 @@ const featureRoutes: RouteRecordRaw[] = [
         component: Pdf,
         meta: {
           title: "pdf",
+        },
+      },
+      {
+        path: "/feature/barcode",
+        name: "barcode",
+        component: Barcode,
+        meta: {
+          title: "barcode",
         },
       },
       {

@@ -8,6 +8,7 @@ export default {
     codeeditor: "CodeEditor",
     print: "Print",
     pdf: "PDF",
+    barcode: "Barcode",
     excel: "Excel",
     clipboard: "Clipboard",
     watermark: "Watermark",

@@ -8,6 +8,7 @@ export default {
     codeeditor: "代码编辑器",
     print: "打印",
     pdf: "PDF预览",
+    barcode: "条码生成",
     excel: "Excel操作",
     clipboard: "剪贴板",
     watermark: "水印",

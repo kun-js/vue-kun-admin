@@ -1,11 +1,9 @@
 <template>
-  <div class="a">
-    <div class="container">
-      <div class="icon"><img class="fail-icon" src="@/assets/imgs/failicon.png" alt="" /></div>
-      <div class="text">提交失败</div>
-      <div class="tip-text">请重新核对信息填写并重新提交</div>
-      <div class="action"><el-button type="primary">返回修改</el-button></div>
-    </div>
+  <div class="container">
+    <div class="icon"><img class="fail-icon" src="@/assets/imgs/failicon.png" alt="" /></div>
+    <div class="text">提交失败</div>
+    <div class="tip-text">请重新核对信息填写并重新提交</div>
+    <div class="action"><el-button type="primary">返回修改</el-button></div>
   </div>
 </template>
 
