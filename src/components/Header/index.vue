@@ -23,6 +23,32 @@
       <div class="message">
         <el-icon :size="20"><Message /></el-icon>
       </div>
+      <el-tooltip placement="bottom" effect="dark" trigger="hover" :content="$t('header.tour')">
+        <div class="tour" @click="handleToOpenTour">
+          <el-icon :size="20"><Opportunity /></el-icon>
+        </div>
+      </el-tooltip>
+      <el-tour v-model="isTourOpen">
+        <el-tour-step
+          :title="$t('header.tour_step_one_title')"
+          :description="$t('header.tour_step_one_description')"
+          :next-button-props="{ children: $t('header.tour_step_next_button') }"
+        />
+        <el-tour-step
+          :title="$t('header.tour_step_two_title')"
+          :description="$t('header.tour_step_two_description')"
+          :target="foldEl"
+          :prev-button-props="{ children: $t('header.tour_step_prev_button') }"
+          :next-button-props="{ children: $t('header.tour_step_next_button') }"
+        />
+        <el-tour-step
+          :title="$t('header.tour_step_three_title')"
+          :description="$t('header.tour_step_three_description')"
+          :target="langEl"
+          :prev-button-props="{ children: $t('header.tour_step_prev_button') }"
+          :next-button-props="{ children: $t('header.tour_step_end_button') }"
+        />
+      </el-tour>
       <el-tooltip placement="bottom" effect="dark" trigger="hover" :content="fullScreenTooltip">
         <div class="fullscreen" @click="handleToFullScreen">
           <el-icon :size="20"> <component :is="isFullScreen ? 'Crop' : 'FullScreen'" /></el-icon>
@@ -82,14 +108,18 @@ const { t } = useI18n();
 const userStore = useUserStore();
 const localeStore = useLocaleStore();
 const breadList = ref();
+const isTourOpen = ref(false);
 const isFullScreen = ref(false);
 const drawer = ref(false);
+
+const foldEl = () => document.querySelector<HTMLElement>(".fold");
+const langEl = () => document.querySelector<HTMLElement>(".language");
 
 const router = useRouter();
 const route = useRoute();
 
 const fullScreenTooltip = computed(() => {
-  return isFullScreen.value ? t("header.exitfullscreen") : t("header.fullscreen");
+  return isFullScreen.value ? t("header.exit_fullscreen") : t("header.fullscreen");
 });
 
 const handleToCollapse = () => {
@@ -98,6 +128,10 @@ const handleToCollapse = () => {
 
 const handleToLog = () => {
   console.log(localeStore.locale);
+};
+
+const handleToOpenTour = () => {
+  isTourOpen.value = !isTourOpen.value;
 };
 
 const handleToChangeLangZhCn = () => {
@@ -185,6 +219,18 @@ onMounted(() => {
       align-items: center;
       height: 100%;
       padding: 0 10px;
+    }
+
+    .tour {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
     }
 
     .language {

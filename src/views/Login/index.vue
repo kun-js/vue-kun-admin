@@ -36,7 +36,7 @@
             </div>
           </el-form>
           <el-divider>
-            <span>{{ $t("login.otherloginway") }}</span>
+            <span>{{ $t("login.other_login_way") }}</span>
           </el-divider>
           <div class="login-form-login-way">
             <div class="login-form-login-way-icon">
@@ -70,8 +70,8 @@ const loginForm = reactive({
   password: "",
 });
 const loginFormRules = reactive<FormRules<typeof loginForm>>({
-  username: [{ required: true, message: t("login.usernametip"), trigger: "blur" }],
-  password: [{ required: true, message: t("login.passwordtip"), trigger: "blur" }],
+  username: [{ required: true, message: t("login.username_tip"), trigger: "blur" }],
+  password: [{ required: true, message: t("login.password_tip"), trigger: "blur" }],
 });
 
 const icons = [
@@ -93,9 +93,9 @@ const submitForm = async () => {
         store.getUserInfo(result.userInfo);
         store.getToken(result.token);
         router.push("/");
-        ElMessage({ message: t("login.loginsuccess"), type: "success" });
+        ElMessage({ message: t("login.login_success"), type: "success" });
       } else {
-        ElMessage({ message: t("login.loginfail"), type: "error" });
+        ElMessage({ message: t("login.login_fail"), type: "error" });
       }
     }
   } catch (error) {
