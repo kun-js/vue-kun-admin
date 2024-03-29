@@ -22,7 +22,27 @@
 import { getDetailList } from "@/api";
 import { onMounted, ref } from "vue";
 
-const detail = ref();
+interface Detail {
+  username: string;
+  address: string;
+  tel: string;
+  orderId: string;
+  status: string;
+  createTime: string;
+  effectiveTime: string;
+  remark: string;
+}
+
+const detail = ref<Detail>({
+  username: "",
+  address: "",
+  tel: "",
+  orderId: "",
+  status: "",
+  createTime: "",
+  effectiveTime: "",
+  remark: "",
+});
 
 const fetchData = async () => {
   try {

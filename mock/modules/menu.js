@@ -93,11 +93,45 @@ export const menuList = Mock.mock({
           name: "result",
           title: "结果页",
           path: "/result",
+          children: [
+            {
+              name: "success",
+              title: "成功页",
+              path: "/success",
+            },
+            {
+              name: "fail",
+              title: "失败页",
+              path: "/fail",
+            },
+          ],
         },
         {
           name: "exception",
           title: "异常页",
           path: "/exception",
+          children: [
+            {
+              name: "fourzerofour",
+              title: "404",
+              path: "/404",
+            },
+            {
+              name: "fourzerothree",
+              title: "403",
+              path: "/403",
+            },
+            {
+              name: "fivezerozero",
+              title: "500",
+              path: "/500",
+            },
+            {
+              name: "networkerror",
+              title: "网络错误",
+              path: "/networkerror",
+            },
+          ],
         },
       ],
     },

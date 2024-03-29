@@ -3,8 +3,12 @@ import Layout from "@/components/index.vue";
 import Form from "@/views/Pagedemo/Form/index.vue";
 import List from "@/views/Pagedemo/List/index.vue";
 import Detail from "@/views/Pagedemo/Detail/index.vue";
-import Result from "@/views/Pagedemo/Result/index.vue";
-import Exception from "@/views/Pagedemo/Exception/index.vue";
+import Success from "@/views/Pagedemo/Result/components/success.vue";
+import Fail from "@/views/Pagedemo/Result/components/fail.vue";
+import FourZeroFour from "@/views/Pagedemo/Exception/components/fourzerofour.vue";
+import FourZeroThree from "@/views/Pagedemo/Exception/components/fourzerothree.vue";
+import FiveZeroZero from "@/views/Pagedemo/Exception/components/fivezerozero.vue";
+import NetworkError from "@/views/Pagedemo/Exception/components/networkerror.vue";
 
 const pageRoutes: RouteRecordRaw[] = [
   {
@@ -41,19 +45,51 @@ const pageRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/page/result",
-        name: "result",
-        component: Result,
+        path: "/page/result/success",
+        name: "success",
+        component: Success,
         meta: {
-          title: "result",
+          title: "success",
         },
       },
       {
-        path: "/page/exception",
-        name: "exception",
-        component: Exception,
+        path: "/page/result/fail",
+        name: "fail",
+        component: Fail,
         meta: {
-          title: "exception",
+          title: "fail",
+        },
+      },
+      {
+        path: "/page/exception/404",
+        name: "fourzerofour",
+        component: FourZeroFour,
+        meta: {
+          title: "fourzerofour",
+        },
+      },
+      {
+        path: "/page/exception/403",
+        name: "fourzerothree",
+        component: FourZeroThree,
+        meta: {
+          title: "fourzerothree",
+        },
+      },
+      {
+        path: "/page/exception/500",
+        name: "FiveZeroZero",
+        component: FiveZeroZero,
+        meta: {
+          title: "fivezerozero",
+        },
+      },
+      {
+        path: "/page/exception/networkerror",
+        name: "NetworkError",
+        component: NetworkError,
+        meta: {
+          title: "networkerror",
         },
       },
     ],

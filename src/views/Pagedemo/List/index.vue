@@ -20,7 +20,7 @@
 import { onMounted, ref } from "vue";
 import { getUserList } from "@/api/index";
 
-const tableData = ref();
+const tableData = ref([]);
 const stripe = ref(false);
 const border = ref(false);
 

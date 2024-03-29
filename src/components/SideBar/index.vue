@@ -17,24 +17,42 @@
       >
         <template v-for="route in menuList">
           <template v-if="route.children">
+            <!-- 一级菜单 -->
             <el-sub-menu :index="route.path" :key="route.path">
               <template #title>
                 <el-icon><component :is="route.icon" /></el-icon>
                 <span>{{ $t("menu." + route.name) }}</span>
               </template>
-              <el-menu-item
-                v-for="child in route.children"
-                :index="route.path + child.path"
-                :key="route.path + child.path"
-              >
-                {{ $t("menu." + child.name) }}
-              </el-menu-item>
+              <template v-for="child in route.children">
+                <template v-if="child.children">
+                  <!-- 二级菜单 -->
+                  <el-sub-menu :index="route.path + child.path" :key="route.path + child.path" class="third-menu">
+                    <template #title>
+                      {{ $t("menu." + child.name) }}
+                    </template>
+                    <el-menu-item
+                      v-for="subChild in child.children"
+                      :index="route.path + child.path + subChild.path"
+                      :key="route.path + child.path + subChild.path"
+                    >
+                      {{ $t("menu." + subChild.name) }}
+                    </el-menu-item>
+                  </el-sub-menu>
+                </template>
+                <template v-else>
+                  <!-- 二级菜单不存在子菜单 -->
+                  <el-menu-item :index="route.path + child.path" :key="route.path + child.path">
+                    {{ $t("menu." + child.name) }}
+                  </el-menu-item>
+                </template>
+              </template>
             </el-sub-menu>
           </template>
           <template v-else>
+            <!-- 一级菜单不存在子菜单 -->
             <el-menu-item :index="route.path" :key="route.path" style="background-color: #001529">
               <el-icon><component :is="route.icon" /></el-icon>
-              <span>{{ route.name }}</span>
+              <span>{{ $t("menu." + route.name) }}</span>
             </el-menu-item>
           </template>
         </template>
