@@ -17,6 +17,9 @@
       </div>
     </div>
     <div class="header-right">
+      <div class="dark">
+        <el-switch size="20" v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
+      </div>
       <div class="search" @click="handleToLog">
         <el-icon :size="20"><Search /></el-icon>
       </div>
@@ -25,7 +28,7 @@
       </div>
       <el-tooltip placement="bottom" effect="dark" trigger="hover" :content="$t('header.tour')">
         <div class="tour" @click="handleToOpenTour">
-          <el-icon :size="20"><Opportunity /></el-icon>
+          <el-icon :size="20"><Guide /></el-icon>
         </div>
       </el-tooltip>
       <el-tour v-model="isTourOpen">
@@ -57,6 +60,7 @@
       <el-dropdown trigger="click">
         <div class="language">
           <img class="language-icon" src="@/assets/imgs/SwitchLang.png" alt="切换语言" />
+          <!-- <iconify-icon class="language-icon" icon="mdi:home" /> -->
         </div>
         <template #dropdown>
           <el-dropdown-menu>
@@ -94,10 +98,15 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from "vue";
+import { Sunrise, MoonNight } from "@element-plus/icons-vue";
 import { useRoute, useRouter } from "vue-router";
 import { useUserStore } from "@/stores/user";
 import { useLocaleStore } from "@/stores/locale";
 import { useI18n } from "vue-i18n";
+import { useDark, useToggle } from "@vueuse/core";
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 
 const props = defineProps<{
   isCollapse: Boolean;
@@ -198,7 +207,7 @@ onMounted(() => {
       cursor: pointer;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: var(--header-button-active);
       }
     }
   }
@@ -206,6 +215,13 @@ onMounted(() => {
   &-right {
     display: flex;
     align-items: center;
+
+    .dark {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 10px;
+    }
 
     .search {
       display: flex;
@@ -229,7 +245,7 @@ onMounted(() => {
       cursor: pointer;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: var(--header-button-active);
       }
     }
 
@@ -241,7 +257,7 @@ onMounted(() => {
       cursor: pointer;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: var(--header-button-active);
       }
 
       &-icon {
@@ -258,7 +274,7 @@ onMounted(() => {
       cursor: pointer;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: var(--header-button-active);
       }
     }
 
@@ -270,7 +286,7 @@ onMounted(() => {
       cursor: pointer;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: var(--header-button-active);
       }
 
       &-avatar {
@@ -305,7 +321,7 @@ onMounted(() => {
       cursor: pointer;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: var(--header-button-active);
       }
     }
   }

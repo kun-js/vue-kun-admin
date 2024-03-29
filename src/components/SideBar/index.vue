@@ -11,8 +11,8 @@
         unique-opened
         router
         text-color="#b7bdc3"
-        active-text-color="#fff"
-        background-color="#001529"
+        active-text-color="#ffffff"
+        background-color="var(--menu-background)"
         @select="saveDefaultPath"
       >
         <template v-for="route in menuList">
@@ -29,7 +29,7 @@
                   <el-sub-menu
                     :index="route.path + child.path"
                     :key="route.path + child.path"
-                    style="background-color: #0c2135"
+                    style="background-color: var(--menu-item-background)"
                   >
                     <template #title>
                       <span>{{ $t("menu." + child.name) }}</span>
@@ -115,7 +115,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .sidebar {
   height: 100%;
-  background-color: #001529;
+  background-color: var(--menu-background);
 
   .logo {
     display: flex;
@@ -150,12 +150,12 @@ onMounted(() => {
         color: #fff;
       }
 
-      background-color: #001529;
+      background-color: var(--menu-background);
     }
   }
 
   .el-menu-item {
-    background-color: #0c2135;
+    background-color: var(--menu-item-background);
 
     &:hover {
       color: #fff;

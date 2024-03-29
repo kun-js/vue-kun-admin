@@ -1,17 +1,22 @@
 <template>
   <div class="container">
-    <div class="switch-lang">
-      <el-dropdown trigger="click">
-        <div class="language">
-          <img class="language-icon" src="@/assets/imgs/SwitchLang.png" alt="切换语言" />
-        </div>
-        <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item @click="handleToChangeLangZhCn">简体中文</el-dropdown-item>
-            <el-dropdown-item @click="handleToChangeLangEnUs">English</el-dropdown-item>
-          </el-dropdown-menu>
-        </template>
-      </el-dropdown>
+    <div class="header-action">
+      <div class="dark">
+        <el-switch size="large" v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
+      </div>
+      <div class="switch-lang">
+        <el-dropdown trigger="click">
+          <div class="language">
+            <img class="language-icon" src="@/assets/imgs/SwitchLang.png" alt="切换语言" />
+          </div>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item @click="handleToChangeLangZhCn">简体中文</el-dropdown-item>
+              <el-dropdown-item @click="handleToChangeLangEnUs">English</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </div>
     </div>
     <div class="basketball"><Basketball /></div>
     <div class="form-container">
@@ -52,13 +57,17 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import Basketball from "./components/basketball.vue";
-import { User, Lock } from "@element-plus/icons-vue";
+import { User, Lock, Sunrise, MoonNight } from "@element-plus/icons-vue";
 import { type FormInstance, type FormRules } from "element-plus";
 import { getLoginInfo } from "@/api/index";
 import { useRouter } from "vue-router";
 import { useUserStore } from "@/stores/user";
 import { useLocaleStore } from "@/stores/locale";
 import { useI18n } from "vue-i18n";
+import { useDark, useToggle } from "@vueuse/core";
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 
 const { t } = useI18n();
 const localeStore = useLocaleStore();
@@ -127,21 +136,26 @@ const handleToChangeLangEnUs = () => {
   background-position: center;
   background-size: cover;
 
-  .switch-lang {
+  .header-action {
     position: absolute;
     top: 2%;
     right: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .language {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      padding: 0 10px;
-      cursor: pointer;
+    .switch-lang {
+      .language {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 10px;
+        cursor: pointer;
 
-      &-icon {
-        width: 20px;
-        height: 20px;
+        &-icon {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }
@@ -151,7 +165,7 @@ const handleToChangeLangEnUs = () => {
     top: 50%;
     left: 70%;
     padding: 28px;
-    background-color: #fff;
+    background-color: var(--background);
     border-radius: 8px;
     transform: translate(-50%, -50%);
 
