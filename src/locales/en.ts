@@ -26,6 +26,7 @@ export default {
     codeeditor: "CodeEditor",
     print: "Print",
     pdf: "PDF",
+    drag: "Draggable",
     barcode: "Barcode",
     excel: "Excel",
     clipboard: "Clipboard",

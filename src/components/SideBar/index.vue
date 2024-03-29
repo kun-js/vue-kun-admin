@@ -163,7 +163,7 @@ onMounted(() => {
   }
 
   .el-menu-item.is-active {
-    background-color: #0960bd;
+    background-color: #409eff;
   }
 }
 </style>

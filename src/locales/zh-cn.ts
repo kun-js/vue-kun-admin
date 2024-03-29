@@ -25,6 +25,7 @@ export default {
     download: "文件下载",
     codeeditor: "代码编辑器",
     print: "打印",
+    drag: "拖拽",
     pdf: "PDF预览",
     barcode: "条码生成",
     excel: "Excel操作",

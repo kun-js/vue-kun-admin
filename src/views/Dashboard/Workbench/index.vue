@@ -10,7 +10,7 @@
             <div class="personal-info-right-greeting">
               <span>你好,{{ userStore.userInfo.name }},祝您今日工作愉快!</span>
             </div>
-            <div class="personal-info-right-weather">今日晴,当前温度为28℃</div>
+            <div class="personal-info-right-weather">偶像练习生</div>
           </div>
         </div>
         <div class="personal-task">

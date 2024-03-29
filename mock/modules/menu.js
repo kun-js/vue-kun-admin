@@ -42,6 +42,11 @@ export const menuList = Mock.mock({
           path: "/print",
         },
         {
+          name: "drag",
+          title: "拖拽",
+          path: "/drag",
+        },
+        {
           name: "pdf",
           title: "PDF预览",
           path: "/pdf",
