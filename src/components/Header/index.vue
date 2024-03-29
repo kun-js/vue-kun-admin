@@ -51,7 +51,7 @@
           <el-dropdown-menu>
             <el-dropdown-item>
               <div class="logout" @click="handleToLogout">
-                <span class="text">退出</span>
+                <span class="text">{{ $t("header.logout") }}</span>
               </div>
             </el-dropdown-item>
           </el-dropdown-menu>
@@ -62,7 +62,7 @@
       </div>
     </div>
   </div>
-  <el-drawer v-model="drawer" title="项目设置" direction="rtl">
+  <el-drawer v-model="drawer" :title="$t('header.setting')" direction="rtl">
     <span>无</span>
   </el-drawer>
 </template>
@@ -72,6 +72,9 @@ import { ref, computed, watch, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useUserStore } from "@/stores/user";
 import { useLocaleStore } from "@/stores/locale";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const userStore = useUserStore();
 const localeStore = useLocaleStore();
@@ -89,7 +92,7 @@ const router = useRouter();
 const route = useRoute();
 
 const fullScreenTooltip = computed(() => {
-  return isFullScreen.value ? "退出全屏" : "全屏";
+  return isFullScreen.value ? t("header.exitfullscreen") : t("header.fullscreen");
 });
 
 const handleToLog = () => {

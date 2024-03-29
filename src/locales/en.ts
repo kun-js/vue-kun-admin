@@ -8,8 +8,14 @@ export default {
     register: "Register",
     forget: "Forget password?",
     otherloginway: "Other login way",
-    loginseccess: "Login successful! Welcome back!",
+    loginsuccess: "Login successful! Welcome back!",
     loginfail: "Login failed! Incorrect username or password!",
+  },
+  header: {
+    fullscreen: "FullScreen",
+    exitfullscreen: "Exit FullScreen",
+    logout: "Logout",
+    setting: "Setting",
   },
   menu: {
     dashboard: "Dashboard",

@@ -8,8 +8,14 @@ export default {
     register: "注册账号",
     forget: "忘记密码?",
     otherloginway: "其他登录方式",
-    loginseccess: "登陆成功!欢迎回来!",
+    loginsuccess: "登陆成功!欢迎回来!",
     loginfail: "登录失败!用户名或密码错误!",
+  },
+  header: {
+    fullscreen: "全屏",
+    exitfullscreen: "退出全屏",
+    logout: "退出",
+    setting: "设置",
   },
   menu: {
     dashboard: "首页",
