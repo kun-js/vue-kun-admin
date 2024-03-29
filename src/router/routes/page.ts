@@ -3,12 +3,12 @@ import Layout from "@/components/index.vue";
 import Form from "@/views/Pagedemo/Form/index.vue";
 import List from "@/views/Pagedemo/List/index.vue";
 import Detail from "@/views/Pagedemo/Detail/index.vue";
-import Success from "@/views/Pagedemo/Result/components/success.vue";
-import Fail from "@/views/Pagedemo/Result/components/fail.vue";
-import FourZeroFour from "@/views/Pagedemo/Exception/components/fourzerofour.vue";
-import FourZeroThree from "@/views/Pagedemo/Exception/components/fourzerothree.vue";
-import FiveZeroZero from "@/views/Pagedemo/Exception/components/fivezerozero.vue";
-import NetworkError from "@/views/Pagedemo/Exception/components/networkerror.vue";
+import Success from "@/views/Pagedemo/Result/Success/index.vue";
+import Fail from "@/views/Pagedemo/Result/Fail/index.vue";
+import FourZeroFour from "@/views/Pagedemo/Exception/404/index.vue";
+import FourZeroThree from "@/views/Pagedemo/Exception/403/index.vue";
+import FiveZeroZero from "@/views/Pagedemo/Exception/500/index.vue";
+import NetworkError from "@/views/Pagedemo/Exception/NetworkError/index.vue";
 
 const pageRoutes: RouteRecordRaw[] = [
   {

@@ -47,7 +47,7 @@ const detail = ref<Detail>({
 const fetchData = async () => {
   try {
     const result = await getDetailList();
-    console.log("result: ", result[0]);
+    // console.log("result: ", result);
     detail.value = result[0];
   } catch (error) {
     console.log("error: ", error);

@@ -26,16 +26,22 @@
               <template v-for="child in route.children">
                 <template v-if="child.children">
                   <!-- 二级菜单 -->
-                  <el-sub-menu :index="route.path + child.path" :key="route.path + child.path" class="third-menu">
+                  <el-sub-menu
+                    :index="route.path + child.path"
+                    :key="route.path + child.path"
+                    style="background-color: #0c2135"
+                  >
                     <template #title>
-                      {{ $t("menu." + child.name) }}
+                      <span>{{ $t("menu." + child.name) }}</span>
                     </template>
                     <el-menu-item
                       v-for="subChild in child.children"
                       :index="route.path + child.path + subChild.path"
                       :key="route.path + child.path + subChild.path"
                     >
-                      {{ $t("menu." + subChild.name) }}
+                      <template #title>
+                        {{ $t("menu." + subChild.name) }}
+                      </template>
                     </el-menu-item>
                   </el-sub-menu>
                 </template>
@@ -66,7 +72,18 @@ import { computed, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { getMenuList } from "@/api/index";
 
+const props = defineProps<{
+  isCollapse: Boolean;
+}>();
+
+const router = useRouter();
 const menuList = ref();
+const currentIndex = sessionStorage.getItem("currentIndex");
+const activePath = currentIndex ? currentIndex : "/dashboard/analysis";
+
+const sideBarWidth = computed(() => {
+  return props.isCollapse ? "64px" : "200px";
+});
 
 const fetchData = async () => {
   try {
@@ -78,24 +95,6 @@ const fetchData = async () => {
   }
 };
 
-onMounted(() => {
-  fetchData();
-});
-
-const props = defineProps<{
-  isCollapse: Boolean;
-}>();
-
-const router = useRouter();
-// const currentPath = ref();
-
-const currentIndex = sessionStorage.getItem("currentIndex");
-const activePath = currentIndex ? currentIndex : "/dashboard/analysis";
-
-const sideBarWidth = computed(() => {
-  return props.isCollapse ? "64px" : "200px";
-});
-
 // 保存当前激活的路径
 const saveDefaultPath = (index: string) => {
   // console.log("index: ", index);
@@ -106,6 +105,10 @@ const saveDefaultPath = (index: string) => {
 router.afterEach((to, from) => {
   const currentPath = to.path;
   saveDefaultPath(currentPath);
+});
+
+onMounted(() => {
+  fetchData();
 });
 </script>
 
@@ -141,12 +144,12 @@ router.afterEach((to, from) => {
   border: none;
 
   .el-sub-menu__title {
-    i,
-    span {
-      color: #fff;
-    }
-
     &:hover {
+      i,
+      span {
+        color: #fff;
+      }
+
       background-color: #001529;
     }
   }

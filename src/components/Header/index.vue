@@ -39,7 +39,6 @@
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-
       <el-dropdown>
         <div class="user">
           <div class="user-avatar">
@@ -74,16 +73,14 @@ import { useUserStore } from "@/stores/user";
 import { useLocaleStore } from "@/stores/locale";
 import { useI18n } from "vue-i18n";
 
-const { t } = useI18n();
-
-const userStore = useUserStore();
-const localeStore = useLocaleStore();
-
 const props = defineProps<{
   isCollapse: Boolean;
   changeSideBarCollapse: Function;
 }>();
 
+const { t } = useI18n();
+const userStore = useUserStore();
+const localeStore = useLocaleStore();
 const breadList = ref();
 const isFullScreen = ref(false);
 const drawer = ref(false);
@@ -95,6 +92,10 @@ const fullScreenTooltip = computed(() => {
   return isFullScreen.value ? t("header.exitfullscreen") : t("header.fullscreen");
 });
 
+const handleToCollapse = () => {
+  props.changeSideBarCollapse();
+};
+
 const handleToLog = () => {
   console.log(localeStore.locale);
 };
@@ -105,14 +106,6 @@ const handleToChangeLangZhCn = () => {
 
 const handleToChangeLangEnUs = () => {
   localeStore.getLocale("en-US");
-};
-
-const handleToCollapse = () => {
-  props.changeSideBarCollapse();
-};
-
-const handleToShowDrawer = () => {
-  drawer.value = !drawer.value;
 };
 
 const getMatched = () => {
@@ -133,6 +126,10 @@ const handleToFullScreen = () => {
 const handleToLogout = () => {
   localStorage.removeItem("pinia-user");
   router.push("/login");
+};
+
+const handleToShowDrawer = () => {
+  drawer.value = !drawer.value;
 };
 
 watch(

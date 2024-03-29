@@ -71,14 +71,18 @@ import { useLocaleStore } from "@/stores/locale";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
-
 const localeStore = useLocaleStore();
-
 const store = useUserStore();
-
 const router = useRouter();
-
 const loginFormRef = ref<FormInstance>();
+const loginForm = reactive({
+  username: "",
+  password: "",
+});
+const loginFormRules = reactive<FormRules<typeof loginForm>>({
+  username: [{ required: true, message: t("login.usernametip"), trigger: "blur" }],
+  password: [{ required: true, message: t("login.passwordtip"), trigger: "blur" }],
+});
 
 const icons = [
   { src: "./src/assets/imgs/QQ.png", alt: "QQ" },
@@ -88,24 +92,6 @@ const icons = [
   { src: "./src/assets/imgs/github.png", alt: "GitHub" },
   { src: "./src/assets/imgs/twitter.png", alt: "Twitter" },
 ];
-
-const handleToChangeLangZhCn = () => {
-  localeStore.getLocale("zh-CN");
-};
-
-const handleToChangeLangEnUs = () => {
-  localeStore.getLocale("en-US");
-};
-
-const loginForm = reactive({
-  username: "",
-  password: "",
-});
-
-const loginFormRules = reactive<FormRules<typeof loginForm>>({
-  username: [{ required: true, message: t("login.usernametip"), trigger: "blur" }],
-  password: [{ required: true, message: t("login.passwordtip"), trigger: "blur" }],
-});
 
 const submitForm = async () => {
   try {
@@ -130,6 +116,14 @@ const submitForm = async () => {
 const resetForm = () => {
   loginForm.username = "";
   loginForm.password = "";
+};
+
+const handleToChangeLangZhCn = () => {
+  localeStore.getLocale("zh-CN");
+};
+
+const handleToChangeLangEnUs = () => {
+  localeStore.getLocale("en-US");
 };
 </script>
 
