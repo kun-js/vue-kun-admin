@@ -71,6 +71,16 @@ export const menuList = Mock.mock({
           title: "水印",
           path: "/watermark",
         },
+        {
+          name: "debounce",
+          title: "防抖节流",
+          path: "/debounce",
+        },
+        {
+          name: "sensitive",
+          title: "敏感词过滤",
+          path: "/sensitive",
+        },
       ],
     },
     {

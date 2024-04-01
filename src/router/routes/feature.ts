@@ -9,11 +9,13 @@ import Draggable from "@/views/Feature/Draggable/index.vue";
 import Barcode from "@/views/Feature/Barcode/index.vue";
 import Clipboard from "@/views/Feature/Clipboard/index.vue";
 import Watermark from "@/views/Feature/WaterMark/index.vue";
+import Debounce from "@/views/Feature/Debounce/index.vue";
+import Sensitive from "@/views/Feature/Sensitive/index.vue";
 
 const featureRoutes: RouteRecordRaw[] = [
   {
     path: "/feature",
-    name: "feature",
+    name: "功能",
     component: Layout,
     redirect: "/feature/watermark",
     meta: {
@@ -22,7 +24,7 @@ const featureRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/feature/download",
-        name: "download",
+        name: "文件下载",
         component: Download,
         meta: {
           title: "download",
@@ -30,7 +32,7 @@ const featureRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/feature/codeeditor",
-        name: "codeeditor",
+        name: "代码编辑器",
         component: CodeEditor,
         meta: {
           title: "codeeditor",
@@ -38,7 +40,7 @@ const featureRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/feature/print",
-        name: "print",
+        name: "打印",
         component: Print,
         meta: {
           title: "print",
@@ -46,7 +48,7 @@ const featureRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/feature/drag",
-        name: "drag",
+        name: "拖拽",
         component: Draggable,
         meta: {
           title: "drag",
@@ -54,7 +56,7 @@ const featureRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/feature/pdf",
-        name: "pdf",
+        name: "PDF预览",
         component: Pdf,
         meta: {
           title: "pdf",
@@ -62,7 +64,7 @@ const featureRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/feature/barcode",
-        name: "barcode",
+        name: "条形码",
         component: Barcode,
         meta: {
           title: "barcode",
@@ -78,7 +80,7 @@ const featureRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/feature/clipboard",
-        name: "clipboard",
+        name: "剪贴板",
         component: Clipboard,
         meta: {
           title: "clipboard",
@@ -86,10 +88,26 @@ const featureRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/feature/watermark",
-        name: "watermark",
+        name: "水印",
         component: Watermark,
         meta: {
           title: "watermark",
+        },
+      },
+      {
+        path: "/feature/debounce",
+        name: "防抖节流",
+        component: Debounce,
+        meta: {
+          title: "debounce",
+        },
+      },
+      {
+        path: "/feature/sensitive",
+        name: "敏感词过滤",
+        component: Sensitive,
+        meta: {
+          title: "sensitive",
         },
       },
     ],

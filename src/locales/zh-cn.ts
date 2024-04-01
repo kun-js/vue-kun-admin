@@ -41,6 +41,8 @@ export default {
     excel: "Excel操作",
     clipboard: "剪贴板",
     watermark: "水印",
+    debounce: "防抖节流",
+    sensitive: "敏感词过滤",
     page: "页面",
     form: "表单页",
     list: "列表页",
