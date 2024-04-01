@@ -48,6 +48,8 @@
     "@codemirror/theme-one-dark": "^6.1.2",
     "@element-plus/icons-vue": "^2.3.1",
     "@vueuse/core": "^10.9.0",
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^5.1.12",
     "axios": "^1.6.7",
     "canvas": "^2.11.2",
     "echarts": "^5.5.0",

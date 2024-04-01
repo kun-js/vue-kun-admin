@@ -34,6 +34,7 @@ export default {
     feature: "功能",
     download: "文件下载",
     codeeditor: "代码编辑器",
+    texteditor: "文本编辑器",
     print: "打印",
     drag: "拖拽",
     pdf: "PDF预览",

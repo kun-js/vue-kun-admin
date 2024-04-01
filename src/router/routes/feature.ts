@@ -2,6 +2,7 @@ import { RouteRecordRaw } from "vue-router";
 import Layout from "@/components/index.vue";
 import Download from "@/views/Feature/Download/index.vue";
 import CodeEditor from "@/views/Feature/CodeEditor/index.vue";
+import TextEditor from "@/views/Feature/TextEditor/index.vue";
 import Print from "@/views/Feature/Print/index.vue";
 import Excel from "@/views/Feature/Excel/index.vue";
 import Pdf from "@/views/Feature/Pdf/index.vue";
@@ -36,6 +37,14 @@ const featureRoutes: RouteRecordRaw[] = [
         component: CodeEditor,
         meta: {
           title: "codeeditor",
+        },
+      },
+      {
+        path: "/feature/texteditor",
+        name: "代码编辑器",
+        component: TextEditor,
+        meta: {
+          title: "texteditor",
         },
       },
       {
