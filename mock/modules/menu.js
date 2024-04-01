@@ -189,6 +189,36 @@ export const menuList = Mock.mock({
       ],
     },
     {
+      name: "externalpage",
+      title: "外部页面",
+      path: "/externalpage",
+      icon: "Monitor",
+      children: [
+        {
+          name: "outerchain",
+          title: "文档外链",
+          path: "/outerchain",
+        },
+        {
+          name: "iframe",
+          title: "文档内嵌",
+          path: "/iframe",
+          children: [
+            {
+              name: "element",
+              title: "element",
+              path: "/element",
+            },
+            {
+              name: "vue",
+              title: "vue",
+              path: "/vue",
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: "about",
       title: "关于",
       path: "/about",

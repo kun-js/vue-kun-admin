@@ -6,6 +6,7 @@ import dashboardRoutes from "./routes/dashboard";
 import featureRoutes from "./routes/feature";
 import pageRoutes from "./routes/page";
 import chartRoutes from "./routes/chart";
+import ExternalPageRoutes from "./routes/externalpage";
 import aboutRoutes from "./routes/about";
 
 const routes: RouteRecordRaw[] = [
@@ -14,6 +15,7 @@ const routes: RouteRecordRaw[] = [
   ...featureRoutes,
   ...pageRoutes,
   ...chartRoutes,
+  ...ExternalPageRoutes,
   ...aboutRoutes,
 ];
 
