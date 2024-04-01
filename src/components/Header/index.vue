@@ -17,9 +17,6 @@
       </div>
     </div>
     <div class="header-right">
-      <div class="dark">
-        <el-switch size="20" v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
-      </div>
       <div class="search" @click="handleToLog">
         <el-icon :size="20"><Search /></el-icon>
       </div>
@@ -59,8 +56,7 @@
       </el-tooltip>
       <el-dropdown trigger="click">
         <div class="language">
-          <img class="language-icon" src="@/assets/imgs/SwitchLang.png" alt="切换语言" />
-          <!-- <iconify-icon class="language-icon" icon="mdi:home" /> -->
+          <Icon class="language-icon" icon="ion:language" />
         </div>
         <template #dropdown>
           <el-dropdown-menu>
@@ -92,7 +88,12 @@
     </div>
   </div>
   <el-drawer v-model="drawer" :title="$t('header.setting')" direction="rtl">
-    <span>无</span>
+    <div class="drawer-container">
+      <el-divider>主题颜色</el-divider>
+      <div class="switch-dark">
+        <el-switch v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
+      </div>
+    </div>
   </el-drawer>
 </template>
 
@@ -104,6 +105,7 @@ import { useUserStore } from "@/stores/user";
 import { useLocaleStore } from "@/stores/locale";
 import { useI18n } from "vue-i18n";
 import { useDark, useToggle } from "@vueuse/core";
+import { Icon } from "@iconify/vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -216,13 +218,6 @@ onMounted(() => {
     display: flex;
     align-items: center;
 
-    .dark {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      padding: 0 10px;
-    }
-
     .search {
       display: flex;
       align-items: center;
@@ -246,6 +241,7 @@ onMounted(() => {
 
       &:hover {
         background-color: var(--header-button-active);
+        border-bottom: 1px solid #eee;
       }
     }
 
@@ -258,9 +254,11 @@ onMounted(() => {
 
       &:hover {
         background-color: var(--header-button-active);
+        border-bottom: 1px solid #eee;
       }
 
       &-icon {
+        display: inline-block;
         width: 20px;
         height: 20px;
       }
@@ -275,6 +273,7 @@ onMounted(() => {
 
       &:hover {
         background-color: var(--header-button-active);
+        border-bottom: 1px solid #eee;
       }
     }
 
@@ -287,6 +286,7 @@ onMounted(() => {
 
       &:hover {
         background-color: var(--header-button-active);
+        border-bottom: 1px solid #eee;
       }
 
       &-avatar {
@@ -322,14 +322,26 @@ onMounted(() => {
 
       &:hover {
         background-color: var(--header-button-active);
+        border-bottom: 1px solid #eee;
       }
     }
   }
 }
 
 .el-dropdown {
-  // display: flex;
-  // align-items: center;
   height: 100%;
+}
+
+.drawer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .switch-dark {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+  }
 }
 </style>

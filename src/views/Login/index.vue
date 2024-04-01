@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="header-action">
-      <div class="dark">
+      <div class="switch-dark">
         <el-switch size="large" v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
       </div>
       <div class="switch-lang">
         <el-dropdown trigger="click">
           <div class="language">
-            <img class="language-icon" src="@/assets/imgs/SwitchLang.png" alt="切换语言" />
+            <img class="language-icon" src="@/assets/imgs/SwitchLang.png" />
           </div>
           <template #dropdown>
             <el-dropdown-menu>
@@ -25,10 +25,10 @@
       <div class="form-container-body">
         <div class="login-form">
           <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" style="width: 308px">
-            <el-form-item label="" prop="username">
+            <el-form-item prop="username">
               <el-input :prefix-icon="User" v-model="loginForm.username" />
             </el-form-item>
-            <el-form-item label="" prop="password">
+            <el-form-item prop="password">
               <el-input :prefix-icon="Lock" show-password v-model="loginForm.password" />
             </el-form-item>
             <div class="login-form-tip">
@@ -64,6 +64,7 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "@/stores/user";
 import { useLocaleStore } from "@/stores/locale";
 import { useI18n } from "vue-i18n";
+import { Icon } from "@iconify/vue";
 import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
