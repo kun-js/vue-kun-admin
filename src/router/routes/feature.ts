@@ -3,6 +3,7 @@ import Layout from "@/components/index.vue";
 import Download from "@/views/Feature/Download/index.vue";
 import CodeEditor from "@/views/Feature/CodeEditor/index.vue";
 import TextEditor from "@/views/Feature/TextEditor/index.vue";
+import ImageClipper from "@/views/Feature/ImageClipper/index.vue";
 import Print from "@/views/Feature/Print/index.vue";
 import Excel from "@/views/Feature/Excel/index.vue";
 import Pdf from "@/views/Feature/Pdf/index.vue";
@@ -41,10 +42,18 @@ const featureRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/feature/texteditor",
-        name: "代码编辑器",
+        name: "文本编辑器",
         component: TextEditor,
         meta: {
           title: "texteditor",
+        },
+      },
+      {
+        path: "/feature/imageclipper",
+        name: "图片裁剪",
+        component: ImageClipper,
+        meta: {
+          title: "imageclipper",
         },
       },
       {

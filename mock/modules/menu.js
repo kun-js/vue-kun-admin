@@ -42,6 +42,11 @@ export const menuList = Mock.mock({
           path: "/texteditor",
         },
         {
+          name: "imageclipper",
+          title: "图片裁剪",
+          path: "/imageclipper",
+        },
+        {
           name: "print",
           title: "打印",
           path: "/print",

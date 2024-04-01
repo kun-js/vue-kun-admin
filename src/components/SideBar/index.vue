@@ -5,64 +5,66 @@
       <div class="logo-title">Kun Admin</div>
     </div>
     <div class="menu">
-      <el-menu
-        :default-active="activePath"
-        :collapse="isCollapse"
-        unique-opened
-        router
-        text-color="#b7bdc3"
-        active-text-color="#ffffff"
-        background-color="var(--menu-background)"
-        @select="saveDefaultPath"
-      >
-        <template v-for="route in menuList">
-          <template v-if="route.children">
-            <!-- 一级菜单 -->
-            <el-sub-menu :index="route.path" :key="route.path">
-              <template #title>
-                <el-icon><component :is="route.icon" /></el-icon>
-                <span>{{ $t("menu." + route.name) }}</span>
-              </template>
-              <template v-for="child in route.children">
-                <template v-if="child.children">
-                  <!-- 二级菜单 -->
-                  <el-sub-menu
-                    :index="route.path + child.path"
-                    :key="route.path + child.path"
-                    style="background-color: var(--menu-item-background)"
-                  >
-                    <template #title>
-                      <span>{{ $t("menu." + child.name) }}</span>
-                    </template>
-                    <el-menu-item
-                      v-for="subChild in child.children"
-                      :index="route.path + child.path + subChild.path"
-                      :key="route.path + child.path + subChild.path"
+      <el-scrollbar height="910px">
+        <el-menu
+          :default-active="activePath"
+          :collapse="isCollapse"
+          unique-opened
+          router
+          text-color="#b7bdc3"
+          active-text-color="#ffffff"
+          background-color="var(--menu-background)"
+          @select="saveDefaultPath"
+        >
+          <template v-for="route in menuList">
+            <template v-if="route.children">
+              <!-- 一级菜单 -->
+              <el-sub-menu :index="route.path" :key="route.path">
+                <template #title>
+                  <el-icon><component :is="route.icon" /></el-icon>
+                  <span>{{ $t("menu." + route.name) }}</span>
+                </template>
+                <template v-for="child in route.children">
+                  <template v-if="child.children">
+                    <!-- 二级菜单 -->
+                    <el-sub-menu
+                      :index="route.path + child.path"
+                      :key="route.path + child.path"
+                      style="background-color: var(--menu-item-background)"
                     >
                       <template #title>
-                        {{ $t("menu." + subChild.name) }}
+                        <span>{{ $t("menu." + child.name) }}</span>
                       </template>
+                      <el-menu-item
+                        v-for="subChild in child.children"
+                        :index="route.path + child.path + subChild.path"
+                        :key="route.path + child.path + subChild.path"
+                      >
+                        <template #title>
+                          {{ $t("menu." + subChild.name) }}
+                        </template>
+                      </el-menu-item>
+                    </el-sub-menu>
+                  </template>
+                  <template v-else>
+                    <!-- 二级菜单不存在子菜单 -->
+                    <el-menu-item :index="route.path + child.path" :key="route.path + child.path">
+                      {{ $t("menu." + child.name) }}
                     </el-menu-item>
-                  </el-sub-menu>
+                  </template>
                 </template>
-                <template v-else>
-                  <!-- 二级菜单不存在子菜单 -->
-                  <el-menu-item :index="route.path + child.path" :key="route.path + child.path">
-                    {{ $t("menu." + child.name) }}
-                  </el-menu-item>
-                </template>
-              </template>
-            </el-sub-menu>
+              </el-sub-menu>
+            </template>
+            <template v-else>
+              <!-- 一级菜单不存在子菜单 -->
+              <el-menu-item :index="route.path" :key="route.path" style="background-color: #001529">
+                <el-icon><component :is="route.icon" /></el-icon>
+                <span>{{ $t("menu." + route.name) }}</span>
+              </el-menu-item>
+            </template>
           </template>
-          <template v-else>
-            <!-- 一级菜单不存在子菜单 -->
-            <el-menu-item :index="route.path" :key="route.path" style="background-color: #001529">
-              <el-icon><component :is="route.icon" /></el-icon>
-              <span>{{ $t("menu." + route.name) }}</span>
-            </el-menu-item>
-          </template>
-        </template>
-      </el-menu>
+        </el-menu>
+      </el-scrollbar>
     </div>
   </div>
 </template>
@@ -71,6 +73,14 @@
 import { computed, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { getMenuList } from "@/api/index";
+
+const menuHeight = computed(() => {
+  // Calculate menu height based on menuList length
+  const menuItemHeight = 40; // height of each menu item
+  const numOfMenuItems = menuList.value.length;
+  const menuHeight = numOfMenuItems * menuItemHeight;
+  return menuHeight > 900 ? "900px" : "auto"; // check if menu height exceeds sidebar height
+});
 
 const props = defineProps<{
   isCollapse: Boolean;

@@ -35,6 +35,7 @@ export default {
     download: "Download",
     codeeditor: "Code Editor",
     texteditor: "Text Editor",
+    imageclipper: "Image Clipper",
     print: "Print",
     pdf: "PDF",
     drag: "Draggable",
