@@ -6,7 +6,7 @@ export const menuList = Mock.mock({
       name: "dashboard",
       title: "首页",
       path: "/dashboard",
-      icon: "Menu",
+      icon: "HomeFilled",
       children: [
         {
           name: "analysis",
@@ -17,6 +17,19 @@ export const menuList = Mock.mock({
           name: "workbench",
           title: "工作台",
           path: "/workbench",
+        },
+      ],
+    },
+    {
+      name: "component",
+      title: "组件",
+      path: "/component",
+      icon: "Menu",
+      children: [
+        {
+          name: "button",
+          title: "按钮",
+          path: "/button",
         },
       ],
     },

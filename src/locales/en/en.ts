@@ -31,6 +31,8 @@ export default {
     dashboard: "Dashboard",
     analysis: "Analysis",
     workbench: "Workbench",
+    component: "Components",
+    button: "Button",
     feature: "Feature",
     download: "Download",
     verify: "Verify",

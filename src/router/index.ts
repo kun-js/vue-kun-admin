@@ -3,6 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 
 import baseRoutes from "./routes/base";
 import dashboardRoutes from "./routes/dashboard";
+import componentRoutes from "./routes/component";
 import featureRoutes from "./routes/feature";
 import pageRoutes from "./routes/page";
 import chartRoutes from "./routes/chart";
@@ -12,6 +13,7 @@ import aboutRoutes from "./routes/about";
 const routes: RouteRecordRaw[] = [
   ...baseRoutes,
   ...dashboardRoutes,
+  ...componentRoutes,
   ...featureRoutes,
   ...pageRoutes,
   ...chartRoutes,

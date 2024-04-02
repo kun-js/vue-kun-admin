@@ -74,14 +74,6 @@ import { computed, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { getMenuList } from "@/api/index";
 
-const menuHeight = computed(() => {
-  // Calculate menu height based on menuList length
-  const menuItemHeight = 40; // height of each menu item
-  const numOfMenuItems = menuList.value.length;
-  const menuHeight = numOfMenuItems * menuItemHeight;
-  return menuHeight > 900 ? "900px" : "auto"; // check if menu height exceeds sidebar height
-});
-
 const props = defineProps<{
   isCollapse: Boolean;
 }>();

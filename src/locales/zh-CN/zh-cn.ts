@@ -31,6 +31,8 @@ export default {
     dashboard: "首页",
     analysis: "分析页",
     workbench: "工作台",
+    component: "组件",
+    button: "按钮",
     feature: "功能",
     download: "文件下载",
     verify: "验证码",
