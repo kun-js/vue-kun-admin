@@ -7,20 +7,12 @@ import Vue from "@/views/ExternalPage/Iframe/Vue/index.vue";
 const ExternalPageRoutes: RouteRecordRaw[] = [
   {
     path: "/externalpage",
-    name: "externalpage",
+    name: "外部页面",
     component: Layout,
     meta: {
       title: "externalpage",
     },
     children: [
-      {
-        path: "/externalpage/outerchain",
-        name: "outerchain",
-        component: OuterChain,
-        meta: {
-          title: "outerchain",
-        },
-      },
       {
         path: "/externalpage/outerchain/element",
         name: "outerchainelement",

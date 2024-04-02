@@ -33,6 +33,7 @@ export default {
     workbench: "工作台",
     component: "组件",
     button: "按钮",
+    colorpicker: "取色器",
     feature: "功能",
     download: "文件下载",
     verify: "验证码",

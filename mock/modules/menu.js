@@ -31,6 +31,11 @@ export const menuList = Mock.mock({
           title: "按钮",
           path: "/button",
         },
+        {
+          name: "colorpicker",
+          title: "取色器",
+          path: "/colorpicker",
+        },
       ],
     },
     {

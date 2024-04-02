@@ -8,7 +8,7 @@ import PieChart from "@/views/Chart/PieChart/index.vue";
 const chartRoutes: RouteRecordRaw[] = [
   {
     path: "/chart",
-    name: "pagedemo",
+    name: "页面",
     component: Layout,
     redirect: "/chart/barchart",
     meta: {
@@ -17,7 +17,7 @@ const chartRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/chart/gaodemap",
-        name: "GaoDeMap",
+        name: "高德地图",
         component: GaoDeMap,
         meta: {
           title: "gaodemap",
@@ -25,7 +25,7 @@ const chartRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/chart/barchart",
-        name: "BarChart",
+        name: "柱状图",
         component: BarChart,
         meta: {
           title: "barchart",
@@ -33,7 +33,7 @@ const chartRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/chart/linechart",
-        name: "LineChart",
+        name: "折线图",
         component: LineChart,
         meta: {
           title: "linechart",
@@ -41,7 +41,7 @@ const chartRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/chart/piechart",
-        name: "PieChart",
+        name: "饼图",
         component: PieChart,
         meta: {
           title: "piechart",

@@ -6,7 +6,7 @@ import Workbench from "@/views/Dashboard/Workbench/index.vue";
 const dashboardRoutes: RouteRecordRaw[] = [
   {
     path: "/dashboard",
-    name: "dashboard",
+    name: "首页",
     component: Layout,
     redirect: "/dashboard/analysis",
     meta: {
@@ -15,7 +15,7 @@ const dashboardRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/dashboard/analysis",
-        name: "analysis",
+        name: "分析页",
         component: Analysis,
         meta: {
           title: "analysis",
@@ -23,7 +23,7 @@ const dashboardRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/dashboard/workbench",
-        name: "workbench",
+        name: "工作台",
         component: Workbench,
         meta: {
           title: "workbench",

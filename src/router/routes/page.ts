@@ -13,7 +13,7 @@ import NetworkError from "@/views/PageDemo/Exception/NetworkError/index.vue";
 const pageRoutes: RouteRecordRaw[] = [
   {
     path: "/page",
-    name: "page",
+    name: "页面",
     component: Layout,
     redirect: "/page/form",
     meta: {
@@ -22,7 +22,7 @@ const pageRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/page/form",
-        name: "form",
+        name: "表单页",
         component: Form,
         meta: {
           title: "form",
@@ -30,7 +30,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/list",
-        name: "list",
+        name: "列表页",
         component: List,
         meta: {
           title: "list",
@@ -38,7 +38,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/detail",
-        name: "detail",
+        name: "详情页",
         component: Detail,
         meta: {
           title: "detail",
@@ -46,7 +46,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/result/success",
-        name: "success",
+        name: "成功页",
         component: Success,
         meta: {
           title: "success",
@@ -54,7 +54,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/result/fail",
-        name: "fail",
+        name: "失败页",
         component: Fail,
         meta: {
           title: "fail",
@@ -86,7 +86,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/exception/networkerror",
-        name: "NetworkError",
+        name: "网络错误",
         component: NetworkError,
         meta: {
           title: "networkerror",

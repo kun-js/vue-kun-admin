@@ -14,7 +14,7 @@ const aboutRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/about/me",
-        name: "me",
+        name: "关于我们",
         component: About,
         meta: {
           title: "me",
@@ -22,7 +22,7 @@ const aboutRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/about/skill",
-        name: "skill",
+        name: "关于技术栈",
         component: Skill,
         meta: {
           title: "skill",

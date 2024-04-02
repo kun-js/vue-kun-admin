@@ -33,6 +33,7 @@ export default {
     workbench: "Workbench",
     component: "Components",
     button: "Button",
+    colorpicker: "Color Picker",
     feature: "Feature",
     download: "Download",
     verify: "Verify",
