@@ -1,9 +1,9 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%">
+  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '100%', padding: 0 }">
     <template #header>
-      <span style="margin-right: 18px">vue示例</span>
+      <span style="margin-right: 18px">vue文档内嵌示例</span>
     </template>
-    <iframe src="https://www.baidu.com" width="100%" height="600"></iframe>
+    <iframe src="https://cn.vuejs.org/" width="100%" height="100%"></iframe>
   </el-card>
 </template>
 
