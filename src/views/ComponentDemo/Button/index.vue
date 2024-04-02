@@ -10,7 +10,7 @@
       </el-radio-group>
     </template>
     <div>
-      <el-radio-group v-model="radio">
+      <el-radio-group v-model="radio" class="mb-4">
         <el-radio label="default" value="default" size="large" />
         <el-radio label="plain" value="plain" size="large" />
         <el-radio label="round" value="round" size="large" />

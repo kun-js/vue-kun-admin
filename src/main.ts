@@ -7,6 +7,7 @@ import "element-plus/theme-chalk/dark/css-vars.css";
 
 // 样式
 import "@/styles/index.scss";
+import "uno.css";
 import { createApp } from "vue";
 
 import App from "./App.vue";

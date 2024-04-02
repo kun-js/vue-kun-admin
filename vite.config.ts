@@ -8,6 +8,9 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
+// 引入Unocss
+import Unocss from "unocss/vite";
+import { presetUno, presetAttributify, presetIcons } from "unocss";
 
 const CWD = process.cwd();
 
@@ -18,6 +21,10 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     base: VITE_BASE_URL,
     plugins: [
       vue(),
+      Unocss({
+        // 使用Unocss
+        presets: [presetUno(), presetAttributify(), presetIcons()],
+      }),
       vueJsx(),
       VueDevTools(),
       AutoImport({
