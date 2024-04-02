@@ -8,6 +8,7 @@ const aboutRoutes: RouteRecordRaw[] = [
     path: "/about",
     name: "about",
     component: Layout,
+    redirect: "/about/me",
     meta: {
       title: "about",
     },

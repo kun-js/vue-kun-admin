@@ -15,6 +15,7 @@ const pageRoutes: RouteRecordRaw[] = [
     path: "/page",
     name: "page",
     component: Layout,
+    redirect: "/page/form",
     meta: {
       title: "page",
     },

@@ -8,6 +8,7 @@ const componentRoutes: RouteRecordRaw[] = [
     path: "/component",
     name: "component",
     component: Layout,
+    redirect: "/component/button",
     meta: {
       title: "chart",
     },

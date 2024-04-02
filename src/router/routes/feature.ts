@@ -20,7 +20,7 @@ const featureRoutes: RouteRecordRaw[] = [
     path: "/feature",
     name: "功能",
     component: Layout,
-    redirect: "/feature/watermark",
+    redirect: "/feature/download",
     meta: {
       title: "feature",
     },
