@@ -19,6 +19,7 @@
 <script setup lang="ts">
 import { debounce } from "@/utils/debounce";
 import { throttle } from "@/utils/throttle";
+import { ElMessage } from "element-plus";
 
 const clickEventDebounce = debounce(() => {
   ElMessage.success("防抖");

@@ -1,6 +1,7 @@
 import { RouteRecordRaw } from "vue-router";
 import Layout from "@/components/index.vue";
 import Download from "@/views/Feature/Download/index.vue";
+import Verify from "@/views/Feature/Verify/index.vue";
 import CodeEditor from "@/views/Feature/CodeEditor/index.vue";
 import TextEditor from "@/views/Feature/TextEditor/index.vue";
 import ImageClipper from "@/views/Feature/ImageClipper/index.vue";
@@ -30,6 +31,14 @@ const featureRoutes: RouteRecordRaw[] = [
         component: Download,
         meta: {
           title: "download",
+        },
+      },
+      {
+        path: "/feature/verify",
+        name: "验证码",
+        component: Verify,
+        meta: {
+          title: "verify",
         },
       },
       {

@@ -32,6 +32,11 @@ export const menuList = Mock.mock({
           path: "/download",
         },
         {
+          name: "verify",
+          title: "验证码",
+          path: "/verify",
+        },
+        {
           name: "codeeditor",
           title: "代码编辑器",
           path: "/codeeditor",

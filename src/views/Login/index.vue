@@ -56,9 +56,9 @@
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-import Basketball from "./components/basketball.vue";
+import Basketball from "./components/Basketball.vue";
 import { User, Lock, Sunrise, MoonNight } from "@element-plus/icons-vue";
-import { type FormInstance, type FormRules } from "element-plus";
+import { ElMessage, type FormInstance, type FormRules } from "element-plus";
 import { getLoginInfo } from "@/api/index";
 import { useRouter } from "vue-router";
 import { useUserStore } from "@/stores/user";

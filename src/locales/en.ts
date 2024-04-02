@@ -33,6 +33,7 @@ export default {
     workbench: "Workbench",
     feature: "Feature",
     download: "Download",
+    verify: "Verify",
     codeeditor: "Code Editor",
     texteditor: "Text Editor",
     imageclipper: "Image Clipper",

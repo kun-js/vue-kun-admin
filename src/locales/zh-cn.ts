@@ -33,6 +33,7 @@ export default {
     workbench: "工作台",
     feature: "功能",
     download: "文件下载",
+    verify: "验证码",
     codeeditor: "代码编辑器",
     texteditor: "文本编辑器",
     imageclipper: "图片裁剪",
