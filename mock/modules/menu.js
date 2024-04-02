@@ -142,17 +142,17 @@ export const menuList = Mock.mock({
           path: "/exception",
           children: [
             {
-              name: "fourzerofour",
+              name: "404",
               title: "404",
               path: "/404",
             },
             {
-              name: "fourzerothree",
+              name: "403",
               title: "403",
               path: "/403",
             },
             {
-              name: "fivezerozero",
+              name: "500",
               title: "500",
               path: "/500",
             },

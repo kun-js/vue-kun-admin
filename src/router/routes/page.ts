@@ -1,14 +1,14 @@
 import { RouteRecordRaw } from "vue-router";
 import Layout from "@/components/index.vue";
-import Form from "@/views/Pagedemo/Form/index.vue";
-import List from "@/views/Pagedemo/List/index.vue";
-import Detail from "@/views/Pagedemo/Detail/index.vue";
-import Success from "@/views/Pagedemo/Result/Success/index.vue";
-import Fail from "@/views/Pagedemo/Result/Fail/index.vue";
-import FourZeroFour from "@/views/Pagedemo/Exception/404/index.vue";
-import FourZeroThree from "@/views/Pagedemo/Exception/403/index.vue";
-import FiveZeroZero from "@/views/Pagedemo/Exception/500/index.vue";
-import NetworkError from "@/views/Pagedemo/Exception/NetworkError/index.vue";
+import Form from "@/views/PageDemo/Form/index.vue";
+import List from "@/views/PageDemo/List/index.vue";
+import Detail from "@/views/PageDemo/Detail/index.vue";
+import Success from "@/views/PageDemo/Result/Success/index.vue";
+import Fail from "@/views/PageDemo/Result/Fail/index.vue";
+import FourZeroFour from "@/views/PageDemo/Exception/404/index.vue";
+import FourZeroThree from "@/views/PageDemo/Exception/403/index.vue";
+import FiveZeroZero from "@/views/PageDemo/Exception/500/index.vue";
+import NetworkError from "@/views/PageDemo/Exception/NetworkError/index.vue";
 
 const pageRoutes: RouteRecordRaw[] = [
   {
@@ -62,26 +62,26 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/exception/404",
-        name: "fourzerofour",
+        name: "404",
         component: FourZeroFour,
         meta: {
-          title: "fourzerofour",
+          title: "404",
         },
       },
       {
         path: "/page/exception/403",
-        name: "fourzerothree",
+        name: "403",
         component: FourZeroThree,
         meta: {
-          title: "fourzerothree",
+          title: "403",
         },
       },
       {
         path: "/page/exception/500",
-        name: "FiveZeroZero",
+        name: "500",
         component: FiveZeroZero,
         meta: {
-          title: "fivezerozero",
+          title: "500",
         },
       },
       {

@@ -1,6 +1,6 @@
 import { createI18n } from "vue-i18n";
-import zhCn from "./zh-cn";
-import en from "./en";
+import zhCn from "./zh-CN/zh-cn";
+import en from "./en/en";
 
 // 如果 localStorage 中不存在 lang 值，则将其设置为默认值 'zh-CN'
 if (!localStorage.getItem("lang")) {
