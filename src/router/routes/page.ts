@@ -13,9 +13,8 @@ import NetworkError from "@/views/PageDemo/Exception/NetworkError/index.vue";
 const pageRoutes: RouteRecordRaw[] = [
   {
     path: "/page",
-    name: "页面",
+    name: "page",
     component: Layout,
-    redirect: "/page/form",
     meta: {
       title: "page",
     },
