@@ -3,11 +3,22 @@
     <div class="icon"><img class="img" src="@/assets/imgs/500.png" alt="" /></div>
     <div class="text">500</div>
     <div class="tip-text">抱歉,服务器出现错误!</div>
-    <div class="action"><el-button type="primary">返回首页</el-button></div>
+    <div class="action"><el-button type="primary" @click="handleToBackHome">返回首页</el-button></div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const handleToBackHome = () => {
+  router.push("/dashboard");
+  sessionStorage.setItem("currentIndex", "/dashboard");
+  setTimeout(() => {
+    window.location.reload();
+  });
+};
+</script>
 
 <style lang="scss" scoped>
 .container {

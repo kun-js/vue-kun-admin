@@ -1,13 +1,24 @@
 <template>
   <div class="container">
-    <div class="icon"><img class="img" src="@/assets/imgs/403.png" alt="" /></div>
+    <div class="icon"><img class="img" src="@/assets/imgs/403.png" /></div>
     <div class="text">403</div>
     <div class="tip-text">抱歉,你无权访问页面!</div>
-    <div class="action"><el-button type="primary">返回首页</el-button></div>
+    <div class="action"><el-button type="primary" @click="handleToBackHome">返回首页</el-button></div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const handleToBackHome = () => {
+  router.push("/dashboard");
+  sessionStorage.setItem("currentIndex", "/dashboard");
+  setTimeout(() => {
+    window.location.reload();
+  });
+};
+</script>
 
 <style lang="scss" scoped>
 .container {
