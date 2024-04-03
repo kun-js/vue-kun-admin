@@ -3,6 +3,7 @@ import { menuList } from "./modules/menu";
 import { analysisCardList } from "./modules/analysis";
 import { userList } from "./modules/list";
 import { detailList } from "./modules/detail";
+import { messageList } from "./modules/message";
 
 export default [
   {
@@ -38,6 +39,13 @@ export default [
     method: "get",
     response: () => {
       return detailList;
+    },
+  },
+  {
+    url: "/api/messageList",
+    method: "get",
+    response: () => {
+      return messageList;
     },
   },
 ];

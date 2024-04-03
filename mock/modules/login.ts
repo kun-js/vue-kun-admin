@@ -7,7 +7,7 @@ export const loginInfo = Mock.mock({
     token: "abc123",
     userInfo: {
       avatar: "https://img1.baidu.com/it/u=3105572522,2684938522&fm=253&fmt=auto&app=120&f=JPEG?w=802&h=500",
-      name: "Kun哥",
+      name: "坤哥",
     },
   },
 });

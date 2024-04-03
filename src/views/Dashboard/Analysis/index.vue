@@ -1,8 +1,10 @@
 <template>
-  <div class="container">
-    <div class="card-container">
-      <Card v-for="item in cardList" :key="item.id" :item="item" :id="item.id" />
-    </div>
+  <div class="analysis-container">
+    <el-row :gutter="20">
+      <el-col :span="6" v-for="item in cardList" :key="item.id">
+        <Card :item="item" :id="item.id" />
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -28,11 +30,4 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped>
-.container {
-  .card-container {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

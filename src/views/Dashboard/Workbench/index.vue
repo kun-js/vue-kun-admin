@@ -1,7 +1,7 @@
 <template>
   <el-card style="max-width: 100%; height: 100%">
     <template #header>
-      <div class="container">
+      <div class="workbench-container">
         <div class="personal-info">
           <div class="personal-info-left">
             <el-avatar :size="72" :src="userStore.userInfo.avatar" />
@@ -39,7 +39,7 @@ const userStore = useUserStore();
 </script>
 
 <style lang="scss" scoped>
-.container {
+.workbench-container {
   display: flex;
   justify-content: space-between;
 

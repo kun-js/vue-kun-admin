@@ -6,6 +6,7 @@ const Api = {
   MenuInfo: "/api/menuList",
   userList: "/api/userList",
   detailList: "/api/detailList",
+  messageList: "/api/messageList",
 };
 
 export const getLoginInfo = async (username: string, password: string) => {
@@ -31,4 +32,9 @@ export const getUserList = async () => {
 export const getDetailList = async () => {
   const { data } = await axios.get(Api.detailList);
   return data.detailList;
+};
+
+export const getMessageList = async () => {
+  const { data } = await axios.get(Api.messageList);
+  return data;
 };

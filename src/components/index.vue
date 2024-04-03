@@ -13,13 +13,16 @@
 <script setup lang="ts">
 import Header from "@/components/header/index.vue";
 import SideBar from "@/components/sidebar/index.vue";
-import { ref } from "vue";
+import { ref, provide } from "vue";
 
 const isCollapse = ref(false);
 
 const changeSideBarCollapse = () => {
   isCollapse.value = !isCollapse.value;
 };
+
+provide("isCollapse", isCollapse);
+provide("changeCollapse", changeSideBarCollapse);
 </script>
 
 <style lang="scss" scoped>

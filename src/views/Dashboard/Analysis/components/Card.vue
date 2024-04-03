@@ -66,8 +66,6 @@ const images: { [key: string]: string } = {
 }
 
 .card {
-  width: 23%;
-
   &-header {
     display: flex;
     align-items: center;

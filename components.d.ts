@@ -7,6 +7,8 @@ export {}
 
 declare module "vue" {
   export interface GlobalComponents {
+    Breadcrumb: (typeof import("./src/components/header/components/Breadcrumb.vue"))["default"];
+    Collapse: (typeof import("./src/components/header/components/Collapse.vue"))["default"];
     Components: (typeof import("./src/components/index.vue"))["default"];
     ElAside: (typeof import("element-plus/es"))["ElAside"];
     ElAvatar: (typeof import("element-plus/es"))["ElAvatar"];
@@ -35,6 +37,7 @@ declare module "vue" {
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
     ElOption: (typeof import("element-plus/es"))["ElOption"];
+    ElPopover: (typeof import("element-plus/es"))["ElPopover"];
     ElRadio: (typeof import("element-plus/es"))["ElRadio"];
     ElRadioGroup: (typeof import("element-plus/es"))["ElRadioGroup"];
     ElRow: (typeof import("element-plus/es"))["ElRow"];
@@ -44,15 +47,23 @@ declare module "vue" {
     ElSwitch: (typeof import("element-plus/es"))["ElSwitch"];
     ElTable: (typeof import("element-plus/es"))["ElTable"];
     ElTableColumn: (typeof import("element-plus/es"))["ElTableColumn"];
+    ElTabPane: (typeof import("element-plus/es"))["ElTabPane"];
+    ElTabs: (typeof import("element-plus/es"))["ElTabs"];
     ElTag: (typeof import("element-plus/es"))["ElTag"];
     ElTooltip: (typeof import("element-plus/es"))["ElTooltip"];
     ElTour: (typeof import("element-plus/es"))["ElTour"];
     ElTourStep: (typeof import("element-plus/es"))["ElTourStep"];
     ElWatermark: (typeof import("element-plus/es"))["ElWatermark"];
+    FullScreen: (typeof import("./src/components/header/components/FullScreen.vue"))["default"];
     Header: (typeof import("./src/components/header/index.vue"))["default"];
+    Message: (typeof import("./src/components/header/components/Message.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
+    Setting: (typeof import("./src/components/header/components/Setting.vue"))["default"];
     Sidebar: (typeof import("./src/components/sidebar/index.vue"))["default"];
     SideBar: (typeof import("./src/components/SideBar/index.vue"))["default"];
+    SwitchLanguage: (typeof import("./src/components/header/components/SwitchLanguage.vue"))["default"];
+    Tour: (typeof import("./src/components/header/components/Tour.vue"))["default"];
+    User: (typeof import("./src/components/header/components/User.vue"))["default"];
   }
 }
