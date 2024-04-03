@@ -1,41 +1,79 @@
-import { createRouter, createWebHistory } from "vue-router";
-import { RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
-import baseRoutes from "./routes/base";
-import dashboardRoutes from "./routes/dashboard";
-import featureRoutes from "./routes/feature";
-import pageRoutes from "./routes/page";
-import chartRoutes from "./routes/chart";
-import aboutRoutes from "./routes/about";
+export const Layout = () => import("@/layout/index.vue");
 
-const routes: RouteRecordRaw[] = [
-  ...baseRoutes,
-  ...dashboardRoutes,
-  ...featureRoutes,
-  ...pageRoutes,
-  ...chartRoutes,
-  ...aboutRoutes,
+// 静态路由
+export const constantRoutes: RouteRecordRaw[] = [
+  {
+    path: "/redirect",
+    component: Layout,
+    meta: { hidden: true },
+    children: [
+      {
+        path: "/redirect/:path(.*)",
+        component: () => import("@/views/redirect/index.vue"),
+      },
+    ],
+  },
+
+  {
+    path: "/login",
+    component: () => import("@/views/login/index.vue"),
+    meta: { hidden: true },
+  },
+
+  {
+    path: "/",
+    name: "/",
+    component: Layout,
+    redirect: "/dashboard",
+    children: [
+      {
+        path: "dashboard",
+        component: () => import("@/views/dashboard/index.vue"),
+        name: "Dashboard", // 用于 keep-alive, 必须与SFC自动推导或者显示声明的组件name一致
+        // https://cn.vuejs.org/guide/built-ins/keep-alive.html#include-exclude
+        meta: {
+          title: "dashboard",
+          icon: "homepage",
+          affix: true,
+          keepAlive: true,
+          alwaysShow: false,
+        },
+      },
+      {
+        path: "401",
+        component: () => import("@/views/error-page/401.vue"),
+        meta: { hidden: true },
+      },
+      {
+        path: "404",
+        component: () => import("@/views/error-page/404.vue"),
+        meta: { hidden: true },
+      },
+    ],
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    component: () => import("@/views/error-page/404.vue"),
+  },
 ];
 
+/**
+ * 创建路由
+ */
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
+  history: createWebHashHistory(),
+  routes: constantRoutes as RouteRecordRaw[],
+  // 刷新时，滚动条位置还原
+  scrollBehavior: () => ({ left: 0, top: 0 }),
 });
 
-router.beforeEach((to, from, next) => {
-  if (to.path === "/login") return next(); // 如果是访问登录页，直接放行
-  const result = localStorage.getItem("pinia-user");
-  if (result) {
-    const { token } = JSON.parse(result);
-    // console.log("token: ", token);
-    if (token) {
-      next(); // 已登录则放行
-    } else {
-      next("/login"); // 如果未登录，则跳转到登录页
-    }
-  } else {
-    next("/login"); // 如果未登录，则跳转到登录页
-  }
-});
+/**
+ * 重置路由
+ */
+export function resetRouter() {
+  router.replace({ path: "/login" });
+}
 
 export default router;

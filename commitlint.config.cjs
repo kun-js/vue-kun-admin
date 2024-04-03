@@ -73,10 +73,7 @@ module.exports = {
     breaklineChar: "|",
     skipQuestions: [],
     issuePrefixes: [
-      {
-        value: "closed",
-        name: "closed:   ISSUES has been processed",
-      },
+      { value: "closed", name: "closed:   ISSUES has been processed" },
     ],
     customIssuePrefixAlign: "top",
     emptyIssuePrefixAlias: "skip",

@@ -1,8 +1,6 @@
 dist
 node_modules
 public
-/dist/*
-/public/*
 .husky
 .vscode
 .idea
@@ -10,3 +8,4 @@ public
 *.md
 
 src/assets
+stats.html

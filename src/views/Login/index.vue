@@ -1,262 +1,313 @@
 <template>
-  <div class="container">
-    <div class="header-action">
-      <div class="switch-dark">
-        <el-switch size="large" v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
-      </div>
-      <div class="switch-lang">
-        <el-dropdown trigger="click">
-          <div class="language">
-            <img class="language-icon" src="@/assets/imgs/SwitchLang.png" />
-          </div>
-          <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item @click="handleToChangeLangZhCn">简体中文</el-dropdown-item>
-              <el-dropdown-item @click="handleToChangeLangEnUs">English</el-dropdown-item>
-            </el-dropdown-menu>
-          </template>
-        </el-dropdown>
-      </div>
+  <div class="login-container">
+    <!-- 顶部 -->
+    <div class="absolute-lt flex-x-end p-3 w-full">
+      <el-switch
+        v-model="isDark"
+        inline-prompt
+        :active-icon="Moon"
+        :inactive-icon="Sunny"
+        active-color="var(--el-fill-color-dark)"
+        inactive-color="var(--el-color-primary)"
+        @change="handleThemeChange"
+      />
+      <lang-select class="ml-2 cursor-pointer" />
     </div>
-    <div class="basketball"><Basketball /></div>
-    <div class="form-container">
-      <div class="form-container-header"></div>
-      <div class="introduce">{{ $t("login.title") }}</div>
-      <div class="form-container-body">
-        <div class="login-form">
-          <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" style="width: 308px">
-            <el-form-item prop="username">
-              <el-input :prefix-icon="User" v-model="loginForm.username" />
-            </el-form-item>
-            <el-form-item prop="password">
-              <el-input :prefix-icon="Lock" show-password v-model="loginForm.password" />
-            </el-form-item>
-            <div class="login-form-tip">
-              <span class="login-form-tip-register">{{ $t("login.register") }} </span>
-              <span class="login-form-tip-forget">{{ $t("login.forget") }}</span>
-            </div>
-            <div class="login-form-main-action">
-              <el-button type="primary" @click="submitForm">{{ $t("login.submit") }}</el-button>
-              <el-button @click="resetForm">{{ $t("login.reset") }}</el-button>
-            </div>
-          </el-form>
-          <el-divider>
-            <span>{{ $t("login.other_login_way") }}</span>
-          </el-divider>
-          <div class="login-form-login-way">
-            <div class="login-form-login-way-icon">
-              <img v-for="(icon, index) in icons" :key="index" class="img" :src="icon.src" :alt="icon.alt" />
-            </div>
-          </div>
-        </div>
+    <!-- 登录表单 -->
+    <el-card class="!border-none !bg-transparent !rounded-4% w-100 <sm:w-85">
+      <div class="text-center relative">
+        <h2>{{ defaultSettings.title }}</h2>
+        <el-tag class="ml-2 absolute-rt">{{ defaultSettings.version }}</el-tag>
       </div>
+
+      <el-form
+        ref="loginFormRef"
+        :model="loginData"
+        :rules="loginRules"
+        class="login-form"
+      >
+        <!-- 用户名 -->
+        <el-form-item prop="username">
+          <div class="flex-y-center w-full">
+            <svg-icon icon-class="user" class="mx-2" />
+            <el-input
+              ref="username"
+              v-model="loginData.username"
+              :placeholder="$t('login.username')"
+              name="username"
+              size="large"
+              class="h-[48px]"
+            />
+          </div>
+        </el-form-item>
+
+        <!-- 密码 -->
+        <el-tooltip
+          :visible="isCapslock"
+          content="Caps lock is On"
+          placement="right"
+        >
+          <el-form-item prop="password">
+            <div class="flex-y-center w-full">
+              <el-icon class="mx-2"><Lock /></el-icon>
+              <el-input
+                v-model="loginData.password"
+                :placeholder="$t('login.password')"
+                type="password"
+                name="password"
+                @keyup="checkCapslock"
+                @keyup.enter="handleLogin"
+                size="large"
+                class="h-[48px] pr-2"
+                show-password
+              />
+            </div>
+          </el-form-item>
+        </el-tooltip>
+
+        <!-- 验证码 -->
+        <el-form-item prop="captchaCode">
+          <div class="flex-y-center w-full">
+            <svg-icon icon-class="captcha" class="mx-2" />
+            <el-input
+              v-model="loginData.captchaCode"
+              auto-complete="off"
+              size="large"
+              class="flex-1"
+              :placeholder="$t('login.captchaCode')"
+              @keyup.enter="handleLogin"
+            />
+
+            <el-image
+              @click="getCaptcha"
+              :src="captchaBase64"
+              class="rounded-tr-md rounded-br-md cursor-pointer h-[48px]"
+            />
+          </div>
+        </el-form-item>
+
+        <!-- 登录按钮 -->
+        <el-button
+          :loading="loading"
+          type="primary"
+          size="large"
+          class="w-full"
+          @click.prevent="handleLogin"
+          >{{ $t("login.login") }}
+        </el-button>
+
+        <!-- 账号密码提示 -->
+        <div class="mt-10 text-sm">
+          <span>{{ $t("login.username") }}: admin</span>
+          <span class="ml-4"> {{ $t("login.password") }}: 123456</span>
+        </div>
+      </el-form>
+    </el-card>
+
+    <!-- ICP备案 -->
+    <div class="absolute bottom-1 text-[10px] text-center" v-show="icpVisible">
+      <!-- <p>Copyright © 2024 - 2027 kun.js All Rights Reserved. kun 版权所有</p> -->
+      <!-- <p>88888</p> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from "vue";
-import Basketball from "./components/basketball.vue";
-import { User, Lock, Sunrise, MoonNight } from "@element-plus/icons-vue";
-import { type FormInstance, type FormRules } from "element-plus";
-import { getLoginInfo } from "@/api/index";
-import { useRouter } from "vue-router";
-import { useUserStore } from "@/stores/user";
-import { useLocaleStore } from "@/stores/locale";
-import { useI18n } from "vue-i18n";
-import { Icon } from "@iconify/vue";
-import { useDark, useToggle } from "@vueuse/core";
+import { useSettingsStore, useUserStore, useAppStore } from "@/store";
+import { Sunny, Moon } from "@element-plus/icons-vue";
+import router from "@/router";
+import { LocationQuery, LocationQueryValue, useRoute } from "vue-router";
+import { getCaptchaApi } from "@/api/auth";
+import { LoginData } from "@/api/auth/types";
 
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+const route = useRoute();
+const userStore = useUserStore();
+const settingsStore = useSettingsStore();
+
+import defaultSettings from "@/settings";
+import { ThemeEnum } from "@/enums/ThemeEnum";
+/**
+ * 明亮/暗黑主题切换
+ */
+const isDark = ref<boolean>(settingsStore.theme === ThemeEnum.DARK);
+const handleThemeChange = (isDark: any) => {
+  const theme = isDark ? ThemeEnum.DARK : ThemeEnum.LIGHT;
+  settingsStore.changeTheme(theme);
+  document.documentElement.classList.toggle("dark", theme === ThemeEnum.DARK);
+};
+
+/**
+ * 根据屏幕宽度切换设备模式
+ */
+const appStore = useAppStore();
+const { width, height } = useWindowSize();
+const icpVisible = ref(true);
+
+watchEffect(() => {
+  // 响应式布局容器固定宽度  大屏（>=1200px） 中屏（>=992px） 小屏（>=768px）
+  if (width.value < 992) {
+    appStore.toggleDevice("mobile");
+  } else {
+    appStore.toggleDevice("desktop");
+  }
+
+  if (height.value < 600) {
+    icpVisible.value = false;
+  } else {
+    icpVisible.value = true;
+  }
+});
+
+const loading = ref(false); // 按钮loading
+const isCapslock = ref(false); // 是否大写锁定
+const captchaBase64 = ref(); // 验证码图片Base64字符串
+const loginFormRef = ref(ElForm); // 登录表单ref
+
+const loginData = ref<LoginData>({
+  username: "admin",
+  password: "123456",
+});
 
 const { t } = useI18n();
-const localeStore = useLocaleStore();
-const store = useUserStore();
-const router = useRouter();
-const loginFormRef = ref<FormInstance>();
-const loginForm = reactive({
-  username: "",
-  password: "",
-});
-const loginFormRules = reactive<FormRules<typeof loginForm>>({
-  username: [{ required: true, message: t("login.username_tip"), trigger: "blur" }],
-  password: [{ required: true, message: t("login.password_tip"), trigger: "blur" }],
+const loginRules = computed(() => {
+  const prefix = appStore.language === "en" ? "Please enter " : "请输入";
+  return {
+    username: [
+      {
+        required: true,
+        trigger: "blur",
+        message: `${prefix}${t("login.username")}`,
+      },
+    ],
+    password: [
+      {
+        required: true,
+        trigger: "blur",
+        validator: (rule: any, value: any, callback: any) => {
+          if (value.length < 6) {
+            callback(new Error("The password can not be less than 6 digits"));
+          } else {
+            callback();
+          }
+        },
+        message: `${prefix}${t("login.password")}`,
+      },
+    ],
+    captchaCode: [
+      {
+        required: true,
+        trigger: "blur",
+        message: `${prefix}${t("login.captchaCode")}`,
+      },
+    ],
+  };
 });
 
-const icons = [
-  { src: "./src/assets/imgs/QQ.png", alt: "QQ" },
-  { src: "./src/assets/imgs/wechat.png", alt: "WeChat" },
-  { src: "./src/assets/imgs/weibo.png", alt: "Weibo" },
-  { src: "./src/assets/imgs/alipay.png", alt: "Alipay" },
-  { src: "./src/assets/imgs/github.png", alt: "GitHub" },
-  { src: "./src/assets/imgs/twitter.png", alt: "Twitter" },
-];
+/**
+ * 检查输入大小写状态
+ */
+function checkCapslock(e: any) {
+  isCapslock.value = e.getModifierState("CapsLock");
+}
 
-const submitForm = async () => {
-  try {
-    const valid = await loginFormRef.value?.validate();
+/**
+ * 获取验证码
+ */
+function getCaptcha() {
+  getCaptchaApi().then(({ data }) => {
+    loginData.value.captchaKey = data.captchaKey;
+    captchaBase64.value = data.captchaBase64;
+  });
+}
+
+/**
+ * 登录
+ */
+function handleLogin() {
+  loginFormRef.value.validate((valid: boolean) => {
     if (valid) {
-      const result = await getLoginInfo(loginForm.username, loginForm.password);
-      // console.log("result: ", result);
-      if (result) {
-        store.getUserInfo(result.userInfo);
-        store.getToken(result.token);
-        router.push("/");
-        ElMessage({ message: t("login.login_success"), type: "success" });
-      } else {
-        ElMessage({ message: t("login.login_fail"), type: "error" });
-      }
+      loading.value = true;
+      userStore
+        .login(loginData.value)
+        .then(() => {
+          const query: LocationQuery = route.query;
+
+          const redirect = (query.redirect as LocationQueryValue) ?? "/";
+
+          const otherQueryParams = Object.keys(query).reduce(
+            (acc: any, cur: string) => {
+              if (cur !== "redirect") {
+                acc[cur] = query[cur];
+              }
+              return acc;
+            },
+            {}
+          );
+
+          router.push({ path: redirect, query: otherQueryParams });
+        })
+        .catch(() => {
+          // 验证失败，重新生成验证码
+          getCaptcha();
+        })
+        .finally(() => {
+          loading.value = false;
+        });
     }
-  } catch (error) {
-    console.error("表单验证出错：", error);
+  });
+}
+
+onMounted(() => {
+  getCaptcha();
+
+  // 主题初始化
+  const theme = useSettingsStore().theme;
+  useSettingsStore().changeSetting({ key: "theme", value: theme });
+  if (theme == "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
   }
-};
-
-const resetForm = () => {
-  loginForm.username = "";
-  loginForm.password = "";
-};
-
-const handleToChangeLangZhCn = () => {
-  localeStore.getLocale("zh-CN");
-};
-
-const handleToChangeLangEnUs = () => {
-  localeStore.getLocale("en-US");
-};
+});
 </script>
 
 <style lang="scss" scoped>
-.container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-image: url("@/assets/imgs/kunkunbg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+html.dark .login-container {
+  background: url("@/assets/images/login-bg-dark.jpg") no-repeat center right;
+}
 
-  .header-action {
-    position: absolute;
-    top: 2%;
-    right: 1%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.login-container {
+  overflow-y: auto;
+  background: url("@/assets/images/login-bg.jpg") no-repeat center right;
 
-    .switch-lang {
-      .language {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        padding: 0 10px;
-        cursor: pointer;
+  @apply wh-full flex-center;
 
-        &-icon {
-          width: 20px;
-          height: 20px;
-        }
-      }
-    }
-  }
-
-  .form-container {
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    padding: 28px;
-    background-color: var(--background);
-    border-radius: 8px;
-    transform: translate(-50%, -50%);
-
-    &-header {
-      &-logo {
-        display: flex;
-      }
-    }
-
-    .introduce {
-      margin-bottom: 18px;
-      font-size: 30px;
-    }
-
-    &-body {
-      .login-form {
-        .el-input {
-          height: 42px;
-        }
-
-        &-tip {
-          display: flex;
-          justify-content: space-between;
-
-          &-register {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #8c8c8c;
-            cursor: pointer;
-
-            &:hover {
-              color: #79bbff;
-            }
-          }
-
-          &-forget {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #409eff;
-            cursor: pointer;
-
-            &:hover {
-              color: #79bbff;
-            }
-          }
-        }
-
-        &-main-action {
-          display: flex;
-          margin-top: 18px;
-          margin-bottom: 38px;
-
-          .el-button {
-            width: 100%;
-            height: 38px;
-          }
-        }
-
-        &-login-way {
-          padding: 0 20px;
-
-          &-icon {
-            display: flex;
-            justify-content: space-between;
-
-            .img {
-              width: 30px;
-              height: 30px;
-              overflow: hidden;
-              cursor: pointer;
-
-              &:hover {
-                filter: brightness(0.8);
-                transform: scale(1.2);
-              }
-            }
-          }
-        }
-      }
-    }
+  .login-form {
+    padding: 30px 10px;
   }
 }
 
-.basketball {
-  position: absolute;
-  bottom: 0;
-  left: 20%;
+.el-form-item {
+  background: var(--el-input-bg-color);
+  border: 1px solid var(--el-border-color);
+  border-radius: 5px;
+}
+
+:deep(.el-input) {
+  .el-input__wrapper {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+
+    &.is-focus,
+    &:hover {
+      box-shadow: none !important;
+    }
+
+    input:-webkit-autofill {
+      /* 通过延时渲染背景色变相去除背景颜色 */
+      transition: background-color 1000s ease-in-out 0s;
+    }
+  }
 }
 </style>

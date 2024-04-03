@@ -1,10 +1,7 @@
 /** 全局SCSS变量 */
 
 :root {
-  --background: #fff;
-  --header-button-active: #f5f5f5;
-  --menu-background: #001529;
-  --menu-item-background: #0c2135;
+  --menu-background: #304156;
   --menu-text: #bfcbd9;
   --menu-active-text: var(--el-menu-active-color);
   --menu-hover: #263445;
@@ -13,10 +10,7 @@
 
 /** 暗黑主题 */
 html.dark {
-  --background: #1f1f1f;
-  --header-button-active: #242424;
-  --menu-background: #1f1f1f;
-  --menu-item-background: #2d2d2d;
+  --menu-background: var(--el-bg-color-overlay);
   --menu-text: #fff;
   --menu-active-text: var(--el-menu-active-color);
   --menu-hover: rgb(0 0 0 / 20%);

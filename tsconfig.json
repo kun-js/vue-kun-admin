@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "allowJs": true,
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -12,13 +11,15 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "baseUrl": ".",
+    "allowJs": true,
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["vite/client"],
+    "types": ["vite/client", "unplugin-icons/types/vue", "element-plus/global"],
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "allowSyntheticDefaultImports": true /* 允许默认导入 */,
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+
     "jsx": "preserve",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment"
@@ -28,8 +29,7 @@
     "src/**/*.vue",
     "src/typings/**/*.d.ts",
     "mock/**/*.ts",
-    "vite.config.ts",
-    "src/api/index.js"
+    "vite.config.ts"
   ],
   "exclude": ["node_modules", "dist", "**/*.js"]
 }

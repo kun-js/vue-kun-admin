@@ -1,17 +1,35 @@
 <template>
-  <el-config-provider :locale="locale">
-    <router-view />
+  <el-config-provider :locale="locale" :size="size">
+    <!-- 开启水印 -->
+    <el-watermark
+      v-if="watermarkEnabled"
+      :font="{ color: fontColor }"
+      :content="defaultSettings.watermarkContent"
+      class="wh-full"
+    >
+      <router-view />
+    </el-watermark>
+    <!-- 关闭水印 -->
+    <router-view v-else />
   </el-config-provider>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { ElConfigProvider } from "element-plus";
+import { useAppStore, useSettingsStore } from "@/store";
+import defaultSettings from "@/settings";
+import { ThemeEnum } from "@/enums/ThemeEnum";
 
-import zhCn from "element-plus/dist/locale/zh-cn.mjs";
-import en from "element-plus/dist/locale/en.mjs";
+const appStore = useAppStore();
+const settingsStore = useSettingsStore();
 
-const locale = computed(() => {
-  return localStorage.getItem("lang") === "zh-CN" ? zhCn : en;
+const locale = computed(() => appStore.locale);
+const size = computed(() => appStore.size);
+const watermarkEnabled = computed(() => settingsStore.watermarkEnabled);
+
+// 明亮/暗黑主题水印字体颜色适配
+const fontColor = computed(() => {
+  return settingsStore.theme === ThemeEnum.DARK
+    ? "rgba(255, 255, 255, .15)"
+    : "rgba(0, 0, 0, .15)";
 });
 </script>

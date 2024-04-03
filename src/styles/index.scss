@@ -1,16 +1,5 @@
 @use "./reset";
 
-@font-face {
-  font-family: PingFang;
-  font-style: normal;
-  font-weight: normal;
-  src: url("@/assets/fonts/PingFangSC.ttf");
-}
-
-body {
-  font-family: PingFang, sans-serif;
-}
-
 .app-container {
   padding: 10px;
 }

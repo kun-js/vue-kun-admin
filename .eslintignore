@@ -1,14 +1,11 @@
 dist
 node_modules
 public
-mock
 .husky
 .vscode
 .idea
 *.sh
 *.md
-*.woff
-*.ttf
 
 src/assets
 

@@ -1,35 +1,33 @@
-import * as ElementPlusIconsVue from "@element-plus/icons-vue";
-//引入elementplus推荐的light模式的样式文件
-import "element-plus/dist/index.css";
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "@/router";
+import { setupStore } from "@/store";
+import { setupDirective } from "@/directive";
 
-//  elementplus实现的dark模式的样式文件
-import "element-plus/theme-chalk/dark/css-vars.css";
+import "@/permission";
+
+import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+
+// 本地SVG图标
+import "virtual:svg-icons-register";
+
+// 国际化
+import i18n from "@/lang/index";
 
 // 样式
+import "element-plus/theme-chalk/dark/css-vars.css";
 import "@/styles/index.scss";
-import { createApp } from "vue";
-
-import App from "./App.vue";
-import router from "./router";
-import i18n from "./locales";
-import print from "vue3-print-nb";
-
-import { createPinia } from "pinia";
-import { createPersistedState } from "pinia-persistedstate-plugin";
-
-const pinia = createPinia();
-const persist = createPersistedState();
-pinia.use(persist);
+import "uno.css";
+import "animate.css";
 
 const app = createApp(App);
+// 全局注册 自定义指令(directive)
+setupDirective(app);
+// 全局注册 状态管理(store)
+setupStore(app);
 
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
 
-app.use(pinia);
-app.use(router);
-app.use(i18n);
-app.use(print);
-
-app.mount("#app");
+app.use(router).use(i18n).mount("#app");
