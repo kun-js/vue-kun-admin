@@ -1,20 +1,10 @@
 import { RouteRecordRaw } from "vue-router";
-import Layout from "@/components/index.vue";
-import Form from "@/views/PageDemo/Form/index.vue";
-import List from "@/views/PageDemo/List/index.vue";
-import Detail from "@/views/PageDemo/Detail/index.vue";
-import Success from "@/views/PageDemo/Result/Success/index.vue";
-import Fail from "@/views/PageDemo/Result/Fail/index.vue";
-import FourZeroFour from "@/views/PageDemo/Exception/404/index.vue";
-import FourZeroThree from "@/views/PageDemo/Exception/403/index.vue";
-import FiveZeroZero from "@/views/PageDemo/Exception/500/index.vue";
-import NetworkError from "@/views/PageDemo/Exception/NetworkError/index.vue";
 
 const pageRoutes: RouteRecordRaw[] = [
   {
     path: "/page",
     name: "page",
-    component: Layout,
+    component: () => import("@/components/index.vue"),
     redirect: "/page/form",
     meta: {
       title: "page",
@@ -23,7 +13,7 @@ const pageRoutes: RouteRecordRaw[] = [
       {
         path: "/page/form",
         name: "表单页",
-        component: Form,
+        component: () => import("@/views/page/form/index.vue"),
         meta: {
           title: "form",
         },
@@ -31,7 +21,7 @@ const pageRoutes: RouteRecordRaw[] = [
       {
         path: "/page/list",
         name: "列表页",
-        component: List,
+        component: () => import("@/views/page/list/index.vue"),
         meta: {
           title: "list",
         },
@@ -39,7 +29,7 @@ const pageRoutes: RouteRecordRaw[] = [
       {
         path: "/page/detail",
         name: "详情页",
-        component: Detail,
+        component: () => import("@/views/page/detail/index.vue"),
         meta: {
           title: "detail",
         },
@@ -47,7 +37,7 @@ const pageRoutes: RouteRecordRaw[] = [
       {
         path: "/page/result/success",
         name: "成功页",
-        component: Success,
+        component: () => import("@/views/page/result/success/index.vue"),
         meta: {
           title: "success",
         },
@@ -55,7 +45,7 @@ const pageRoutes: RouteRecordRaw[] = [
       {
         path: "/page/result/fail",
         name: "失败页",
-        component: Fail,
+        component: () => import("@/views/page/result/fail/index.vue"),
         meta: {
           title: "fail",
         },
@@ -63,33 +53,33 @@ const pageRoutes: RouteRecordRaw[] = [
       {
         path: "/page/exception/404",
         name: "404",
-        component: FourZeroFour,
+        component: () => import("@/views/page/exception/404/index.vue"),
         meta: {
-          title: "404",
+          title: "page404",
         },
       },
       {
         path: "/page/exception/403",
         name: "403",
-        component: FourZeroThree,
+        component: () => import("@/views/page/exception/403/index.vue"),
         meta: {
-          title: "403",
+          title: "page403",
         },
       },
       {
         path: "/page/exception/500",
         name: "500",
-        component: FiveZeroZero,
+        component: () => import("@/views/page/exception/500/index.vue"),
         meta: {
-          title: "500",
+          title: "page500",
         },
       },
       {
-        path: "/page/exception/networkerror",
+        path: "/page/exception/network-error",
         name: "网络错误",
-        component: NetworkError,
+        component: () => import("@/views/page/exception/network-error/index.vue"),
         meta: {
-          title: "networkerror",
+          title: "networkError",
         },
       },
     ],

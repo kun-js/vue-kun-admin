@@ -1,20 +1,16 @@
 import { RouteRecordRaw } from "vue-router";
-import Layout from "@/components/index.vue";
-import OuterChain from "@/views/ExternalPage/OuterChain/index.vue";
-import Element from "@/views/ExternalPage/Iframe/Element/index.vue";
-import Vue from "@/views/ExternalPage/Iframe/Vue/index.vue";
 
 const ExternalPageRoutes: RouteRecordRaw[] = [
   {
-    path: "/externalpage",
+    path: "/external-page",
     name: "外部页面",
-    component: Layout,
+    component: () => import("@/components/index.vue"),
     meta: {
-      title: "externalpage",
+      title: "externalPage",
     },
     children: [
       {
-        path: "/externalpage/outerchain/element",
+        path: "/external-page/outerchain/element",
         name: "outerchainelement",
         beforeEnter: (to, from, next) => {
           window.open("https://element-plus.org/zh-CN/#/zh-CN", "_blank");
@@ -23,7 +19,7 @@ const ExternalPageRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/externalpage/outerchain/vue",
+        path: "/external-page/outerchain/vue",
         name: "outerchainvue",
         beforeEnter: (to, from, next) => {
           window.open("https://cn.vuejs.org/", "_blank");
@@ -32,7 +28,7 @@ const ExternalPageRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/externalpage/outerchain/baidu",
+        path: "/external-page/outerchain/baidu",
         name: "outerchainbaidu",
         beforeEnter: (to, from, next) => {
           window.open("https://www.baidu.com", "_blank");
@@ -41,17 +37,17 @@ const ExternalPageRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/externalpage/iframe/element",
+        path: "/external-page/iframe/element",
         name: "element",
-        component: Element,
+        component: () => import("@/views/external-page/iframe/element/index.vue"),
         meta: {
           title: "element",
         },
       },
       {
-        path: "/externalpage/iframe/vue",
+        path: "/external-page/iframe/vue",
         name: "vue",
-        component: Vue,
+        component: () => import("@/views/external-page/iframe/vue/index.vue"),
         meta: {
           title: "vue",
         },

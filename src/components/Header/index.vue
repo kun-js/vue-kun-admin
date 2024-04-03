@@ -7,7 +7,7 @@
         </el-icon>
       </div>
       <div class="breadcrumb">
-        <el-breadcrumb separator="/">
+        <el-breadcrumb>
           <template v-for="(item, index) in breadList">
             <el-breadcrumb-item v-if="item.name" :key="index" :to="item.path">
               {{ $t("menu." + item.meta.title) }}
@@ -89,7 +89,7 @@
   </div>
   <el-drawer v-model="drawer" :title="$t('header.setting')" direction="rtl">
     <div class="drawer-container">
-      <el-divider>主题颜色</el-divider>
+      <el-divider>{{ $t("header.themeColor") }}</el-divider>
       <div class="switch-dark">
         <el-switch v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
       </div>
@@ -130,7 +130,7 @@ const router = useRouter();
 const route = useRoute();
 
 const fullScreenTooltip = computed(() => {
-  return isFullScreen.value ? t("header.exit_fullscreen") : t("header.fullscreen");
+  return isFullScreen.value ? t("header.exitFullScreen") : t("header.entryFullScreen");
 });
 
 const handleToCollapse = () => {

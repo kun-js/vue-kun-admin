@@ -1,50 +1,45 @@
 import { RouteRecordRaw } from "vue-router";
-import Layout from "@/components/index.vue";
-import GaoDeMap from "@/views/Chart/GaoDeMap/index.vue";
-import BarChart from "@/views/Chart/BarChart/index.vue";
-import LineChart from "@/views/Chart/LineChart/index.vue";
-import PieChart from "@/views/Chart/PieChart/index.vue";
 
 const chartRoutes: RouteRecordRaw[] = [
   {
     path: "/chart",
     name: "页面",
-    component: Layout,
-    redirect: "/chart/barchart",
+    component: () => import("@/components/index.vue"),
+    redirect: "/chart/bar-chart",
     meta: {
       title: "chart",
     },
     children: [
       {
-        path: "/chart/gaodemap",
+        path: "/chart/amap",
         name: "高德地图",
-        component: GaoDeMap,
+        component: () => import("@/views/chart/amap/index.vue"),
         meta: {
-          title: "gaodemap",
+          title: "AMap",
         },
       },
       {
-        path: "/chart/barchart",
+        path: "/chart/bar-chart",
         name: "柱状图",
-        component: BarChart,
+        component: () => import("@/views/chart/bar-chart/index.vue"),
         meta: {
-          title: "barchart",
+          title: "barChart",
         },
       },
       {
-        path: "/chart/linechart",
+        path: "/chart/line-chart",
         name: "折线图",
-        component: LineChart,
+        component: () => import("@/views/chart/line-chart/index.vue"),
         meta: {
-          title: "linechart",
+          title: "lineChart",
         },
       },
       {
-        path: "/chart/piechart",
+        path: "/chart/pie-chart",
         name: "饼图",
-        component: PieChart,
+        component: () => import("@/views/chart/pie-chart/index.vue"),
         meta: {
-          title: "piechart",
+          title: "pieChart",
         },
       },
     ],

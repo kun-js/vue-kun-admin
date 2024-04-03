@@ -2,7 +2,7 @@
   <div class="sidebar">
     <div class="logo" :style="{ width: sideBarWidth }">
       <img class="logo-pic" src="@/assets/imgs/KunLogo.jpg" />
-      <div class="logo-title">Kun Admin</div>
+      <div class="logo-title" @click="openMenu">Kun Admin</div>
     </div>
     <div class="menu">
       <el-scrollbar height="910px">
@@ -146,6 +146,13 @@ onMounted(() => {
   border: none;
 
   .el-sub-menu__title {
+    span {
+      width: 106px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     &:hover {
       i,
       span {

@@ -1,13 +1,10 @@
 import { RouteRecordRaw } from "vue-router";
-import Layout from "@/components/index.vue";
-import Analysis from "@/views/Dashboard/Analysis/index.vue";
-import Workbench from "@/views/Dashboard/Workbench/index.vue";
 
 const dashboardRoutes: RouteRecordRaw[] = [
   {
     path: "/dashboard",
     name: "首页",
-    component: Layout,
+    component: () => import("@/components/index.vue"),
     redirect: "/dashboard/analysis",
     meta: {
       title: "dashboard",
@@ -16,7 +13,7 @@ const dashboardRoutes: RouteRecordRaw[] = [
       {
         path: "/dashboard/analysis",
         name: "分析页",
-        component: Analysis,
+        component: () => import("@/views/dashboard/analysis/index.vue"),
         meta: {
           title: "analysis",
         },
@@ -24,7 +21,7 @@ const dashboardRoutes: RouteRecordRaw[] = [
       {
         path: "/dashboard/workbench",
         name: "工作台",
-        component: Workbench,
+        component: () => import("@/views/dashboard/workbench/index.vue"),
         meta: {
           title: "workbench",
         },

@@ -1,25 +1,10 @@
 import { RouteRecordRaw } from "vue-router";
-import Layout from "@/components/index.vue";
-import Download from "@/views/Feature/Download/index.vue";
-import Verify from "@/views/Feature/Verify/index.vue";
-import CodeEditor from "@/views/Feature/CodeEditor/index.vue";
-import TextEditor from "@/views/Feature/TextEditor/index.vue";
-import ImageClipper from "@/views/Feature/ImageClipper/index.vue";
-import Print from "@/views/Feature/Print/index.vue";
-import Excel from "@/views/Feature/Excel/index.vue";
-import Pdf from "@/views/Feature/Pdf/index.vue";
-import Draggable from "@/views/Feature/Draggable/index.vue";
-import Barcode from "@/views/Feature/Barcode/index.vue";
-import Clipboard from "@/views/Feature/Clipboard/index.vue";
-import Watermark from "@/views/Feature/WaterMark/index.vue";
-import Debounce from "@/views/Feature/Debounce/index.vue";
-import Sensitive from "@/views/Feature/Sensitive/index.vue";
 
 const featureRoutes: RouteRecordRaw[] = [
   {
     path: "/feature",
     name: "功能",
-    component: Layout,
+    component: () => import("@/components/index.vue"),
     redirect: "/feature/download",
     meta: {
       title: "feature",
@@ -28,7 +13,7 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/download",
         name: "文件下载",
-        component: Download,
+        component: () => import("@/views/feature/download/index.vue"),
         meta: {
           title: "download",
         },
@@ -36,39 +21,39 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/verify",
         name: "验证码",
-        component: Verify,
+        component: () => import("@/views/feature/verify/index.vue"),
         meta: {
           title: "verify",
         },
       },
       {
-        path: "/feature/codeeditor",
+        path: "/feature/code-editor",
         name: "代码编辑器",
-        component: CodeEditor,
+        component: () => import("@/views/feature/code-editor/index.vue"),
         meta: {
-          title: "codeeditor",
+          title: "codeEditor",
         },
       },
       {
-        path: "/feature/texteditor",
+        path: "/feature/text-editor",
         name: "文本编辑器",
-        component: TextEditor,
+        component: () => import("@/views/feature/text-editor/index.vue"),
         meta: {
-          title: "texteditor",
+          title: "textEditor",
         },
       },
       {
-        path: "/feature/imageclipper",
+        path: "/feature/image-clipper",
         name: "图片裁剪",
-        component: ImageClipper,
+        component: () => import("@/views/feature/image-clipper/index.vue"),
         meta: {
-          title: "imageclipper",
+          title: "imageClipper",
         },
       },
       {
         path: "/feature/print",
         name: "打印",
-        component: Print,
+        component: () => import("@/views/feature/print/index.vue"),
         meta: {
           title: "print",
         },
@@ -76,7 +61,7 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/drag",
         name: "拖拽",
-        component: Draggable,
+        component: () => import("@/views/feature/draggable/index.vue"),
         meta: {
           title: "drag",
         },
@@ -84,7 +69,7 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/pdf",
         name: "PDF预览",
-        component: Pdf,
+        component: () => import("@/views/feature/pdf/index.vue"),
         meta: {
           title: "pdf",
         },
@@ -92,7 +77,7 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/barcode",
         name: "条形码",
-        component: Barcode,
+        component: () => import("@/views/feature/barcode/index.vue"),
         meta: {
           title: "barcode",
         },
@@ -100,7 +85,7 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/excel",
         name: "excel",
-        component: Excel,
+        component: () => import("@/views/feature/excel/index.vue"),
         meta: {
           title: "excel",
         },
@@ -108,7 +93,7 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/clipboard",
         name: "剪贴板",
-        component: Clipboard,
+        component: () => import("@/views/feature/clipboard/index.vue"),
         meta: {
           title: "clipboard",
         },
@@ -116,7 +101,7 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/watermark",
         name: "水印",
-        component: Watermark,
+        component: () => import("@/views/feature/watermark/index.vue"),
         meta: {
           title: "watermark",
         },
@@ -124,7 +109,7 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/debounce",
         name: "防抖节流",
-        component: Debounce,
+        component: () => import("@/views/feature/debounce/index.vue"),
         meta: {
           title: "debounce",
         },
@@ -132,7 +117,7 @@ const featureRoutes: RouteRecordRaw[] = [
       {
         path: "/feature/sensitive",
         name: "敏感词过滤",
-        component: Sensitive,
+        component: () => import("@/views/feature/sensitive/index.vue"),
         meta: {
           title: "sensitive",
         },

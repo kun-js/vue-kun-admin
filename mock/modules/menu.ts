@@ -32,9 +32,9 @@ export const menuList = Mock.mock({
           path: "/button",
         },
         {
-          name: "colorpicker",
+          name: "colorPicker",
           title: "取色器",
-          path: "/colorpicker",
+          path: "/color-picker",
         },
       ],
     },
@@ -55,19 +55,19 @@ export const menuList = Mock.mock({
           path: "/verify",
         },
         {
-          name: "codeeditor",
+          name: "codeEditor",
           title: "代码编辑器",
-          path: "/codeeditor",
+          path: "/code-editor",
         },
         {
-          name: "texteditor",
+          name: "textEditor",
           title: "文本编辑器",
-          path: "/texteditor",
+          path: "/text-editor",
         },
         {
-          name: "imageclipper",
+          name: "imageClipper",
           title: "图片裁剪",
-          path: "/imageclipper",
+          path: "/image-clipper",
         },
         {
           name: "print",
@@ -160,24 +160,24 @@ export const menuList = Mock.mock({
           path: "/exception",
           children: [
             {
-              name: "404",
+              name: "page404",
               title: "404",
               path: "/404",
             },
             {
-              name: "403",
+              name: "page403",
               title: "403",
               path: "/403",
             },
             {
-              name: "500",
+              name: "page500",
               title: "500",
               path: "/500",
             },
             {
-              name: "networkerror",
+              name: "networkError",
               title: "网络错误",
-              path: "/networkerror",
+              path: "/network-error",
             },
           ],
         },
@@ -190,35 +190,35 @@ export const menuList = Mock.mock({
       icon: "PieChart",
       children: [
         {
-          name: "gaodemap",
+          name: "AMap",
           title: "高德地图",
-          path: "/gaodemap",
+          path: "/amap",
         },
         {
-          name: "barchart",
+          name: "barChart",
           title: "柱状图",
-          path: "/barchart",
+          path: "/bar-chart",
         },
         {
-          name: "linechart",
+          name: "lineChart",
           title: "折线图",
-          path: "/linechart",
+          path: "/line-chart",
         },
         {
-          name: "piechart",
+          name: "pieChart",
           title: "饼图",
-          path: "/piechart",
+          path: "/pie-chart",
         },
       ],
     },
     {
-      name: "externalpage",
+      name: "externalPage",
       title: "外部页面",
-      path: "/externalpage",
+      path: "/external-page",
       icon: "Monitor",
       children: [
         {
-          name: "outerchain",
+          name: "outerChain",
           title: "文档外链",
           path: "/outerchain",
           children: [

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="login-container">
     <div class="header-action">
       <div class="switch-dark">
         <el-switch size="large" v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
@@ -41,7 +41,7 @@
             </div>
           </el-form>
           <el-divider>
-            <span>{{ $t("login.other_login_way") }}</span>
+            <span>{{ $t("login.otherLoginWay") }}</span>
           </el-divider>
           <div class="login-form-login-way">
             <div class="login-form-login-way-icon">
@@ -64,7 +64,6 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "@/stores/user";
 import { useLocaleStore } from "@/stores/locale";
 import { useI18n } from "vue-i18n";
-import { Icon } from "@iconify/vue";
 import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
@@ -80,8 +79,8 @@ const loginForm = reactive({
   password: "",
 });
 const loginFormRules = reactive<FormRules<typeof loginForm>>({
-  username: [{ required: true, message: t("login.username_tip"), trigger: "blur" }],
-  password: [{ required: true, message: t("login.password_tip"), trigger: "blur" }],
+  username: [{ required: true, message: t("login.usernameTip"), trigger: "blur" }],
+  password: [{ required: true, message: t("login.passwordTip"), trigger: "blur" }],
 });
 
 const icons = [
@@ -103,9 +102,9 @@ const submitForm = async () => {
         store.getUserInfo(result.userInfo);
         store.getToken(result.token);
         router.push("/");
-        ElMessage({ message: t("login.login_success"), type: "success" });
+        ElMessage({ message: t("login.loginSuccess"), type: "success" });
       } else {
-        ElMessage({ message: t("login.login_fail"), type: "error" });
+        ElMessage({ message: t("login.loginFail"), type: "error" });
       }
     }
   } catch (error) {
@@ -128,7 +127,7 @@ const handleToChangeLangEnUs = () => {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.login-container {
   position: relative;
   width: 100%;
   height: 100%;

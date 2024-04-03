@@ -49,9 +49,10 @@ declare module "vue" {
     ElTour: (typeof import("element-plus/es"))["ElTour"];
     ElTourStep: (typeof import("element-plus/es"))["ElTourStep"];
     ElWatermark: (typeof import("element-plus/es"))["ElWatermark"];
-    Header: (typeof import("./src/components/Header/index.vue"))["default"];
+    Header: (typeof import("./src/components/header/index.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
+    Sidebar: (typeof import("./src/components/sidebar/index.vue"))["default"];
     SideBar: (typeof import("./src/components/SideBar/index.vue"))["default"];
   }
 }

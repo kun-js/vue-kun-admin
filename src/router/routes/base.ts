@@ -1,11 +1,10 @@
 import { RouteRecordRaw } from "vue-router";
-import Login from "@/views/Login/index.vue";
 
 const baseRoutes: RouteRecordRaw[] = [
   {
     path: "/login",
     name: "login",
-    component: Login,
+    component: () => import("@/views/login/index.vue"),
   },
   {
     path: "/",

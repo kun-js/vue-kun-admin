@@ -11,8 +11,8 @@
 </template>
 
 <script setup lang="ts">
-import Header from "@/components/Header/index.vue";
-import SideBar from "@/components/SideBar/index.vue";
+import Header from "@/components/header/index.vue";
+import SideBar from "@/components/sidebar/index.vue";
 import { ref } from "vue";
 
 const isCollapse = ref(false);

@@ -1,13 +1,10 @@
 import { RouteRecordRaw } from "vue-router";
-import Layout from "@/components/index.vue";
-import Button from "@/views/ComponentDemo/Button/index.vue";
-import ColorPicker from "@/views/ComponentDemo/ColorPicker/index.vue";
 
 const componentRoutes: RouteRecordRaw[] = [
   {
     path: "/component",
     name: "component",
-    component: Layout,
+    component: () => import("@/components/index.vue"),
     redirect: "/component/button",
     meta: {
       title: "chart",
@@ -16,17 +13,17 @@ const componentRoutes: RouteRecordRaw[] = [
       {
         path: "/component/button",
         name: "按钮",
-        component: Button,
+        component: () => import("@/views/component/button/index.vue"),
         meta: {
           title: "button",
         },
       },
       {
-        path: "/component/colorpicker",
+        path: "/component/color-picker",
         name: "取色器",
-        component: ColorPicker,
+        component: () => import("@/views/component/color-picker/index.vue"),
         meta: {
-          title: "colorpicker",
+          title: "colorPicker",
         },
       },
     ],
