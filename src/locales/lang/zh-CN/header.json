@@ -13,5 +13,6 @@
   "exitFullScreen": "退出全屏",
   "logout": "退出",
   "setting": "设置",
-  "themeColor": "主题颜色"
+  "themeColor": "主题颜色",
+  "faceShow": "界面展示"
 }

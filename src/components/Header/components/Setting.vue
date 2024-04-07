@@ -9,15 +9,19 @@
       <div class="switch-dark">
         <el-switch v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
       </div>
+      <el-divider>{{ $t("header.faceShow") }}</el-divider>
+      <div class="action-btn">展示页脚<el-switch v-model="hasFooter" /></div>
     </div>
   </el-drawer>
 </template>
 
 <script setup lang="ts">
 import { Sunrise, MoonNight } from "@element-plus/icons-vue";
-import { ref } from "vue";
+import { inject, ref } from "vue";
 
 import { useDark, useToggle } from "@vueuse/core";
+
+const hasFooter = inject<boolean>("hasFooter");
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -53,6 +57,12 @@ const handleToShowDrawer = () => {
     align-items: center;
     height: 100%;
     padding: 0 10px;
+  }
+
+  .action-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 </style>

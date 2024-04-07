@@ -41,6 +41,7 @@
     </el-tabs>
     <template #reference>
       <div class="message">
+        <div class="red-dot" v-show="hasMessage"></div>
         <el-icon :size="20"><Message /></el-icon>
       </div>
     </template>
@@ -49,7 +50,7 @@
 
 <script setup lang="ts">
 import { getMessageList } from "@/api/index";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import type { TabsPaneContext } from "element-plus";
 
 interface NoticeListItem {
@@ -79,10 +80,14 @@ const noticeList = ref<NoticeListItem[]>([]);
 const messageList = ref<MessageListItem[]>([]);
 const todoList = ref<TodoListItem[]>([]);
 
+const hasMessage = computed(() => {
+  return noticeList.value.length > 0 || messageList.value.length > 0 || todoList.value.length > 0;
+});
+
 const fetchData = async () => {
   try {
     const result = await getMessageList();
-    console.log("result: ", result);
+    // console.log("result: ", result);
     noticeList.value = result.noticeList;
     messageList.value = result.messageList;
     todoList.value = result.todoList;
@@ -132,6 +137,10 @@ onMounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    img {
+      border-radius: 50%;
+    }
   }
 
   .content {
@@ -168,7 +177,11 @@ onMounted(() => {
   }
 
   .avatar {
-    margin-top: 6px;
+    margin-top: 4px;
+
+    img {
+      border-radius: 50%;
+    }
   }
 
   .content {
@@ -221,6 +234,7 @@ onMounted(() => {
 }
 
 .message {
+  position: relative;
   display: flex;
   align-items: center;
   height: 100%;
@@ -230,6 +244,17 @@ onMounted(() => {
   &:hover {
     background-color: var(--header-button-active);
     border-bottom: 1px solid #eee;
+  }
+
+  .red-dot {
+    position: absolute;
+    top: 14px;
+    right: 8px;
+    z-index: 99;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
   }
 }
 </style>

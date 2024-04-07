@@ -5,7 +5,7 @@
       <div class="logo-title">Kun Admin</div>
     </div>
     <div class="menu">
-      <el-scrollbar height="910px">
+      <el-scrollbar :style="{ height: 'calc(100vh - 48px)' }">
         <el-menu
           :default-active="activePath"
           :collapse="isCollapse"
