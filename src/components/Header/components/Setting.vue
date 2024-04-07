@@ -11,6 +11,7 @@
           <el-switch v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
         </div>
         <el-divider>{{ $t("header.faceShow") }}</el-divider>
+        <div class="action-btn">Logo<el-switch v-model="isShowLogo" /></div>
         <div class="action-btn">折叠菜单<el-switch v-model="isCollapse" /></div>
         <div class="action-btn">页脚<el-switch v-model="hasFooter" /></div>
       </div>
@@ -28,6 +29,7 @@ import { inject, ref } from "vue";
 
 import { useDark, useToggle } from "@vueuse/core";
 
+const isShowLogo = inject<boolean>("isShowLogo");
 const isCollapse = inject<boolean>("isCollapse");
 const hasFooter = inject<boolean>("hasFooter");
 

@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <div class="logo" :style="{ width: sideBarWidth }">
+    <div class="logo" v-show="isShowLogo" :style="{ width: sideBarWidth }">
       <img class="logo-pic" src="@/assets/imgs/KunLogo.jpg" />
       <div class="logo-title">Kun Admin</div>
     </div>
@@ -75,6 +75,7 @@ import { useRouter } from "vue-router";
 import { getMenuList } from "@/api/index";
 
 const props = defineProps<{
+  isShowLogo: Boolean;
   isCollapse: Boolean;
 }>();
 

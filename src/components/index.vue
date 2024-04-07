@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside width="collapse"><SideBar :isCollapse="isCollapse" /></el-aside>
+    <el-aside width="collapse"><SideBar :isCollapse="isCollapse" :isShowLogo="isShowLogo" /></el-aside>
     <el-container>
       <el-header><Header :changeSideBarCollapse="changeSideBarCollapse" :isCollapse="isCollapse" /></el-header>
       <el-scrollbar :wrap-style="{ height: 'calc(100vh - 48px)' }" :view-style="{ height: '100%' }">
@@ -20,6 +20,7 @@ import Header from "@/components/header/index.vue";
 import SideBar from "@/components/sidebar/index.vue";
 import { ref, computed, provide } from "vue";
 
+const isShowLogo = ref(true);
 const isCollapse = ref(false);
 const hasFooter = ref(false);
 
@@ -31,6 +32,7 @@ const changeSideBarCollapse = () => {
   isCollapse.value = !isCollapse.value;
 };
 
+provide("isShowLogo", isShowLogo);
 provide("isCollapse", isCollapse);
 provide("changeCollapse", changeSideBarCollapse);
 provide("hasFooter", hasFooter);
