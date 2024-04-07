@@ -103,18 +103,13 @@ const fetchData = async () => {
 };
 
 const getTagType = (status: string) => {
-  switch (status) {
-    case "未开始":
-      return "info";
-    case "进行中":
-      return "primary";
-    case "即将截止":
-      return "warning";
-    case "已逾期":
-      return "danger";
-    default:
-      return "info";
-  }
+  const tagTypes: { [key: string]: string } = {
+    未开始: "info",
+    进行中: "primary",
+    即将截止: "warning",
+    已逾期: "danger",
+  };
+  return tagTypes[status] || "info";
 };
 
 const tabActiveName = ref("notice");
@@ -131,6 +126,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .notice-container {
   display: flex;
+  margin-right: 12px;
   margin-bottom: 8px;
   border-bottom: 1px solid #ccc;
 
@@ -174,6 +170,7 @@ onMounted(() => {
 
 .message-container {
   display: flex;
+  margin-right: 12px;
   margin-bottom: 8px;
   border-bottom: 1px solid #ccc;
 
@@ -213,6 +210,7 @@ onMounted(() => {
 .todo-container {
   display: flex;
   flex-direction: column;
+  margin-right: 12px;
   margin-bottom: 8px;
   border-bottom: 1px solid #ccc;
 
