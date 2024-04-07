@@ -1,7 +1,7 @@
 import Mock from "mockjs";
 
 export const messageList = Mock.mock({
-  "noticeList|4-6": [
+  "noticeList|6-8": [
     {
       "id|+1": 100,
       title: "@ctitle(5, 8)",
@@ -9,7 +9,7 @@ export const messageList = Mock.mock({
       icon: '@image("30x30","#409eff", "Icon")',
     },
   ],
-  "messageList|3-5": [
+  "messageList|4-6": [
     {
       "id|+1": 200,
       avatar: '@image("30x30", "#4A7BF7", "Avatar")',

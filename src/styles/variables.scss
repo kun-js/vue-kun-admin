@@ -9,6 +9,7 @@
   --menu-active-text: var(--el-menu-active-color);
   --menu-hover: #263445;
   --sidebar-logo-background: #2d3748;
+  --footer-background: #f5f5f5;
 }
 
 /** 暗黑主题 */
@@ -20,7 +21,7 @@ html.dark {
   --menu-text: #fff;
   --menu-active-text: var(--el-menu-active-color);
   --menu-hover: rgb(0 0 0 / 20%);
-  --sidebar-logo-background: rgb(0 0 0 / 20%);
+  --footer-background: #000;
 }
 
 $menu-background: var(--menu-background); // 菜单背景色

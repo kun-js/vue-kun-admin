@@ -55,6 +55,7 @@ declare module "vue" {
     ElTour: (typeof import("element-plus/es"))["ElTour"];
     ElTourStep: (typeof import("element-plus/es"))["ElTourStep"];
     ElWatermark: (typeof import("element-plus/es"))["ElWatermark"];
+    Footer: (typeof import("./src/components/footer/index.vue"))["default"];
     FullScreen: (typeof import("./src/components/header/components/FullScreen.vue"))["default"];
     Header: (typeof import("./src/components/header/index.vue"))["default"];
     Message: (typeof import("./src/components/header/components/Message.vue"))["default"];

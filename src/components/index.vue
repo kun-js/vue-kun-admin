@@ -9,7 +9,7 @@
         </el-main>
       </el-scrollbar>
       <el-footer v-show="hasFooter">
-        <div class="footer-text">Copyright © 2024 KUN Admin</div>
+        <Footer />
       </el-footer>
     </el-container>
   </el-container>
@@ -18,6 +18,7 @@
 <script setup lang="ts">
 import Header from "@/components/header/index.vue";
 import SideBar from "@/components/sidebar/index.vue";
+import Footer from "@/components/footer/index.vue";
 import { ref, computed, provide } from "vue";
 
 const isShowLogo = ref(true);
@@ -66,10 +67,7 @@ provide("hasFooter", hasFooter);
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: #f0f2f5;
-
-  .footer-text {
-    transform: translate(-50%, 0%);
-  }
+  padding: 0;
+  background-color: var(--footer-background);
 }
 </style>
