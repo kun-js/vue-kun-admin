@@ -67,7 +67,6 @@ provide("hasFooter", hasFooter);
   background-color: #f0f2f5;
 
   .footer-text {
-    bottom: 5%;
     transform: translate(-50%, 0%);
   }
 }

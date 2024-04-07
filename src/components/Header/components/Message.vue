@@ -1,42 +1,48 @@
 <template>
-  <el-popover placement="bottom" :width="248" trigger="click">
-    <el-tabs v-model="tabActiveName" @tab-click="handleClick">
+  <el-popover placement="bottom" :width="300" trigger="click">
+    <el-tabs v-model="tabActiveName" @tab-click="handleClick" stretch>
       <el-tab-pane name="notice">
         <template #label> 通知({{ noticeList.length }}) </template>
-        <div class="notice-container" v-for="noticeItem in noticeList" :key="noticeItem.id">
-          <div class="icon">
-            <img :src="noticeItem.icon" alt="" />
+        <el-scrollbar height="260px">
+          <div class="notice-container" v-for="noticeItem in noticeList" :key="noticeItem.id">
+            <div class="icon">
+              <img :src="noticeItem.icon" alt="" />
+            </div>
+            <div class="content">
+              <div class="title">{{ noticeItem.title }}</div>
+              <div class="time">{{ noticeItem.time }}</div>
+            </div>
           </div>
-          <div class="content">
-            <div class="title">{{ noticeItem.title }}</div>
-            <div class="time">{{ noticeItem.time }}</div>
-          </div>
-        </div>
+        </el-scrollbar>
       </el-tab-pane>
       <el-tab-pane label="消息" name="messages">
         <template #label> 消息({{ messageList.length }}) </template>
-        <div class="message-container" v-for="MessageItem in messageList" :key="MessageItem.id">
-          <div class="avatar">
-            <img :src="MessageItem.avatar" alt="" />
-          </div>
-          <div class="content">
-            <div class="title">{{ MessageItem.username }} {{ MessageItem.type }}了你</div>
-            <div class="text">{{ MessageItem.content }}</div>
-            <div class="time">{{ MessageItem.time }}</div>
-          </div>
-        </div>
-      </el-tab-pane>
-      <el-tab-pane label="代办" name="todo"
-        ><template #label> 代办({{ todoList.length }}) </template>
-        <div class="todo-container" v-for="todoItem in todoList" :key="todoItem.id">
-          <div class="content">
-            <div class="title">{{ todoItem.title }}</div>
-            <div class="status">
-              <el-tag :type="getTagType(todoItem.status)">{{ todoItem.status }}</el-tag>
+        <el-scrollbar height="260px">
+          <div class="message-container" v-for="MessageItem in messageList" :key="MessageItem.id">
+            <div class="avatar">
+              <img :src="MessageItem.avatar" alt="" />
+            </div>
+            <div class="content">
+              <div class="title">{{ MessageItem.username }} {{ MessageItem.type }}了你</div>
+              <div class="text">{{ MessageItem.content }}</div>
+              <div class="time">{{ MessageItem.time }}</div>
             </div>
           </div>
-          <div class="text">{{ todoItem.description }}</div>
-        </div>
+        </el-scrollbar>
+      </el-tab-pane>
+      <el-tab-pane label="代办" name="todo">
+        <template #label> 代办({{ todoList.length }}) </template>
+        <el-scrollbar height="260px">
+          <div class="todo-container" v-for="todoItem in todoList" :key="todoItem.id">
+            <div class="content">
+              <div class="title">{{ todoItem.title }}</div>
+              <div class="status">
+                <el-tag :type="getTagType(todoItem.status)">{{ todoItem.status }}</el-tag>
+              </div>
+            </div>
+            <div class="text">{{ todoItem.description }}</div>
+          </div>
+        </el-scrollbar>
       </el-tab-pane>
     </el-tabs>
     <template #reference>

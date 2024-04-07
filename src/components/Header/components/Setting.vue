@@ -3,14 +3,21 @@
     <el-icon :size="20"><Setting /></el-icon>
   </div>
 
-  <el-drawer v-model="drawer" :title="$t('header.setting')" direction="rtl">
+  <el-drawer v-model="drawer" :title="$t('header.setting')" direction="rtl" size="280px">
     <div class="drawer-container">
-      <el-divider>{{ $t("header.themeColor") }}</el-divider>
-      <div class="switch-dark">
-        <el-switch v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
+      <div class="drawer-body">
+        <el-divider>{{ $t("header.themeColor") }}</el-divider>
+        <div class="switch-dark">
+          <el-switch v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
+        </div>
+        <el-divider>{{ $t("header.faceShow") }}</el-divider>
+        <div class="action-btn">折叠菜单<el-switch v-model="isCollapse" /></div>
+        <div class="action-btn">页脚<el-switch v-model="hasFooter" /></div>
       </div>
-      <el-divider>{{ $t("header.faceShow") }}</el-divider>
-      <div class="action-btn">展示页脚<el-switch v-model="hasFooter" /></div>
+      <div class="drawer-footer">
+        <el-divider />
+        <el-button type="danger" @click="clearCacheAndExit">清空缓存并退出</el-button>
+      </div>
     </div>
   </el-drawer>
 </template>
@@ -21,6 +28,7 @@ import { inject, ref } from "vue";
 
 import { useDark, useToggle } from "@vueuse/core";
 
+const isCollapse = inject<boolean>("isCollapse");
 const hasFooter = inject<boolean>("hasFooter");
 
 const isDark = useDark();
@@ -30,6 +38,12 @@ const drawer = ref(false);
 
 const handleToShowDrawer = () => {
   drawer.value = !drawer.value;
+};
+
+const clearCacheAndExit = () => {
+  localStorage.clear();
+  sessionStorage.clear();
+  window.location.reload();
 };
 </script>
 
@@ -50,19 +64,32 @@ const handleToShowDrawer = () => {
 .drawer-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 
-  .switch-dark {
+  .drawer-body {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 100%;
-    padding: 0 10px;
+
+    .switch-dark {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 10px;
+    }
+
+    .action-btn {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
   }
 
-  .action-btn {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  .drawer-footer {
+    .el-button {
+      width: 100%;
+    }
   }
 }
 </style>

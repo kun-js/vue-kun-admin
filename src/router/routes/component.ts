@@ -7,7 +7,7 @@ const componentRoutes: RouteRecordRaw[] = [
     component: () => import("@/components/index.vue"),
     redirect: "/component/button",
     meta: {
-      title: "chart",
+      title: "component",
     },
     children: [
       {
@@ -24,6 +24,14 @@ const componentRoutes: RouteRecordRaw[] = [
         component: () => import("@/views/component/color-picker/index.vue"),
         meta: {
           title: "colorPicker",
+        },
+      },
+      {
+        path: "/component/date-picker",
+        name: "日期选择器",
+        component: () => import("@/views/component/date-picker/index.vue"),
+        meta: {
+          title: "datePicker",
         },
       },
     ],

@@ -5,6 +5,7 @@
   "component": "Component",
   "button": "Button",
   "colorPicker": "Color Picker",
+  "datePicker": "Date Picker",
   "feature": "Feature",
   "download": "Download",
   "verify": "Verify",
