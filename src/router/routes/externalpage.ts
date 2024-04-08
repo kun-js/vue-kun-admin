@@ -6,13 +6,14 @@ const ExternalPageRoutes: RouteRecordRaw[] = [
     name: "外部页面",
     component: () => import("@/components/index.vue"),
     meta: {
+      icon: "Monitor",
       title: "externalPage",
     },
     children: [
       {
         path: "/external-page/outerchain/element",
         name: "outerchainelement",
-        beforeEnter: (to, from, next) => {
+        beforeEnter: (to: any, from: any, next: (arg0: boolean) => void) => {
           window.open("https://element-plus.org/zh-CN/#/zh-CN", "_blank");
           // 需要调用 next() 函数来结束路由导航
           next(false); // 因为我们手动打开了一个新标签页，所以不需要继续导航
@@ -21,7 +22,7 @@ const ExternalPageRoutes: RouteRecordRaw[] = [
       {
         path: "/external-page/outerchain/vue",
         name: "outerchainvue",
-        beforeEnter: (to, from, next) => {
+        beforeEnter: (to: any, from: any, next: (arg0: boolean) => void) => {
           window.open("https://cn.vuejs.org/", "_blank");
           // 需要调用 next() 函数来结束路由导航
           next(false); // 因为我们手动打开了一个新标签页，所以不需要继续导航
@@ -30,7 +31,7 @@ const ExternalPageRoutes: RouteRecordRaw[] = [
       {
         path: "/external-page/outerchain/baidu",
         name: "outerchainbaidu",
-        beforeEnter: (to, from, next) => {
+        beforeEnter: (to: any, from: any, next: (arg0: boolean) => void) => {
           window.open("https://www.baidu.com", "_blank");
           // 需要调用 next() 函数来结束路由导航
           next(false); // 因为我们手动打开了一个新标签页，所以不需要继续导航

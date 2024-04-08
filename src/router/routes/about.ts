@@ -7,6 +7,7 @@ const aboutRoutes: RouteRecordRaw[] = [
     component: () => import("@/components/index.vue"),
     redirect: "/about/me",
     meta: {
+      icon: "User",
       title: "about",
     },
     children: [

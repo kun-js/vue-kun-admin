@@ -7,6 +7,7 @@ const dashboardRoutes: RouteRecordRaw[] = [
     component: () => import("@/components/index.vue"),
     redirect: "/dashboard/analysis",
     meta: {
+      icon: "HomeFilled",
       title: "dashboard",
     },
     children: [

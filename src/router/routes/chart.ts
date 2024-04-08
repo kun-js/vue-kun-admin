@@ -7,6 +7,7 @@ const chartRoutes: RouteRecordRaw[] = [
     component: () => import("@/components/index.vue"),
     redirect: "/chart/bar-chart",
     meta: {
+      icon: "PieChart",
       title: "chart",
     },
     children: [

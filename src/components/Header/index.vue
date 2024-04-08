@@ -27,13 +27,18 @@ import Tour from "./components/Tour.vue";
 import FullScreen from "./components/FullScreen.vue";
 import Setting from "./components/Setting.vue";
 import User from "./components/User.vue";
+import { ref, provide } from "vue";
 
 const foldEl = () => document.querySelector<HTMLElement>(".fold");
 const langEl = () => document.querySelector<HTMLElement>(".lang");
 
+const isShowBreadcrumbIcon = ref(false);
+
 const handleToLog = () => {
   console.log("search");
 };
+
+provide("isShowBreadcrumbIcon", isShowBreadcrumbIcon);
 </script>
 
 <style lang="scss" scoped>

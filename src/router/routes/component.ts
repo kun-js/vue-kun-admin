@@ -7,6 +7,7 @@ const componentRoutes: RouteRecordRaw[] = [
     component: () => import("@/components/index.vue"),
     redirect: "/component/button",
     meta: {
+      icon: "Menu",
       title: "component",
     },
     children: [

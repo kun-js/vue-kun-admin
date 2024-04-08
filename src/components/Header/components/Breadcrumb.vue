@@ -1,9 +1,12 @@
 <template>
   <div class="breadcrumb">
     <el-breadcrumb>
-      <template v-for="(item, index) in breadList">
+      <template v-for="(item, index) in breadList" :key="index">
         <el-breadcrumb-item v-if="item.name" :key="index" :to="item.path">
-          {{ $t("menu." + item.meta.title) }}
+          <div class="breadcrumb-item">
+            <el-icon v-if="item.meta.icon && isShowBreadcrumbIcon"> <component :is="item.meta.icon" /></el-icon>
+            {{ $t("menu." + item.meta.title) }}
+          </div>
         </el-breadcrumb-item>
       </template>
     </el-breadcrumb>
@@ -11,15 +14,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from "vue";
+import { ref, watch, onMounted, inject } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
 const breadList = ref();
 
+const isShowBreadcrumbIcon = inject<boolean>("isShowBreadcrumbIcon");
+
 const getMatched = () => {
-  // console.log(route.matched);
+  console.log(route.matched);
   breadList.value = route.matched.filter((item) => item.meta && item.meta.title);
+  console.log(" breadList.value: ", breadList.value);
 };
 
 watch(
@@ -36,4 +42,12 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.breadcrumb-item {
+  display: flex;
+
+  .el-icon {
+    margin-right: 6px;
+  }
+}
+</style>

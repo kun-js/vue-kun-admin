@@ -62,10 +62,6 @@ const handleToLogout = () => {
   &:hover {
     background-color: #f4f4f4;
   }
-
-  .text {
-    margin-left: 8px;
-  }
 }
 
 .el-dropdown {

@@ -31,7 +31,7 @@ const handleToChangeLangEnUs = () => {
 .language {
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 48px;
   padding: 0 10px;
   cursor: pointer;
 
