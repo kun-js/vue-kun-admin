@@ -3,6 +3,8 @@
   "analysis": "Analysis",
   "workbench": "Workbench",
   "component": "Component",
+  "permission": "Permission Management",
+  "buttonPermission": "Button Permission",
   "button": "Button",
   "colorPicker": "Color Picker",
   "datePicker": "Date Picker",

@@ -22,11 +22,18 @@ export const useUserStore = defineStore(
       token.value = val;
     };
 
+    const permission = ref("");
+    const getPermission = (val: string) => {
+      permission.value = val;
+    };
+
     return {
       userInfo,
       getUserInfo,
       token,
       getToken,
+      permission,
+      getPermission,
     };
   },
   {

@@ -21,6 +21,19 @@ export const menuList = Mock.mock({
       ],
     },
     {
+      name: "permission",
+      title: "权限管理",
+      path: "/permission",
+      icon: "Key",
+      children: [
+        {
+          name: "buttonPermission",
+          title: "按钮权限",
+          path: "/button-permission",
+        },
+      ],
+    },
+    {
       name: "component",
       title: "组件",
       path: "/component",
