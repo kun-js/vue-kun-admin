@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div class="icon"><img class="img" src="@/assets/imgs/networkerror.png" alt="" /></div>
-    <div class="text">网络错误</div>
-    <div class="tip-text">抱歉,你的网络已断开,请检查你的网络!</div>
+    <div class="icon"><img class="img" src="@/assets/imgs/noData.png" alt="" /></div>
+    <div class="text">暂无数据</div>
+    <div class="tip-text">抱歉!此页暂无数据!</div>
     <div class="action"><el-button type="primary" @click="handleToReload">刷新</el-button></div>
   </div>
 </template>
@@ -24,8 +24,8 @@ const handleToReload = () => {
 
   .icon {
     .img {
-      width: 250px;
-      height: 200px;
+      width: 210px;
+      height: 140px;
     }
   }
 

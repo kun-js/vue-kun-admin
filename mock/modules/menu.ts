@@ -193,6 +193,11 @@ export const menuList = Mock.mock({
               path: "/500",
             },
             {
+              name: "noData",
+              title: "无数据",
+              path: "/no-data",
+            },
+            {
               name: "networkError",
               title: "网络错误",
               path: "/network-error",

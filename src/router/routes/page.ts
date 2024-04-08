@@ -76,6 +76,14 @@ const pageRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/page/exception/no-data",
+        name: "无数据",
+        component: () => import("@/views/page/exception/no-data/index.vue"),
+        meta: {
+          title: "noData",
+        },
+      },
+      {
         path: "/page/exception/network-error",
         name: "网络错误",
         component: () => import("@/views/page/exception/network-error/index.vue"),

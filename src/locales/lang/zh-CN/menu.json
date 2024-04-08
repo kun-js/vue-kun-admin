@@ -34,6 +34,7 @@
   "page404": "404",
   "page403": "403",
   "page500": "500",
+  "noData": "无数据",
   "networkError": "网络错误",
   "chart": "图表",
   "AMap": "高德地图",

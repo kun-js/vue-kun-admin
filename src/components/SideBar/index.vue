@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <div class="logo" v-show="isShowLogo" :style="{ width: sideBarWidth }">
-      <img class="logo-pic" src="@/assets/imgs/KunLogo.jpg" />
+      <img class="logo-pic" src="@/assets/imgs/KunLogo.png" />
       <div class="logo-title">Kun Admin</div>
     </div>
     <div class="menu">

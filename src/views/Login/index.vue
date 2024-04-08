@@ -45,7 +45,12 @@
           </el-divider>
           <div class="login-form-login-way">
             <div class="login-form-login-way-icon">
-              <img v-for="(icon, index) in icons" :key="index" class="img" :src="icon.src" :alt="icon.alt" />
+              <Icon class="app-icon" icon="ant-design:qq-circle-filled" />
+              <Icon class="app-icon" icon="ant-design:wechat-filled" />
+              <Icon class="app-icon" icon="ant-design:alipay-circle-filled" />
+              <Icon class="app-icon" icon="ant-design:weibo-circle-filled" />
+              <Icon class="app-icon" icon="ant-design:github-filled" />
+              <Icon class="app-icon" icon="ant-design:twitter-outlined" />
             </div>
           </div>
         </div>
@@ -65,6 +70,7 @@ import { useUserStore } from "@/stores/user";
 import { useLocaleStore } from "@/stores/locale";
 import { useI18n } from "vue-i18n";
 import { useDark, useToggle } from "@vueuse/core";
+import { Icon } from "@iconify/vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -83,22 +89,20 @@ const loginFormRules = reactive<FormRules<typeof loginForm>>({
   password: [{ required: true, message: t("login.passwordTip"), trigger: "blur" }],
 });
 
-const icons = [
-  { src: "./src/assets/imgs/QQ.png", alt: "QQ" },
-  { src: "./src/assets/imgs/wechat.png", alt: "WeChat" },
-  { src: "./src/assets/imgs/weibo.png", alt: "Weibo" },
-  { src: "./src/assets/imgs/alipay.png", alt: "Alipay" },
-  { src: "./src/assets/imgs/github.png", alt: "GitHub" },
-  { src: "./src/assets/imgs/twitter.png", alt: "Twitter" },
-];
-
 const submitForm = async () => {
   try {
     const valid = await loginFormRef.value?.validate();
     if (valid) {
       const result = await getLoginInfo(loginForm.username, loginForm.password);
+      // const result = true;
       // console.log("result: ", result);
       if (result) {
+        // store.getUserInfo({
+        //   avatar: "https://img1.baidu.com/it/u=3105572522,2684938522&fm=253&fmt=auto&app=120&f=JPEG?w=802&h=500",
+        //   name: "坤哥",
+        // });
+        // store.getToken("123456");
+        // store.getPermission("admin");
         store.getUserInfo(result.userInfo);
         store.getToken(result.token);
         store.getPermission(result.permission);
@@ -236,10 +240,9 @@ const handleToChangeLangEnUs = () => {
             display: flex;
             justify-content: space-between;
 
-            .img {
-              width: 30px;
-              height: 30px;
+            .app-icon {
               overflow: hidden;
+              font-size: 32px;
               cursor: pointer;
 
               &:hover {
