@@ -1,5 +1,6 @@
 import { createI18n } from "vue-i18n";
-import zhCn from "./lang/zh-cn";
+import zhCN from "./lang/zh-cn";
+import zhHK from "./lang/zh-hk";
 import en from "./lang/en";
 
 // 如果 localStorage 中不存在 lang 值，则将其设置为默认值 'zh-CN'
@@ -16,7 +17,8 @@ const i18n = createI18n({
   globalInjection: true, // 全局模式，可以直接使用 $t
   locale: lang,
   messages: {
-    "zh-CN": zhCn,
+    "zh-CN": zhCN,
+    "zh-HK": zhHK,
     "en-US": en,
   },
 });

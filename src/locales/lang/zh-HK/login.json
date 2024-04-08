@@ -1,0 +1,12 @@
+{
+  "title": "登錄",
+  "submit": "登錄",
+  "reset": "重置",
+  "usernameTip": "請輸入賬號!",
+  "passwordTip": "請輸入密碼",
+  "register": "註冊賬號",
+  "forget": "忘記密碼?",
+  "otherLoginWay": "其他登錄方式",
+  "loginSuccess": "登陸成功!歡迎回來!",
+  "loginFail": "登錄失敗!用戶名或密碼錯誤!"
+}
