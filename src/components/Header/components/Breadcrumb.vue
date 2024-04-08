@@ -23,9 +23,8 @@ const breadList = ref();
 const isShowBreadcrumbIcon = inject<boolean>("isShowBreadcrumbIcon");
 
 const getMatched = () => {
-  console.log(route.matched);
+  // console.log(route.matched);
   breadList.value = route.matched.filter((item) => item.meta && item.meta.title);
-  console.log(" breadList.value: ", breadList.value);
 };
 
 watch(
