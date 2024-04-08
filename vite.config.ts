@@ -8,6 +8,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
+import viteImagemin from "vite-plugin-imagemin";
 // 引入Unocss
 import Unocss from "unocss/vite";
 import { presetUno, presetAttributify, presetIcons } from "unocss";
@@ -44,6 +45,34 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       viteMockServe({
         mockPath: "./mock/", // 注意:此时的 mockPath 地址是真正安装的 mock 文件夹的地址; 设置模拟数据的存储文件夹,如果不是index.js需要写明完整路径
       }),
+      // 图片资源优化
+      viteImagemin({
+        gifsicle: {
+          optimizationLevel: 7,
+          interlaced: false,
+        },
+        optipng: {
+          optimizationLevel: 7,
+        },
+        mozjpeg: {
+          quality: 20,
+        },
+        pngquant: {
+          quality: [0.8, 0.9],
+          speed: 4,
+        },
+        svgo: {
+          plugins: [
+            {
+              name: "removeViewBox",
+            },
+            {
+              name: "removeEmptyAttrs",
+              active: false,
+            },
+          ],
+        },
+      }),
     ],
     resolve: {
       alias: {
@@ -59,6 +88,28 @@ export default ({ mode }: ConfigEnv): UserConfig => {
           additionalData: `
             @use "@/styles/variables.scss" as *;
           `,
+        },
+      },
+    },
+    build: {
+      minify: "terser", // 启用 terser 压缩
+      terserOptions: {
+        compress: {
+          drop_console: true, // 删除所有 console
+          drop_debugger: true, // 删除 debugger
+        },
+      },
+      rollupOptions: {
+        output: {
+          chunkFileNames: "js/[name]-[hash].js", // 引入文件名的名称
+          entryFileNames: "js/[name]-[hash].js", // 包的入口文件名称
+          assetFileNames: "[ext]/[name]-[hash].[ext]", // 资源文件像 字体，图片等
+          // 最小化拆分包
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              return id.toString().split("node_modules/")[1].split("/")[0].toString();
+            }
+          },
         },
       },
     },
