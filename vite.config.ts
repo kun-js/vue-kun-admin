@@ -8,7 +8,10 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
+import viteCompression from "vite-plugin-compression";
 import viteImagemin from "vite-plugin-imagemin";
+import { visualizer } from "rollup-plugin-visualizer";
+
 // 引入Unocss
 import Unocss from "unocss/vite";
 import { presetUno, presetAttributify, presetIcons } from "unocss";
@@ -45,6 +48,16 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       viteMockServe({
         mockPath: "./mock/", // 注意:此时的 mockPath 地址是真正安装的 mock 文件夹的地址; 设置模拟数据的存储文件夹,如果不是index.js需要写明完整路径
       }),
+      viteCompression({
+        verbose: true, // 是否在控制台中输出压缩结果
+        disable: false,
+        threshold: 10240, // 如果体积大于阈值，将被压缩，单位为b，体积过小时请不要压缩，以免适得其反
+        algorithm: "gzip", // 压缩算法，可选['gzip'，' brotliccompress '，'deflate '，'deflateRaw']
+        ext: ".gz",
+        deleteOriginFile: true, // 源文件压缩后是否删除(我为了看压缩后的效果，先选择了true)
+      }),
+      // 打包体积分析
+      visualizer({ open: true }),
       // 图片资源优化
       viteImagemin({
         gifsicle: {
