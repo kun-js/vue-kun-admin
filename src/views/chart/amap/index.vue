@@ -2,7 +2,7 @@
   <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '100%', padding: 0 }">
     <template #header>高德地图示例 </template>
     <!-- 地图容器 -->
-    <div ref="mapContainer" style="width: 100%; height: 100%"></div>
+    <div ref="mapContainer" style="width: 100%; height: 93%"></div>
   </el-card>
 </template>
 
@@ -23,11 +23,11 @@ const initMap = () => {
         //设置地图容器id
         resizeEnable: true,
         zoom: 12, //地图的缩放比例
-        center: [114.028453, 22.609294], //初始化地图中心点位置
+        center: [116.403675, 39.927635], //初始化地图中心点位置
       });
 
       new AMap.Marker({
-        position: [114.028453, 22.609294],
+        position: [116.403675, 39.927635],
         map,
       });
     })

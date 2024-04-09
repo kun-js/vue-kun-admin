@@ -20,6 +20,14 @@ const chartRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/chart/bmap",
+        name: "百度地图",
+        component: () => import("@/views/chart/bmap/index.vue"),
+        meta: {
+          title: "BMap",
+        },
+      },
+      {
         path: "/chart/bar-chart",
         name: "柱状图",
         component: () => import("@/views/chart/bar-chart/index.vue"),

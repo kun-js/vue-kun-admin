@@ -42,6 +42,7 @@
   "networkError": "Network Error",
   "chart": "Chart",
   "AMap": "AMap",
+  "BMap": "BMap",
   "barChart": "Bar Chart",
   "lineChart": "Line Chart",
   "pieChart": "Pie Chart",

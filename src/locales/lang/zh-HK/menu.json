@@ -42,6 +42,7 @@
   "networkError": "網絡錯誤",
   "chart": "圖表",
   "AMap": "高德地圖",
+  "BMap": "百度地圖",
   "barChart": "柱狀圖",
   "lineChart": "折線圖",
   "pieChart": "餅圖",
