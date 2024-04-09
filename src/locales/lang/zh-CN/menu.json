@@ -26,6 +26,8 @@
   "page": "页面",
   "form": "表单页",
   "list": "列表页",
+  "basicList": "基础列表",
+  "cardList": "卡片列表",
   "detail": "详情页",
   "result": "结果页",
   "success": "成功页",

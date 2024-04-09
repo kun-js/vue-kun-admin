@@ -20,11 +20,19 @@ const pageRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/page/list",
-        name: "列表页",
-        component: () => import("@/views/page/list/index.vue"),
+        path: "/page/list/basic",
+        name: "基础列表页",
+        component: () => import("@/views/page/list/basic/index.vue"),
         meta: {
-          title: "list",
+          title: "basicList",
+        },
+      },
+      {
+        path: "/page/list/card",
+        name: "卡片列表页",
+        component: () => import("@/views/page/list/card/index.vue"),
+        meta: {
+          title: "cardList",
         },
       },
       {

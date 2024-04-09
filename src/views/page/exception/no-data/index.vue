@@ -1,8 +1,7 @@
 <template>
   <div class="container">
     <div class="icon"><img class="img" src="@/assets/imgs/noData.png" alt="" /></div>
-    <div class="text">暂无数据</div>
-    <div class="tip-text">抱歉!此页暂无数据!</div>
+    <div class="text">当前页无数据!</div>
     <div class="action"><el-button type="primary" @click="handleToReload">刷新</el-button></div>
   </div>
 </template>
@@ -32,12 +31,6 @@ const handleToReload = () => {
   .text {
     margin-top: 12px;
     font-size: 24px;
-  }
-
-  .tip-text {
-    margin-top: 12px;
-    font-size: 14px;
-    color: #8c8c8c;
   }
 
   .action {

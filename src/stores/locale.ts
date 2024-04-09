@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 import i18n from "@/locales";
 
-type LocaleType = "zh-CN" | "en-US";
+type LocaleType = "zh-CN" | "en-US" | "zh-HK";
 
 export const useLocaleStore = defineStore(
   "locale",

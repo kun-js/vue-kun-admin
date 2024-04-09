@@ -1,7 +1,7 @@
 <template>
   <el-card style="max-width: 100%; height: 100%">
     <template #header>
-      列表示例
+      基础列表示例
       <el-switch v-model="stripe" inline-prompt active-text="带斑马纹" inactive-text="无斑马纹" />
       <el-switch v-model="border" inline-prompt active-text="显示边框" inactive-text="无边框" />
     </template>
@@ -28,7 +28,7 @@ const fetchData = async () => {
   try {
     const result = await getUserList();
     // console.log("result: ", result);
-    tableData.value = result;
+    tableData.value = result.userList;
   } catch (error) {
     console.log("error: ", error);
   }

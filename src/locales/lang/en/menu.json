@@ -26,6 +26,8 @@
   "page": "Page",
   "form": "Form Page",
   "list": "List Page",
+  "basicList": "Basic List",
+  "cardList": "Card List",
   "detail": "Detail Page",
   "result": "Result Page",
   "success": "Success Page",

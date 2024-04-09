@@ -12,4 +12,12 @@ export const userList = Mock.mock({
       address: "@county(true)",
     },
   ],
+  "cardList|12": [
+    {
+      "id|+1": 200,
+      icon: '@image("30x30","#409eff", "Icon")',
+      title: "@ctitle(3, 6)",
+      content: "@cparagraph(3)",
+    },
+  ],
 });

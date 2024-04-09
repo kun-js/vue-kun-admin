@@ -26,7 +26,7 @@ export const getAnalysisCardList = async () => {
 
 export const getUserList = async () => {
   const { data } = await axios.get(Api.userList);
-  return data.userList;
+  return data;
 };
 
 export const getDetailList = async () => {

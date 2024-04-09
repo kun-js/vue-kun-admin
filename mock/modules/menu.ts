@@ -149,6 +149,18 @@ export const menuList = Mock.mock({
           name: "list",
           title: "列表页",
           path: "/list",
+          children: [
+            {
+              name: "basicList",
+              title: "基础列表",
+              path: "/basic",
+            },
+            {
+              name: "cardList",
+              title: "卡片列表",
+              path: "/card",
+            },
+          ],
         },
         {
           name: "detail",
