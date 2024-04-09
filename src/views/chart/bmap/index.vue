@@ -2,15 +2,17 @@
   <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '100%', padding: 0 }">
     <template #header>百度地图示例 </template>
     <!-- 地图容器 -->
-    <div id="baiduMap" style="width: 100%; height: 93%"></div>
+    <div ref="mapContainer" style="width: 100%; height: 93%"></div>
   </el-card>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted } from "vue";
 
+const mapContainer = ref(null);
+
 const initBaiduMap = () => {
-  const map = new BMapGL.Map("baiduMap");
+  const map = new BMapGL.Map(mapContainer.value);
   const point = new BMapGL.Point(116.404, 39.915);
   map.centerAndZoom(point, 15);
 

@@ -247,6 +247,11 @@ export const menuList = Mock.mock({
           path: "/bmap",
         },
         {
+          name: "TMap",
+          title: "腾讯地图",
+          path: "/tmap",
+        },
+        {
           name: "barChart",
           title: "柱状图",
           path: "/bar-chart",

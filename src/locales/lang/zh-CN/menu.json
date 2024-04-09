@@ -43,6 +43,7 @@
   "chart": "图表",
   "AMap": "高德地图",
   "BMap": "百度地图",
+  "TMap": "腾讯地图",
   "barChart": "柱状图",
   "lineChart": "折线图",
   "pieChart": "饼图",

@@ -43,6 +43,7 @@
   "chart": "Chart",
   "AMap": "AMap",
   "BMap": "BMap",
+  "TMap": "Tencent Map",
   "barChart": "Bar Chart",
   "lineChart": "Line Chart",
   "pieChart": "Pie Chart",

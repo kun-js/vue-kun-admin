@@ -28,6 +28,14 @@ const chartRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/chart/tmap",
+        name: "腾讯地图",
+        component: () => import("@/views/chart/tmap/index.vue"),
+        meta: {
+          title: "TMap",
+        },
+      },
+      {
         path: "/chart/bar-chart",
         name: "柱状图",
         component: () => import("@/views/chart/bar-chart/index.vue"),
