@@ -12,11 +12,19 @@ const pageRoutes: RouteRecordRaw[] = [
     },
     children: [
       {
-        path: "/page/form",
-        name: "表单页",
-        component: () => import("@/views/page/form/index.vue"),
+        path: "/page/form/basic",
+        name: "基础表单",
+        component: () => import("@/views/page/form/basic/index.vue"),
         meta: {
-          title: "form",
+          title: "basicFrom",
+        },
+      },
+      {
+        path: "/page/form/step",
+        name: "分步表单",
+        component: () => import("@/views/page/form/step/index.vue"),
+        meta: {
+          title: "stepForm",
         },
       },
       {

@@ -25,6 +25,8 @@
   "sensitive": "Sensitive Word Filtering",
   "page": "Page",
   "form": "Form Page",
+  "basicForm": "Basic Form",
+  "stepForm": "Step Form",
   "list": "List Page",
   "basicList": "Basic List",
   "cardList": "Card List",

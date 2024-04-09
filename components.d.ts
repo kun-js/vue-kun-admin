@@ -34,6 +34,7 @@ declare module "vue" {
     ElIcon: (typeof import("element-plus/es"))["ElIcon"];
     ElImage: (typeof import("element-plus/es"))["ElImage"];
     ElInput: (typeof import("element-plus/es"))["ElInput"];
+    ElInputNumber: (typeof import("element-plus/es"))["ElInputNumber"];
     ElMain: (typeof import("element-plus/es"))["ElMain"];
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
@@ -41,9 +42,12 @@ declare module "vue" {
     ElPopover: (typeof import("element-plus/es"))["ElPopover"];
     ElRadio: (typeof import("element-plus/es"))["ElRadio"];
     ElRadioGroup: (typeof import("element-plus/es"))["ElRadioGroup"];
+    ElRate: (typeof import("element-plus/es"))["ElRate"];
     ElRow: (typeof import("element-plus/es"))["ElRow"];
     ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
     ElSelect: (typeof import("element-plus/es"))["ElSelect"];
+    ElStep: (typeof import("element-plus/es"))["ElStep"];
+    ElSteps: (typeof import("element-plus/es"))["ElSteps"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
     ElSwitch: (typeof import("element-plus/es"))["ElSwitch"];
     ElTable: (typeof import("element-plus/es"))["ElTable"];
@@ -51,6 +55,7 @@ declare module "vue" {
     ElTabPane: (typeof import("element-plus/es"))["ElTabPane"];
     ElTabs: (typeof import("element-plus/es"))["ElTabs"];
     ElTag: (typeof import("element-plus/es"))["ElTag"];
+    ElTimePicker: (typeof import("element-plus/es"))["ElTimePicker"];
     ElTooltip: (typeof import("element-plus/es"))["ElTooltip"];
     ElTour: (typeof import("element-plus/es"))["ElTour"];
     ElTourStep: (typeof import("element-plus/es"))["ElTourStep"];

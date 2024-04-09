@@ -1,6 +1,6 @@
 <template>
   <el-card style="max-width: 100%; height: 100%">
-    <template #header> 表单示例 </template>
+    <template #header> 基础表单示例 </template>
     <el-form :model="form" label-width="auto" style="width: 100%">
       <el-row :gutter="20">
         <el-col :span="8">
@@ -71,8 +71,8 @@
         <el-input v-model="form.desc" type="textarea" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">提交</el-button>
         <el-button>取消</el-button>
+        <el-button type="primary" @click="onSubmit">提交</el-button>
       </el-form-item>
     </el-form>
   </el-card>

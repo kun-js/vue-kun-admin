@@ -25,6 +25,8 @@
   "sensitive": "敏感詞過濾",
   "page": "頁面",
   "form": "表單頁",
+  "basicForm": "基础表單",
+  "stepForm": "分步表單",
   "list": "列表頁",
   "basicList": "基础列表",
   "cardList": "卡片列表",
