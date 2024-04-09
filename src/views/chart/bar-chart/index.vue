@@ -9,7 +9,7 @@
 import { ref, onMounted } from "vue";
 import * as echarts from "echarts";
 
-let chart = ref(null); //注意变量名 和 ref名字要对应
+const chart = ref<HTMLElement | null>(null);
 
 const initChart = () => {
   const myChart = echarts.init(chart.value);

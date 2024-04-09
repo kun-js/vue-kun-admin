@@ -45,6 +45,8 @@
   "barChart": "柱狀圖",
   "lineChart": "折線圖",
   "pieChart": "餅圖",
+  "basicPieChart": "基础餅圖",
+  "doughnutChart": "环形餅圖",
   "externalPage": "外部頁面",
   "outerChain": "文檔外鏈",
   "iframe": "文檔內嵌",

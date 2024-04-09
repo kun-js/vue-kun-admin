@@ -255,6 +255,18 @@ export const menuList = Mock.mock({
           name: "pieChart",
           title: "饼图",
           path: "/pie-chart",
+          children: [
+            {
+              name: "basicPieChart",
+              title: "基础饼图",
+              path: "/basic",
+            },
+            {
+              name: "doughnutChart",
+              title: "环形饼图",
+              path: "/doughnut",
+            },
+          ],
         },
       ],
     },

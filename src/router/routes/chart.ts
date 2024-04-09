@@ -36,11 +36,19 @@ const chartRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/chart/pie-chart",
-        name: "饼图",
-        component: () => import("@/views/chart/pie-chart/index.vue"),
+        path: "/chart/pie-chart/basic",
+        name: "基础饼图",
+        component: () => import("@/views/chart/pie-chart/basic/index.vue"),
         meta: {
-          title: "pieChart",
+          title: "basicPieChart",
+        },
+      },
+      {
+        path: "/chart/pie-chart/doughnut",
+        name: "环形饼图",
+        component: () => import("@/views/chart/pie-chart/doughnut/index.vue"),
+        meta: {
+          title: "doughnutChart",
         },
       },
     ],
