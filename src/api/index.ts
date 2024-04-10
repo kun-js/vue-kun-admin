@@ -7,6 +7,7 @@ const Api = {
   userList: "/api/userList",
   detailList: "/api/detailList",
   messageList: "/api/messageList",
+  systemList: "/api/systemList",
 };
 
 export const getLoginInfo = async (username: string, password: string) => {
@@ -36,5 +37,10 @@ export const getDetailList = async () => {
 
 export const getMessageList = async () => {
   const { data } = await axios.get(Api.messageList);
+  return data;
+};
+
+export const getSystemList = async () => {
+  const { data } = await axios.get(Api.systemList);
   return data;
 };

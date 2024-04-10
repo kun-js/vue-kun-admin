@@ -4,6 +4,7 @@ import { analysisCardList } from "./modules/analysis";
 import { userList } from "./modules/list";
 import { detailList } from "./modules/detail";
 import { messageList } from "./modules/message";
+import { systemList } from "./modules/system";
 
 export default [
   {
@@ -46,6 +47,13 @@ export default [
     method: "get",
     response: () => {
       return messageList;
+    },
+  },
+  {
+    url: "/api/systemList",
+    method: "get",
+    response: () => {
+      return systemList;
     },
   },
 ];
