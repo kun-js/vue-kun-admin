@@ -1,5 +1,5 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '95%' }">
+  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '93%' }">
     <template #header> 账号管理示例 </template>
     <el-table :data="tableData" stripe border fixed style="width: 100%" height="100%" show-overflow-tooltip>
       <el-table-column align="center" prop="id" label="序号" width="60" />
@@ -12,10 +12,10 @@
       <el-table-column align="center" prop="department" label="部门" width="100" />
       <el-table-column align="center" prop="remark" label="备注" />
       <el-table-column align="center" label="操作" width="200">
-        <template #default="scope">
-          <el-button size="small" @click="handleWatch(scope.$index, scope.row)">查看</el-button>
-          <el-button size="small" type="primary" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-          <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+        <template #default="action">
+          <el-button size="small" @click="handleWatch(action.$index, action.row)">查看</el-button>
+          <el-button size="small" type="primary" @click="handleEdit(action.$index, action.row)">编辑</el-button>
+          <el-button size="small" type="danger" @click="handleDelete(action.$index, action.row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
