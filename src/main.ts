@@ -29,6 +29,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
 
+// console.log("当前环境:", process.env.NODE_ENV);
+
 app.use(pinia);
 app.use(router);
 app.use(i18n);

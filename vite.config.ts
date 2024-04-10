@@ -46,7 +46,10 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         resolvers: [ElementPlusResolver()],
       }),
       viteMockServe({
-        mockPath: "./mock/", // 注意:此时的 mockPath 地址是真正安装的 mock 文件夹的地址; 设置模拟数据的存储文件夹,如果不是index.js需要写明完整路径
+        mockPath: "mock",
+        logger: false,
+        watchFiles: true, // 监视文件更改 这样更改mock的时候，不需要重新启动编译
+        enable: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "production",
       }),
       // viteCompression({
       //   verbose: true, // 是否在控制台中输出压缩结果
@@ -108,8 +111,8 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       minify: "terser", // 启用 terser 压缩
       terserOptions: {
         compress: {
-          drop_console: true, // 删除所有 console
-          drop_debugger: true, // 删除 debugger
+          drop_console: false, // 删除所有 console
+          drop_debugger: false, // 删除 debugger
         },
       },
       rollupOptions: {

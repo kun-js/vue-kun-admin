@@ -19,7 +19,7 @@ const initMap = () => {
   });
 
   //定义事件处理方法
-  const clickHandler = function (evt) {
+  const clickHandler = (evt: { latLng: { getLat: () => number; getLng: () => number } }) => {
     const lat = evt.latLng.getLat().toFixed(6);
     const lng = evt.latLng.getLng().toFixed(6);
     console.log("您点击的的坐标是：" + lat + "," + lng);

@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 const mapContainer = ref(null);
 
@@ -25,13 +25,13 @@ const initBaiduMap = () => {
   const marker = new BMapGL.Marker(point);
   map.addOverlay(marker);
 
-  const opts = {
-    width: 200,
-    height: 100,
-    title: "故宫博物院",
-  };
-  const infoWindow = new BMapGL.InfoWindow("地址：北京市东城区王府井大街88号乐天银泰百货八层", opts);
-  map.openInfoWindow(infoWindow, point);
+  // const opts = {
+  //   width: 200,
+  //   height: 100,
+  //   title: "故宫博物院",
+  // };
+  // const infoWindow = new BMapGL.InfoWindow("地址：北京市东城区王府井大街88号乐天银泰百货八层", opts);
+  // map.openInfoWindow(infoWindow, point);
 };
 
 onMounted(() => {

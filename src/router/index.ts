@@ -8,6 +8,7 @@ import componentRoutes from "./routes/component";
 import featureRoutes from "./routes/feature";
 import pageRoutes from "./routes/page";
 import chartRoutes from "./routes/chart";
+import systemRoutes from "./routes/system";
 import ExternalPageRoutes from "./routes/externalpage";
 import aboutRoutes from "./routes/about";
 
@@ -19,6 +20,7 @@ const routes: RouteRecordRaw[] = [
   ...featureRoutes,
   ...pageRoutes,
   ...chartRoutes,
+  ...systemRoutes,
   ...ExternalPageRoutes,
   ...aboutRoutes,
 ];

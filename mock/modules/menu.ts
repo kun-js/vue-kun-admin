@@ -24,7 +24,7 @@ export const menuList = Mock.mock({
       name: "permission",
       title: "权限管理",
       path: "/permission",
-      icon: "Key",
+      icon: "Lock",
       children: [
         {
           name: "buttonPermission",
@@ -324,6 +324,24 @@ export const menuList = Mock.mock({
               path: "/vue",
             },
           ],
+        },
+      ],
+    },
+    {
+      name: "system",
+      title: "系统管理",
+      path: "/system",
+      icon: "Setting",
+      children: [
+        {
+          name: "account",
+          title: "账号管理",
+          path: "/account",
+        },
+        {
+          name: "role",
+          title: "角色管理",
+          path: "/role",
         },
       ],
     },

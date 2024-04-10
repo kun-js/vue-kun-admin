@@ -6,7 +6,7 @@
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item @click="handleToChangeLangZhCn">简体中文</el-dropdown-item>
-        <el-dropdown-item @click="handleToChangeLangZhHk">繁體中文</el-dropdown-item>
+        <!-- <el-dropdown-item @click="handleToChangeLangZhHk">繁體中文</el-dropdown-item> -->
         <el-dropdown-item @click="handleToChangeLangEnUs">English</el-dropdown-item>
       </el-dropdown-menu>
     </template>
@@ -23,9 +23,9 @@ const handleToChangeLangZhCn = () => {
   localeStore.getLocale("zh-CN");
 };
 
-const handleToChangeLangZhHk = () => {
-  localeStore.getLocale("zh-HK");
-};
+// const handleToChangeLangZhHk = () => {
+//   localeStore.getLocale("zh-HK");
+// };
 
 const handleToChangeLangEnUs = () => {
   localeStore.getLocale("en-US");

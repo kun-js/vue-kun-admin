@@ -15,7 +15,7 @@ import * as echarts from "echarts";
 
 const chart = ref<HTMLElement | null>(null);
 const lineSmooth = ref(false);
-const lineBoundaryGap = ref(false);
+const lineBoundaryGap = ref(true);
 
 const initChart = () => {
   if (chart.value) {
