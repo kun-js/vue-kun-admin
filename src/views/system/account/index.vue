@@ -1,7 +1,7 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '93%' }">
+  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '90%' }">
     <template #header> 账号管理示例 </template>
-    <el-table :data="tableData" stripe border fixed style="width: 100%" height="100%" show-overflow-tooltip>
+    <el-table :data="tableData" stripe fixed style="width: 100%" height="100%" show-overflow-tooltip>
       <el-table-column align="center" prop="id" label="序号" width="60" />
       <el-table-column align="center" prop="username" label="账号" />
       <el-table-column align="center" prop="name" label="姓名" width="80" />
@@ -19,6 +19,19 @@
         </template>
       </el-table-column>
     </el-table>
+
+    <!-- 分页器 -->
+    <div class="mt-2" style=" bottom: 0;float: right">
+      <el-pagination
+        v-model:current-page="currentPage"
+        v-model:page-size="pageSize"
+        :page-sizes="[10, 20, 30, 50]"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="total"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+      />
+    </div>
   </el-card>
 
   <el-dialog v-model="editDialogVisible" title="编辑操作" width="500">
@@ -77,7 +90,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { getSystemList } from "@/api/index";
+import { getAccountList } from "@/api/index";
 import { deepClone } from "@/utils/deepClone";
 import { ElMessage } from "element-plus";
 
@@ -94,7 +107,9 @@ interface AccountInfo {
   remark: string;
 }
 
-// 使用 ref 创建响应式变量
+const currentPage = ref(1);
+const pageSize = ref(10);
+const total = ref(0);
 const tableData = ref<AccountInfo[]>([]);
 const editDialogVisible = ref(false);
 const deleteDialogVisible = ref(false);
@@ -115,6 +130,29 @@ const deleteName = ref<string>("");
 
 const showMessage = (message: string) => {
   ElMessage.success(message);
+};
+
+const fetchData = async () => {
+  try {
+    const result = await getAccountList(currentPage.value, pageSize.value);
+    // console.log("result: ", result);
+    tableData.value = result.accountList;
+    total.value = result.total;
+  } catch (error) {
+    console.error("数据获取失败：", error);
+  }
+};
+
+// 每页显示条数改变时触发
+const handleSizeChange = (val: number) => {
+  pageSize.value = val;
+  fetchData();
+};
+
+// 当前页码改变时触发
+const handleCurrentChange = (val: number) => {
+  currentPage.value = val;
+  fetchData();
 };
 
 // 查看操作
@@ -153,15 +191,6 @@ const handleToConfirmDelete = () => {
     showMessage("删除成功！");
     deleteDialogVisible.value = false;
     deleteIndex.value = null;
-  }
-};
-
-const fetchData = async () => {
-  try {
-    const result = await getSystemList();
-    tableData.value = result.accountList;
-  } catch (error) {
-    console.error("数据获取失败：", error);
   }
 };
 

@@ -7,7 +7,8 @@ const Api = {
   userList: "/api/userList",
   detailList: "/api/detailList",
   messageList: "/api/messageList",
-  systemList: "/api/systemList",
+  accountList: "/api/accountList",
+  roleList: "/api/roleList",
 };
 
 export const getLoginInfo = async (username: string, password: string) => {
@@ -40,7 +41,23 @@ export const getMessageList = async () => {
   return data;
 };
 
-export const getSystemList = async () => {
-  const { data } = await axios.get(Api.systemList);
-  return data;
+export const getAccountList = async (page: number = 1, pageSize: number = 10) => {
+  const { data } = await axios.get(Api.accountList, {
+    params: {
+      page,
+      pageSize,
+    },
+  });
+  const start = (page - 1) * pageSize;
+  const end = start + pageSize;
+  const slicedData = data.accountList.slice(start, end);
+  return {
+    accountList: slicedData,
+    total: data.accountList.length,
+  };
+};
+
+export const getRoleList = async () => {
+  const { data } = await axios.get(Api.roleList);
+  return data.roleList;
 };

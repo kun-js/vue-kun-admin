@@ -1,7 +1,7 @@
 <template>
   <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '93%' }">
     <template #header> 角色管理示例 </template>
-    <el-table :data="tableData" stripe border fixed style="width: 100%" height="100%" show-overflow-tooltip>
+    <el-table :data="tableData" stripe border fixed style="width: 100%" max-height="100%" show-overflow-tooltip>
       <el-table-column align="center" prop="id" label="序号" width="60" />
       <el-table-column align="center" prop="role" label="角色名称" width="130" />
       <el-table-column align="center" prop="roleValue" label="角色值" width="150" />
@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-import { getSystemList } from "@/api/index";
+import { getRoleList } from "@/api/index";
 import { deepClone } from "@/utils/deepClone";
 import { ElMessage } from "element-plus";
 import { onMounted, ref } from "vue";
@@ -123,9 +123,9 @@ const handleToConfirmDelete = () => {
 
 const fetchData = async () => {
   try {
-    const result = await getSystemList();
+    const result = await getRoleList();
     // console.log("result: ", result);
-    tableData.value = result.roleList;
+    tableData.value = result;
   } catch (error) {
     console.log("error: ", error);
   }

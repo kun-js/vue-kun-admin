@@ -4,7 +4,8 @@ import { analysisCardList } from "./modules/analysis";
 import { userList } from "./modules/list";
 import { detailList } from "./modules/detail";
 import { messageList } from "./modules/message";
-import { systemList } from "./modules/system";
+import { accountList } from "./modules/account";
+import { roleList } from "./modules/role";
 
 export default [
   {
@@ -50,10 +51,17 @@ export default [
     },
   },
   {
-    url: "/api/systemList",
+    url: "/api/accountList",
     method: "get",
     response: () => {
-      return systemList;
+      return accountList;
+    },
+  },
+  {
+    url: "/api/roleList",
+    method: "get",
+    response: () => {
+      return roleList;
     },
   },
 ];
