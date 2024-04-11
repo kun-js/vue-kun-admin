@@ -44,6 +44,14 @@ const featureRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/feature/markdown-editor",
+        name: "Markdown编辑器",
+        component: () => import("@/views/feature/markdown-editor/index.vue"),
+        meta: {
+          title: "markdownEditor",
+        },
+      },
+      {
         path: "/feature/image-clipper",
         name: "图片裁剪",
         component: () => import("@/views/feature/image-clipper/index.vue"),

@@ -13,6 +13,7 @@
   "verify": "验证码",
   "codeEditor": "代码编辑器",
   "textEditor": "文本编辑器",
+  "markdownEditor": "Markdown编辑器",
   "imageClipper": "图片裁剪",
   "print": "打印",
   "drag": "拖拽",

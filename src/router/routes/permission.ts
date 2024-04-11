@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 const permissionRoutes: RouteRecordRaw[] = [
   {
     path: "/permission",
-    name: "permission",
+    name: "权限管理",
     component: () => import("@/components/index.vue"),
     redirect: "/permission/button-permission",
     meta: {

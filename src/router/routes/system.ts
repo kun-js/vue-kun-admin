@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 const systemRoutes: RouteRecordRaw[] = [
   {
     path: "/system",
-    name: "system",
+    name: "系统管理",
     component: () => import("@/components/index.vue"),
     redirect: "/system/account",
     meta: {
@@ -13,7 +13,7 @@ const systemRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/system/account",
-        name: "account",
+        name: "账号管理",
         component: () => import("@/views/system/account/index.vue"),
         meta: {
           title: "account",
@@ -21,7 +21,7 @@ const systemRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/system/role",
-        name: "role",
+        name: "角色管理",
         component: () => import("@/views/system/role/index.vue"),
         meta: {
           title: "role",

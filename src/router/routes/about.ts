@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 const aboutRoutes: RouteRecordRaw[] = [
   {
     path: "/about",
-    name: "about",
+    name: "关于",
     component: () => import("@/components/index.vue"),
     redirect: "/about/me",
     meta: {
