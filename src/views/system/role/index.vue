@@ -1,7 +1,16 @@
 <template>
   <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '93%' }">
     <template #header> 角色管理示例 </template>
-    <el-table :data="tableData" stripe border fixed style="width: 100%" max-height="100%" show-overflow-tooltip>
+    <el-table
+      v-loading="loading"
+      :data="tableData"
+      stripe
+      border
+      fixed
+      style="width: 100%"
+      max-height="100%"
+      show-overflow-tooltip
+    >
       <el-table-column align="center" prop="id" label="序号" width="60" />
       <el-table-column align="center" prop="role" label="角色名称" width="130" />
       <el-table-column align="center" prop="roleValue" label="角色值" width="150" />
@@ -71,6 +80,7 @@ interface roleInfo {
   remark: string;
 }
 
+const loading = ref(false);
 const tableData = ref<roleInfo[]>([]);
 const showDrawer = ref(false);
 const editIndex = ref<number | null>(null);
@@ -123,11 +133,14 @@ const handleToConfirmDelete = () => {
 
 const fetchData = async () => {
   try {
+    loading.value = true;
     const result = await getRoleList();
     // console.log("result: ", result);
     tableData.value = result;
   } catch (error) {
     console.log("error: ", error);
+  } finally {
+    loading.value = false;
   }
 };
 

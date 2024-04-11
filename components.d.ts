@@ -76,4 +76,7 @@ declare module "vue" {
     Tour: (typeof import("./src/components/header/components/Tour.vue"))["default"];
     User: (typeof import("./src/components/header/components/User.vue"))["default"];
   }
+  export interface ComponentCustomProperties {
+    vLoading: (typeof import("element-plus/es"))["ElLoadingDirective"];
+  }
 }

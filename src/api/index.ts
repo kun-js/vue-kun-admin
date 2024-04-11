@@ -41,19 +41,27 @@ export const getMessageList = async () => {
   return data;
 };
 
-export const getAccountList = async (page: number = 1, pageSize: number = 10) => {
+export const getAccountList = async (page: number = 1, pageSize: number = 10, keyword: string = "") => {
   const { data } = await axios.get(Api.accountList, {
     params: {
       page,
       pageSize,
+      keyword,
     },
   });
+
+  let filteredData = data.accountList;
+  if (typeof keyword === "string" && keyword.trim() !== "") {
+    filteredData = filteredData.filter((account) => account.name.includes(keyword.trim()));
+  }
+
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
-  const slicedData = data.accountList.slice(start, end);
+  const slicedData = filteredData.slice(start, end);
+  const total = filteredData.length;
   return {
     accountList: slicedData,
-    total: data.accountList.length,
+    total: total,
   };
 };
 

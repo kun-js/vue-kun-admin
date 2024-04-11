@@ -1,7 +1,19 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '90%' }">
-    <template #header> 账号管理示例 </template>
-    <el-table :data="tableData" stripe fixed style="width: 100%" height="100%" show-overflow-tooltip>
+  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '88%' }">
+    <template #header>
+      <el-input style="width: 240px" v-model="searchKeyword" v-enter="handleToSearch" placeholder="输入姓名进行搜索" />
+      <el-button style="margin-left: 18px" @click="handleToReset">重置</el-button>
+      <el-button style="margin-left: 18px" type="primary" @click="handleToSearch"> 搜索 </el-button>
+    </template>
+    <el-table
+      v-loading="loading"
+      :data="tableData"
+      stripe
+      fixed
+      style="width: 100%"
+      height="100%"
+      show-overflow-tooltip
+    >
       <el-table-column align="center" prop="id" label="序号" width="60" />
       <el-table-column align="center" prop="username" label="账号" />
       <el-table-column align="center" prop="name" label="姓名" width="80" />
@@ -21,11 +33,11 @@
     </el-table>
 
     <!-- 分页器 -->
-    <div class="mt-2" style=" bottom: 0;float: right">
+    <div class="mt-3" style="float: right">
       <el-pagination
         v-model:current-page="currentPage"
         v-model:page-size="pageSize"
-        :page-sizes="[10, 20, 30, 50]"
+        :page-sizes="[5, 10, 20, 30, 50, 100]"
         layout="total, sizes, prev, pager, next, jumper"
         :total="total"
         @size-change="handleSizeChange"
@@ -107,9 +119,11 @@ interface AccountInfo {
   remark: string;
 }
 
+const loading = ref(false);
 const currentPage = ref(1);
 const pageSize = ref(10);
 const total = ref(0);
+const searchKeyword = ref<string>();
 const tableData = ref<AccountInfo[]>([]);
 const editDialogVisible = ref(false);
 const deleteDialogVisible = ref(false);
@@ -134,13 +148,24 @@ const showMessage = (message: string) => {
 
 const fetchData = async () => {
   try {
-    const result = await getAccountList(currentPage.value, pageSize.value);
+    loading.value = true;
+    const result = await getAccountList(currentPage.value, pageSize.value, searchKeyword.value);
     // console.log("result: ", result);
     tableData.value = result.accountList;
     total.value = result.total;
   } catch (error) {
     console.error("数据获取失败：", error);
+  } finally {
+    loading.value = false;
   }
+};
+
+const handleToReset = () => {
+  searchKeyword.value = "";
+  fetchData();
+};
+const handleToSearch = () => {
+  fetchData();
 };
 
 // 每页显示条数改变时触发
