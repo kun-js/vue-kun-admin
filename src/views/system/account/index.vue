@@ -49,13 +49,13 @@
         <el-input v-model="editForm.email" />
       </el-form-item>
       <el-form-item label="备注">
-        <el-input v-model="editForm.remark" />
+        <el-input v-model="editForm.remark" type="textarea" />
       </el-form-item>
     </el-form>
     <template #footer>
       <div class="dialog-footer">
         <el-button @click="editDialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="handleToFinishEdit"> 确认 </el-button>
+        <el-button type="primary" @click="handleToConfirmEdit"> 确认 </el-button>
       </div>
     </template>
   </el-dialog>
@@ -69,22 +69,36 @@
     <template #footer>
       <div class="dialog-footer">
         <el-button @click="deleteDialogVisible = false">取消</el-button>
-        <el-button type="danger" @click="handleToFinishDelete"> 确认 </el-button>
+        <el-button type="danger" @click="handleToConfirmDelete"> 确认 </el-button>
       </div>
     </template>
   </el-dialog>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
 import { getSystemList } from "@/api/index";
-import { onMounted, ref } from "vue";
 import { deepClone } from "@/utils/deepClone";
 import { ElMessage } from "element-plus";
 
-const tableData = ref();
+// 声明类型
+interface AccountInfo {
+  id: number;
+  username: string;
+  name: string;
+  createTime: string;
+  role: string;
+  email: string;
+  tel: string;
+  department: string;
+  remark: string;
+}
+
+// 使用 ref 创建响应式变量
+const tableData = ref<AccountInfo[]>([]);
 const editDialogVisible = ref(false);
 const deleteDialogVisible = ref(false);
-const editForm = ref({
+const editForm = ref<AccountInfo>({
   id: 0,
   username: "",
   name: "",
@@ -95,47 +109,59 @@ const editForm = ref({
   department: "",
   remark: "",
 });
-const editIndex = ref();
-const deleteIndex = ref();
-const deleteName = ref();
+const editIndex = ref<number | null>(null);
+const deleteIndex = ref<number | null>(null);
+const deleteName = ref<string>("");
 
+const showMessage = (message: string) => {
+  ElMessage.success(message);
+};
+
+// 查看操作
 const handleWatch = (index: number, row: any) => {
   console.log(index, row);
 };
+
+// 编辑操作
 const handleEdit = (index: number, row: any) => {
-  // console.log(index, row);
-  editDialogVisible.value = true;
   editIndex.value = index;
   editForm.value = deepClone(row);
+  editDialogVisible.value = true;
 };
+
+// 删除操作
 const handleDelete = (index: number, row: any) => {
-  // console.log(index, row);
   deleteIndex.value = index;
   deleteName.value = row.name;
   deleteDialogVisible.value = true;
 };
 
-const handleToFinishEdit = () => {
-  tableData.value[editIndex.value] = { ...editForm.value };
-  ElMessage.success("编辑成功!");
-  editDialogVisible.value = false;
-  editIndex.value = null;
+// 完成编辑操作
+const handleToConfirmEdit = () => {
+  if (editIndex.value !== null) {
+    tableData.value[editIndex.value] = { ...editForm.value };
+    showMessage("编辑成功！");
+    editDialogVisible.value = false;
+    editIndex.value = null;
+  }
 };
 
-const handleToFinishDelete = () => {
-  tableData.value.splice(deleteIndex.value, 1);
-  ElMessage.success("删除成功!");
-  deleteDialogVisible.value = false;
-  deleteIndex.value = null;
+// 完成删除操作
+const handleToConfirmDelete = () => {
+  if (deleteIndex.value !== null) {
+    tableData.value.splice(deleteIndex.value, 1);
+    showMessage("删除成功！");
+    deleteDialogVisible.value = false;
+    deleteIndex.value = null;
+  }
 };
 
 const fetchData = async () => {
   try {
     const result = await getSystemList();
-    // console.log("result: ", result);
     tableData.value = result.accountList;
   } catch (error) {
-    console.log("error: ", error);
+    console.error("数据获取失败：", error);
   }
 };
 
