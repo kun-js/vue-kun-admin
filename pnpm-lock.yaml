@@ -98,6 +98,9 @@ dependencies:
   vuedraggable:
     specifier: ^4.1.0
     version: 4.1.0(vue@3.4.21)
+  wavesurfer.js:
+    specifier: ^7.7.10
+    version: 7.7.10
 
 devDependencies:
   '@commitlint/cli':
@@ -9212,6 +9215,10 @@ packages:
 
   /w3c-keyname@2.2.8:
     resolution: {integrity: sha512-dpojBhNsCNN7T82Tm7k26A6G9ML3NkhDsnw9n/eoxSRlVBB4CEtIQ/KTCLI2Fwf3ataSXRhYFkQi3SlnFwPvPQ==}
+    dev: false
+
+  /wavesurfer.js@7.7.10:
+    resolution: {integrity: sha512-fpQ/OiHGkFxD6cJRuU/VQ+iuYM4ipMvMyD5fp0ENPPHYwiZeb01nqXYdXPemK70vAxNDHkVqAsFqLZEchxySJg==}
     dev: false
 
   /wcwidth@1.0.1:

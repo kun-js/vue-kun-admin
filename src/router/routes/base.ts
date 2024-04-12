@@ -8,7 +8,7 @@ const baseRoutes: RouteRecordRaw[] = [
   },
   {
     path: "/",
-    name: "首页",
+    name: "home",
     redirect: "/dashboard",
   },
 ];

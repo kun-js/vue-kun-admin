@@ -93,6 +93,11 @@ export const menuList = Mock.mock({
           path: "/image-clipper",
         },
         {
+          name: "audio",
+          title: "音频可视化",
+          path: "/audio",
+        },
+        {
           name: "print",
           title: "打印",
           path: "/print",

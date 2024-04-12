@@ -60,6 +60,14 @@ const featureRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/feature/audio",
+        name: "音频可视化",
+        component: () => import("@/views/feature/audio/index.vue"),
+        meta: {
+          title: "audio",
+        },
+      },
+      {
         path: "/feature/print",
         name: "打印",
         component: () => import("@/views/feature/print/index.vue"),
