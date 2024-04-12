@@ -2,7 +2,7 @@
   <el-card style="max-width: 100%">
     <template #header>
       <strong>关于</strong>
-      <div class="mt-4">
+      <div class="mt-2">
         <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blanvue-kun-admink">
           vue-kun-admin
         </el-link>

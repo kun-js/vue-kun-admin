@@ -1,14 +1,14 @@
 <template>
   <el-card style="max-width: 100%">
     <template #header> <strong>该平台所选技术栈如下</strong> </template>
-    <el-descriptions title="生产环境依赖" :column="3" border>
+    <el-descriptions v-if="!isEmpty(dependencies)" title="生产环境依赖" :column="3" border>
       <el-descriptions-item v-for="(version, name) in dependencies" :key="name">
         <template #label> {{ name }} </template>
         {{ version }}
       </el-descriptions-item>
     </el-descriptions>
-    <el-divider />
-    <el-descriptions title="开发环境依赖" :column="3" border>
+    <el-divider v-if="!isEmpty(dependencies) && !isEmpty(devDependencies)" />
+    <el-descriptions v-if="!isEmpty(devDependencies)" title="开发环境依赖" :column="3" border>
       <el-descriptions-item v-for="(version, name) in devDependencies" :key="name">
         <template #label> {{ name }} </template>
         {{ version }}
@@ -20,6 +20,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import { isEmpty } from "@/utils/isEmpty";
 
 const dependencies = ref<Record<string, string>>({});
 const devDependencies = ref<Record<string, string>>({});

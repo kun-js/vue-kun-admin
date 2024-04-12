@@ -54,6 +54,11 @@ export const menuList = Mock.mock({
           title: "日期选择器",
           path: "/date-picker",
         },
+        {
+          name: "timestamp",
+          title: "相对时间",
+          path: "/timestamp",
+        },
       ],
     },
     {

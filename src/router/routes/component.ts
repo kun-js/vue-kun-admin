@@ -35,6 +35,22 @@ const componentRoutes: RouteRecordRaw[] = [
           title: "datePicker",
         },
       },
+      {
+        path: "/component/timestamp",
+        name: "相对时间",
+        component: () => import("@/views/component/timestamp/index.vue"),
+        meta: {
+          title: "timestamp",
+        },
+      },
+      {
+        path: "/component/date-picker",
+        name: "日期选择器",
+        component: () => import("@/views/component/date-picker/index.vue"),
+        meta: {
+          title: "datePicker",
+        },
+      },
     ],
   },
 ];
