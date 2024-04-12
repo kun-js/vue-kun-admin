@@ -98,6 +98,11 @@ export const menuList = Mock.mock({
           path: "/audio",
         },
         {
+          name: "video",
+          title: "视频播放器",
+          path: "/video",
+        },
+        {
           name: "print",
           title: "打印",
           path: "/print",
