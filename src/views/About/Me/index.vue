@@ -1,45 +1,55 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '100%', padding: 0 }">
+  <el-card style="max-width: 100%">
     <template #header>
       <strong>关于</strong>
-      <div class="introduce">
+      <div class="mt-4">
         <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blanvue-kun-admink">
           vue-kun-admin
         </el-link>
-        是一款基于Vue3.2、Vite5、Element-Plus、TypeScript的后台解决方案。
+        <span>是一款基于Vue3.2、Vite5、Element-Plus、TypeScript的后台解决方案。</span>
       </div>
     </template>
-    <div class="container">
-      <div class="video-container">
-        <video class="video" controls>
-          <source src="@/assets/videos/ouxianglianxisheng.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
+    <el-descriptions title="项目信息" :column="3" border>
+      <el-descriptions-item>
+        <template #label> 版本 </template>
+        0.0.1
+      </el-descriptions-item>
+      <el-descriptions-item>
+        <template #label> 最后编译时间 </template>
+        {{ time }}
+      </el-descriptions-item>
+      <el-descriptions-item>
+        <template #label> 地点 </template>
+        深圳
+      </el-descriptions-item>
+      <el-descriptions-item>
+        <template #label> 开发人员 </template>
+        <el-tag>张三</el-tag>
+        <el-tag class="ml-1">李四</el-tag>
+      </el-descriptions-item>
+      <el-descriptions-item>
+        <template #label> Github </template>
+        <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blanvue-kun-admink">
+          Github
+        </el-link>
+      </el-descriptions-item>
+    </el-descriptions>
   </el-card>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { getDateTime } from "@/utils/getDateTime";
+import { onMounted, ref } from "vue";
 
-<style lang="scss" scoped>
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-image: url("@/assets/imgs/kunkunbg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+const time = ref();
 
-  .video-container {
-    border: 1px solid #000;
+const getTime = () => {
+  time.value = getDateTime(4);
+};
 
-    video {
-      width: 800px;
-    }
-  }
-}
-</style>
+onMounted(() => {
+  getTime();
+});
+</script>
+
+<style lang="scss" scoped></style>

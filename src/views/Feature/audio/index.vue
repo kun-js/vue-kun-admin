@@ -1,7 +1,7 @@
 <template>
   <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '95%' }">
     <template #header>音频可视化示例</template>
-    <div ref="audioRef"></div>
+    <div ref="audioContainer"></div>
   </el-card>
 </template>
 
@@ -9,16 +9,17 @@
 import WaveSurfer from "wavesurfer.js";
 import { ref, onMounted } from "vue";
 
-const audioRef = ref();
+const audioContainer = ref<HTMLElement | null>(null);
 
 const initAudio = () => {
+  if (!audioContainer.value) return;
+
   const wavesurfer = WaveSurfer.create({
-    container: audioRef.value,
+    container: audioContainer.value,
     waveColor: "rgb(200, 0, 200)",
     progressColor: "rgb(100, 0, 100)",
-    url: "@/assets/audios/zhiyinnitaimei.mp3",
+    url: "@assets/audios/zhiyinnitaimei.mp3",
   });
-
   wavesurfer.on("click", () => {
     wavesurfer.play();
   });

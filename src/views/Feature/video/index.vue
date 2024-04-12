@@ -6,10 +6,12 @@
 </template>
 
 <script setup lang="ts">
+import { VideoPlayer } from "@videojs-player/vue";
+import "video.js/dist/video-js.css";
 import { ref } from "vue";
 
 // 视频链接地址
-const videoSrc = ref("../../../assets/videos/ouxianglianxisheng.mp4");
+const videoSrc = ref("https://videos.pexels.com/video-files/15921892/15921892-uhd_3840_2160_50fps.mp4");
 // 视频播放器配置
 const playerOptions = ref({
   // height: 200,

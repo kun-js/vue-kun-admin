@@ -14,8 +14,6 @@ import App from "./App.vue";
 import router from "./router";
 import i18n from "./locales";
 import print from "vue3-print-nb";
-import VueVideoPlayer from "@videojs-player/vue";
-import "video.js/dist/video-js.css";
 import { registerDirectives } from "./directive";
 
 import { createPinia } from "pinia";
@@ -37,7 +35,6 @@ app.use(pinia);
 app.use(router);
 app.use(i18n);
 app.use(print);
-app.use(VueVideoPlayer);
 registerDirectives(app); // 注册所有自定义指令
 
 app.mount("#app");
