@@ -1,5 +1,5 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '95%' }">
+  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '90%' }">
     <template #header>视频播放器示例</template>
     <video-player :src="videoSrc" :options="playerOptions" :volume="0.6" />
   </el-card>
