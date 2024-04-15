@@ -1,4 +1,6 @@
-<template><div ref="chart" style="width: 100%; height: 250px"></div></template>
+<template>
+  <div ref="chart" style="width: 100%; height: 250px"></div>
+</template>
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";

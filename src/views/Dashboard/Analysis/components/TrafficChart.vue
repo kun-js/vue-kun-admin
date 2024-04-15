@@ -5,6 +5,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import * as echarts from "echarts";
+import { watchEffect } from "vue";
 
 const chart = ref(null);
 
