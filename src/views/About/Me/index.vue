@@ -2,9 +2,7 @@
   <el-card style="max-width: 100%">
     <strong>关于</strong>
     <div class="mt-2">
-      <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blanvue-kun-admink">
-        vue-kun-admin
-      </el-link>
+      <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blank"> vue-kun-admin </el-link>
       <span>是一款基于Vue3.2、Vite5、Element-Plus、TypeScript的后台解决方案。</span>
     </div>
   </el-card>
@@ -26,13 +24,11 @@
         <el-descriptions-item>
           <template #label> 开发人员 </template>
           <el-tag>张三</el-tag>
-          <el-tag class="ml-1">李四</el-tag>
+          <el-tag class="ml-2">李四</el-tag>
         </el-descriptions-item>
         <el-descriptions-item>
           <template #label> Github </template>
-          <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blanvue-kun-admink">
-            Github
-          </el-link>
+          <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blank"> Github </el-link>
         </el-descriptions-item>
       </el-descriptions>
     </el-card>
