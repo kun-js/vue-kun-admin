@@ -1,23 +1,25 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%">
-    <template #header>
-      打印示例
-      <el-button type="primary" v-print="'#print-table'">打印表格</el-button>
-      <el-button type="primary" v-print="'#print-img'">打印图片</el-button>
-    </template>
-    <span>打印表格示例:</span>
-    <div id="print-table">
-      <el-table :data="tableData">
-        <el-table-column label="姓名" prop="name" width="100" />
-        <el-table-column label="年龄" prop="age" width="100" />
-        <el-table-column label="性别" prop="gender" width="100" />
-      </el-table>
-    </div>
-    <!-- <span>打印图片示例:</span> -->
-    <div id="print-img">
-      <img src="@/assets/imgs/Caixukun.png" alt="" />
-    </div>
-  </el-card>
+  <div class="print-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+      <template #header>
+        打印示例
+        <el-button type="primary" v-print="'#print-table'">打印表格</el-button>
+        <el-button type="primary" v-print="'#print-img'">打印图片</el-button>
+      </template>
+      <span>打印表格示例:</span>
+      <div id="print-table">
+        <el-table :data="tableData">
+          <el-table-column label="姓名" prop="name" width="100" />
+          <el-table-column label="年龄" prop="age" width="100" />
+          <el-table-column label="性别" prop="gender" width="100" />
+        </el-table>
+      </div>
+      <!-- <span>打印图片示例:</span> -->
+      <div id="print-img">
+        <img src="@/assets/imgs/Caixukun.png" alt="" />
+      </div>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -32,6 +34,11 @@ const tableData = ref([
 </script>
 
 <style lang="scss" scoped>
+.print-feature-container {
+  height: 100%;
+  padding: 20px;
+}
+
 // #print-table {
 //   display: none;
 // }

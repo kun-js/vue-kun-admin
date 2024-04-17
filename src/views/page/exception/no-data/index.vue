@@ -1,12 +1,14 @@
 <template>
-  <div class="exception-container">
-    <el-result>
-      <template #icon><img class="img" src="@/assets/imgs/noData.png" /> </template>
-      <template #title>当前页无数据! </template>
-      <template #extra>
-        <el-button type="primary" @click="handleToReload">刷新</el-button>
-      </template>
-    </el-result>
+  <div class="no-data-exception-container">
+    <div class="exception-container">
+      <el-result>
+        <template #icon><img class="img" src="@/assets/imgs/noData.png" /> </template>
+        <template #title>当前页无数据! </template>
+        <template #extra>
+          <el-button type="primary" @click="handleToReload">刷新</el-button>
+        </template>
+      </el-result>
+    </div>
   </div>
 </template>
 
@@ -17,17 +19,22 @@ const handleToReload = () => {
 </script>
 
 <style lang="scss" scoped>
-.exception-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 80%;
-  margin-top: 100px;
+.no-data-exception-container {
+  height: 100%;
+  padding: 20px;
 
-  .img {
-    width: 200px;
-    height: 200px;
+  .exception-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    margin-top: 100px;
+
+    .img {
+      width: 200px;
+      height: 200px;
+    }
   }
 }
 </style>

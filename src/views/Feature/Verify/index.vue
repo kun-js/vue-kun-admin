@@ -1,26 +1,28 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%">
-    <template #header>
-      <span style="margin-right: 18px">验证码示例</span>
-      <el-button type="primary" @click="handleToOpenImgVerify">打开图形验证码</el-button>
-    </template>
-    <div class="login-page">
-      <el-form label-width="65px">
-        <el-form-item label="验证码">
-          <el-input placeholder="请输入验证码" v-model="sidentifyMode" clearable />
-        </el-form-item>
-        <!-- 使用验证码组件 -->
-        <div class="code" @click="refreshCode">
-          <SIdentify :identifyCode="identifyCode" />
-        </div>
-        <el-button class="login_btn" type="primary" size="default" @click="handleToValidate">验证</el-button>
-      </el-form>
-    </div>
-    <div>
-      <!-- 备注：imgs是自定义的背景图，没有使用默认图片 -->
-      <Vcode :show="isShow" @success="success" @close="close" @fail="fail" :imgs="[Img]" />
-    </div>
-  </el-card>
+  <div class="verify-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+      <template #header>
+        <span style="margin-right: 18px">验证码示例</span>
+        <el-button type="primary" @click="handleToOpenImgVerify">打开图形验证码</el-button>
+      </template>
+      <div class="login-page">
+        <el-form label-width="65px">
+          <el-form-item label="验证码">
+            <el-input placeholder="请输入验证码" v-model="sidentifyMode" clearable />
+          </el-form-item>
+          <!-- 使用验证码组件 -->
+          <div class="code" @click="refreshCode">
+            <SIdentify :identifyCode="identifyCode" />
+          </div>
+          <el-button class="login_btn" type="primary" size="default" @click="handleToValidate">验证</el-button>
+        </el-form>
+      </div>
+      <div>
+        <!-- 备注：imgs是自定义的背景图，没有使用默认图片 -->
+        <Vcode :show="isShow" @success="success" @close="close" @fail="fail" :imgs="[Img]" />
+      </div>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -96,21 +98,26 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-.login-page {
-  width: 400px;
+.verify-feature-container {
+  height: 100%;
   padding: 20px;
-  //   margin: 0 auto;
-  margin-top: 50px;
-  border: 1px solid rgb(123 109 30);
-  border-radius: 8px;
 
-  .code {
-    margin-bottom: 10px;
-    text-align: center;
-  }
+  .login-page {
+    width: 400px;
+    padding: 20px;
+    //   margin: 0 auto;
+    margin-top: 50px;
+    border: 1px solid rgb(123 109 30);
+    border-radius: 8px;
 
-  .login_btn {
-    width: 100%;
+    .code {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .login_btn {
+      width: 100%;
+    }
   }
 }
 </style>

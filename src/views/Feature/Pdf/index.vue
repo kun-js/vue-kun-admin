@@ -1,14 +1,16 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '95%' }">
-    <template #header>
-      PDF预览示例
-      <el-button type="primary" @click="handleToShowPdf1">展示多页PDF</el-button>
-      <el-button type="primary" @click="handleToShowPdf2">展示单页PDF</el-button>
-    </template>
-    <div class="container">
-      <iframe :src="pdfUrl" width="100%" height="100%"></iframe>
-    </div>
-  </el-card>
+  <div class="pdf-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '95%' }">
+      <template #header>
+        PDF预览示例
+        <el-button type="primary" @click="handleToShowPdf1">展示多页PDF</el-button>
+        <el-button type="primary" @click="handleToShowPdf2">展示单页PDF</el-button>
+      </template>
+      <div class="pdf-container">
+        <iframe :src="pdfUrl" width="100%" height="100%"></iframe>
+      </div>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -35,8 +37,13 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-.container {
-  width: 100%;
+.pdf-feature-container {
   height: 100%;
+  padding: 20px;
+
+  .pdf-container {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

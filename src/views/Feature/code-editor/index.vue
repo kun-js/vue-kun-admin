@@ -1,17 +1,19 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '100%', padding: 0 }">
-    <template #header>代码编辑器示例</template>
-    <codemirror
-      v-model="code"
-      placeholder="在这里输入代码..."
-      :style="{ height: '100%' }"
-      :autofocus="true"
-      :tabSize="2"
-      :extensions="extensions"
-      @change="onChange"
-      @input="onInput"
-    />
-  </el-card>
+  <div class="code-editor-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '100%', padding: 0 }">
+      <template #header>代码编辑器示例</template>
+      <codemirror
+        v-model="code"
+        placeholder="在这里输入代码..."
+        :style="{ height: '100%' }"
+        :autofocus="true"
+        :tabSize="2"
+        :extensions="extensions"
+        @change="onChange"
+        @input="onInput"
+      />
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -32,4 +34,9 @@ const onInput = (val: string) => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.code-editor-feature-container {
+  height: 100%;
+  padding: 20px;
+}
+</style>

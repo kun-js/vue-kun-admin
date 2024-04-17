@@ -1,31 +1,33 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%">
-    <template #header>
-      <span style="margin-right: 18px">图片裁剪示例</span>
-    </template>
-    <el-row :gutter="20">
-      <el-col :span="6">
-        <cropper-img :imageSrc="imageSrc" @update-image-src="updateImageSrc" />
-      </el-col>
-      <el-col :span="6" :offset="3">
-        <div>
-          <span>预览图片</span>
-          <div class="demo-image__preview">
-            <el-image
-              style="width: 300px; height: 300px"
-              :src="imageNew"
-              :zoom-rate="1.2"
-              :max-scale="7"
-              :min-scale="0.2"
-              :preview-src-list="srcList"
-              :autoCrop="true"
-              fit="cover"
-            />
+  <div class="image-clipper-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+      <template #header>
+        <span style="margin-right: 18px">图片裁剪示例</span>
+      </template>
+      <el-row :gutter="20">
+        <el-col :span="6">
+          <cropper-img :imageSrc="imageSrc" @update-image-src="updateImageSrc" />
+        </el-col>
+        <el-col :span="6" :offset="3">
+          <div>
+            <span>预览图片</span>
+            <div class="demo-image__preview">
+              <el-image
+                style="width: 300px; height: 300px"
+                :src="imageNew"
+                :zoom-rate="1.2"
+                :max-scale="7"
+                :min-scale="0.2"
+                :preview-src-list="srcList"
+                :autoCrop="true"
+                fit="cover"
+              />
+            </div>
           </div>
-        </div>
-      </el-col>
-    </el-row>
-  </el-card>
+        </el-col>
+      </el-row>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -49,16 +51,21 @@ const updateImageSrc = (updateImageSrc: any) => {
 </script>
 
 <style lang="scss" scoped>
-.demo-image__error .image-slot {
-  font-size: 30px;
-}
+.image-clipper-feature-container {
+  height: 100%;
+  padding: 20px;
 
-.demo-image__error .image-slot .el-icon {
-  font-size: 30px;
-}
+  .demo-image__error .image-slot {
+    font-size: 30px;
+  }
 
-.demo-image__error .el-image {
-  width: 100%;
-  height: 200px;
+  .demo-image__error .image-slot .el-icon {
+    font-size: 30px;
+  }
+
+  .demo-image__error .el-image {
+    width: 100%;
+    height: 200px;
+  }
 }
 </style>

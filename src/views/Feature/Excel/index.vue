@@ -1,30 +1,32 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%">
-    <template #header>
-      Excel操作示例
-      <el-button type="primary" @click="handleToExportExcel1">导出excel(基础)</el-button>
-      <el-button type="primary" @click="handleToExportExcel2">导出excel(自定义标题宽度)</el-button>
-      <el-button type="primary" @click="handleToExportExcel3">导出excel(自定义样式)</el-button>
-      <el-button type="primary" @click="handleToExportExcel4">导出excel(附带excel公式)</el-button>
-      <el-button type="primary" @click="handleToExportExcel5">导出excel(合并单元格)</el-button>
-      <el-button type="primary" @click="handleToImportExcel">导入excel</el-button>
-      <input
-        ref="fileInput"
-        type="file"
-        accept=".xls,.xlsx"
-        class="upload-file"
-        @change="importExcel($event)"
-        style="display: none"
-      />
-    </template>
-    <span>导入excel文件内容:</span>
-    <template v-if="excelHeader">
-      <el-table :data="excelData" border style="width: 100%">
-        <el-table-column v-for="(item, index) in excelHeader" :key="index" :prop="item" :label="item" width="100" />
-      </el-table>
-    </template>
-    <template v-else> <span> 无(请导入excel文件以查看)</span> </template>
-  </el-card>
+  <div class="excel-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+      <template #header>
+        Excel操作示例
+        <el-button type="primary" @click="handleToExportExcel1">导出excel(基础)</el-button>
+        <el-button type="primary" @click="handleToExportExcel2">导出excel(自定义标题宽度)</el-button>
+        <el-button type="primary" @click="handleToExportExcel3">导出excel(自定义样式)</el-button>
+        <el-button type="primary" @click="handleToExportExcel4">导出excel(附带excel公式)</el-button>
+        <el-button type="primary" @click="handleToExportExcel5">导出excel(合并单元格)</el-button>
+        <el-button type="primary" @click="handleToImportExcel">导入excel</el-button>
+        <input
+          ref="fileInput"
+          type="file"
+          accept=".xls,.xlsx"
+          class="upload-file"
+          @change="importExcel($event)"
+          style="display: none"
+        />
+      </template>
+      <span>导入excel文件内容:</span>
+      <template v-if="excelHeader">
+        <el-table :data="excelData" border style="width: 100%">
+          <el-table-column v-for="(item, index) in excelHeader" :key="index" :prop="item" :label="item" width="100" />
+        </el-table>
+      </template>
+      <template v-else> <span> 无(请导入excel文件以查看)</span> </template>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -330,4 +332,9 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.excel-feature-container {
+  height: 100%;
+  padding: 20px;
+}
+</style>

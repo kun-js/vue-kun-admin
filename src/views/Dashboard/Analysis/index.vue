@@ -41,11 +41,15 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-.card-container {
-  margin-bottom: 18px;
-}
+.analysis-container {
+  padding: 20px;
 
-.progress-container {
-  margin-bottom: 18px;
+  .card-container {
+    margin-bottom: 18px;
+  }
+
+  .progress-container {
+    margin-bottom: 18px;
+  }
 }
 </style>

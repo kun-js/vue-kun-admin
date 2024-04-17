@@ -1,47 +1,49 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%">
-    <template #header> 拖拽示例 </template>
-    <el-row :gutter="20">
-      <el-col :span="8">
-        <h1>左边位置</h1>
-        <div class="drag-box">
-          <Draggable
-            :list="list"
-            :animation="300"
-            class="list-group"
-            :forceFallback="true"
-            chosen-class="chosenClass"
-            group="componentsGroup"
-          >
-            <template #item="{ element }">
-              <div class="items">
-                <div class="title">{{ element.label }}</div>
-                <img :src="element.img" height="40" />
-              </div>
-            </template>
-          </Draggable></div
-      ></el-col>
-      <el-col :span="8">
-        <h1>右边位置</h1>
-        <div class="drag-box">
-          <Draggable
-            :list="cloneList"
-            :animation="300"
-            class="list-group"
-            :forceFallback="true"
-            chosen-class="chosenClass"
-            group="componentsGroup"
-          >
-            <template #item="{ element }">
-              <div class="items">
-                <div class="title">{{ element.label }}</div>
-                <img :src="element.img" height="40" />
-              </div>
-            </template>
-          </Draggable></div
-      ></el-col>
-    </el-row>
-  </el-card>
+  <div class="draggable-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+      <template #header> 拖拽示例 </template>
+      <el-row :gutter="20">
+        <el-col :span="8">
+          <h1>左边位置</h1>
+          <div class="drag-box">
+            <Draggable
+              :list="list"
+              :animation="300"
+              class="list-group"
+              :forceFallback="true"
+              chosen-class="chosenClass"
+              group="componentsGroup"
+            >
+              <template #item="{ element }">
+                <div class="items">
+                  <div class="title">{{ element.label }}</div>
+                  <img :src="element.img" height="40" />
+                </div>
+              </template>
+            </Draggable></div
+        ></el-col>
+        <el-col :span="8">
+          <h1>右边位置</h1>
+          <div class="drag-box">
+            <Draggable
+              :list="cloneList"
+              :animation="300"
+              class="list-group"
+              :forceFallback="true"
+              chosen-class="chosenClass"
+              group="componentsGroup"
+            >
+              <template #item="{ element }">
+                <div class="items">
+                  <div class="title">{{ element.label }}</div>
+                  <img :src="element.img" height="40" />
+                </div>
+              </template>
+            </Draggable></div
+        ></el-col>
+      </el-row>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -68,20 +70,25 @@ const cloneList = reactive([{ img: img6, label: "图片6", id: 6 }]);
 </script>
 
 <style lang="scss" scoped>
-.drag-box {
-  .items {
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-    padding: 16px;
-    margin-bottom: 12px;
-    text-align: center;
-    background: #e3e3e3;
-    border-radius: 8px;
-  }
-}
+.draggable-feature-container {
+  height: 100%;
+  padding: 20px;
 
-.chosenClass {
-  border: 3px solid #409eff !important;
+  .drag-box {
+    .items {
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+      padding: 16px;
+      margin-bottom: 12px;
+      text-align: center;
+      background: #e3e3e3;
+      border-radius: 8px;
+    }
+  }
+
+  .chosenClass {
+    border: 3px solid #409eff !important;
+  }
 }
 </style>

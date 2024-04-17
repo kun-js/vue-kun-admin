@@ -1,40 +1,42 @@
 <template>
   <el-card style="max-width: 100%">
-    <template #header>
-      <strong>关于</strong>
-      <div class="mt-2">
-        <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blanvue-kun-admink">
-          vue-kun-admin
-        </el-link>
-        <span>是一款基于Vue3.2、Vite5、Element-Plus、TypeScript的后台解决方案。</span>
-      </div>
-    </template>
-    <el-descriptions title="项目信息" :column="3" border>
-      <el-descriptions-item>
-        <template #label> 版本 </template>
-        0.0.1
-      </el-descriptions-item>
-      <el-descriptions-item>
-        <template #label> 最后编译时间 </template>
-        {{ time }}
-      </el-descriptions-item>
-      <el-descriptions-item>
-        <template #label> 地点 </template>
-        深圳
-      </el-descriptions-item>
-      <el-descriptions-item>
-        <template #label> 开发人员 </template>
-        <el-tag>张三</el-tag>
-        <el-tag class="ml-1">李四</el-tag>
-      </el-descriptions-item>
-      <el-descriptions-item>
-        <template #label> Github </template>
-        <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blanvue-kun-admink">
-          Github
-        </el-link>
-      </el-descriptions-item>
-    </el-descriptions>
+    <strong>关于</strong>
+    <div class="mt-2">
+      <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blanvue-kun-admink">
+        vue-kun-admin
+      </el-link>
+      <span>是一款基于Vue3.2、Vite5、Element-Plus、TypeScript的后台解决方案。</span>
+    </div>
   </el-card>
+  <div class="project-info-container">
+    <el-card style="max-width: 100%">
+      <el-descriptions title="项目信息" :column="3" border="true">
+        <el-descriptions-item>
+          <template #label> 版本 </template>
+          0.0.1
+        </el-descriptions-item>
+        <el-descriptions-item>
+          <template #label> 最后编译时间 </template>
+          {{ time }}
+        </el-descriptions-item>
+        <el-descriptions-item>
+          <template #label> 地点 </template>
+          深圳
+        </el-descriptions-item>
+        <el-descriptions-item>
+          <template #label> 开发人员 </template>
+          <el-tag>张三</el-tag>
+          <el-tag class="ml-1">李四</el-tag>
+        </el-descriptions-item>
+        <el-descriptions-item>
+          <template #label> Github </template>
+          <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blanvue-kun-admink">
+            Github
+          </el-link>
+        </el-descriptions-item>
+      </el-descriptions>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -52,4 +54,8 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.project-info-container {
+  padding: 20px;
+}
+</style>

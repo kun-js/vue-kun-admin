@@ -1,20 +1,22 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%">
-    <template #header> 相对时间示例 </template>
-    <div>
-      <strong>基础示例</strong>
-      <div v-time="Date.now() - 7620000"></div>
-      <div v-time="Date.now() - 874350000"></div>
-      <div v-time="Date.now() - 915420000000"></div>
-    </div>
-    <el-divider />
-    <div>
-      <strong>定时更新</strong>
-      <div>进入页面的时间：{{ initialTime }}</div>
-      <div>实时时间：{{ currentTime }}</div>
-      <div>相对时间：<span v-time="timestamp"></span></div>
-    </div>
-  </el-card>
+  <div class="timestamp-component-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+      <template #header> 相对时间示例 </template>
+      <div>
+        <strong>基础示例</strong>
+        <div v-time="Date.now() - 7620000"></div>
+        <div v-time="Date.now() - 874350000"></div>
+        <div v-time="Date.now() - 915420000000"></div>
+      </div>
+      <el-divider />
+      <div>
+        <strong>定时更新</strong>
+        <div>进入页面的时间：{{ initialTime }}</div>
+        <div>实时时间：{{ currentTime }}</div>
+        <div>相对时间：<span v-time="timestamp"></span></div>
+      </div>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -37,4 +39,9 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.timestamp-component-container {
+  height: 100%;
+  padding: 20px;
+}
+</style>

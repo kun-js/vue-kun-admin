@@ -1,13 +1,15 @@
 <template>
-  <div class="exception-container">
-    <el-result>
-      <template #icon><img class="img" src="@/assets/imgs/403.png" /> </template>
-      <template #title>403 </template>
-      <template #sub-title>抱歉,你无权访问页面! </template>
-      <template #extra>
-        <el-button type="primary" @click="handleToBackHome">返回首页</el-button>
-      </template>
-    </el-result>
+  <div class="fourzerothree-exception-container">
+    <div class="exception-container">
+      <el-result>
+        <template #icon><img class="img" src="@/assets/imgs/403.png" /> </template>
+        <template #title>403 </template>
+        <template #sub-title>抱歉,你无权访问页面! </template>
+        <template #extra>
+          <el-button type="primary" @click="handleToBackHome">返回首页</el-button>
+        </template>
+      </el-result>
+    </div>
   </div>
 </template>
 
@@ -25,17 +27,22 @@ const handleToBackHome = () => {
 </script>
 
 <style lang="scss" scoped>
-.exception-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 80%;
-  margin-top: 100px;
+.fourzerothree-exception-container {
+  height: 100%;
+  padding: 20px;
 
-  .img {
-    width: 200px;
-    height: 200px;
+  .exception-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    margin-top: 100px;
+
+    .img {
+      width: 200px;
+      height: 200px;
+    }
   }
 }
 </style>

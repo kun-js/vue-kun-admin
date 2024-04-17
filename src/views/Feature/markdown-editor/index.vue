@@ -1,10 +1,12 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '93%' }">
-    <template #header>
-      <span style="margin-right: 18px">Markdown编辑器示例</span>
-    </template>
-    <MdEditor v-model="markdownText" style="height: 100%" />
-  </el-card>
+  <div class="markdown-editor-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '93%' }">
+      <template #header>
+        <span style="margin-right: 18px">Markdown编辑器示例</span>
+      </template>
+      <MdEditor v-model="markdownText" style="height: 100%" />
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -15,4 +17,9 @@ import "md-editor-v3/lib/style.css";
 const markdownText = ref("# Hello Editor");
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.markdown-editor-feature-container {
+  height: 100%;
+  padding: 20px;
+}
+</style>

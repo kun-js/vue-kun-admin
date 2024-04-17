@@ -1,8 +1,10 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '90%' }">
-    <template #header>视频播放器示例</template>
-    <video-player :src="videoSrc" :options="playerOptions" :volume="0.6" />
-  </el-card>
+  <div class="video-feature-container">
+    <el-card style="max-width: 100%">
+      <template #header>视频播放器示例</template>
+      <video-player :src="videoSrc" :options="playerOptions" :volume="0.6" />
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -35,4 +37,9 @@ const playerOptions = ref({
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.video-feature-container {
+  height: 100%;
+  padding: 20px;
+}
+</style>

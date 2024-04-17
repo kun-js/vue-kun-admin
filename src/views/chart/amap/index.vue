@@ -1,9 +1,11 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '100%', padding: 0 }">
-    <template #header>高德地图示例 </template>
-    <!-- 地图容器 -->
-    <div ref="mapContainer" style="width: 100%; height: 93%"></div>
-  </el-card>
+  <div class="amap-chart-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '100%', padding: 0 }">
+      <template #header>高德地图示例 </template>
+      <!-- 地图容器 -->
+      <div ref="mapContainer" style="width: 100%; height: 93%"></div>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -41,4 +43,9 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.amap-chart-container {
+  height: 1px;
+  padding: 20px;
+}
+</style>

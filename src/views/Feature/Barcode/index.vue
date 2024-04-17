@@ -1,25 +1,27 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '95%' }">
-    <template #header>
-      条码生成示例(可扫描)
-      <el-button type="primary" @click="handleToCreateBarcode">生成条形码</el-button>
-      <el-button type="primary" @click="handleToCreateQRcode">生成二维码</el-button>
-    </template>
-    <el-row :gutter="20">
-      <el-col :span="10"
-        ><span>生成条形码如下:</span>
-        <div class="barcode-container">
-          <svg id="barcode" />
-        </div>
-      </el-col>
-      <el-col :span="10">
-        <span>生成二维码如下:</span>
-        <div v-if="QRcodeValue">
-          <qrcode-vue :value="QRcodeValue" :size="QRcodeSize" />
-        </div>
-      </el-col>
-    </el-row>
-  </el-card>
+  <div class="barcode-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '95%' }">
+      <template #header>
+        条码生成示例(可扫描)
+        <el-button type="primary" @click="handleToCreateBarcode">生成条形码</el-button>
+        <el-button type="primary" @click="handleToCreateQRcode">生成二维码</el-button>
+      </template>
+      <el-row :gutter="20">
+        <el-col :span="10"
+          ><span>生成条形码如下:</span>
+          <div class="barcode-container">
+            <svg id="barcode" />
+          </div>
+        </el-col>
+        <el-col :span="10">
+          <span>生成二维码如下:</span>
+          <div v-if="QRcodeValue">
+            <qrcode-vue :value="QRcodeValue" :size="QRcodeSize" />
+          </div>
+        </el-col>
+      </el-row>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -52,4 +54,9 @@ const handleToCreateQRcode = async () => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.barcode-feature-container {
+  height: 100%;
+  padding: 20px;
+}
+</style>

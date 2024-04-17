@@ -3,7 +3,7 @@
     <el-aside width="collapse"><SideBar :isCollapse="isCollapse" :isShowLogo="isShowLogo" /></el-aside>
     <el-container>
       <el-header><Header :changeSideBarCollapse="changeSideBarCollapse" :isCollapse="isCollapse" /></el-header>
-      <el-scrollbar :wrap-style="{ height: 'calc(100vh - 48px)' }" :view-style="{ height: '100%' }">
+      <el-scrollbar :wrap-style="{ height: 'calc(100vh - 48px)' }">
         <el-main :style="{ paddingBottom: footerHeight }">
           <Router-view />
         </el-main>
@@ -26,7 +26,7 @@ const isCollapse = ref(false);
 const hasFooter = ref(false);
 
 const footerHeight = computed(() => {
-  return hasFooter.value ? "60px" : "20px";
+  return hasFooter.value ? "60px" : "0";
 });
 
 const changeSideBarCollapse = () => {
@@ -54,6 +54,7 @@ provide("hasFooter", hasFooter);
 
 .el-main {
   height: 100%;
+  padding: 0;
 }
 
 .el-aside {

@@ -1,33 +1,35 @@
 <template>
-  <div class="container">
-    <el-card style="max-width: 100%; height: 100%">
-      <template #header>
-        <span style="margin-right: 18px">水印示例</span>
-      </template>
-      <div class="visit-watermark">
-        <div class="action">
-          <el-button type="primary" @click="handleToCreateTextWaterMarkOne">创建文字水印1</el-button>
-          <el-button type="primary" @click="handleToCreateTextWaterMarkTwo">创建文字水印2</el-button>
-          <el-button type="primary" @click="handleToCreatePicWaterMark">创建图片水印</el-button>
-          <el-button type="danger" @click="handleToDeleteWaterMark">清除水印</el-button>
+  <div class="watermark-feature-container">
+    <div class="watermark-container">
+      <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+        <template #header>
+          <span style="margin-right: 18px">水印示例</span>
+        </template>
+        <div class="visit-watermark">
+          <div class="action">
+            <el-button type="primary" @click="handleToCreateTextWaterMarkOne">创建文字水印1</el-button>
+            <el-button type="primary" @click="handleToCreateTextWaterMarkTwo">创建文字水印2</el-button>
+            <el-button type="primary" @click="handleToCreatePicWaterMark">创建图片水印</el-button>
+            <el-button type="danger" @click="handleToDeleteWaterMark">清除水印</el-button>
+          </div>
+          <div class="display">
+            <el-watermark :font="font" content="KUN ADMIN">
+              <div class="watermark" v-show="isShowTextWatermarkOne"></div>
+            </el-watermark>
+            <el-watermark :font="font" :content="['CXK', 'JINITAIMEI']">
+              <div class="watermark" v-show="isShowTextWatermarkTwo"></div>
+            </el-watermark>
+            <el-watermark
+              :width="120"
+              :height="50"
+              image="https://img2.baidu.com/it/u=964355120,2707565892&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800"
+            >
+              <div class="watermark" v-show="isShowPicWatermark"></div>
+            </el-watermark>
+          </div>
         </div>
-        <div class="display">
-          <el-watermark :font="font" content="KUN ADMIN">
-            <div class="watermark" v-show="isShowTextWatermarkOne"></div>
-          </el-watermark>
-          <el-watermark :font="font" :content="['CXK', 'JINITAIMEI']">
-            <div class="watermark" v-show="isShowTextWatermarkTwo"></div>
-          </el-watermark>
-          <el-watermark
-            :width="120"
-            :height="50"
-            image="https://img2.baidu.com/it/u=964355120,2707565892&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800"
-          >
-            <div class="watermark" v-show="isShowPicWatermark"></div>
-          </el-watermark>
-        </div>
-      </div>
-    </el-card>
+      </el-card>
+    </div>
   </div>
 </template>
 
@@ -65,26 +67,31 @@ const handleToCreatePicWaterMark = () => {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.watermark-feature-container {
   height: 100%;
+  padding: 20px;
 
-  .visit-watermark {
-    position: relative;
+  .watermark-container {
+    height: 100%;
 
-    .action {
-      position: absolute;
-      z-index: 1000;
-    }
+    .visit-watermark {
+      position: relative;
 
-    .display {
-      position: fixed;
-      top: 48px;
-      left: 200px;
-      width: 100%;
-      height: 100%;
+      .action {
+        position: absolute;
+        z-index: 1000;
+      }
 
-      .watermark {
-        height: 100vh;
+      .display {
+        position: fixed;
+        top: 48px;
+        left: 200px;
+        width: 100%;
+        height: 100%;
+
+        .watermark {
+          height: 100vh;
+        }
       }
     }
   }

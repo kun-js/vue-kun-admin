@@ -1,11 +1,13 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%">
-    <template #header> 下载示例 </template>
-    <el-button @click="handleToDownloadFileBlob">点击下载文件(文件流)</el-button>
-    <el-button @click="handleToDownloadFileBase64">点击下载文件(base64)</el-button>
-    <el-button type="primary" @click="handleToDownloadImageBlob">点击下载图片(文件流)</el-button>
-    <el-button type="primary" @click="handleToDownloadImageBase64">点击下载图片(base64)</el-button>
-  </el-card>
+  <div class="download-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+      <template #header> 下载示例 </template>
+      <el-button @click="handleToDownloadFileBlob">点击下载文件(文件流)</el-button>
+      <el-button @click="handleToDownloadFileBase64">点击下载文件(base64)</el-button>
+      <el-button type="primary" @click="handleToDownloadImageBlob">点击下载图片(文件流)</el-button>
+      <el-button type="primary" @click="handleToDownloadImageBase64">点击下载图片(base64)</el-button>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -137,4 +139,9 @@ const handleToDownloadImageBase64 = () => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.download-feature-container {
+  height: 100%;
+  padding: 20px;
+}
+</style>

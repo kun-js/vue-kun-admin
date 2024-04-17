@@ -1,11 +1,13 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%" :body-style="{ height: '90%' }">
-    <template #header>
-      饼图示例
-      <el-switch v-model="addBorderStyle" inline-prompt active-text="圆角" inactive-text="无圆角" />
-    </template>
-    <div ref="chart" style="width: 100%; height: 100%"></div>
-  </el-card>
+  <div class="doughnut-pie-chart-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '90%' }">
+      <template #header>
+        饼图示例
+        <el-switch v-model="addBorderStyle" inline-prompt active-text="圆角" inactive-text="无圆角" />
+      </template>
+      <div ref="chart" style="width: 100%; height: 100%"></div>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -87,4 +89,9 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.doughnut-pie-chart-container {
+  height: 100%;
+  padding: 20px;
+}
+</style>

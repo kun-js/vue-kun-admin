@@ -1,19 +1,26 @@
 <template>
-  <el-card style="max-width: 100%; height: 100%">
-    <template #header>
-      <span style="margin-right: 18px">文本编辑器示例</span>
-    </template>
-    <div style="border: 1px solid #ccc">
-      <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
-      <Editor
-        style="height: 600px; overflow-y: hidden"
-        v-model="valueHtml"
-        :defaultConfig="editorConfig"
-        :mode="mode"
-        @on-created="handleCreated"
-      />
-    </div>
-  </el-card>
+  <div class="text-editor-feature-container">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+      <template #header>
+        <span style="margin-right: 18px">文本编辑器示例</span>
+      </template>
+      <div style="border: 1px solid #ccc">
+        <Toolbar
+          style="border-bottom: 1px solid #ccc"
+          :editor="editorRef"
+          :defaultConfig="toolbarConfig"
+          :mode="mode"
+        />
+        <Editor
+          style="height: 600px; overflow-y: hidden"
+          v-model="valueHtml"
+          :defaultConfig="editorConfig"
+          :mode="mode"
+          @on-created="handleCreated"
+        />
+      </div>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -53,4 +60,9 @@ const handleCreated = (editor: any) => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.text-editor-feature-container {
+  height: 100%;
+  padding: 20px;
+}
+</style>
