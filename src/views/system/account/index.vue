@@ -5,17 +5,9 @@
       <el-button style="margin-left: 18px" @click="handleToReset">重置</el-button>
       <el-button style="margin-left: 18px" type="primary" @click="handleToSearch"> 搜索 </el-button>
     </template>
-    <el-table
-      v-loading="loading"
-      :data="tableData"
-      stripe
-      fixed
-      style="width: 100%"
-      height="100%"
-      show-overflow-tooltip
-    >
+    <el-table v-loading="loading" :data="tableData" stripe style="width: 100%" height="100%" show-overflow-tooltip>
       <el-table-column align="center" prop="id" label="序号" width="60" />
-      <el-table-column align="center" prop="username" label="账号" />
+      <el-table-column align="center" prop="username" label="账号" width="120" />
       <el-table-column align="center" prop="name" label="姓名" width="80" />
       <el-table-column align="center" prop="createTime" label="创建时间" />
       <el-table-column align="center" prop="role" label="角色" width="100" />

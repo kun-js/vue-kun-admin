@@ -18,31 +18,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import axios from "axios";
+import { ref } from "vue";
 import { isEmpty } from "@/utils/isEmpty";
+import dependenciesJSON from "./dependencies.json";
 
-const dependencies = ref<Record<string, string>>({});
-const devDependencies = ref<Record<string, string>>({});
-
-const getPackageJson = async () => {
-  try {
-    const response = await axios.get("/package.json");
-    const packageJson = response.data;
-    if (packageJson && packageJson.dependencies) {
-      dependencies.value = packageJson.dependencies;
-    }
-    if (packageJson && packageJson.devDependencies) {
-      devDependencies.value = packageJson.devDependencies;
-    }
-  } catch (error) {
-    console.error("获取package.json文件失败:", error);
-  }
-};
-
-onMounted(() => {
-  getPackageJson();
-});
+const dependencies = ref<Record<string, string>>(dependenciesJSON.dependencies || {});
+const devDependencies = ref<Record<string, string>>(dependenciesJSON.devDependencies || {});
 </script>
 
 <style lang="scss" scoped></style>

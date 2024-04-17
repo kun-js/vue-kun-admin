@@ -5,8 +5,8 @@
       v-loading="loading"
       :data="tableData"
       stripe
-      border
-      fixed
+      border="true"
+      fixed="true"
       style="width: 100%"
       max-height="100%"
       show-overflow-tooltip

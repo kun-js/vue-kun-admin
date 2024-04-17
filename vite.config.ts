@@ -3,7 +3,7 @@ import { fileURLToPath, URL } from "node:url";
 import { ConfigEnv, loadEnv, UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import VueDevTools from "vite-plugin-vue-devtools";
+// import VueDevTools from "vite-plugin-vue-devtools";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
@@ -30,7 +30,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         presets: [presetUno(), presetAttributify(), presetIcons()],
       }),
       vueJsx(),
-      VueDevTools(),
+      // VueDevTools(),
       AutoImport({
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
         imports: [
