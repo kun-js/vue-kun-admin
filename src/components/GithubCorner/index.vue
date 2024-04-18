@@ -1,6 +1,6 @@
 <template>
   <a
-    href="https://github.com/kun-js/vue-kun-admin/tree/chenjiadong"
+    href="https://github.com/kun-js/vue-kun-admin/tree/nest-admin"
     target="_blank"
     class="github-corner"
     aria-label="View source on Github"

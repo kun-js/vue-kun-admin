@@ -1,9 +1,11 @@
 # vue-kun-admin
 
+![预览](image.png)
+
 ## 安装
 
 ```sh
-pnpm install
+pnpm i
 ```
 
 ### 启动
@@ -15,5 +17,5 @@ pnpm dev
 ### 打包
 
 ```sh
-pnpm build
+pnpm build:prod
 ```
