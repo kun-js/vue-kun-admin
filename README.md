@@ -1,6 +1,6 @@
 # vue-kun-admin
 
-![预览](image.png)
+![预览](./image.png)
 
 ## 安装
 
