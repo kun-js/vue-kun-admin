@@ -19,8 +19,6 @@
 </template>
 
 <script setup lang="ts">
-import { HomeFilled, Menu, SetUp, PieChart, Setting, Lock } from "@element-plus/icons-vue";
-
 const navigatorList = [
   { id: 1, icon: "HomeFilled", color: "#1fdaca", name: "首页" },
   { id: 2, icon: "Menu", color: "#c72a46", name: "组件" },

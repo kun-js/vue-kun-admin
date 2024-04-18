@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <el-card shadow="hover">
+    <el-card>
       <template #header>
         <div class="card-header">
           <span class="card-header-title">{{ item.title }}</span>

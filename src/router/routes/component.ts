@@ -44,11 +44,11 @@ const componentRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/component/date-picker",
+        path: "/component/password-strength",
         name: "日期选择器",
-        component: () => import("@/views/component/date-picker/index.vue"),
+        component: () => import("@/views/component/password-strength/index.vue"),
         meta: {
-          title: "datePicker",
+          title: "passwordStrength",
         },
       },
     ],

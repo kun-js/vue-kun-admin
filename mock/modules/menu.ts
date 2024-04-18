@@ -59,6 +59,11 @@ export const menuList = Mock.mock({
           title: "相对时间",
           path: "/timestamp",
         },
+        {
+          name: "passwordStrength",
+          title: "相对时间",
+          path: "/password-strength",
+        },
       ],
     },
     {

@@ -64,6 +64,7 @@ declare module "vue" {
     ElTabPane: (typeof import("element-plus/es"))["ElTabPane"];
     ElTabs: (typeof import("element-plus/es"))["ElTabs"];
     ElTag: (typeof import("element-plus/es"))["ElTag"];
+    ElText: (typeof import("element-plus/es"))["ElText"];
     ElTimePicker: (typeof import("element-plus/es"))["ElTimePicker"];
     ElTooltip: (typeof import("element-plus/es"))["ElTooltip"];
     ElTour: (typeof import("element-plus/es"))["ElTour"];
@@ -75,6 +76,7 @@ declare module "vue" {
     Message: (typeof import("./src/components/header/components/Message.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
+    Search: (typeof import("./src/components/header/components/Search.vue"))["default"];
     Setting: (typeof import("./src/components/header/components/Setting.vue"))["default"];
     Sidebar: (typeof import("./src/components/sidebar/index.vue"))["default"];
     SwitchLanguage: (typeof import("./src/components/header/components/SwitchLanguage.vue"))["default"];

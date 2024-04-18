@@ -35,7 +35,6 @@
 <script setup lang="ts">
 import { Sunrise, MoonNight } from "@element-plus/icons-vue";
 import { inject, ref } from "vue";
-
 import { useDark, useToggle } from "@vueuse/core";
 
 const isShowBreadcrumbIcon = inject<boolean>("isShowBreadcrumbIcon");
@@ -44,7 +43,7 @@ const isCollapse = inject<boolean>("isCollapse");
 const hasFooter = inject<boolean>("hasFooter");
 
 const isDark = useDark();
-const toggleDark = useToggle(isDark);
+// const toggleDark = useToggle(isDark);
 
 const drawer = ref(false);
 

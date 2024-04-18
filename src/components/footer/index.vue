@@ -1,6 +1,6 @@
 <template>
   <div class="footer-container">
-    <div class="footer-text">Copyright © 2024 KUN Admin</div>
+    <el-text class="footer-text">Copyright © 2024 KUN Admin</el-text>
   </div>
 </template>
 

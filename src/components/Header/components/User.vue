@@ -4,7 +4,7 @@
       <div class="user-avatar">
         <el-avatar :size="30" :src="userStore.userInfo.avatar" />
       </div>
-      <div class="user-name">{{ userStore.userInfo.name }}</div>
+      <el-text class="user-name">{{ userStore.userInfo.name }}</el-text>
     </div>
     <template #dropdown>
       <el-dropdown-menu>
@@ -46,10 +46,6 @@ const handleToLogout = () => {
 
   &-avatar {
     margin-right: 12px;
-  }
-
-  &-name {
-    color: gray;
   }
 }
 

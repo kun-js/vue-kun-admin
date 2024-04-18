@@ -26,7 +26,6 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 
-const iconName = "logos:vue";
 const projectList = [
   {
     id: 1,

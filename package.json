@@ -76,7 +76,8 @@
     "vue3-print-nb": "^0.1.4",
     "vue3-puzzle-vcode": "^1.1.7",
     "vuedraggable": "^4.1.0",
-    "wavesurfer.js": "^7.7.10"
+    "wavesurfer.js": "^7.7.10",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.1.0",
@@ -87,6 +88,7 @@
     "@types/file-saver": "^2.0.7",
     "@types/mockjs": "^1.0.10",
     "@types/node": "^20.11.26",
+    "@types/zxcvbn": "^4.4.4",
     "@unocss/preset-attributify": "0.59.0-beta.1",
     "@unocss/preset-icons": "0.59.0-beta.1",
     "@unocss/preset-uno": "0.59.0-beta.1",
