@@ -2,7 +2,7 @@
   <div class="sidebar">
     <div class="logo" v-show="isShowLogo" :style="{ width: sideBarWidth }">
       <img class="logo-pic" src="@/assets/imgs/KunLogo.png" />
-      <div class="logo-title">Kun Admin</div>
+      <div class="logo-title" v-show="!isCollapse">Kun Admin</div>
     </div>
     <div class="menu">
       <el-scrollbar :style="{ height: 'calc(100vh - 48px)' }">
@@ -125,6 +125,7 @@ onMounted(() => {
     align-items: center;
     height: 48px;
     padding: 8px;
+    transition: 0.5s all ease;
 
     &-pic {
       width: 32px;
@@ -139,6 +140,7 @@ onMounted(() => {
       font-size: 16px;
       font-weight: 600;
       color: #fff;
+      white-space: nowrap;
     }
   }
 }
