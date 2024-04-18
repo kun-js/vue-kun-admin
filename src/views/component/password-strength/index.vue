@@ -8,7 +8,7 @@
       <div class="password-container">
         <el-form :model="registerData" label-width="100px" :rules="rules" ref="ruleFormRef">
           <el-form-item label="密码" prop="password">
-            <el-input v-model="registerData.password" placeholder="请输入密码" />
+            <el-input v-model="registerData.password" placeholder="请输入密码" type="password" show-password />
           </el-form-item>
           <el-form-item
             v-if="registerData.password !== '' && registerData.password !== undefined"

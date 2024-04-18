@@ -4,7 +4,7 @@ const pageRoutes: RouteRecordRaw[] = [
   {
     path: "/page",
     name: "page",
-    component: () => import("@/components/index.vue"),
+    component: () => import("@/layouts/index.vue"),
     redirect: "/page/form",
     meta: {
       icon: "Picture",

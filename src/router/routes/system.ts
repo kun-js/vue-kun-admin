@@ -4,7 +4,7 @@ const systemRoutes: RouteRecordRaw[] = [
   {
     path: "/system",
     name: "系统管理",
-    component: () => import("@/components/index.vue"),
+    component: () => import("@/layouts/index.vue"),
     redirect: "/system/account",
     meta: {
       icon: "Setting",

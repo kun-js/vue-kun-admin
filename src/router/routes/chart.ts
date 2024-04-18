@@ -4,7 +4,7 @@ const chartRoutes: RouteRecordRaw[] = [
   {
     path: "/chart",
     name: "页面",
-    component: () => import("@/components/index.vue"),
+    component: () => import("@/layouts/index.vue"),
     redirect: "/chart/bar-chart",
     meta: {
       icon: "PieChart",

@@ -80,6 +80,8 @@ declare module "vue" {
     Setting: (typeof import("./src/components/header/components/Setting.vue"))["default"];
     Sidebar: (typeof import("./src/components/sidebar/index.vue"))["default"];
     SwitchLanguage: (typeof import("./src/components/header/components/SwitchLanguage.vue"))["default"];
+    ThemeColorButton: (typeof import("./src/components/ThemeColorButton.vue"))["default"];
+    ThemeColorSwitch: (typeof import("./src/components/ThemeColorSwitch.vue"))["default"];
     Tour: (typeof import("./src/components/header/components/Tour.vue"))["default"];
     User: (typeof import("./src/components/header/components/User.vue"))["default"];
   }

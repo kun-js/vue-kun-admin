@@ -8,7 +8,7 @@
       <div class="drawer-body">
         <el-divider>{{ $t("header.themeColor") }}</el-divider>
         <div class="switch-dark">
-          <el-switch v-model="isDark" :active-action-icon="MoonNight" :inactive-action-icon="Sunrise" />
+          <ThemeColorSwitch />
         </div>
         <el-divider>{{ $t("header.faceShow") }}</el-divider>
         <div class="action-btn">
@@ -33,17 +33,13 @@
 </template>
 
 <script setup lang="ts">
-import { Sunrise, MoonNight } from "@element-plus/icons-vue";
+import ThemeColorSwitch from "@/components/ThemeColorSwitch.vue";
 import { inject, ref } from "vue";
-import { useDark, useToggle } from "@vueuse/core";
 
 const isShowBreadcrumbIcon = inject<boolean>("isShowBreadcrumbIcon");
 const isShowLogo = inject<boolean>("isShowLogo");
 const isCollapse = inject<boolean>("isCollapse");
 const hasFooter = inject<boolean>("hasFooter");
-
-const isDark = useDark();
-// const toggleDark = useToggle(isDark);
 
 const drawer = ref(false);
 

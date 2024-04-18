@@ -4,7 +4,7 @@ const featureRoutes: RouteRecordRaw[] = [
   {
     path: "/feature",
     name: "功能",
-    component: () => import("@/components/index.vue"),
+    component: () => import("@/layouts/index.vue"),
     redirect: "/feature/download",
     meta: {
       icon: "SetUp",

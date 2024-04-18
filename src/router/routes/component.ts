@@ -4,7 +4,7 @@ const componentRoutes: RouteRecordRaw[] = [
   {
     path: "/component",
     name: "component",
-    component: () => import("@/components/index.vue"),
+    component: () => import("@/layouts/index.vue"),
     redirect: "/component/button",
     meta: {
       icon: "Menu",
@@ -45,7 +45,7 @@ const componentRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/component/password-strength",
-        name: "日期选择器",
+        name: "密码强度",
         component: () => import("@/views/component/password-strength/index.vue"),
         meta: {
           title: "passwordStrength",

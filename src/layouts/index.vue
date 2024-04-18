@@ -16,9 +16,9 @@
 </template>
 
 <script setup lang="ts">
-import Header from "@/components/header/index.vue";
-import SideBar from "@/components/sidebar/index.vue";
-import Footer from "@/components/footer/index.vue";
+import Header from "./header/index.vue";
+import SideBar from "./sidebar/index.vue";
+import Footer from "./footer/index.vue";
 import { ref, computed, provide } from "vue";
 
 const isShowLogo = ref(true);

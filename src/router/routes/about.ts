@@ -4,7 +4,7 @@ const aboutRoutes: RouteRecordRaw[] = [
   {
     path: "/about",
     name: "关于",
-    component: () => import("@/components/index.vue"),
+    component: () => import("@/layouts/index.vue"),
     redirect: "/about/me",
     meta: {
       icon: "User",

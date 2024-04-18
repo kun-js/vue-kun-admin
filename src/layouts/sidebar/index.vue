@@ -82,7 +82,7 @@ const props = defineProps<{
 const router = useRouter();
 const menuList = ref();
 const currentIndex = sessionStorage.getItem("currentIndex");
-const activePath = currentIndex ? currentIndex : "/dashboard/analysis";
+let activePath = currentIndex ? currentIndex : "/dashboard/analysis";
 
 const sideBarWidth = computed(() => {
   return props.isCollapse ? "64px" : "200px";
