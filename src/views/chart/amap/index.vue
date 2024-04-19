@@ -45,7 +45,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .amap-chart-container {
-  height: 1px;
+  height: 100%;
   padding: 20px;
 }
 </style>
