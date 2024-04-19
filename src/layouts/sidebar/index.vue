@@ -49,7 +49,7 @@
                   <template v-else>
                     <!-- 二级菜单不存在子菜单 -->
                     <el-menu-item :index="route.path + child.path" :key="route.path + child.path">
-                      {{ $t("menu." + child.name) }}
+                      <span>{{ $t("menu." + child.name) }}</span>
                     </el-menu-item>
                   </template>
                 </template>
@@ -168,6 +168,13 @@ onMounted(() => {
 
   .el-menu-item {
     background-color: var(--menu-item-background);
+
+    span {
+      width: 136px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
     &:hover {
       color: #fff;
