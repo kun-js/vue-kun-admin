@@ -1,0 +1,12 @@
+{
+  "title": "登录",
+  "submit": "登录",
+  "reset": "重置",
+  "usernameTip": "请输入账号!",
+  "passwordTip": "请输入密码",
+  "register": "注册账号",
+  "forget": "忘记密码?",
+  "otherLoginWay": "其他登录方式",
+  "loginSuccess": "登陆成功!欢迎回来!",
+  "loginFail": "登录失败!用户名或密码错误!"
+}

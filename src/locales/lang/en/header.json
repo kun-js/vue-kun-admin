@@ -1,0 +1,18 @@
+{
+  "tour": "Tour",
+  "tour_step_one_title": "Hello!",
+  "tour_step_one_description": "Welcome to Kun Admin!",
+  "tour_step_two_title": "Collapse Button",
+  "tour_step_two_description": "This button is used to collapse and expand the sidebar.",
+  "tour_step_three_title": "Language Switch Button",
+  "tour_step_three_description": "Click this button to select a language for switching.",
+  "tour_step_prev_button": "Previous",
+  "tour_step_next_button": "Next",
+  "tour_step_end_button": "End Tour",
+  "entryFullScreen": "Entry FullScreen",
+  "exitFullScreen": "Exit FullScreen",
+  "logout": "Logout",
+  "setting": "Setting",
+  "themeColor": "Theme Color",
+  "faceShow": "Face SHow"
+}

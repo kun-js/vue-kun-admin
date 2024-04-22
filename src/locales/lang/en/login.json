@@ -1,0 +1,12 @@
+{
+  "title": "Login Window",
+  "submit": "Login",
+  "reset": "Reset",
+  "usernameTip": "Please enter username!",
+  "passwordTip": "Please enter password",
+  "register": "Register",
+  "forget": "Forget password?",
+  "otherLoginWay": "Other login way",
+  "loginSuccess": "Login successful! Welcome back!",
+  "loginFail": "Login failed! Incorrect username or password!"
+}
