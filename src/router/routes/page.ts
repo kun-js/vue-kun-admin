@@ -7,7 +7,7 @@ const pageRoutes: RouteRecordRaw[] = [
     component: () => import("@/layouts/index.vue"),
     redirect: "/page/form",
     meta: {
-      icon: "Picture",
+      icon: "noto:framed-picture",
       title: "page",
     },
     children: [

@@ -23,6 +23,16 @@ const initChart = () => {
   if (chart.value) {
     const myChart = echarts.init(chart.value);
     const option = {
+      tooltip: {
+        trigger: "axis",
+      },
+      grid: {
+        top: "5%",
+        left: "0%",
+        right: "5%",
+        bottom: "0%",
+        containLabel: true,
+      },
       xAxis: {
         type: "category",
         boundaryGap: lineBoundaryGap,
@@ -33,8 +43,38 @@ const initChart = () => {
       },
       series: [
         {
-          data: [150, 230, 224, 218, 135, 147, 260],
+          name: "Email",
           type: "line",
+          stack: "Total",
+          data: [120, 132, 101, 134, 90, 230, 210],
+          smooth: lineSmooth.value,
+        },
+        {
+          name: "Union Ads",
+          type: "line",
+          stack: "Total",
+          data: [220, 182, 191, 234, 290, 330, 310],
+          smooth: lineSmooth.value,
+        },
+        {
+          name: "Video Ads",
+          type: "line",
+          stack: "Total",
+          data: [150, 232, 201, 154, 190, 330, 410],
+          smooth: lineSmooth.value,
+        },
+        {
+          name: "Direct",
+          type: "line",
+          stack: "Total",
+          data: [320, 332, 301, 334, 390, 330, 320],
+          smooth: lineSmooth.value,
+        },
+        {
+          name: "Search Engine",
+          type: "line",
+          stack: "Total",
+          data: [820, 932, 901, 934, 1290, 1330, 1320],
           smooth: lineSmooth.value,
         },
       ],
@@ -50,14 +90,23 @@ const initChart = () => {
 watch(lineSmooth, (newValue) => {
   const myChart = echarts.getInstanceByDom(chart.value!);
   if (myChart) {
-    const option = {
-      series: [
-        {
+    const option = myChart.getOption() as echarts.EChartsOption;
+    if (Array.isArray(option.series)) {
+      myChart.setOption({
+        series: option.series.map((series) => ({
+          ...series,
           smooth: newValue,
-        },
-      ],
-    };
-    myChart.setOption(option);
+        })),
+      });
+    } else {
+      // 如果不是数组，尝试将其转换为数组后再进行操作
+      myChart.setOption({
+        series: [option.series].map((series) => ({
+          ...series,
+          smooth: newValue,
+        })),
+      });
+    }
   }
 });
 

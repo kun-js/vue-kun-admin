@@ -89,7 +89,8 @@ const projectList = [
   }
 
   &-introduce {
-    margin-bottom: 20px;
+    height: 45px;
+    margin-bottom: 18px;
     font-size: 14px;
   }
 
@@ -99,10 +100,12 @@ const projectList = [
 
     &-team {
       font-size: 14px;
+      white-space: nowrap;
     }
 
     &-time {
       font-size: 14px;
+      white-space: nowrap;
     }
   }
 }

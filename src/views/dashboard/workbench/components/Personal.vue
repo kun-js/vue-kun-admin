@@ -55,11 +55,13 @@ const userStore = useUserStore();
         margin-bottom: 12px;
         font-size: 18px;
         font-weight: 800;
+        white-space: nowrap;
       }
 
       &-weather {
         font-size: 14px;
         color: #8c8c8c;
+        white-space: nowrap;
       }
     }
   }
@@ -75,6 +77,7 @@ const userStore = useUserStore();
       &-title {
         font-size: 14px;
         color: #8c8c8c;
+        white-space: nowrap;
       }
 
       &-number {

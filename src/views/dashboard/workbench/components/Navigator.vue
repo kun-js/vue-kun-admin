@@ -7,7 +7,7 @@
           <el-card shadow="hover" style="border-radius: 0" :body-style="{ height: '100px' }">
             <div class="navigator">
               <div class="navigator-icon">
-                <el-icon :size="24" :style="{ color: item.color }"><component :is="item.icon" /></el-icon>
+                <Icon style="font-size: 24px" :icon="item.icon" />
               </div>
               <div class="navigator-name">{{ item.name }}</div>
             </div>
@@ -19,13 +19,15 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from "@iconify/vue";
+
 const navigatorList = [
-  { id: 1, icon: "HomeFilled", color: "#1fdaca", name: "首页" },
-  { id: 2, icon: "Menu", color: "#c72a46", name: "组件" },
-  { id: 3, icon: "SetUp", color: "#e18525", name: "功能" },
-  { id: 4, icon: "PieChart", color: "#50b98a", name: "图表" },
-  { id: 5, icon: "Setting", color: "#73c04b", name: "系统管理" },
-  { id: 6, icon: "Lock", color: "#20ddff", name: "权限管理" },
+  { id: 1, icon: "noto:house", name: "首页" },
+  { id: 2, icon: "noto:closed-book", name: "组件" },
+  { id: 3, icon: "noto:dna", name: "功能" },
+  { id: 4, icon: "emojione:bar-chart", name: "图表" },
+  { id: 5, icon: "noto-v1:gear", name: "系统管理" },
+  { id: 6, icon: "noto:locked-with-key", name: "权限管理" },
 ];
 </script>
 
@@ -35,5 +37,9 @@ const navigatorList = [
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  &-name {
+    white-space: nowrap;
+  }
 }
 </style>

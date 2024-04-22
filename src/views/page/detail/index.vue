@@ -2,20 +2,18 @@
   <div class="detail-page-container">
     <el-card style="max-width: 100%; height: calc(100vh - 88px)">
       <template #header> 详情页示例 </template>
-      <div class="title">用户信息:</div>
-      <el-row :gutter="20">
-        <el-col :span="8">用户姓名: {{ detail.username }}</el-col>
-        <el-col :span="8">用户地址: {{ detail.address }}</el-col>
-        <el-col :span="8">联系电话: {{ detail.tel }}</el-col>
-      </el-row>
-      <div class="title">订单信息:</div>
-      <el-row :gutter="20">
-        <el-col :span="12">订单编号: {{ detail.orderId }}</el-col>
-        <el-col :span="12">订单状态: {{ detail.status }}</el-col>
-        <el-col :span="12">创建时间: {{ detail.createTime }}</el-col>
-        <el-col :span="12">生效时间: {{ detail.effectiveTime }}</el-col>
-        <el-col :span="24">备注: {{ detail.remark }}</el-col>
-      </el-row>
+      <el-descriptions title="用户信息:">
+        <el-descriptions-item label="用户名">{{ detail.username }}</el-descriptions-item>
+        <el-descriptions-item label="手机号">{{ detail.tel }}</el-descriptions-item>
+        <el-descriptions-item label="地址">{{ detail.address }}</el-descriptions-item>
+      </el-descriptions>
+      <el-descriptions title="订单信息:">
+        <el-descriptions-item label="订单编号">{{ detail.orderId }}</el-descriptions-item>
+        <el-descriptions-item label="订单状态">{{ detail.status }}</el-descriptions-item>
+        <el-descriptions-item label="创建时间">{{ detail.createTime }}</el-descriptions-item>
+        <el-descriptions-item label="生效时间">{{ detail.effectiveTime }}</el-descriptions-item>
+        <el-descriptions-item label="备注">{{ detail.remark }}</el-descriptions-item>
+      </el-descriptions>
     </el-card>
   </div>
 </template>

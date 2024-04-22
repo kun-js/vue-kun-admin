@@ -7,7 +7,7 @@ const componentRoutes: RouteRecordRaw[] = [
     component: () => import("@/layouts/index.vue"),
     redirect: "/component/button",
     meta: {
-      icon: "Menu",
+      icon: "noto:closed-book",
       title: "component",
     },
     children: [
@@ -33,6 +33,22 @@ const componentRoutes: RouteRecordRaw[] = [
         component: () => import("@/views/component/date-picker/index.vue"),
         meta: {
           title: "datePicker",
+        },
+      },
+      {
+        path: "/component/statistic",
+        name: "统计组件",
+        component: () => import("@/views/component/statistic/index.vue"),
+        meta: {
+          title: "statistic",
+        },
+      },
+      {
+        path: "/component/menu-tree",
+        name: "树形菜单",
+        component: () => import("@/views/component/menu-tree/index.vue"),
+        meta: {
+          title: "menuTree",
         },
       },
       {

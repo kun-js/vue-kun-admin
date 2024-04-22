@@ -7,7 +7,7 @@ const permissionRoutes: RouteRecordRaw[] = [
     component: () => import("@/layouts/index.vue"),
     redirect: "/permission/button-permission",
     meta: {
-      icon: "Key",
+      icon: "noto:locked-with-key",
       title: "permission",
     },
     children: [

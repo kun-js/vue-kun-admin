@@ -7,7 +7,7 @@ const systemRoutes: RouteRecordRaw[] = [
     component: () => import("@/layouts/index.vue"),
     redirect: "/system/account",
     meta: {
-      icon: "Setting",
+      icon: "noto-v1:gear",
       title: "system",
     },
     children: [
