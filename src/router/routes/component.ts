@@ -7,7 +7,7 @@ const componentRoutes: RouteRecordRaw[] = [
     component: () => import("@/layouts/index.vue"),
     redirect: "/component/button",
     meta: {
-      icon: "Menu",
+      icon: "noto:closed-book",
       title: "component",
     },
     children: [

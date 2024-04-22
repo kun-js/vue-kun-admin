@@ -21,8 +21,10 @@
               <!-- 一级菜单 -->
               <el-sub-menu :index="route.path" :key="route.path">
                 <template #title>
-                  <el-icon><component :is="route.icon" /></el-icon>
-                  <span>{{ $t("menu." + route.name) }}</span>
+                  <el-icon>
+                    <Icon style="width: 24px; height: 24px; font-size: 24px" :icon="route.icon" />
+                  </el-icon>
+                  <span style="margin-left: 12px">{{ $t("menu." + route.name) }}</span>
                 </template>
                 <template v-for="child in route.children">
                   <template v-if="child.children">
@@ -73,6 +75,7 @@
 import { computed, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { getMenuList } from "@/api/index";
+import { Icon } from "@iconify/vue";
 
 const props = defineProps<{
   isShowLogo: Boolean;
@@ -85,12 +88,13 @@ const currentIndex = sessionStorage.getItem("currentIndex");
 let activePath = currentIndex ? currentIndex : "/dashboard/analysis";
 
 const sideBarWidth = computed(() => {
-  return props.isCollapse ? "64px" : "200px";
+  return props.isCollapse ? "64px" : "210px";
 });
 
 const fetchData = async () => {
   try {
     const result = await getMenuList();
+    console.log("result: ", result);
     // console.log("result: ", result);
     menuList.value = result;
   } catch (error) {

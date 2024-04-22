@@ -6,7 +6,7 @@ const ExternalPageRoutes: RouteRecordRaw[] = [
     name: "外部页面",
     component: () => import("@/layouts/index.vue"),
     meta: {
-      icon: "Monitor",
+      icon: "fluent-emoji-flat:desktop-computer",
       title: "externalPage",
     },
     children: [
