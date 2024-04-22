@@ -33,7 +33,6 @@ const props = defineProps<{
 }>();
 
 watchEffect(() => {
-  console.log("props.dataList: ", props.dataList);
   formData.value = props.dataList;
 });
 </script>

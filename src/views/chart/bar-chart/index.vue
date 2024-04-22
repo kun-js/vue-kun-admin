@@ -16,6 +16,16 @@ const chart = ref<HTMLElement | null>(null);
 const initChart = () => {
   const myChart = echarts.init(chart.value);
   const option = {
+    tooltip: {
+      trigger: "axis",
+    },
+    grid: {
+      top: "5%",
+      left: "0%",
+      right: "5%",
+      bottom: "0%",
+      containLabel: true,
+    },
     xAxis: {
       type: "category",
       data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -27,6 +37,10 @@ const initChart = () => {
       {
         data: [120, 200, 150, 80, 70, 110, 130],
         type: "bar",
+        showBackground: true,
+        backgroundStyle: {
+          color: "rgba(180, 180, 180, 0.2)",
+        },
       },
     ],
   };
