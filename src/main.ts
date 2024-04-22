@@ -1,5 +1,8 @@
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+//引入elementplus推荐的light模式的样式文件
 import "element-plus/dist/index.css";
+
+//  elementplus实现的dark模式的样式文件
 import "element-plus/theme-chalk/dark/css-vars.css";
 
 // 样式
