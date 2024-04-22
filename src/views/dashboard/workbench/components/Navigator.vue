@@ -35,5 +35,9 @@ const navigatorList = [
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  &-name {
+    white-space: nowrap;
+  }
 }
 </style>
