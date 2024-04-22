@@ -55,13 +55,18 @@ export const menuList = Mock.mock({
           path: "/date-picker",
         },
         {
+          name: "statistic",
+          title: "统计组件",
+          path: "/statistic",
+        },
+        {
           name: "timestamp",
           title: "相对时间",
           path: "/timestamp",
         },
         {
           name: "passwordStrength",
-          title: "相对时间",
+          title: "密码强度",
           path: "/password-strength",
         },
       ],

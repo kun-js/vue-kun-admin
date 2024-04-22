@@ -18,6 +18,7 @@ declare module "vue" {
     ElCol: (typeof import("element-plus/es"))["ElCol"];
     ElColorPicker: (typeof import("element-plus/es"))["ElColorPicker"];
     ElContainer: (typeof import("element-plus/es"))["ElContainer"];
+    ElCountdown: (typeof import("element-plus/es"))["ElCountdown"];
     ElDatePicker: (typeof import("element-plus/es"))["ElDatePicker"];
     ElDescriptions: (typeof import("element-plus/es"))["ElDescriptions"];
     ElDescriptionsItem: (typeof import("element-plus/es"))["ElDescriptionsItem"];
@@ -52,6 +53,7 @@ declare module "vue" {
     ElRow: (typeof import("element-plus/es"))["ElRow"];
     ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
     ElSelect: (typeof import("element-plus/es"))["ElSelect"];
+    ElStatistic: (typeof import("element-plus/es"))["ElStatistic"];
     ElStep: (typeof import("element-plus/es"))["ElStep"];
     ElSteps: (typeof import("element-plus/es"))["ElSteps"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];

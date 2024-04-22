@@ -104,7 +104,7 @@ const onSubmit = () => {
 
 <style lang="scss" scoped>
 .basic-form-page-container {
-  height: 100px;
+  height: 100%;
   padding: 20px;
 }
 </style>

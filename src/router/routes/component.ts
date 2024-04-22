@@ -36,6 +36,14 @@ const componentRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/component/statistic",
+        name: "统计组件",
+        component: () => import("@/views/component/statistic/index.vue"),
+        meta: {
+          title: "statistic",
+        },
+      },
+      {
         path: "/component/timestamp",
         name: "相对时间",
         component: () => import("@/views/component/timestamp/index.vue"),
