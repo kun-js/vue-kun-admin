@@ -44,6 +44,14 @@ const componentRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/component/menu-tree",
+        name: "树形菜单",
+        component: () => import("@/views/component/menu-tree/index.vue"),
+        meta: {
+          title: "menuTree",
+        },
+      },
+      {
         path: "/component/timestamp",
         name: "相对时间",
         component: () => import("@/views/component/timestamp/index.vue"),

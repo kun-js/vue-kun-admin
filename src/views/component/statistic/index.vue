@@ -8,7 +8,6 @@
         <el-col :span="6">
           <el-statistic title="交易人数" :value="outputValue" />
         </el-col>
-
         <el-col :span="6">
           <el-countdown title="距离开始还有" :value="startTimeValue" />
         </el-col>

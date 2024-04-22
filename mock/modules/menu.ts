@@ -60,6 +60,11 @@ export const menuList = Mock.mock({
           path: "/statistic",
         },
         {
+          name: "menuTree",
+          title: "树形菜单",
+          path: "/menu-tree",
+        },
+        {
           name: "timestamp",
           title: "相对时间",
           path: "/timestamp",
