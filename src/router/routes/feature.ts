@@ -7,7 +7,7 @@ const featureRoutes: RouteRecordRaw[] = [
     component: () => import("@/layouts/index.vue"),
     redirect: "/feature/download",
     meta: {
-      icon: "SetUp",
+      icon: "noto:dna",
       title: "feature",
     },
     children: [

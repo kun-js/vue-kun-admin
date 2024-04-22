@@ -6,7 +6,7 @@ export const menuList = Mock.mock({
       name: "dashboard",
       title: "首页",
       path: "/dashboard",
-      icon: "HomeFilled",
+      icon: "noto:house",
       children: [
         {
           name: "analysis",
@@ -24,7 +24,7 @@ export const menuList = Mock.mock({
       name: "permission",
       title: "权限管理",
       path: "/permission",
-      icon: "Lock",
+      icon: "noto:locked-with-key",
       children: [
         {
           name: "buttonPermission",
@@ -37,7 +37,7 @@ export const menuList = Mock.mock({
       name: "component",
       title: "组件",
       path: "/component",
-      icon: "Menu",
+      icon: "noto:closed-book",
       children: [
         {
           name: "button",
@@ -55,13 +55,23 @@ export const menuList = Mock.mock({
           path: "/date-picker",
         },
         {
+          name: "statistic",
+          title: "统计组件",
+          path: "/statistic",
+        },
+        {
+          name: "menuTree",
+          title: "树形菜单",
+          path: "/menu-tree",
+        },
+        {
           name: "timestamp",
           title: "相对时间",
           path: "/timestamp",
         },
         {
           name: "passwordStrength",
-          title: "相对时间",
+          title: "密码强度",
           path: "/password-strength",
         },
       ],
@@ -70,7 +80,7 @@ export const menuList = Mock.mock({
       name: "feature",
       title: "功能",
       path: "/feature",
-      icon: "SetUp",
+      icon: "noto:dna",
       children: [
         {
           name: "download",
@@ -163,7 +173,7 @@ export const menuList = Mock.mock({
       name: "page",
       title: "页面",
       path: "/page",
-      icon: "Picture",
+      icon: "noto:framed-picture",
       children: [
         {
           name: "form",
@@ -259,7 +269,7 @@ export const menuList = Mock.mock({
       name: "chart",
       title: "图表",
       path: "/chart",
-      icon: "PieChart",
+      icon: "emojione:bar-chart",
       children: [
         {
           name: "AMap",
@@ -309,7 +319,7 @@ export const menuList = Mock.mock({
       name: "externalPage",
       title: "外部页面",
       path: "/external-page",
-      icon: "Monitor",
+      icon: "fluent-emoji-flat:desktop-computer",
       children: [
         {
           name: "outerChain",
@@ -356,7 +366,7 @@ export const menuList = Mock.mock({
       name: "system",
       title: "系统管理",
       path: "/system",
-      icon: "Setting",
+      icon: "noto-v1:gear",
       children: [
         {
           name: "account",
@@ -374,7 +384,7 @@ export const menuList = Mock.mock({
       name: "about",
       title: "关于",
       path: "/about",
-      icon: "User",
+      icon: "streamline-emojis:smiling-face-with-sunglasses",
       children: [
         {
           name: "me",

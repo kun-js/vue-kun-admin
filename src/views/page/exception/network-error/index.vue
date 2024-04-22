@@ -21,7 +21,7 @@ const handleToReload = () => {
 
 <style lang="scss" scoped>
 .network-error-exception-container {
-  height: 100px;
+  height: 100%;
   padding: 20px;
 
   .exception-container {

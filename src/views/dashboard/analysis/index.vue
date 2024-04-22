@@ -13,6 +13,12 @@
         <el-col :span="6"> <Complete /></el-col>
       </el-row>
     </div>
+    <div class="data-container">
+      <el-row :gutter="20">
+        <el-col :span="18"><DataForm :dataList="dataList" /> </el-col>
+        <el-col :span="6"> <LatestUpdate :updateList="updateList" /></el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
@@ -21,15 +27,21 @@ import { onMounted, ref } from "vue";
 import Card from "./components/Card.vue";
 import Chart from "./components/Chart.vue";
 import Complete from "./components/Complete.vue";
+import DataForm from "./components/DataForm.vue";
+import LatestUpdate from "./components/LatestUpdate.vue";
 import { getAnalysisCardList } from "@/api/index";
 
 const cardList = ref();
+const updateList = ref();
+const dataList = ref();
 
 const fetchData = async () => {
   try {
     const result = await getAnalysisCardList();
     // console.log("result: ", result);
-    cardList.value = result;
+    cardList.value = result.analysisCardList;
+    updateList.value = result.updateList;
+    dataList.value = result.dataList;
   } catch (error) {
     console.log("error: ", error);
   }
@@ -49,6 +61,10 @@ onMounted(() => {
   }
 
   .progress-container {
+    margin-bottom: 18px;
+  }
+
+  .data-container {
     margin-bottom: 18px;
   }
 }
