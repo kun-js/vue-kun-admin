@@ -52,6 +52,14 @@ const featureRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/feature/json-editor",
+        name: "Json编辑器",
+        component: () => import("@/views/feature/json-editor/index.vue"),
+        meta: {
+          title: "jsonEditor",
+        },
+      },
+      {
         path: "/feature/image-clipper",
         name: "图片裁剪",
         component: () => import("@/views/feature/image-clipper/index.vue"),

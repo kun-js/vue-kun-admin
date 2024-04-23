@@ -11,6 +11,7 @@ import { viteMockServe } from "vite-plugin-mock";
 // import viteCompression from "vite-plugin-compression";
 import viteImagemin from "vite-plugin-imagemin";
 // import { visualizer } from "rollup-plugin-visualizer";
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 
 // 引入Unocss
 import Unocss from "unocss/vite";
@@ -25,6 +26,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     base: VITE_BASE_URL,
     plugins: [
       vue(),
+      viteCommonjs(),
       Unocss({
         // 使用Unocss
         presets: [presetUno(), presetAttributify(), presetIcons()],
