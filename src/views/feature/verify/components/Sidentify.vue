@@ -115,8 +115,16 @@ const drawDot = (ctx: any) => {
 
 //画图
 const drawPic = () => {
-  let canvas = document.getElementById("s-canvas");
+  let canvas = document.getElementById("s-canvas") as HTMLCanvasElement | null;
+  if (!canvas) {
+    console.error("无法获取到 canvas 元素");
+    return;
+  }
   let ctx = canvas.getContext("2d");
+  if (!ctx) {
+    console.error("无法获取到 2D 上下文");
+    return;
+  }
   ctx.textBaseline = "bottom";
   // 绘制背景
   ctx.fillStyle = randomColor(props.backgroundColorMin, props.backgroundColorMax);

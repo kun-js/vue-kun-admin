@@ -70,6 +70,7 @@ declare module "vue" {
     ElTooltip: (typeof import("element-plus/es"))["ElTooltip"];
     ElTour: (typeof import("element-plus/es"))["ElTour"];
     ElTourStep: (typeof import("element-plus/es"))["ElTourStep"];
+    ElTree: (typeof import("element-plus/es"))["ElTree"];
     ElWatermark: (typeof import("element-plus/es"))["ElWatermark"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
