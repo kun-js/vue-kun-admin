@@ -28,6 +28,7 @@
   "excel": "Excel操作",
   "clipboard": "剪贴板",
   "watermark": "水印",
+  "polling": "轮询",
   "debounce": "防抖节流",
   "sensitive": "敏感词过滤",
   "page": "页面",

@@ -158,6 +158,11 @@ export const menuList = Mock.mock({
           path: "/watermark",
         },
         {
+          name: "polling",
+          title: "轮询",
+          path: "/polling",
+        },
+        {
           name: "debounce",
           title: "防抖节流",
           path: "/debounce",

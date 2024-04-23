@@ -132,6 +132,14 @@ const featureRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/feature/polling",
+        name: "轮询",
+        component: () => import("@/views/feature/polling/index.vue"),
+        meta: {
+          title: "polling",
+        },
+      },
+      {
         path: "/feature/debounce",
         name: "防抖节流",
         component: () => import("@/views/feature/debounce/index.vue"),
