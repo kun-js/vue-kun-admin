@@ -94,7 +94,6 @@ const sideBarWidth = computed(() => {
 const fetchData = async () => {
   try {
     const result = await getMenuList();
-    console.log("result: ", result);
     // console.log("result: ", result);
     menuList.value = result;
   } catch (error) {

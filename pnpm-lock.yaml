@@ -153,6 +153,9 @@ importers:
       '@types/node':
         specifier: ^20.11.26
         version: 20.11.26
+      '@types/uuid':
+        specifier: ^9.0.8
+        version: 9.0.8
       '@types/zxcvbn':
         specifier: ^4.4.4
         version: 4.4.4
@@ -1258,6 +1261,9 @@ packages:
 
   '@types/svgo@2.6.4':
     resolution: {integrity: sha512-l4cmyPEckf8moNYHdJ+4wkHvFxjyW6ulm9l4YGaOxeyBWPhBOT0gvni1InpFPdzx1dKf/2s62qGITwxNWnPQng==}
+
+  '@types/uuid@9.0.8':
+    resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
 
   '@types/video.js@7.3.57':
     resolution: {integrity: sha512-CKAaJ9p/myadqT/FAnlzVvHMVj35ynl86eGgqPM9paTCWbFtq9JUZATUzOir+bLjRyXqrjA10e5KgHc7dRR38g==}
@@ -6611,6 +6617,8 @@ snapshots:
   '@types/svgo@2.6.4':
     dependencies:
       '@types/node': 20.11.26
+
+  '@types/uuid@9.0.8': {}
 
   '@types/video.js@7.3.57': {}
 
