@@ -32,14 +32,18 @@ const navigatorList = [
 </script>
 
 <style lang="scss" scoped>
-.navigator {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.navigator-container {
+  margin-bottom: 20px;
 
-  &-name {
-    white-space: nowrap;
+  .navigator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-name {
+      white-space: nowrap;
+    }
   }
 }
 </style>

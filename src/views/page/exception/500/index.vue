@@ -41,7 +41,7 @@ const handleToBackHome = () => {
 
     .img {
       width: 250px;
-      height: 200px;
+      height: 180px;
     }
   }
 }

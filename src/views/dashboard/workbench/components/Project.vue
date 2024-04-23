@@ -72,40 +72,44 @@ const projectList = [
 </script>
 
 <style lang="scss" scoped>
-.project {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 120px;
+.project-container {
+  margin-bottom: 20px;
 
-  &-title {
+  .project {
     display: flex;
-    align-items: center;
-
-    &-name {
-      margin-left: 18px;
-      font-size: 20px;
-    }
-  }
-
-  &-introduce {
-    height: 45px;
-    margin-bottom: 18px;
-    font-size: 14px;
-  }
-
-  &-footer {
-    display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    height: 120px;
 
-    &-team {
-      font-size: 14px;
-      white-space: nowrap;
+    &-title {
+      display: flex;
+      align-items: center;
+
+      &-name {
+        margin-left: 18px;
+        font-size: 20px;
+      }
     }
 
-    &-time {
+    &-introduce {
+      height: 45px;
+      margin-bottom: 18px;
       font-size: 14px;
-      white-space: nowrap;
+    }
+
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+
+      &-team {
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      &-time {
+        font-size: 14px;
+        white-space: nowrap;
+      }
     }
   }
 }

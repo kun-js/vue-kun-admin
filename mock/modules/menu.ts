@@ -108,6 +108,11 @@ export const menuList = Mock.mock({
           path: "/markdown-editor",
         },
         {
+          name: "jsonEditor",
+          title: "Json编辑器",
+          path: "/json-editor",
+        },
+        {
           name: "imageClipper",
           title: "图片裁剪",
           path: "/image-clipper",
@@ -156,6 +161,11 @@ export const menuList = Mock.mock({
           name: "watermark",
           title: "水印",
           path: "/watermark",
+        },
+        {
+          name: "polling",
+          title: "轮询",
+          path: "/polling",
         },
         {
           name: "debounce",
