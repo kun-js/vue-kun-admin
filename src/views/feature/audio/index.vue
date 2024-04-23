@@ -11,7 +11,7 @@
 import WaveSurfer from "wavesurfer.js";
 import { ref, onMounted } from "vue";
 
-const audioContainer = ref<HTMLElement | null>(null);
+const audioContainer = ref(null);
 
 const initAudio = () => {
   if (!audioContainer.value) return;

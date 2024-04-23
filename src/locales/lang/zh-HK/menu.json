@@ -1,7 +1,7 @@
 {
   "dashboard": "首頁",
   "analysis": "分析頁",
-  "workbench": "工作臺",
+  "workbench": "工作台",
   "permission": "權限管理",
   "buttonPermission": "按鈕權限",
   "component": "組件",
@@ -18,6 +18,7 @@
   "codeEditor": "代碼編輯器",
   "textEditor": "文本編輯器",
   "markdownEditor": "Markdown編輯器",
+  "jsonEditor": "Json編輯器",
   "imageClipper": "圖片裁剪",
   "audio": "音頻可視化",
   "video": "視頻播放器",
