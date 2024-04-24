@@ -36,6 +36,14 @@ const componentRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/component/message",
+        name: "消息提示",
+        component: () => import("@/views/component/message/index.vue"),
+        meta: {
+          title: "message",
+        },
+      },
+      {
         path: "/component/statistic",
         name: "统计组件",
         component: () => import("@/views/component/statistic/index.vue"),

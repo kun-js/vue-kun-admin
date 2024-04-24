@@ -55,6 +55,11 @@ export const menuList = Mock.mock({
           path: "/date-picker",
         },
         {
+          name: "message",
+          title: "消息提示",
+          path: "/message",
+        },
+        {
           name: "statistic",
           title: "统计组件",
           path: "/statistic",
@@ -161,6 +166,11 @@ export const menuList = Mock.mock({
           name: "watermark",
           title: "水印",
           path: "/watermark",
+        },
+        {
+          name: "flowChart",
+          title: "流程图",
+          path: "/flow-chart",
         },
         {
           name: "polling",

@@ -1,7 +1,7 @@
 <template>
   <div class="project-container">
     <el-card :body-style="{ padding: 0 }">
-      <template #header> 项目 </template>
+      <template #header> <span style="white-space: nowrap">项目</span> </template>
       <el-row>
         <el-col :span="8" v-for="item in projectList" :key="item.id">
           <el-card shadow="hover" style="border-radius: 0" :body-style="{ height: '160px' }">

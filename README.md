@@ -1,39 +1,24 @@
-# vue-kun-admin
+# 简介
 
-This template should help get you started developing with Vue 3 in Vite.
+KunAdmin 是一个后台管理系统模板，采用 Vue、TypeScript 等最新前端技术栈进行开发，该系统仅用作学习参考。
 
-## Recommended IDE Setup
+## 项目相关
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- 项目仓库地址：https://github.com/kun-js/vue-kun-admin
 
-## Type Support for `.vue` Imports in TS
+## 克隆仓库
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+```
+# 从Github上拉取
+git clone https://github.com/kun-js/vue-kun-admin.git
+```
 
-## Customize configuration
+## 本地开发
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+```
+# 安装依赖
 pnpm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# 项目启动
 pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
 ```

@@ -1,6 +1,6 @@
 <template>
   <el-card>
-    <template #header> 销售分析 </template>
+    <template #header> <span style="white-space: nowrap">销售分析</span> </template>
     <div ref="chart" style="width: 100%; height: 300px"></div>
   </el-card>
 </template>
@@ -18,15 +18,9 @@ const initChart = () => {
       tooltip: {
         trigger: "axis",
       },
-      grid: {
-        top: "5%",
-        left: "0%",
-        right: "5%",
-        bottom: "0%",
-        containLabel: true,
-      },
       legend: {
-        left: "center",
+        left: "left",
+        orient: "vertical",
         data: ["进货量", "售出量", "利润"],
       },
       radar: [
@@ -39,7 +33,7 @@ const initChart = () => {
             { text: "2020", max: 100 },
             { text: "2019", max: 100 },
           ],
-          center: ["50%", "60%"],
+          center: ["50%", "50%"],
         },
       ],
       series: [
