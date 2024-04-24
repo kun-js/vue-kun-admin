@@ -3,7 +3,7 @@
     <strong>关于</strong>
     <div class="mt-2">
       <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blank"> vue-kun-admin </el-link>
-      <span>是一款基于Vue3.2、Vite5、Element-Plus、TypeScript的后台解决方案。</span>
+      <span>是一款基于Vue3.4、Vite5、Element-Plus、TypeScript的后台解决方案。</span>
     </div>
   </el-card>
   <div class="project-info-container">

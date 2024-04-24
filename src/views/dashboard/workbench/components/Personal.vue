@@ -9,7 +9,9 @@
           <div class="personal-info-right-greeting">
             <span>你好,{{ userStore.userInfo.name }},祝您今日工作愉快!</span>
           </div>
-          <div class="personal-info-right-weather">偶像练习生</div>
+          <div class="personal-info-right-weather">
+            偶像练习生<span v-if="weather && temperature"> | 当前天气:{{ weather }},温度:{{ temperature }}</span>
+          </div>
         </div>
       </div>
       <div class="personal-task">
@@ -32,8 +34,35 @@
 
 <script setup lang="ts">
 import { useUserStore } from "@/stores/user";
+import axios from "axios";
+import { ref, onMounted } from "vue";
 
 const userStore = useUserStore();
+
+const weather = ref();
+const temperature = ref();
+
+const fetchData = async () => {
+  try {
+    const response = await axios.get("https://api.seniverse.com/v3/weather/now.json", {
+      params: {
+        key: "SLoH6H86MEago-1B3",
+        location: "shenzhen",
+        language: "zh-Hans",
+        unit: "c",
+      },
+    });
+    // console.log("response: ", response);
+    weather.value = response.data.results[0].now.text;
+    temperature.value = response.data.results[0].now.temperature;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+onMounted(() => {
+  fetchData();
+});
 </script>
 
 <style lang="scss" scoped>

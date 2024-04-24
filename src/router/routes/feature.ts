@@ -140,6 +140,14 @@ const featureRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/feature/flow-chart",
+        name: "流程图",
+        component: () => import("@/views/feature/flow-chart/index.vue"),
+        meta: {
+          title: "flowChart",
+        },
+      },
+      {
         path: "/feature/polling",
         name: "轮询",
         component: () => import("@/views/feature/polling/index.vue"),

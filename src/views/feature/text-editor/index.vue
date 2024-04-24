@@ -1,6 +1,6 @@
 <template>
   <div class="text-editor-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '93%', padding: 0 }">
       <template #header>
         <span style="margin-right: 18px">文本编辑器示例</span>
       </template>
@@ -12,7 +12,7 @@
           :mode="mode"
         />
         <Editor
-          style="height: 600px; overflow-y: hidden"
+          style="height: calc(100vh - 235px); overflow-y: hidden"
           v-model="valueHtml"
           :defaultConfig="editorConfig"
           :mode="mode"
