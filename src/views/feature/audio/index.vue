@@ -10,6 +10,7 @@
 <script setup lang="ts">
 import WaveSurfer from "wavesurfer.js";
 import { ref, onMounted } from "vue";
+import musicUrl from "@/assets/audios/zhiyinnitaimei.mp3";
 
 const audioContainer = ref(null);
 
@@ -20,8 +21,11 @@ const initAudio = () => {
     container: audioContainer.value,
     waveColor: "rgb(200, 0, 200)",
     progressColor: "rgb(100, 0, 100)",
-    url: "@assets/audios/zhiyinnitaimei.mp3",
+    normalize: true,
+    mediaControls: true,
+    url: musicUrl,
   });
+
   wavesurfer.on("click", () => {
     wavesurfer.play();
   });
