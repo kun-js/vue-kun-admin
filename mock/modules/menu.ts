@@ -55,6 +55,11 @@ export const menuList = Mock.mock({
           path: "/date-picker",
         },
         {
+          name: "message",
+          title: "消息提示",
+          path: "/message",
+        },
+        {
           name: "statistic",
           title: "统计组件",
           path: "/statistic",

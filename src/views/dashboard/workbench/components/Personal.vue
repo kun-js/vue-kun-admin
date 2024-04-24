@@ -52,7 +52,7 @@ const fetchData = async () => {
         unit: "c",
       },
     });
-    console.log("response: ", response.data.results[0]);
+    // console.log("response: ", response);
     weather.value = response.data.results[0].now.text;
     temperature.value = response.data.results[0].now.temperature;
   } catch (error) {

@@ -15,7 +15,7 @@
   .background {
     width: 100%;
     height: 100%;
-    // background-image: url("@/assets/imgs/kunkundance.png");
+    background-image: url("@/assets/imgs/kunkundance.png");
     background-repeat: no-repeat;
     background-size: cover;
   }

@@ -22,7 +22,7 @@
               <el-sub-menu :index="route.path" :key="route.path">
                 <template #title>
                   <el-icon>
-                    <Icon style="width: 24px; height: 24px; font-size: 24px" :icon="route.icon" />
+                    <Icon style="font-size: 24px" :icon="route.icon" />
                   </el-icon>
                   <span style="margin-left: 12px">{{ $t("menu." + route.name) }}</span>
                 </template>

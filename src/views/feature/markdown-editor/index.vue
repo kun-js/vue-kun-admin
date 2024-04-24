@@ -1,6 +1,6 @@
 <template>
   <div class="markdown-editor-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '93%' }">
+    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '93%', padding: 0 }">
       <template #header>
         <span style="margin-right: 18px">Markdown编辑器示例</span>
       </template>
