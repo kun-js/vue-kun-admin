@@ -6,7 +6,7 @@
           <div class="breadcrumb-item">
             <Icon
               v-if="item.meta.icon && isShowBreadcrumbIcon"
-              style=" margin-right: 8px;font-size: 14px"
+              style="margin-right: 8px; font-size: 14px"
               :icon="item.meta.icon"
             />
             <span style="white-space: nowrap">{{ $t("menu." + item.meta.title) }}</span>
