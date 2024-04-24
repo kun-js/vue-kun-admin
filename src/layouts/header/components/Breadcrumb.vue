@@ -5,7 +5,7 @@
         <el-breadcrumb-item v-if="item.name" :key="index" :to="item.path">
           <div class="breadcrumb-item">
             <el-icon v-if="item.meta.icon && isShowBreadcrumbIcon"> <component :is="item.meta.icon" /></el-icon>
-            {{ $t("menu." + item.meta.title) }}
+            <span style="white-space: nowrap">{{ $t("menu." + item.meta.title) }}</span>
           </div>
         </el-breadcrumb-item>
       </template>

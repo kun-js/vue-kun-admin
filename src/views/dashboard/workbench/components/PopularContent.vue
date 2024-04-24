@@ -1,7 +1,7 @@
 <template>
   <div class="popular-content-container">
     <el-card :body-style="{ height: '540px' }">
-      <template #header> 热门内容 </template>
+      <template #header> <span style="white-space: nowrap">热点内容</span> </template>
       <el-table v-loading="loading" :data="newsList" style="width: 100%" fit stripe show-overflow-tooltip>
         <el-table-column align="center" prop="title" label="标题" />
         <el-table-column align="center" prop="source" label="作者" width="120">
@@ -45,7 +45,7 @@ const fetchData = async () => {
         page: 0,
       },
     });
-    console.log("response: ", response);
+    // console.log("response: ", response);
     if (response.status === 200) {
       newsList.value = response.data.data;
     }

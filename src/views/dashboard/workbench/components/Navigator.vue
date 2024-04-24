@@ -1,7 +1,7 @@
 <template>
   <div class="navigator-container">
     <el-card :body-style="{ padding: 0 }">
-      <template #header> 快捷导航 </template>
+      <template #header> <span style="white-space: nowrap">快捷导航</span> </template>
       <el-row>
         <el-col :span="8" v-for="item in navigatorList" :key="item.id">
           <el-card shadow="hover" style="border-radius: 0" :body-style="{ height: '100px' }">
