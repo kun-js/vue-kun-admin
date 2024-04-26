@@ -1,5 +1,5 @@
 <template>
-  <div class="pdf-feature-container">
+  <div class="pdf-preview-iframe-feature-container">
     <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '93%', padding: 0 }">
       <template #header>
         PDF预览示例
@@ -37,7 +37,7 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-.pdf-feature-container {
+.pdf-preview-iframe-feature-container {
   height: 100%;
   padding: 20px;
 

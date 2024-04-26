@@ -100,11 +100,43 @@ const featureRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/feature/pdf",
-        name: "PDF预览",
-        component: () => import("@/views/feature/pdf/index.vue"),
+        path: "/feature/word-preview",
+        name: "Word预览",
+        component: () => import("@/views/feature/word-preview/index.vue"),
         meta: {
-          title: "pdf",
+          title: "wordPreview",
+        },
+      },
+      {
+        path: "/feature/excel-preview",
+        name: "Excel预览",
+        component: () => import("@/views/feature/excel-preview/index.vue"),
+        meta: {
+          title: "excelPreview",
+        },
+      },
+      {
+        path: "/feature/pdf-preview",
+        name: "PDF预览",
+        component: () => import("@/views/feature/pdf-preview/index.vue"),
+        meta: {
+          title: "pdfPreview",
+        },
+      },
+      {
+        path: "/feature/pdf-preview-iframe",
+        name: "PDF预览(Iframe)",
+        component: () => import("@/views/feature/pdf-preview-iframe/index.vue"),
+        meta: {
+          title: "pdfPreviewIframe",
+        },
+      },
+      {
+        path: "/feature/excel-action",
+        name: "excel",
+        component: () => import("@/views/feature/excel-action/index.vue"),
+        meta: {
+          title: "excelAction",
         },
       },
       {
@@ -113,14 +145,6 @@ const featureRoutes: RouteRecordRaw[] = [
         component: () => import("@/views/feature/barcode/index.vue"),
         meta: {
           title: "barcode",
-        },
-      },
-      {
-        path: "/feature/excel",
-        name: "excel",
-        component: () => import("@/views/feature/excel/index.vue"),
-        meta: {
-          title: "excel",
         },
       },
       {
