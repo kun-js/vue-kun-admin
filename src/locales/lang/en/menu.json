@@ -32,6 +32,7 @@
   "excelAction": "Excel Action",
   "barcode": "Barcode Generation",
   "clipboard": "Clipboard",
+  "signature": "Signature",
   "watermark": "Watermark",
   "flowChart": "Flow Chart",
   "polling": "Polling",

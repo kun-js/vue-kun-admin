@@ -178,6 +178,11 @@ export const menuList = Mock.mock({
           path: "/clipboard",
         },
         {
+          name: "signature",
+          title: "签名",
+          path: "/signature",
+        },
+        {
           name: "watermark",
           title: "水印",
           path: "/watermark",
