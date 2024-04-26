@@ -156,6 +156,14 @@ const featureRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/feature/signature",
+        name: "签名",
+        component: () => import("@/views/feature/signature/index.vue"),
+        meta: {
+          title: "signature",
+        },
+      },
+      {
         path: "/feature/watermark",
         name: "水印",
         component: () => import("@/views/feature/watermark/index.vue"),

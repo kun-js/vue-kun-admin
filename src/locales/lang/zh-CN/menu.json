@@ -32,6 +32,7 @@
   "excelAction": "Excel操作",
   "barcode": "条码生成",
   "clipboard": "剪贴板",
+  "signature": "签名",
   "watermark": "水印",
   "flowChart": "流程图",
   "polling": "轮询",
