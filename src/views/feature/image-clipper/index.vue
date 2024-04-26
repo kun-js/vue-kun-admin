@@ -21,7 +21,11 @@
                 :preview-src-list="srcList"
                 :autoCrop="true"
                 fit="cover"
-              />
+              >
+                <template #error>
+                  <span>请裁剪图片以查看</span>
+                </template>
+              </el-image>
             </div>
           </div>
         </el-col>

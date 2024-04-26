@@ -2,7 +2,7 @@
   <div class="pdf-preview-iframe-feature-container">
     <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '93%', padding: 0 }">
       <template #header>
-        PDF预览示例
+        PDF预览示例(iframe版)
         <el-button type="primary" @click="handleToShowPdf1">展示多页PDF</el-button>
         <el-button type="primary" @click="handleToShowPdf2">展示单页PDF</el-button>
       </template>
