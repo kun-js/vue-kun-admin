@@ -143,19 +143,34 @@ export const menuList = Mock.mock({
           path: "/drag",
         },
         {
-          name: "pdf",
+          name: "wordPreview",
+          title: "Word预览",
+          path: "/word-preview",
+        },
+        {
+          name: "excelPreview",
+          title: "Excel预览",
+          path: "/excel-preview",
+        },
+        {
+          name: "pdfPreview",
           title: "PDF预览",
-          path: "/pdf",
+          path: "/pdf-preview",
+        },
+        {
+          name: "pdfPreviewIframe",
+          title: "PDF预览Iframe版",
+          path: "/pdf-preview-iframe",
+        },
+        {
+          name: "excelAction",
+          title: "Excel操作",
+          path: "/excel-action",
         },
         {
           name: "barcode",
           title: "条码",
           path: "/barcode",
-        },
-        {
-          name: "excel",
-          title: "Excel导入/导出",
-          path: "/excel",
         },
         {
           name: "clipboard",

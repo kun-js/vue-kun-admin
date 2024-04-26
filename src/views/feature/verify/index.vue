@@ -106,8 +106,7 @@ onMounted(() => {
     width: 400px;
     padding: 20px;
     //   margin: 0 auto;
-    margin-top: 50px;
-    border: 1px solid rgb(123 109 30);
+    border: 1px solid #000;
     border-radius: 8px;
 
     .code {
