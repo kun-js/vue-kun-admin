@@ -16,8 +16,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
-import pdf1 from "./test1.pdf";
-import pdf2 from "./test2.pdf";
+import pdf1 from "@/assets/documents/test1.pdf";
+import pdf2 from "@/assets/documents/test2.pdf";
 const pdfUrl = ref(""); // pdf文件地址
 // const fileUrl = "/pdfjs/web/viewer.html?file="; // pdfjs文件地址
 
