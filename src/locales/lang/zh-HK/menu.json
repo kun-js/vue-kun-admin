@@ -6,6 +6,7 @@
   "buttonPermission": "按鈕權限",
   "component": "組件",
   "button": "按鈕",
+  "tag": "標籤",
   "colorPicker": "取色器",
   "datePicker": "日期選擇器",
   "message": "消息提示",

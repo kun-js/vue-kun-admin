@@ -20,6 +20,14 @@ const componentRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/component/tag",
+        name: "标签",
+        component: () => import("@/views/component/tag/index.vue"),
+        meta: {
+          title: "tag",
+        },
+      },
+      {
         path: "/component/color-picker",
         name: "取色器",
         component: () => import("@/views/component/color-picker/index.vue"),

@@ -1,7 +1,7 @@
 import Mock from "mockjs";
 
 export const accountList = Mock.mock({
-  "accountList|100-1000": [
+  "accountList|200-1000": [
     {
       "id|+1": 1,
       username: "@word(8)",

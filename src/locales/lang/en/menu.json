@@ -6,6 +6,7 @@
   "buttonPermission": "Button Permission",
   "component": "Component",
   "button": "Button",
+  "tag": "Tag",
   "colorPicker": "Color Picker",
   "datePicker": "Date Picker",
   "message": "Message Prompt",
