@@ -3,23 +3,27 @@
     <strong>关于</strong>
     <div class="mt-2">
       <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blank"> vue-kun-admin </el-link>
-      <span>是一款基于Vue3.4、Vite5、Element-Plus、TypeScript的后台解决方案。</span>
+      <span>是一款基于Vue3.4、Vite5、Element-Plus、TypeScript的中后台解决方案。</span>
     </div>
   </el-card>
   <div class="project-info-container">
     <el-card style="max-width: 100%">
-      <el-descriptions title="项目信息" :column="3" border="true">
+      <el-descriptions title="项目信息" :column="4" border="true">
         <el-descriptions-item>
           <template #label> 版本 </template>
-          0.0.1
+          <el-tag>0.0.1</el-tag>
         </el-descriptions-item>
         <el-descriptions-item>
           <template #label> 最后编译时间 </template>
-          {{ time }}
+          <el-tag>{{ time }}</el-tag>
         </el-descriptions-item>
         <el-descriptions-item>
-          <template #label> 地点 </template>
-          深圳
+          <template #label> node 版本建议 </template>
+          <el-tag>>=18.16.0</el-tag>
+        </el-descriptions-item>
+        <el-descriptions-item>
+          <template #label> pnpm 版本建议 </template>
+          <el-tag>>=8.15.0</el-tag>
         </el-descriptions-item>
         <el-descriptions-item>
           <template #label> 开发人员 </template>
@@ -27,8 +31,12 @@
           <el-tag class="ml-2">李四</el-tag>
         </el-descriptions-item>
         <el-descriptions-item>
-          <template #label> Github </template>
+          <template #label> 代码仓库 </template>
           <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blank"> Github </el-link>
+        </el-descriptions-item>
+        <el-descriptions-item>
+          <template #label> 预览地址 </template>
+          <el-link type="primary" href="http://8.134.153.24" target="_blank"> 预览链接 </el-link>
         </el-descriptions-item>
       </el-descriptions>
     </el-card>
