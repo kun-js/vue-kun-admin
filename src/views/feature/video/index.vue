@@ -1,6 +1,6 @@
 <template>
   <div class="video-feature-container">
-    <el-card style="max-width: 100%">
+    <el-card style="max-width: 100%" :body-style="{ padding: 0 }">
       <template #header>视频播放器示例</template>
       <video-player :src="videoSrc" :options="playerOptions" :volume="0.6" />
     </el-card>
