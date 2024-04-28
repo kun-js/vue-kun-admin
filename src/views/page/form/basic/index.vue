@@ -71,7 +71,7 @@
         <el-form-item label="备注">
           <el-input v-model="form.desc" type="textarea" />
         </el-form-item>
-        <el-form-item>
+        <el-form-item style="float: right">
           <el-button>取消</el-button>
           <el-button type="primary" @click="onSubmit">提交</el-button>
         </el-form-item>
