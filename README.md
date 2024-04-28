@@ -1,6 +1,6 @@
 # 简介 📃
 
-`vue-kun-admin` 是一个后台管理系统模板，采用 `Vue`、`TypeScript` 等最新前端技术栈进行开发，该系统仅用作学习参考 📚
+`vue-kun-admin` 是一个中后台管理系统模板，采用 `Vue`、`TypeScript`、`Element-Plus` 等最新主流前端技术进行开发，该系统仅用作个人学习参考 📚
 
 ## 项目相关 🧭
 
