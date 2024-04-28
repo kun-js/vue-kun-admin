@@ -5,7 +5,7 @@
         <span style="margin-right: 18px">敏感词过滤示例</span>
       </template>
       <p>过滤词(可自定义):脑残,傻逼,草泥马</p>
-      <el-input v-model="textInput" v-filter />
+      <el-input v-model="textInput" v-filter placeholder="请输入敏感词" />
       <p>{{ textInput }}</p>
     </el-card>
   </div>
