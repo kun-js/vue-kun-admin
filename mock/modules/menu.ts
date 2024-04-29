@@ -367,6 +367,23 @@ export const menuList = Mock.mock({
       icon: "fluent-emoji-flat:desktop-computer",
       children: [
         {
+          name: "iframe",
+          title: "文档内嵌",
+          path: "/iframe",
+          children: [
+            {
+              name: "element",
+              title: "element",
+              path: "/element",
+            },
+            {
+              name: "vue",
+              title: "vue",
+              path: "/vue",
+            },
+          ],
+        },
+        {
           name: "outerChain",
           title: "文档外链",
           path: "/outerchain",
@@ -385,23 +402,6 @@ export const menuList = Mock.mock({
               name: "baidu",
               title: "baidu",
               path: "/baidu",
-            },
-          ],
-        },
-        {
-          name: "iframe",
-          title: "文档内嵌",
-          path: "/iframe",
-          children: [
-            {
-              name: "element",
-              title: "element",
-              path: "/element",
-            },
-            {
-              name: "vue",
-              title: "vue",
-              path: "/vue",
             },
           ],
         },
