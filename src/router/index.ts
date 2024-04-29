@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { RouteRecordRaw } from "vue-router";
+import { useMenuStore } from "@/stores/menu";
 
 import baseRoutes from "./routes/base";
 import dashboardRoutes from "./routes/dashboard";
@@ -30,6 +31,14 @@ const router = createRouter({
   routes,
 });
 
+// el-menu 高亮
+router.beforeEach((to, from, next) => {
+  useMenuStore().defaultActive = to.path;
+  // console.log("useMenuStore().defaultActive: ", useMenuStore().defaultActive);
+  next();
+});
+
+// 登录判断
 router.beforeEach((to, from, next) => {
   if (to.path === "/login") return next(); // 如果是访问登录页，直接放行
   const result = localStorage.getItem("pinia-user");
