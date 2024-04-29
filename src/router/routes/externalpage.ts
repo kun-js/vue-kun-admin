@@ -1,15 +1,30 @@
-import { RouteRecordRaw } from "vue-router";
-
-const ExternalPageRoutes: RouteRecordRaw[] = [
+const ExternalPageRoutes = [
   {
     path: "/external-page",
     name: "外部页面",
     component: () => import("@/layouts/index.vue"),
+    redirect: "/external-page/iframe/element",
     meta: {
       icon: "fluent-emoji-flat:desktop-computer",
       title: "externalPage",
     },
     children: [
+      {
+        path: "/external-page/iframe/element",
+        name: "element",
+        component: () => import("@/views/external-page/iframe/element/index.vue"),
+        meta: {
+          title: "element",
+        },
+      },
+      {
+        path: "/external-page/iframe/vue",
+        name: "vue",
+        component: () => import("@/views/external-page/iframe/vue/index.vue"),
+        meta: {
+          title: "vue",
+        },
+      },
       {
         path: "/external-page/outerchain/element",
         name: "outerchainelement",
@@ -35,22 +50,6 @@ const ExternalPageRoutes: RouteRecordRaw[] = [
           window.open("https://www.baidu.com", "_blank");
           // 需要调用 next() 函数来结束路由导航
           next(false); // 因为我们手动打开了一个新标签页，所以不需要继续导航
-        },
-      },
-      {
-        path: "/external-page/iframe/element",
-        name: "element",
-        component: () => import("@/views/external-page/iframe/element/index.vue"),
-        meta: {
-          title: "element",
-        },
-      },
-      {
-        path: "/external-page/iframe/vue",
-        name: "vue",
-        component: () => import("@/views/external-page/iframe/vue/index.vue"),
-        meta: {
-          title: "vue",
         },
       },
     ],
