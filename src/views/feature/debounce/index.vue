@@ -23,6 +23,10 @@ import { debounce } from "@/utils/debounce";
 import { throttle } from "@/utils/throttle";
 import { ElMessage } from "element-plus";
 
+defineOptions({
+  name: "Debounce",
+});
+
 const clickEventDebounce = debounce(() => {
   ElMessage.success("防抖");
 }, 1000);

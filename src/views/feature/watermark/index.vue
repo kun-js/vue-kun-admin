@@ -36,6 +36,10 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 
+defineOptions({
+  name: "Watermark",
+});
+
 const isShowTextWatermarkOne = ref(false);
 const isShowTextWatermarkTwo = ref(false);
 const isShowPicWatermark = ref(false);

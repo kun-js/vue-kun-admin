@@ -12,6 +12,10 @@ import WaveSurfer from "wavesurfer.js";
 import { ref, onMounted } from "vue";
 import musicUrl from "@/assets/audios/zhiyinnitaimei.mp3";
 
+defineOptions({
+  name: "Audio",
+});
+
 const audioContainer = ref(null);
 
 const initAudio = () => {

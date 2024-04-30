@@ -14,7 +14,6 @@
           <el-table-column label="性别" prop="gender" width="100" />
         </el-table>
       </div>
-      <!-- <span>打印图片示例:</span> -->
       <div id="print-img">
         <img src="@/assets/imgs/Caixukun.png" alt="" />
       </div>
@@ -24,6 +23,10 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+
+defineOptions({
+  name: "Print",
+});
 
 const tableData = ref([
   // 表格数据

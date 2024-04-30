@@ -14,6 +14,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
+defineOptions({
+  name: "Sensitive",
+});
+
 const textInput = ref("");
 </script>
 

@@ -105,6 +105,10 @@ import { getAccountList } from "@/api/index";
 import { deepClone } from "@/utils/deepClone";
 import { ElMessage } from "element-plus";
 
+defineOptions({
+  name: "Account",
+});
+
 // 声明类型
 interface AccountInfo {
   id: number;

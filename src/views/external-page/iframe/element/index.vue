@@ -4,6 +4,10 @@
   </el-card>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineOptions({
+  name: "Element",
+});
+</script>
 
 <style lang="scss" scoped></style>

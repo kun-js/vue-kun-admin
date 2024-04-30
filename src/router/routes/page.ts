@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 const pageRoutes: RouteRecordRaw[] = [
   {
     path: "/page",
-    name: "page",
+    name: "Page",
     component: () => import("@/layouts/index.vue"),
     redirect: "/page/form",
     meta: {
@@ -13,7 +13,7 @@ const pageRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/page/form/basic",
-        name: "基础表单",
+        name: "BasicForm",
         component: () => import("@/views/page/form/basic/index.vue"),
         meta: {
           title: "basicFrom",
@@ -21,7 +21,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/form/step",
-        name: "分步表单",
+        name: "StepForm",
         component: () => import("@/views/page/form/step/index.vue"),
         meta: {
           title: "stepForm",
@@ -29,7 +29,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/list/basic",
-        name: "基础列表页",
+        name: "BasicList",
         component: () => import("@/views/page/list/basic/index.vue"),
         meta: {
           title: "basicList",
@@ -37,7 +37,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/list/card",
-        name: "卡片列表页",
+        name: "CarkList",
         component: () => import("@/views/page/list/card/index.vue"),
         meta: {
           title: "cardList",
@@ -45,7 +45,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/detail",
-        name: "详情页",
+        name: "Detail",
         component: () => import("@/views/page/detail/index.vue"),
         meta: {
           title: "detail",
@@ -53,7 +53,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/result/success",
-        name: "成功页",
+        name: "SuccessPage",
         component: () => import("@/views/page/result/success/index.vue"),
         meta: {
           title: "success",
@@ -61,7 +61,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/result/fail",
-        name: "失败页",
+        name: "FailPage",
         component: () => import("@/views/page/result/fail/index.vue"),
         meta: {
           title: "fail",
@@ -69,7 +69,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/exception/404",
-        name: "404",
+        name: "404Page",
         component: () => import("@/views/page/exception/404/index.vue"),
         meta: {
           title: "page404",
@@ -77,7 +77,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/exception/403",
-        name: "403",
+        name: "403Page",
         component: () => import("@/views/page/exception/403/index.vue"),
         meta: {
           title: "page403",
@@ -85,7 +85,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/exception/500",
-        name: "500",
+        name: "500Page",
         component: () => import("@/views/page/exception/500/index.vue"),
         meta: {
           title: "page500",
@@ -93,7 +93,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/exception/no-data",
-        name: "无数据",
+        name: "NoDataPage",
         component: () => import("@/views/page/exception/no-data/index.vue"),
         meta: {
           title: "noData",
@@ -101,7 +101,7 @@ const pageRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/page/exception/network-error",
-        name: "网络错误",
+        name: "NetworkErrorPage",
         component: () => import("@/views/page/exception/network-error/index.vue"),
         meta: {
           title: "networkError",

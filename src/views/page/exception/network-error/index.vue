@@ -14,6 +14,10 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({
+  name: "NetworkErrorPage",
+});
+
 const handleToReload = () => {
   location.reload();
 };

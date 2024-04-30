@@ -11,6 +11,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
+defineOptions({
+  name: "TMap",
+});
+
 const mapContainer = ref(null);
 
 const initMap = () => {

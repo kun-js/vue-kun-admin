@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineOptions({
+  name: "Barcode",
+});
+
 import { ref } from "vue";
 import JsBarcode from "jsbarcode";
 import QrcodeVue from "qrcode.vue";

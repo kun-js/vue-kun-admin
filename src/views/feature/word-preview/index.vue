@@ -8,12 +8,13 @@
 </template>
 
 <script setup lang="ts">
-//引入VueOfficeDocx组件
 import VueOfficeDocx from "@vue-office/docx";
-//引入相关样式
 import "@vue-office/docx/lib/index.css";
-
 import { ref } from "vue";
+
+defineOptions({
+  name: "WordPreview",
+});
 
 const docxUrl = ref("http://static.shanhuxueyuan.com/test6.docx");
 

@@ -30,8 +30,11 @@ import { Sunrise, MoonNight } from "@element-plus/icons-vue";
 import { useLocaleStore } from "@/stores/locale";
 import { useDark } from "@vueuse/core";
 
-const isDark = useDark();
+defineOptions({
+  name: "Login",
+});
 
+const isDark = useDark();
 const localeStore = useLocaleStore();
 
 const handleToChangeLangZhCn = () => {

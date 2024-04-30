@@ -50,6 +50,10 @@
 import { reactive } from "vue";
 import Draggable from "vuedraggable";
 
+defineOptions({
+  name: "Draggable",
+});
+
 // 引入图片
 import img1 from "@/assets/imgs/xiaoheizi1.png";
 import img2 from "@/assets/imgs/xiaoheizi2.png";

@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 const dashboardRoutes: RouteRecordRaw[] = [
   {
     path: "/dashboard",
-    name: "首页",
+    name: "Dashboard",
     component: () => import("@/layouts/index.vue"),
     redirect: "/dashboard/analysis",
     meta: {
@@ -13,7 +13,7 @@ const dashboardRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/dashboard/analysis",
-        name: "分析页",
+        name: "Analysis",
         component: () => import("@/views/dashboard/analysis/index.vue"),
         meta: {
           title: "analysis",
@@ -21,7 +21,7 @@ const dashboardRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/dashboard/workbench",
-        name: "工作台",
+        name: "Workbench",
         component: () => import("@/views/dashboard/workbench/index.vue"),
         meta: {
           title: "workbench",

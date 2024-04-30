@@ -12,6 +12,10 @@
 import AMapLoader from "@amap/amap-jsapi-loader";
 import { onMounted, ref } from "vue";
 
+defineOptions({
+  name: "AMap",
+});
+
 const mapContainer = ref(null);
 
 const initMap = () => {

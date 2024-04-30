@@ -31,6 +31,10 @@ import DataForm from "./components/DataForm.vue";
 import LatestUpdate from "./components/LatestUpdate.vue";
 import { getAnalysisCardList } from "@/api/index";
 
+defineOptions({
+  name: "Analysis",
+});
+
 const cardList = ref();
 const updateList = ref();
 const dataList = ref();

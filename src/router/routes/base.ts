@@ -3,12 +3,12 @@ import { RouteRecordRaw } from "vue-router";
 const baseRoutes: RouteRecordRaw[] = [
   {
     path: "/login",
-    name: "登录页",
+    name: "Login",
     component: () => import("@/views/login/index.vue"),
   },
   {
     path: "/",
-    name: "home",
+    name: "Home",
     redirect: "/dashboard",
   },
 ];

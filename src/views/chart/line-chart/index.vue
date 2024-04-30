@@ -15,6 +15,10 @@
 import { ref, onMounted, watch } from "vue";
 import * as echarts from "echarts";
 
+defineOptions({
+  name: "LineChart",
+});
+
 const chart = ref<HTMLElement | null>(null);
 const lineSmooth = ref(false);
 const lineBoundaryGap = ref(true);

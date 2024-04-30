@@ -93,6 +93,10 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 
+defineOptions({
+  name: "StepForm",
+});
+
 interface Form {
   name: string;
   age: number;

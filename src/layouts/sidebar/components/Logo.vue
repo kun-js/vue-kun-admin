@@ -1,5 +1,5 @@
 <template>
-  <div class="logo" v-show="isShowLogo" :style="{ width: sideBarWidth }">
+  <div class="logo" v-show="isShowLogo" :style="{ width: sideBarWidth }" @click="toggleToDashboard">
     <img class="logo-pic" src="@/assets/imgs/KunLogo.png" />
     <div class="logo-title" v-show="!isCollapse">Kun Admin</div>
   </div>
@@ -7,15 +7,22 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { useRouter } from "vue-router";
 
 const props = defineProps<{
   isShowLogo: Boolean;
   isCollapse: Boolean;
 }>();
 
+const router = useRouter();
+
 const sideBarWidth = computed(() => {
   return props.isCollapse ? "64px" : "210px";
 });
+
+const toggleToDashboard = () => {
+  router.push("/dashboard");
+};
 </script>
 
 <style lang="scss" scoped>
@@ -24,6 +31,7 @@ const sideBarWidth = computed(() => {
   align-items: center;
   height: 48px;
   padding: 8px;
+  cursor: pointer;
   transition: 0.5s all ease;
 
   &-pic {

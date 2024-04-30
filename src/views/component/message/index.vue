@@ -20,6 +20,10 @@
 import { ElMessage } from "element-plus";
 import { Select, CloseBold } from "@element-plus/icons-vue";
 
+defineOptions({
+  name: "Message",
+});
+
 const open1 = () => {
   ElMessage("Info");
 };

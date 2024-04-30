@@ -16,6 +16,10 @@ import { v4 as uuidv4 } from "uuid";
 import { getMenuList } from "@/api/index";
 import { onMounted, ref } from "vue";
 
+defineOptions({
+  name: "MenuTree",
+});
+
 const menuTreeList = ref();
 const defaultProps = {
   children: "children",

@@ -18,6 +18,10 @@
 import { onMounted, ref } from "vue";
 import { getUserList } from "@/api/index";
 
+defineOptions({
+  name: "BasicList",
+});
+
 const tableData = ref([]);
 
 const fetchData = async () => {

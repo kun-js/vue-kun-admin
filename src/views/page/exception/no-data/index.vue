@@ -13,6 +13,10 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({
+  name: "NoDataPage",
+});
+
 const handleToReload = () => {
   location.reload();
 };
