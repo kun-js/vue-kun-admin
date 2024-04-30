@@ -1,6 +1,6 @@
 <template>
   <el-card style="max-width: 100%">
-    <strong>该平台所选技术栈如下</strong>
+    <strong>该平台开发依赖如下</strong>
   </el-card>
   <div class="dependency-description-container">
     <el-card style="max-width: 100%">
