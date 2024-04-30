@@ -438,7 +438,7 @@ export const menuList = Mock.mock({
         },
         {
           name: "skill",
-          title: "技术栈",
+          title: "开发依赖",
           path: "/skill",
         },
       ],

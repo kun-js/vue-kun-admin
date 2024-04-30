@@ -21,7 +21,7 @@ const aboutRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/about/skill",
-        name: "关于技术栈",
+        name: "开发依赖",
         component: () => import("@/views/about/skill/index.vue"),
         meta: {
           title: "skill",
