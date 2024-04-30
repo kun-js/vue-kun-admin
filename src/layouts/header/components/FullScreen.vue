@@ -1,7 +1,7 @@
 <template>
   <el-tooltip placement="bottom" effect="dark" trigger="hover" :content="fullScreenTooltip">
     <div class="fullscreen" @click="handleToFullScreen">
-      <el-icon :size="20"> <component :is="isFullScreen ? 'Crop' : 'FullScreen'" /></el-icon>
+      <Icon :icon="isFullScreen ? 'charm:screen-minimise' : 'charm:screen-maximise'" />
     </div>
   </el-tooltip>
 </template>
@@ -9,6 +9,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { Icon } from "@iconify/vue";
 
 const { t } = useI18n();
 const isFullScreen = ref(false);
