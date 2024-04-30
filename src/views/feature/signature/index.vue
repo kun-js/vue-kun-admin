@@ -37,6 +37,11 @@
 import vueEsign from "vue-esign";
 import { ElMessage } from "element-plus";
 import { ref } from "vue";
+
+defineOptions({
+  name: "Signature",
+});
+
 const lineWidth = ref(4);
 const lineColor = ref("#000000");
 const bgColor = ref("#ffffff");
@@ -55,11 +60,11 @@ const save = () => {
   if (esign.value) {
     esign.value
       .generate()
-      .then((res) => {
+      .then((res: any) => {
         // console.log(res);
         resultImg.value = res;
       })
-      .catch((err) => {
+      .catch((err: any) => {
         // console.log(err);
         ElMessage.error("您还未完成签字，请签字完成后保存");
       });

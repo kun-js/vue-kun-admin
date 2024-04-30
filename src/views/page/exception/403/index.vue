@@ -15,6 +15,11 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+
+defineOptions({
+  name: "403Page",
+});
+
 const router = useRouter();
 
 const handleToBackHome = () => {

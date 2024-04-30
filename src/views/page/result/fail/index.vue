@@ -12,7 +12,11 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineOptions({
+  name: "FailPage",
+});
+</script>
 
 <style lang="scss" scoped>
 .fail-page-container {

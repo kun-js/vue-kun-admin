@@ -45,6 +45,10 @@
 import { ref } from "vue";
 import { Check, Delete, Edit, Message, Search, Star } from "@element-plus/icons-vue";
 
+defineOptions({
+  name: "Button",
+});
+
 const buttonList = [
   {
     type: "",

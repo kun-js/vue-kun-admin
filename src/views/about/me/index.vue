@@ -2,15 +2,14 @@
   <el-card style="max-width: 100%">
     <strong>关于</strong>
     <div class="mt-2">
-      <el-link type="primary" href="https://github.com/kun-js/vue-kun-admin" target="_blank"> vue-kun-admin </el-link>
-      <span>是一款基于Vue3.4、Vite5、Element-Plus、TypeScript的中后台解决方案。</span>
+      <span><el-tag>vue-kun-admin</el-tag>是一款基于Vue3、Vite5、Element-Plus、TypeScript的中后台解决方案。</span>
     </div>
   </el-card>
   <div class="project-info-container">
     <el-card style="max-width: 100%">
       <el-descriptions title="项目信息" :column="4" border="true">
         <el-descriptions-item>
-          <template #label> 版本 </template>
+          <template #label> 当前版本 </template>
           <el-tag>0.0.1</el-tag>
         </el-descriptions-item>
         <el-descriptions-item>
@@ -46,6 +45,10 @@
 <script setup lang="ts">
 import { getDateTime } from "@/utils/getDateTime";
 import { onMounted, ref } from "vue";
+
+defineOptions({
+  name: "Me",
+});
 
 const time = ref();
 

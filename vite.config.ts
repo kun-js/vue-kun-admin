@@ -55,6 +55,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         logger: false, //是否在控制台显示请求日志
         supportTs: true, //打开后，可以读取 ts 文件模块。 请注意，打开后将无法监视.js 文件
       }),
+
       // viteCompression({
       //   verbose: true, // 是否在控制台中输出压缩结果
       //   disable: false,
@@ -63,36 +64,43 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       //   ext: ".gz",
       //   deleteOriginFile: true, // 源文件压缩后是否删除(我为了看压缩后的效果，先选择了true)
       // }),
+
       // 打包体积分析
-      // visualizer({ open: true }),
-      // 图片资源优化
-      // viteImagemin({
-      //   gifsicle: {
-      //     optimizationLevel: 7,
-      //     interlaced: false,
-      //   },
-      //   optipng: {
-      //     optimizationLevel: 7,
-      //   },
-      //   mozjpeg: {
-      //     quality: 20,
-      //   },
-      //   pngquant: {
-      //     quality: [0.8, 0.9],
-      //     speed: 4,
-      //   },
-      //   svgo: {
-      //     plugins: [
-      //       {
-      //         name: "removeViewBox",
-      //       },
-      //       {
-      //         name: "removeEmptyAttrs",
-      //         active: false,
-      //       },
-      //     ],
-      //   },
+      // visualizer({
+      //   open: true, // 注意这里要设置为true，否则无效，如果存在本地服务端口，将在打包后自动展示
+      //   gzipSize: true,
+      //   file: "stats.html", //分析图生成的文件名
+      //   brotliSize: true
       // }),
+
+      // 图片资源优化
+      viteImagemin({
+        gifsicle: {
+          optimizationLevel: 7,
+          interlaced: false,
+        },
+        optipng: {
+          optimizationLevel: 7,
+        },
+        mozjpeg: {
+          quality: 20,
+        },
+        pngquant: {
+          quality: [0.8, 0.9],
+          speed: 4,
+        },
+        svgo: {
+          plugins: [
+            {
+              name: "removeViewBox",
+            },
+            {
+              name: "removeEmptyAttrs",
+              active: false,
+            },
+          ],
+        },
+      }),
     ],
     resolve: {
       alias: {
@@ -115,8 +123,8 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       minify: "terser", // 启用 terser 压缩
       terserOptions: {
         compress: {
-          drop_console: false, // 删除所有 console
-          drop_debugger: false, // 删除 debugger
+          drop_console: true, // 删除所有 console
+          drop_debugger: true, // 删除 debugger
         },
       },
       rollupOptions: {

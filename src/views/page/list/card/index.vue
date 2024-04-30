@@ -29,6 +29,10 @@
 import { onMounted, ref } from "vue";
 import { getUserList } from "@/api/index";
 
+defineOptions({
+  name: "CardList",
+});
+
 const tableData = ref();
 
 const fetchData = async () => {

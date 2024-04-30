@@ -11,6 +11,10 @@
 import { ref, onMounted } from "vue";
 import * as echarts from "echarts";
 
+defineOptions({
+  name: "BasicPieChart",
+});
+
 const chart = ref<HTMLElement | null>(null);
 
 const initChart = () => {

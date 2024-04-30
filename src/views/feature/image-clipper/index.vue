@@ -38,6 +38,10 @@
 import cropperImg from "./components/cropperImg.vue";
 import { ref } from "vue";
 
+defineOptions({
+  name: "ImageClipper",
+});
+
 const srcList: any[] = [
   "https://cdn.tehub.com/uploads/bCChGvhsbU/u/avatar/a2885f74-5400-48a1-fa93-a0bbdb7bddd6.jpeg?imageView2/1/w/200/h/200/q/100",
 ];

@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 const chartRoutes: RouteRecordRaw[] = [
   {
     path: "/chart",
-    name: "页面",
+    name: "Chart",
     component: () => import("@/layouts/index.vue"),
     redirect: "/chart/bar-chart",
     meta: {
@@ -13,7 +13,7 @@ const chartRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/chart/amap",
-        name: "高德地图",
+        name: "AMap",
         component: () => import("@/views/chart/amap/index.vue"),
         meta: {
           title: "AMap",
@@ -21,7 +21,7 @@ const chartRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/chart/bmap",
-        name: "百度地图",
+        name: "BMAp",
         component: () => import("@/views/chart/bmap/index.vue"),
         meta: {
           title: "BMap",
@@ -29,7 +29,7 @@ const chartRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/chart/tmap",
-        name: "腾讯地图",
+        name: "TMap",
         component: () => import("@/views/chart/tmap/index.vue"),
         meta: {
           title: "TMap",
@@ -37,7 +37,7 @@ const chartRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/chart/bar-chart",
-        name: "柱状图",
+        name: "BarChart",
         component: () => import("@/views/chart/bar-chart/index.vue"),
         meta: {
           title: "barChart",
@@ -45,7 +45,7 @@ const chartRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/chart/line-chart",
-        name: "折线图",
+        name: "LineChart",
         component: () => import("@/views/chart/line-chart/index.vue"),
         meta: {
           title: "lineChart",
@@ -53,7 +53,7 @@ const chartRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/chart/pie-chart/basic",
-        name: "基础饼图",
+        name: "BasicPieChart",
         component: () => import("@/views/chart/pie-chart/basic/index.vue"),
         meta: {
           title: "basicPieChart",
@@ -61,7 +61,7 @@ const chartRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/chart/pie-chart/doughnut",
-        name: "环形饼图",
+        name: "DoughnutPieChart",
         component: () => import("@/views/chart/pie-chart/doughnut/index.vue"),
         meta: {
           title: "doughnutChart",

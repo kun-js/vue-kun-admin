@@ -29,11 +29,13 @@
 import SIdentify from "./components/Sidentify.vue";
 import { ref, onMounted } from "vue";
 import { ElMessage } from "element-plus";
-
 import Vcode from "vue3-puzzle-vcode";
 import Img from "@/assets/imgs/Caixukun.png";
 
-//获取路由器
+defineOptions({
+  name: "Verify",
+});
+
 let sidentifyMode = ref(""); //输入框验证码
 let identifyCode = ref(""); //图形验证码
 let identifyCodes = ref("1234567890abcdefjhijklinopqrsduvwxyz"); //验证码出现的数字和字母
@@ -105,7 +107,6 @@ onMounted(() => {
   .login-page {
     width: 400px;
     padding: 20px;
-    //   margin: 0 auto;
     border: 1px solid #000;
     border-radius: 8px;
 

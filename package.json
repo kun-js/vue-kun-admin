@@ -11,7 +11,7 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\"",
-    "lint:stylelint": "stylelint  \"**/*.{css,scss,vue}\" --fix --allow-empty-input",
+    "lint:stylelint": "stylelint  \"**/*.{css,scss,vue}\" --fix",
     "prepare": "husky install",
     "lint:lint-staged": "lint-staged",
     "commit": "git-cz"
@@ -27,10 +27,10 @@
     "*.{vue,html}": [
       "eslint --fix",
       "prettier --write",
-      "stylelint --fix --allow-empty-input"
+      "stylelint --fix"
     ],
     "*.{scss,css}": [
-      "stylelint --fix --allow-empty-input",
+      "stylelint --fix",
       "prettier --write"
     ],
     "*.md": [

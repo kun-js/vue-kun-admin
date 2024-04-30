@@ -22,6 +22,10 @@ import { javascript } from "@codemirror/lang-javascript";
 import { oneDark } from "@codemirror/theme-one-dark";
 import { ref } from "vue";
 
+defineOptions({
+  name: "CodeEditor",
+});
+
 const code = ref("");
 const extensions = [javascript(), oneDark];
 

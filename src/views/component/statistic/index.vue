@@ -38,6 +38,10 @@ import { ref } from "vue";
 import dayjs from "dayjs";
 import { useTransition } from "@vueuse/core";
 
+defineOptions({
+  name: "Statistic",
+});
+
 const source = ref(0);
 const outputValue = useTransition(source, {
   duration: 1500,

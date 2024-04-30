@@ -73,6 +73,10 @@ import { deepClone } from "@/utils/deepClone";
 import { ElMessage } from "element-plus";
 import { onMounted, ref } from "vue";
 
+defineOptions({
+  name: "Role",
+});
+
 interface roleInfo {
   id: number;
   role: string;

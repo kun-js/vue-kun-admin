@@ -8,10 +8,12 @@
 </template>
 
 <script setup lang="ts">
-//引入VueOfficePdf组件
 import VueOfficePdf from "@vue-office/pdf";
-
 import { ref } from "vue";
+
+defineOptions({
+  name: "PdfPreview",
+});
 
 const pdfUrl = ref("http://static.shanhuxueyuan.com/test.pdf");
 

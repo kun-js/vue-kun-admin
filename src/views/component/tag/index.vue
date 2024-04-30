@@ -62,6 +62,10 @@ import type { TagProps } from "element-plus";
 import { ElInput } from "element-plus";
 import { nextTick, ref } from "vue";
 
+defineOptions({
+  name: "Tag",
+});
+
 type Item = { type: TagProps["type"]; label: string };
 
 const typeOptions = ref<string[]>([]);

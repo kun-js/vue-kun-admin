@@ -92,6 +92,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
+defineOptions({
+  name: "DatePicker",
+});
+
 const size = ref("default");
 const dayValue = ref("");
 const daysValue = ref("");
