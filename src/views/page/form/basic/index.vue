@@ -83,6 +83,10 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 
+defineOptions({
+  name: "BasicForm",
+});
+
 const form = reactive({
   name: "",
   tel: "",

@@ -17,6 +17,9 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({
+  name: "Download",
+});
 // 文件流下载文件方法
 const handleToDownloadFileBlob = () => {
   const textContent = "鸡你太美!"; // 文本内容

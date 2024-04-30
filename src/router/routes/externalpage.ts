@@ -11,7 +11,7 @@ const ExternalPageRoutes = [
     children: [
       {
         path: "/external-page/iframe/element",
-        name: "element",
+        name: "Element",
         component: () => import("@/views/external-page/iframe/element/index.vue"),
         meta: {
           title: "element",
@@ -19,7 +19,7 @@ const ExternalPageRoutes = [
       },
       {
         path: "/external-page/iframe/vue",
-        name: "vue",
+        name: "Vue",
         component: () => import("@/views/external-page/iframe/vue/index.vue"),
         meta: {
           title: "vue",

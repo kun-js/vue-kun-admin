@@ -34,6 +34,10 @@ import ExcelJS from "exceljs";
 import FileSaver from "file-saver";
 import { onMounted, ref } from "vue";
 
+defineOptions({
+  name: "ExcelAction",
+});
+
 const excelHeader = ref();
 const excelData = ref();
 

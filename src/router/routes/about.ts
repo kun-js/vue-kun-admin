@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 const aboutRoutes: RouteRecordRaw[] = [
   {
     path: "/about",
-    name: "关于",
+    name: "About",
     component: () => import("@/layouts/index.vue"),
     redirect: "/about/me",
     meta: {
@@ -13,7 +13,7 @@ const aboutRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/about/me",
-        name: "关于我们",
+        name: "Me",
         component: () => import("@/views/about/me/index.vue"),
         meta: {
           title: "me",
@@ -21,7 +21,7 @@ const aboutRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/about/skill",
-        name: "开发依赖",
+        name: "Skill",
         component: () => import("@/views/about/skill/index.vue"),
         meta: {
           title: "skill",

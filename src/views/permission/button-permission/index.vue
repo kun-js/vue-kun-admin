@@ -31,6 +31,10 @@
 import { useUserStore } from "@/stores/user";
 import { computed } from "vue";
 
+defineOptions({
+  name: "ButtonPermission",
+});
+
 const store = useUserStore();
 const userPermission = computed(() => store.permission);
 const isAdmin = computed(() => userPermission.value === "admin");

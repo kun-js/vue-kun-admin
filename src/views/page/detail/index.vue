@@ -22,6 +22,10 @@
 import { getDetailList } from "@/api";
 import { onMounted, ref } from "vue";
 
+defineOptions({
+  name: "Detail",
+});
+
 interface Detail {
   username: string;
   address: string;

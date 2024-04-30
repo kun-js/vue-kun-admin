@@ -14,6 +14,10 @@
 import { ref, onMounted, watch } from "vue";
 import * as echarts from "echarts";
 
+defineOptions({
+  name: "DoughnutPieChart",
+});
+
 const chart = ref<HTMLElement | null>(null);
 const addBorderStyle = ref(false);
 

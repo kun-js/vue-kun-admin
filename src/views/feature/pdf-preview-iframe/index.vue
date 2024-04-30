@@ -14,10 +14,14 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-
 import pdf1 from "@/assets/documents/test1.pdf";
 import pdf2 from "@/assets/documents/test2.pdf";
+import { ref } from "vue";
+
+defineOptions({
+  name: "PdfPreviewIframe",
+});
+
 const pdfUrl = ref(""); // pdf文件地址
 // const fileUrl = "/pdfjs/web/viewer.html?file="; // pdfjs文件地址
 
@@ -28,12 +32,12 @@ const handleToShowPdf2 = () => {
   pdfUrl.value = `/pdfjs/web/viewer.html?file=${pdf2}`;
 };
 
-onMounted(() => {
-  // encodeURIComponent() 函数可把字符串作为 URI 组件进行编码。
-  // 核心就是将 iframe 的 src 属性设置为 pdfjs 的地址，然后将 pdf 文件的地址作为参数传递给 pdfjs
-  // 例如：http://localhost:8080/pdfjs/web/viewer.html?file=http%3A%2F%2Flocalhost%3A8080%2Fpdf%2Ftest.pdf
-  // pdfUrl.value = fileUrl + encodeURIComponent("./test.pdf");
-});
+// onMounted(() => {
+// encodeURIComponent() 函数可把字符串作为 URI 组件进行编码。
+// 核心就是将 iframe 的 src 属性设置为 pdfjs 的地址，然后将 pdf 文件的地址作为参数传递给 pdfjs
+// 例如：http://localhost:8080/pdfjs/web/viewer.html?file=http%3A%2F%2Flocalhost%3A8080%2Fpdf%2Ftest.pdf
+// pdfUrl.value = fileUrl + encodeURIComponent("./test.pdf");
+// });
 </script>
 
 <style scoped lang="scss">

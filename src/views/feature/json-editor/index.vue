@@ -3,6 +3,10 @@ import VueJsonPretty from "vue-json-pretty";
 import "vue-json-pretty/lib/styles.css";
 import { reactive } from "vue";
 
+defineOptions({
+  name: "JsonEditor",
+});
+
 const jsonData = {
   state: "200",
   message: "success",

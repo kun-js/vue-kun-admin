@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 const componentRoutes: RouteRecordRaw[] = [
   {
     path: "/component",
-    name: "component",
+    name: "Component",
     component: () => import("@/layouts/index.vue"),
     redirect: "/component/button",
     meta: {
@@ -13,7 +13,7 @@ const componentRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "/component/button",
-        name: "按钮",
+        name: "Button",
         component: () => import("@/views/component/button/index.vue"),
         meta: {
           title: "button",
@@ -21,7 +21,7 @@ const componentRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/component/tag",
-        name: "标签",
+        name: "Tag",
         component: () => import("@/views/component/tag/index.vue"),
         meta: {
           title: "tag",
@@ -29,7 +29,7 @@ const componentRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/component/color-picker",
-        name: "取色器",
+        name: "ColorPicker",
         component: () => import("@/views/component/color-picker/index.vue"),
         meta: {
           title: "colorPicker",
@@ -37,7 +37,7 @@ const componentRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/component/date-picker",
-        name: "日期选择器",
+        name: "DatePicker",
         component: () => import("@/views/component/date-picker/index.vue"),
         meta: {
           title: "datePicker",
@@ -45,7 +45,7 @@ const componentRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/component/message",
-        name: "消息提示",
+        name: "Message",
         component: () => import("@/views/component/message/index.vue"),
         meta: {
           title: "message",
@@ -53,7 +53,7 @@ const componentRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/component/statistic",
-        name: "统计组件",
+        name: "Statistic",
         component: () => import("@/views/component/statistic/index.vue"),
         meta: {
           title: "statistic",
@@ -61,7 +61,7 @@ const componentRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/component/menu-tree",
-        name: "树形菜单",
+        name: "MenuTree",
         component: () => import("@/views/component/menu-tree/index.vue"),
         meta: {
           title: "menuTree",
@@ -69,7 +69,7 @@ const componentRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/component/timestamp",
-        name: "相对时间",
+        name: "Timestamp",
         component: () => import("@/views/component/timestamp/index.vue"),
         meta: {
           title: "timestamp",
@@ -77,7 +77,7 @@ const componentRoutes: RouteRecordRaw[] = [
       },
       {
         path: "/component/password-strength",
-        name: "密码强度",
+        name: "PasswordStrength",
         component: () => import("@/views/component/password-strength/index.vue"),
         meta: {
           title: "passwordStrength",

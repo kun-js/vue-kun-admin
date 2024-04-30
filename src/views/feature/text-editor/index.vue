@@ -24,10 +24,13 @@
 </template>
 
 <script setup lang="ts">
-import "@wangeditor/editor/dist/css/style.css"; // 引入 css
-
-import { onBeforeUnmount, ref, shallowRef } from "vue";
 import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
+import "@wangeditor/editor/dist/css/style.css"; // 引入 css
+import { onBeforeUnmount, ref, shallowRef } from "vue";
+
+defineOptions({
+  name: "TextEditor",
+});
 
 const mode = "default";
 
@@ -49,7 +52,6 @@ onBeforeUnmount(() => {
 
 const handleCreated = (editor: any) => {
   editorRef.value = editor; // 记录 editor 实例，重要！
-  // console.log("created", editor);
 };
 </script>
 

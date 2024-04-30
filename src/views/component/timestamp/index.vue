@@ -22,6 +22,10 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 
+defineOptions({
+  name: "Timestamp",
+});
+
 const initialTime = ref(new Date().toLocaleString());
 const currentTime = ref(new Date().toLocaleString());
 const enterTime = ref(Date.now());

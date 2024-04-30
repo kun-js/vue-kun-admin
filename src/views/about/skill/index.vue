@@ -29,6 +29,10 @@ import { ref } from "vue";
 import { isEmpty } from "@/utils/isEmpty";
 import dependenciesJSON from "./dependencies.json";
 
+defineOptions({
+  name: "Skill",
+});
+
 const dependencies = ref<Record<string, string>>(dependenciesJSON.dependencies || {});
 const devDependencies = ref<Record<string, string>>(dependenciesJSON.devDependencies || {});
 </script>

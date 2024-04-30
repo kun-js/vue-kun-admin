@@ -12,6 +12,10 @@ import { VideoPlayer } from "@videojs-player/vue";
 import "video.js/dist/video-js.css";
 import { ref } from "vue";
 
+defineOptions({
+  name: "Video",
+});
+
 // 视频链接地址
 const videoSrc = ref("https://videos.pexels.com/video-files/15921892/15921892-uhd_3840_2160_50fps.mp4");
 // 视频播放器配置

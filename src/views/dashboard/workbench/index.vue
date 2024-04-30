@@ -15,6 +15,10 @@ import Navigator from "./components/Navigator.vue";
 import PopularContent from "./components/PopularContent.vue";
 import Background from "./components/Background.vue";
 import Chart from "./components/Chart.vue";
+
+defineOptions({
+  name: "Workbench",
+});
 </script>
 
 <style lang="scss" scoped>

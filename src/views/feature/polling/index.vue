@@ -13,6 +13,10 @@ import { ref, onMounted, onUnmounted } from "vue";
 import { startPolling, stopPolling } from "@/utils/polling";
 import { ElMessage } from "element-plus";
 
+defineOptions({
+  name: "Polling",
+});
+
 const personName = ref<string>("");
 
 const fetchPersonName = async () => {

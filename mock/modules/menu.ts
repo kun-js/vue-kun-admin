@@ -143,9 +143,9 @@ export const menuList = Mock.mock({
           path: "/print",
         },
         {
-          name: "drag",
+          name: "draggable",
           title: "拖拽",
-          path: "/drag",
+          path: "/draggable",
         },
         {
           name: "wordPreview",

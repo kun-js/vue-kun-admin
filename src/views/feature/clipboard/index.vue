@@ -18,6 +18,10 @@
 import { ElMessage } from "element-plus";
 import { ref } from "vue";
 
+defineOptions({
+  name: "Clipboard",
+});
+
 const inputVal = ref("");
 const clipboardVal = ref("");
 

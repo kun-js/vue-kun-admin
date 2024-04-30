@@ -46,6 +46,10 @@
 import { getDateTime } from "@/utils/getDateTime";
 import { onMounted, ref } from "vue";
 
+defineOptions({
+  name: "Me",
+});
+
 const time = ref();
 
 const getTime = () => {

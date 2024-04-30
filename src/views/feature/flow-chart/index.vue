@@ -16,6 +16,10 @@ import "@logicflow/core/dist/style/index.css";
 import "@logicflow/extension/lib/style/index.css";
 import { onMounted } from "vue";
 
+defineOptions({
+  name: "FlowChart",
+});
+
 const initFlowChart = () => {
   const containerElement = document.querySelector("#logicflow") as HTMLElement;
   const lf = new LogicFlow({

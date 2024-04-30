@@ -18,6 +18,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
+defineOptions({
+  name: "ColorPicker",
+});
+
 const size = ref("default");
 const color = ref("#409EFF");
 </script>

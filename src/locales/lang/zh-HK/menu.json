@@ -25,7 +25,7 @@
   "audio": "音頻可視化",
   "video": "視頻播放器",
   "print": "打印",
-  "drag": "拖拽",
+  "draggable": "拖拽",
   "wordPreview": "Word預覽",
   "excelPreview": "Excel預覽",
   "pdfPreview": "PDF預覽",

@@ -43,6 +43,10 @@ import { type FormInstance } from "element-plus";
 // 引入验证方法
 import { checkPasswordRule, level } from "./checkPassword";
 
+defineOptions({
+  name: "PasswordStrength",
+});
+
 // 强度条颜色
 const barColor = ref("");
 // 强度条长度
