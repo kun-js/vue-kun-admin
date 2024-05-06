@@ -19,6 +19,14 @@ const permissionRoutes: RouteRecordRaw[] = [
           title: "buttonPermission",
         },
       },
+      {
+        path: "/permission/page-permission",
+        name: "PagePermission",
+        component: () => import("@/views/permission/page-permission/index.vue"),
+        meta: {
+          title: "pagePermission",
+        },
+      },
     ],
   },
 ];
