@@ -16,7 +16,7 @@ const pageRoutes: RouteRecordRaw[] = [
         name: "BasicForm",
         component: () => import("@/views/page/form/basic/index.vue"),
         meta: {
-          title: "basicFrom",
+          title: "basicForm",
         },
       },
       {

@@ -42,12 +42,10 @@ const isUser = computed(() => userPermission.value === "user");
 
 const changeToAdmin = () => {
   store.getPermission("admin");
-  window.location.reload();
 };
 
 const changeToUser = () => {
   store.getPermission("user");
-  window.location.reload();
 };
 </script>
 
