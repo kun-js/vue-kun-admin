@@ -10,10 +10,10 @@ export function buttonPermission(app: App) {
 
       // 更新按钮显示状态
       const updateButtonPermission = () => {
-        const userPermission: string = store.permission || ""; // 获取用户的角色权限信息
+        const actionPermission: string = store.actionPermission || ""; // 获取用户的角色权限信息
 
         // 如果用户的权限不包含指定的权限要求，则隐藏按钮
-        if (userPermission !== requiredPermission) {
+        if (actionPermission !== requiredPermission) {
           el.style.display = "none";
         } else {
           el.style.display = "";
@@ -24,7 +24,7 @@ export function buttonPermission(app: App) {
       updateButtonPermission();
 
       // 监听用户权限的变化，实时更新按钮状态
-      watch(() => store.permission, updateButtonPermission);
+      watch(() => store.actionPermission, updateButtonPermission);
     },
   });
 }

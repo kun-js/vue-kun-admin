@@ -10,5 +10,7 @@ export const loginInfo = Mock.mock({
       name: "坤哥",
     },
     permission: "admin",
+    actionPermission: "admin",
+    menuPermission: "admin",
   },
 });
