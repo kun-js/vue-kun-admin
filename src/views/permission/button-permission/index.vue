@@ -6,7 +6,7 @@
         <el-button @click="changeToAdmin" type="primary" :disabled="isAdmin">改变为Admin权限</el-button>
         <el-button @click="changeToUser" type="primary" :disabled="isUser">改变为User权限</el-button>
       </template>
-      <div style="margin-bottom: 18px">当前系统权限为:{{ userPermission }}</div>
+      <div style="margin-bottom: 18px">当前操作权限为:{{ actionPermission }}</div>
       <div class="action-container">
         <div>函数方式判断</div>
         <el-button v-if="isAdmin" type="success">Admin可见</el-button>
@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 import { useUserStore } from "@/stores/user";
+import { ElMessage } from "element-plus";
 import { computed } from "vue";
 
 defineOptions({
@@ -36,18 +37,18 @@ defineOptions({
 });
 
 const store = useUserStore();
-const userPermission = computed(() => store.permission);
-const isAdmin = computed(() => userPermission.value === "admin");
-const isUser = computed(() => userPermission.value === "user");
+const actionPermission = computed(() => store.actionPermission);
+const isAdmin = computed(() => actionPermission.value === "admin");
+const isUser = computed(() => actionPermission.value === "user");
 
 const changeToAdmin = () => {
-  store.getPermission("admin");
-  window.location.reload();
+  store.getActionPermission("admin");
+  ElMessage.success("切换操作权限为admin");
 };
 
 const changeToUser = () => {
-  store.getPermission("user");
-  window.location.reload();
+  store.getActionPermission("user");
+  ElMessage.success("切换操作权限为user");
 };
 </script>
 

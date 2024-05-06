@@ -3,6 +3,7 @@
   "analysis": "分析頁",
   "workbench": "工作台",
   "permission": "權限管理",
+  "pagePermission": "頁面權限",
   "buttonPermission": "按鈕權限",
   "component": "組件",
   "button": "按鈕",

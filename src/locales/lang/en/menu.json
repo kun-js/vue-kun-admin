@@ -3,6 +3,7 @@
   "analysis": "Analysis",
   "workbench": "Workbench",
   "permission": "Permission Management",
+  "pagePermission": "Page Permission",
   "buttonPermission": "Button Permission",
   "component": "Component",
   "button": "Button",

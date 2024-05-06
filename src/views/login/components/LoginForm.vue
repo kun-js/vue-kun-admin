@@ -71,6 +71,8 @@ const submitForm = async () => {
         userStore.getUserInfo(result.userInfo);
         userStore.getToken(result.token);
         userStore.getPermission(result.permission);
+        userStore.getActionPermission(result.actionPermission);
+        userStore.getMenuPermission(result.menuPermission);
         router.push("/");
         ElMessage({ message: t("login.loginSuccess"), type: "success" });
       } else {

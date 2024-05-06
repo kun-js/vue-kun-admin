@@ -67,12 +67,15 @@ import { computed, onMounted, ref } from "vue";
 import { getMenuList } from "@/api/index";
 import { Icon } from "@iconify/vue";
 import { useMenuStore } from "@/stores/menu";
+import { useUserStore } from "@/stores/user";
 
 const props = defineProps<{
   isCollapse: Boolean;
 }>();
 
 const menuList = ref();
+const store = useUserStore();
+const menuPermission = computed(() => store.menuPermission);
 
 const activePath = computed(() => {
   return useMenuStore().defaultActive;
@@ -82,7 +85,12 @@ const fetchData = async () => {
   try {
     const result = await getMenuList();
     // console.log("result: ", result);
-    menuList.value = result;
+    // 根据用户权限过滤菜单
+    const filterMenu = result.filter((item: any) => {
+      console.log("item.meta.permission: ", item.meta.permission);
+      return item.meta.permission.includes(menuPermission.value);
+    });
+    menuList.value = filterMenu;
   } catch (error) {
     console.log("error: ", error);
   }
