@@ -7,6 +7,9 @@ export const menuList = Mock.mock({
       title: "首页",
       path: "/dashboard",
       icon: "noto:house",
+      meta: {
+        permission: ["admin", "user"],
+      },
       children: [
         {
           name: "analysis",
@@ -25,11 +28,19 @@ export const menuList = Mock.mock({
       title: "权限管理",
       path: "/permission",
       icon: "noto:locked-with-key",
+      meta: {
+        permission: ["admin", "user"],
+      },
       children: [
         {
           name: "buttonPermission",
           title: "按钮权限",
           path: "/button-permission",
+        },
+        {
+          name: "pagePermission",
+          title: "页面权限",
+          path: "/page-permission",
         },
       ],
     },
@@ -38,6 +49,9 @@ export const menuList = Mock.mock({
       title: "组件",
       path: "/component",
       icon: "noto:closed-book",
+      meta: {
+        permission: ["admin", "user"],
+      },
       children: [
         {
           name: "button",
@@ -91,6 +105,9 @@ export const menuList = Mock.mock({
       title: "功能",
       path: "/feature",
       icon: "noto:dna",
+      meta: {
+        permission: ["admin", "user"],
+      },
       children: [
         {
           name: "download",
@@ -219,6 +236,9 @@ export const menuList = Mock.mock({
       title: "页面",
       path: "/page",
       icon: "noto:framed-picture",
+      meta: {
+        permission: ["admin"],
+      },
       children: [
         {
           name: "form",
@@ -315,6 +335,9 @@ export const menuList = Mock.mock({
       title: "图表",
       path: "/chart",
       icon: "emojione:bar-chart",
+      meta: {
+        permission: ["admin"],
+      },
       children: [
         {
           name: "AMap",
@@ -365,6 +388,9 @@ export const menuList = Mock.mock({
       title: "外部页面",
       path: "/external-page",
       icon: "fluent-emoji-flat:desktop-computer",
+      meta: {
+        permission: ["admin"],
+      },
       children: [
         {
           name: "iframe",
@@ -412,6 +438,9 @@ export const menuList = Mock.mock({
       title: "系统管理",
       path: "/system",
       icon: "noto-v1:gear",
+      meta: {
+        permission: ["admin"],
+      },
       children: [
         {
           name: "account",
@@ -430,6 +459,9 @@ export const menuList = Mock.mock({
       title: "关于",
       path: "/about",
       icon: "streamline-emojis:smiling-face-with-sunglasses",
+      meta: {
+        permission: ["admin", "user"],
+      },
       children: [
         {
           name: "me",

@@ -27,6 +27,16 @@ export const useUserStore = defineStore(
       permission.value = val;
     };
 
+    const actionPermission = ref("");
+    const getActionPermission = (val: string) => {
+      actionPermission.value = val;
+    };
+
+    const menuPermission = ref("");
+    const getMenuPermission = (val: string) => {
+      menuPermission.value = val;
+    };
+
     return {
       userInfo,
       getUserInfo,
@@ -34,6 +44,10 @@ export const useUserStore = defineStore(
       getToken,
       permission,
       getPermission,
+      actionPermission,
+      getActionPermission,
+      menuPermission,
+      getMenuPermission,
     };
   },
   {
