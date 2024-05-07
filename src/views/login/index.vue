@@ -27,7 +27,7 @@
 import Basketball from "./components/Basketball.vue";
 import LoginForm from "./components/LoginForm.vue";
 import { Sunrise, MoonNight } from "@element-plus/icons-vue";
-import { useLocaleStore } from "@/stores/locale";
+import { useLocaleStore } from "@/stores/modules/locale";
 import { useDark } from "@vueuse/core";
 
 defineOptions({
@@ -81,3 +81,4 @@ const handleToChangeLangEnUs = () => {
   }
 }
 </style>
+@/stores/modules/locale

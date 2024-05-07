@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from "vue-router";
-import { RouteRecordRaw } from "vue-router";
-import { useMenuStore } from "@/stores/menu";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { useMenuStore } from "@/stores/modules/menu";
+import { useLocaleStore } from "@/stores/modules/locale";
 
 import baseRoutes from "./routes/base";
 import dashboardRoutes from "./routes/dashboard";
@@ -31,20 +31,24 @@ const router = createRouter({
   routes,
 });
 
+// 设置默认语言
+router.beforeEach((to, from, next) => {
+  useLocaleStore().getLocale("zh-CN");
+  next();
+});
+
 // el-menu 高亮
 router.beforeEach((to, from, next) => {
-  useMenuStore().defaultActive = to.path;
-  // console.log("useMenuStore().defaultActive: ", useMenuStore().defaultActive);
+  useMenuStore().getActivePath(to.path);
   next();
 });
 
 // 登录判断
 router.beforeEach((to, from, next) => {
   if (to.path === "/login") return next(); // 如果是访问登录页，直接放行
-  const result = localStorage.getItem("pinia-user");
+  const result = localStorage.getItem("user");
   if (result) {
     const { token } = JSON.parse(result);
-    // console.log("token: ", token);
     if (token) {
       next(); // 已登录则放行
     } else {

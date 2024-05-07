@@ -72,7 +72,7 @@
     "md-editor-v3": "^4.13.0",
     "path2d-polyfill": "^3.0.1",
     "pinia": "^2.1.7",
-    "pinia-persistedstate-plugin": "^0.1.0",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "qrcode.vue": "^3.4.1",
     "rollup": "^4.16.1",
     "stable": "^0.1.8",

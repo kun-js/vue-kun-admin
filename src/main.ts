@@ -14,14 +14,8 @@ import App from "./App.vue";
 import router from "./router";
 import i18n from "./locales";
 import print from "vue3-print-nb";
+import pinia from "./stores/index";
 import { registerDirectives } from "./directive";
-
-import { createPinia } from "pinia";
-import { createPersistedState } from "pinia-persistedstate-plugin";
-
-const pinia = createPinia();
-const persist = createPersistedState();
-pinia.use(persist);
 
 const app = createApp(App);
 

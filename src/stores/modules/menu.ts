@@ -6,8 +6,13 @@ export const useMenuStore = defineStore(
   () => {
     const defaultActive = ref("");
 
+    const getActivePath = (val: string) => {
+      defaultActive.value = val;
+    };
+
     return {
       defaultActive,
+      getActivePath,
     };
   },
   {
