@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { useLocaleStore } from "@/stores/locale";
+import { useLocaleStore } from "@/stores/modules/locale";
 import { Icon } from "@iconify/vue";
 
 const localeStore = useLocaleStore();
@@ -52,3 +52,4 @@ const handleToChangeLangEnUs = () => {
   }
 }
 </style>
+@/stores/modules/locale

@@ -20,13 +20,13 @@
 
 <script setup>
 import { useRouter } from "vue-router";
-import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores/modules/user";
 
 const router = useRouter();
 const userStore = useUserStore();
 
 const handleToLogout = () => {
-  localStorage.removeItem("pinia-user");
+  localStorage.removeItem("user");
   router.push("/login");
 };
 </script>
@@ -64,3 +64,4 @@ const handleToLogout = () => {
   height: 100%;
 }
 </style>
+@/stores/modules/user @/stores/user

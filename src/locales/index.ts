@@ -3,13 +3,14 @@ import zhCN from "./lang/zh-cn";
 import zhHK from "./lang/zh-hk";
 import en from "./lang/en";
 
-// 如果 localStorage 中不存在 lang 值，则将其设置为默认值 'zh-CN'
-if (!localStorage.getItem("lang")) {
-  localStorage.setItem("lang", "zh-CN");
+if (!localStorage.getItem("locale")) {
+  localStorage.setItem("locale", `{"locale":"zh-CN"}`);
 }
 
-// 获取 localStorage 中的 lang 值，如果不存在则设置为默认值 'zh-CN'
-const lang = localStorage.getItem("lang") || "zh-CN";
+const localeItem = localStorage.getItem("locale");
+const langVal = localeItem ? JSON.parse(localeItem).locale : "zh-CN";
+
+const lang = langVal || "zh-CN";
 
 // 创建 i18n
 const i18n = createI18n({
