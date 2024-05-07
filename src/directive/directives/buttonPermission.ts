@@ -1,5 +1,5 @@
 import { App, DirectiveBinding, watch } from "vue";
-import { useUserStore } from "@/stores/user"; // 导入全局状态管理库
+import { useUserStore } from "@/stores/modules/user"; // 导入全局状态管理库
 
 // 导出自定义指令函数
 export function buttonPermission(app: App) {

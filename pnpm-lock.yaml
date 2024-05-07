@@ -95,9 +95,9 @@ importers:
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.4.2)(vue@3.4.21(typescript@5.4.2))
-      pinia-persistedstate-plugin:
-        specifier: ^0.1.0
-        version: 0.1.0(typescript@5.4.2)(vue@3.4.21(typescript@5.4.2))
+      pinia-plugin-persistedstate:
+        specifier: ^3.2.1
+        version: 3.2.1(pinia@2.1.7(typescript@5.4.2)(vue@3.4.21(typescript@5.4.2)))
       qrcode.vue:
         specifier: ^3.4.1
         version: 3.4.1(vue@3.4.21(typescript@5.4.2))
@@ -1401,9 +1401,6 @@ packages:
 
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
-
-  '@types/js-cookie@3.0.6':
-    resolution: {integrity: sha512-wkw9yd1kEXOPnvEeEV1Go1MmxtBJL0RR79aOTAApecWFVu7w0NNXNqhcWgvw2YgZDYadliXkl14pa3WXw5jlCQ==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -4863,8 +4860,10 @@ packages:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
 
-  pinia-persistedstate-plugin@0.1.0:
-    resolution: {integrity: sha512-ToKR/EJzhhXElQ5YL8PVVY4CqLJjywxszAJjOCgprjmIVkTrPBsEOY4b/ATOzHQc1TtuaJs/3MJuoCpA3pv8Ew==}
+  pinia-plugin-persistedstate@3.2.1:
+    resolution: {integrity: sha512-MK++8LRUsGF7r45PjBFES82ISnPzyO6IZx3CH5vyPseFLZCk1g2kgx6l/nW8pEBKxxd4do0P6bJw+mUSZIEZUQ==}
+    peerDependencies:
+      pinia: ^2.0.0
 
   pinia@2.1.7:
     resolution: {integrity: sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==}
@@ -7670,8 +7669,6 @@ snapshots:
   '@types/istanbul-reports@3.0.4':
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
-
-  '@types/js-cookie@3.0.6': {}
 
   '@types/json-schema@7.0.15': {}
 
@@ -11724,14 +11721,9 @@ snapshots:
 
   pify@4.0.1: {}
 
-  pinia-persistedstate-plugin@0.1.0(typescript@5.4.2)(vue@3.4.21(typescript@5.4.2)):
+  pinia-plugin-persistedstate@3.2.1(pinia@2.1.7(typescript@5.4.2)(vue@3.4.21(typescript@5.4.2))):
     dependencies:
-      '@types/js-cookie': 3.0.6
       pinia: 2.1.7(typescript@5.4.2)(vue@3.4.21(typescript@5.4.2))
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - typescript
-      - vue
 
   pinia@2.1.7(typescript@5.4.2)(vue@3.4.21(typescript@5.4.2)):
     dependencies:

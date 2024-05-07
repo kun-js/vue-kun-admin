@@ -44,7 +44,7 @@ import { User, Lock } from "@element-plus/icons-vue";
 import { ElMessage, type FormInstance, type FormRules } from "element-plus";
 import { getLoginInfo } from "@/api/index";
 import { useRouter } from "vue-router";
-import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores/modules/user";
 import { useI18n } from "vue-i18n";
 import { Icon } from "@iconify/vue";
 
@@ -73,7 +73,7 @@ const submitForm = async () => {
         userStore.getPermission(result.permission);
         userStore.getActionPermission(result.actionPermission);
         userStore.getMenuPermission(result.menuPermission);
-        router.push("/");
+        router.push("/dashboard");
         ElMessage({ message: t("login.loginSuccess"), type: "success" });
       } else {
         ElMessage({ message: t("login.loginFail"), type: "error" });
@@ -182,3 +182,4 @@ const resetForm = () => {
   }
 }
 </style>
+@/stores/modules/user @/stores/user

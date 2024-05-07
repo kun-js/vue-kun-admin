@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores/modules/user";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
@@ -117,3 +117,4 @@ onMounted(() => {
   }
 }
 </style>
+@/stores/modules/user @/stores/modules/user

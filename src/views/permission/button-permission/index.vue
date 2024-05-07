@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores/modules/user";
 import { ElMessage } from "element-plus";
 import { computed } from "vue";
 
@@ -67,3 +67,4 @@ const changeToUser = () => {
   }
 }
 </style>
+@/stores/modules/user @/stores/user
