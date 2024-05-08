@@ -1,6 +1,6 @@
 <template>
   <div class="timestamp-component-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 相对时间示例 </template>
       <div>
         <strong>基础示例</strong>

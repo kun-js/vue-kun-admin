@@ -1,6 +1,6 @@
 <template>
   <div class="sensitive-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header>
         <span style="margin-right: 18px">敏感词过滤示例</span>
       </template>

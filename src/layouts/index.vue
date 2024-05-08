@@ -2,8 +2,10 @@
   <el-container>
     <el-aside width="collapse"><SideBar :isCollapse="isCollapse" :isShowLogo="isShowLogo" /></el-aside>
     <el-container>
-      <el-header><Header :changeSideBarCollapse="changeSideBarCollapse" :isCollapse="isCollapse" /></el-header>
-      <el-scrollbar :wrap-style="{ height: 'calc(100vh - 48px)' }">
+      <el-header>
+        <Header :changeSideBarCollapse="changeSideBarCollapse" :isCollapse="isCollapse" />
+      </el-header>
+      <el-scrollbar :wrap-style="{ height: 'var(--scrollbar-height)' }">
         <el-main :style="{ paddingBottom: footerHeight }">
           <Router-view />
         </el-main>

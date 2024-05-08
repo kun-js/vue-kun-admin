@@ -1,6 +1,6 @@
 <template>
   <div class="basic-form-page-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 基础表单示例 </template>
       <el-form :model="form" label-width="auto" style="width: 100%">
         <el-row :gutter="20">

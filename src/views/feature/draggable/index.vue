@@ -1,6 +1,6 @@
 <template>
   <div class="draggable-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 拖拽示例 </template>
       <el-row :gutter="20">
         <el-col :span="8">

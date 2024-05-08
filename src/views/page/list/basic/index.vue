@@ -1,6 +1,6 @@
 <template>
   <div class="basic-list-page-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 基础列表示例</template>
       <el-table :data="tableData" show-overflow-tooltip fit style="width: 100%">
         <el-table-column prop="name" label="姓名" />

@@ -1,6 +1,6 @@
 <template>
   <div class="code-editor-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '100%', padding: 0 }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '100%', padding: 0 }">
       <template #header>代码编辑器示例</template>
       <codemirror
         v-model="code"

@@ -1,6 +1,6 @@
 <template>
   <div class="amap-chart-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '100%', padding: 0 }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '100%', padding: 0 }">
       <template #header>高德地图示例 </template>
       <!-- 地图容器 -->
       <div ref="mapContainer" style="width: 100%; height: 93%"></div>

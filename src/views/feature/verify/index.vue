@@ -1,6 +1,6 @@
 <template>
   <div class="verify-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header>
         <span style="margin-right: 18px">验证码示例</span>
         <el-button type="primary" @click="handleToOpenImgVerify">打开图形验证码</el-button>

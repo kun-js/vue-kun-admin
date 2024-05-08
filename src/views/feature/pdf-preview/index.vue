@@ -1,6 +1,6 @@
 <template>
   <div class="pdf-preview-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '93%', padding: 0 }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '93%', padding: 0 }">
       <template #header> Pdf预览示例 </template>
       <vue-office-pdf :src="pdfUrl" style="height: 100%" @rendered="renderedHandler" @error="errorHandler" />
     </el-card>
