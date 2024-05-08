@@ -5,7 +5,7 @@ const chartRoutes: RouteRecordRaw[] = [
     path: "/chart",
     name: "Chart",
     component: () => import("@/layouts/index.vue"),
-    redirect: "/chart/bar-chart",
+    redirect: "/chart/amap",
     meta: {
       icon: "emojione:bar-chart",
       title: "chart",

@@ -17,6 +17,7 @@ declare module "vue" {
     ElCheckboxGroup: (typeof import("element-plus/es"))["ElCheckboxGroup"];
     ElCol: (typeof import("element-plus/es"))["ElCol"];
     ElContainer: (typeof import("element-plus/es"))["ElContainer"];
+    ElDatePicker: (typeof import("element-plus/es"))["ElDatePicker"];
     ElDescriptions: (typeof import("element-plus/es"))["ElDescriptions"];
     ElDescriptionsItem: (typeof import("element-plus/es"))["ElDescriptionsItem"];
     ElDivider: (typeof import("element-plus/es"))["ElDivider"];
@@ -35,12 +36,14 @@ declare module "vue" {
     ElMain: (typeof import("element-plus/es"))["ElMain"];
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
+    ElOption: (typeof import("element-plus/es"))["ElOption"];
     ElPopover: (typeof import("element-plus/es"))["ElPopover"];
     ElProgress: (typeof import("element-plus/es"))["ElProgress"];
     ElRadio: (typeof import("element-plus/es"))["ElRadio"];
     ElRadioGroup: (typeof import("element-plus/es"))["ElRadioGroup"];
     ElRow: (typeof import("element-plus/es"))["ElRow"];
     ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
+    ElSelect: (typeof import("element-plus/es"))["ElSelect"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
     ElSwitch: (typeof import("element-plus/es"))["ElSwitch"];
     ElTable: (typeof import("element-plus/es"))["ElTable"];
