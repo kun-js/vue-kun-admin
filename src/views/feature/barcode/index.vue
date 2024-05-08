@@ -34,7 +34,7 @@ const handleToCreateQRcode = async () => {
 
 <template>
   <div class="barcode-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '95%' }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '95%' }">
       <template #header> 条码生成示例(可扫描) </template>
       <el-row :gutter="20">
         <el-col :span="12" class="code-container">

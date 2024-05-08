@@ -1,6 +1,6 @@
 <template>
   <div class="download-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 下载示例 </template>
       <div class="action-container">
         <div class="action">

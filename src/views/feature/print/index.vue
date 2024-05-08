@@ -1,6 +1,6 @@
 <template>
   <div class="print-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header>
         打印示例
         <el-button type="primary" v-print="'#print-table'">打印表格</el-button>

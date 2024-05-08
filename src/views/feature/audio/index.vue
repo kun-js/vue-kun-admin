@@ -1,6 +1,6 @@
 <template>
   <div class="audio-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '95%' }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '95%' }">
       <template #header>音频可视化示例</template>
       <div ref="audioContainer"></div>
     </el-card>

@@ -1,6 +1,6 @@
 <template>
   <div class="clipboard-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 剪贴板示例 </template>
       <div class="copy">
         <el-input v-model="inputVal" style="width: 240px" placeholder="输入内容以复制" />

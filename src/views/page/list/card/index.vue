@@ -1,6 +1,6 @@
 <template>
   <div class="card-list-page-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 卡片列表示例 </template>
       <el-row :gutter="20">
         <template v-for="item in tableData" :key="item.id">

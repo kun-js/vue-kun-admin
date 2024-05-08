@@ -1,6 +1,6 @@
 <template>
   <div class="line-chart-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '90%' }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '90%' }">
       <template #header>
         折线图示例
         <el-switch v-model="lineSmooth" inline-prompt active-text="曲线平滑" inactive-text="不平滑" />

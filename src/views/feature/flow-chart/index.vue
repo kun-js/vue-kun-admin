@@ -1,6 +1,6 @@
 <template>
   <div class="flow-chart-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '93%', padding: 0 }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '93%', padding: 0 }">
       <template #header>
         <span>流程图示例</span>
       </template>
