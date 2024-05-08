@@ -1,6 +1,6 @@
 <template>
   <div class="excel-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header>
         Excel操作示例
         <el-button type="primary" @click="handleToExportExcel1">导出excel(基础)</el-button>

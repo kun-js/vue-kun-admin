@@ -1,6 +1,6 @@
 <template>
   <div class="step-form-page-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 分步表单示例 </template>
       <div class="step-form-container">
         <el-steps style="width: 600px" :active="active">

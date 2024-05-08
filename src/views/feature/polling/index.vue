@@ -1,6 +1,6 @@
 <template>
   <div class="polling-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 轮询示例(5s一次) </template>
       <p>轮询人员列表: ["Alice", "Bob", "Charlie", "David"]</p>
       <p>当前人员名字：{{ personName }}</p>

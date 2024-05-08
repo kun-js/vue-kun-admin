@@ -1,6 +1,6 @@
 <template>
   <div class="debounce-feature-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header>
         <span style="margin-right: 18px">防抖节流示例(时间均为1s)</span>
       </template>

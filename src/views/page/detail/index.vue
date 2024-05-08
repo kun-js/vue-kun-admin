@@ -1,6 +1,6 @@
 <template>
   <div class="detail-page-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header> 详情页示例 </template>
       <el-descriptions class="mb-18px" border title="用户信息:">
         <el-descriptions-item label="用户名">{{ detail.username }}</el-descriptions-item>

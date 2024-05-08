@@ -1,6 +1,6 @@
 <template>
   <div class="message-component-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '95%' }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '95%' }">
       <template #header>
         <span>消息提示组件示例</span>
       </template>

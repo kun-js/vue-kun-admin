@@ -1,6 +1,6 @@
 <template>
   <div class="button-permission-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)">
+    <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header>
         <span style="margin-right: 18px">按钮权限管理示例</span>
         <el-button @click="changeToAdmin" type="primary" :disabled="isAdmin">改变为Admin权限</el-button>

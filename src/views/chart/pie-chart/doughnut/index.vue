@@ -1,6 +1,6 @@
 <template>
   <div class="doughnut-pie-chart-container">
-    <el-card style="max-width: 100%; height: calc(100vh - 88px)" :body-style="{ height: '90%' }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '90%' }">
       <template #header>
         饼图示例
         <el-switch v-model="addBorderStyle" inline-prompt active-text="圆角" inactive-text="无圆角" />
