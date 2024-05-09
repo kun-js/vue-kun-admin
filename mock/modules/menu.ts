@@ -79,6 +79,23 @@ export const menuList = Mock.mock({
           path: "/message",
         },
         {
+          name: "scroll",
+          title: "滚动组件",
+          path: "/scroll",
+          children: [
+            {
+              name: "basicScroll",
+              title: "基础滚动",
+              path: "/basic",
+            },
+            {
+              name: "functionScroll",
+              title: "滚动方法",
+              path: "/function",
+            },
+          ],
+        },
+        {
           name: "statistic",
           title: "统计组件",
           path: "/statistic",

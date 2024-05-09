@@ -10,20 +10,30 @@ const ExternalPageRoutes = [
     },
     children: [
       {
-        path: "/external-page/iframe/element",
-        name: "Element",
-        component: () => import("@/views/external-page/iframe/element/index.vue"),
+        path: "/external-page/iframe",
+        name: "Iframe",
+        redirect: "/external-page/iframe/element",
         meta: {
-          title: "element",
+          title: "iframe",
         },
-      },
-      {
-        path: "/external-page/iframe/vue",
-        name: "Vue",
-        component: () => import("@/views/external-page/iframe/vue/index.vue"),
-        meta: {
-          title: "vue",
-        },
+        children: [
+          {
+            path: "/external-page/iframe/element",
+            name: "Element",
+            component: () => import("@/views/external-page/iframe/element/index.vue"),
+            meta: {
+              title: "element",
+            },
+          },
+          {
+            path: "/external-page/iframe/vue",
+            name: "Vue",
+            component: () => import("@/views/external-page/iframe/vue/index.vue"),
+            meta: {
+              title: "vue",
+            },
+          },
+        ],
       },
       {
         path: "/external-page/outerchain/element",
