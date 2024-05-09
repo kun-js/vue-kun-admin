@@ -52,20 +52,30 @@ const componentRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/component/scroll/basic",
-        name: "BasicScroll",
-        component: () => import("@/views/component/scroll/basic/index.vue"),
+        path: "/component/scroll",
+        name: "Scroll",
+        redirect: "/component/scroll/basic",
         meta: {
-          title: "basicScroll",
+          title: "scroll",
         },
-      },
-      {
-        path: "/component/scroll/function",
-        name: "FunctionScroll",
-        component: () => import("@/views/component/scroll/function/index.vue"),
-        meta: {
-          title: "functionScroll",
-        },
+        children: [
+          {
+            path: "/component/scroll/basic",
+            name: "BasicScroll",
+            component: () => import("@/views/component/scroll/basic/index.vue"),
+            meta: {
+              title: "basicScroll",
+            },
+          },
+          {
+            path: "/component/scroll/function",
+            name: "FunctionScroll",
+            component: () => import("@/views/component/scroll/function/index.vue"),
+            meta: {
+              title: "functionScroll",
+            },
+          },
+        ],
       },
       {
         path: "/component/statistic",
