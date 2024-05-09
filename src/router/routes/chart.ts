@@ -5,7 +5,7 @@ const chartRoutes: RouteRecordRaw[] = [
     path: "/chart",
     name: "Chart",
     component: () => import("@/layouts/index.vue"),
-    redirect: "/chart/bar-chart",
+    redirect: "/chart/amap",
     meta: {
       icon: "emojione:bar-chart",
       title: "chart",
@@ -52,20 +52,30 @@ const chartRoutes: RouteRecordRaw[] = [
         },
       },
       {
-        path: "/chart/pie-chart/basic",
-        name: "BasicPieChart",
-        component: () => import("@/views/chart/pie-chart/basic/index.vue"),
+        path: "/page/pie-chart",
+        name: "PieChart",
+        redirect: "/page/pie-chart/basic",
         meta: {
-          title: "basicPieChart",
+          title: "pieChart",
         },
-      },
-      {
-        path: "/chart/pie-chart/doughnut",
-        name: "DoughnutPieChart",
-        component: () => import("@/views/chart/pie-chart/doughnut/index.vue"),
-        meta: {
-          title: "doughnutChart",
-        },
+        children: [
+          {
+            path: "/chart/pie-chart/basic",
+            name: "BasicPieChart",
+            component: () => import("@/views/chart/pie-chart/basic/index.vue"),
+            meta: {
+              title: "basicPieChart",
+            },
+          },
+          {
+            path: "/chart/pie-chart/doughnut",
+            name: "DoughnutPieChart",
+            component: () => import("@/views/chart/pie-chart/doughnut/index.vue"),
+            meta: {
+              title: "doughnutChart",
+            },
+          },
+        ],
       },
     ],
   },
