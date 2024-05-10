@@ -10,6 +10,7 @@
   "tag": "Tag",
   "colorPicker": "Color Picker",
   "datePicker": "Date Picker",
+  "description": "Description",
   "message": "Message",
   "scroll": "Scroll component",
   "basicScroll": "Basic scroll",

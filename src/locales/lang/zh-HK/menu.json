@@ -10,6 +10,7 @@
   "tag": "標籤",
   "colorPicker": "取色器",
   "datePicker": "日期選擇器",
+  "description": "描述列表",
   "message": "消息提示",
   "scroll": "滾動組件",
   "basicScroll": "基礎滾動",

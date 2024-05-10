@@ -1,5 +1,5 @@
 <template>
-  <el-scrollbar :style="{ height: 'calc(100vh - 48px)' }">
+  <el-scrollbar :style="{ height: sidebarScrollHeight }">
     <el-menu
       :default-active="activePath"
       :collapse="isCollapse"
@@ -70,6 +70,7 @@ import { useMenuStore } from "@/stores/modules/menu";
 import { useUserStore } from "@/stores/modules/user";
 
 const props = defineProps<{
+  isShowLogo: Boolean;
   isCollapse: Boolean;
 }>();
 
@@ -80,6 +81,10 @@ const menuPermission = computed(() => userStore.menuPermission);
 
 const activePath = computed(() => {
   return menuStore.defaultActive;
+});
+
+const sidebarScrollHeight = computed(() => {
+  return props.isShowLogo ? "100vh" : "calc(100vh - 48px)";
 });
 
 const fetchData = async () => {
