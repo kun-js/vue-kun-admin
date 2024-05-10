@@ -2,7 +2,7 @@
   <div class="button-component-container">
     <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header>
-        <span style="margin-right: 18px">按钮组件示例</span>
+        <span class="mr-18px">按钮组件示例</span>
         <el-radio-group v-model="size">
           <el-radio value="large">大尺寸</el-radio>
           <el-radio value="default">默认尺寸</el-radio>
@@ -11,7 +11,7 @@
         </el-radio-group>
       </template>
       <div>
-        <el-radio-group v-model="radio" class="mb-4">
+        <el-radio-group v-model="radio" class="mb-18px">
           <el-radio label="default" value="default" size="large" />
           <el-radio label="plain" value="plain" size="large" />
           <el-radio label="round" value="round" size="large" />

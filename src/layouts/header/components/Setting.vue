@@ -15,6 +15,9 @@
           菜单Logo<el-switch v-model="isShowLogo" inline-prompt active-text="开" inactive-text="关" />
         </div>
         <div class="action-btn">
+          面包屑<el-switch v-model="isShowBreadcrumb" inline-prompt active-text="开" inactive-text="关" />
+        </div>
+        <div class="action-btn">
           面包屑图标<el-switch v-model="isShowBreadcrumbIcon" inline-prompt active-text="开" inactive-text="关" />
         </div>
         <div class="action-btn">
@@ -36,6 +39,7 @@
 import ThemeColorSwitch from "@/components/ThemeColorSwitch.vue";
 import { inject, ref } from "vue";
 
+const isShowBreadcrumb = inject<boolean>("isShowBreadcrumb");
 const isShowBreadcrumbIcon = inject<boolean>("isShowBreadcrumbIcon");
 const isShowLogo = inject<boolean>("isShowLogo");
 const isCollapse = inject<boolean>("isCollapse");
