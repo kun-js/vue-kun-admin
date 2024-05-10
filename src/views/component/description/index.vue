@@ -1,5 +1,5 @@
 <template>
-  <div class="date-picker-component-container">
+  <div class="description-component-container">
     <el-card style="max-width: 100%; height: var(--card-height)">
       <template #header>
         <span class="mr-18px">描述列表组件示例</span>
@@ -45,7 +45,7 @@ const size = ref("default");
 </script>
 
 <style lang="scss" scoped>
-.date-picker-component-container {
+.description-component-container {
   height: 100%;
   padding: 20px;
 }

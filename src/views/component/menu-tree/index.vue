@@ -1,6 +1,6 @@
 <template>
   <div class="menu-tree-component-container">
-    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '95%' }">
+    <el-card style="max-width: 100%; height: var(--card-height)" :body-style="{ height: '93%' }">
       <template #header>
         <span>树形菜单组件示例</span>
       </template>
