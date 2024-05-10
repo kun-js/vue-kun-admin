@@ -31,8 +31,10 @@ import { ref, provide } from "vue";
 const foldEl = () => document.querySelector<HTMLElement>(".fold");
 const langEl = () => document.querySelector<HTMLElement>(".lang");
 
+const isShowBreadcrumb = ref(true);
 const isShowBreadcrumbIcon = ref(false);
 
+provide("isShowBreadcrumb", isShowBreadcrumb);
 provide("isShowBreadcrumbIcon", isShowBreadcrumbIcon);
 </script>
 

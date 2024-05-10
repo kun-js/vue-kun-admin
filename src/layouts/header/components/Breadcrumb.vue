@@ -1,6 +1,6 @@
 <template>
   <div class="breadcrumb">
-    <el-breadcrumb>
+    <el-breadcrumb v-if="isShowBreadcrumb">
       <template v-for="(item, index) in breadList" :key="index">
         <el-breadcrumb-item v-if="item.name" :key="index" :to="item.path">
           <div class="breadcrumb-item">
@@ -25,6 +25,7 @@ import { Icon } from "@iconify/vue";
 const route = useRoute();
 const breadList = ref();
 
+const isShowBreadcrumb = inject<boolean>("isShowBreadcrumb");
 const isShowBreadcrumbIcon = inject<boolean>("isShowBreadcrumbIcon");
 
 const getMatched = () => {
