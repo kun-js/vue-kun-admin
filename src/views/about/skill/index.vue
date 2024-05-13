@@ -12,7 +12,7 @@
       </el-descriptions>
     </el-card>
   </div>
-  <div class="dependency-description-container">
+  <div class="dependency-description-container" style="padding-bottom: 20px">
     <el-card style="max-width: 100%">
       <el-descriptions v-if="!isEmpty(devDependencies)" title="开发环境依赖" :column="3" border="true">
         <el-descriptions-item v-for="(version, name) in devDependencies" :key="name">
