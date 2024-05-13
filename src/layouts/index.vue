@@ -5,11 +5,14 @@
       <el-header>
         <Header :changeSideBarCollapse="changeSideBarCollapse" :isCollapse="isCollapse" />
       </el-header>
-      <el-scrollbar :wrap-style="{ height: 'var(--scrollbar-height)' }">
-        <el-main :style="{ paddingBottom: footerHeight }">
+      <el-main class="layout-view" :style="{ paddingBottom: footerHeight }">
+        <el-scrollbar :wrap-style="{ height: 'var(--scrollbar-height)' }">
           <Router-view />
-        </el-main>
-      </el-scrollbar>
+          <el-tooltip content="回到顶部" placement="bottom" effect="light">
+            <el-backtop target=".layout-view .el-scrollbar__wrap" :right="60" :bottom="60" />
+          </el-tooltip>
+        </el-scrollbar>
+      </el-main>
       <el-footer v-show="hasFooter">
         <Footer />
       </el-footer>

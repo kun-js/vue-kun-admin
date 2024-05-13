@@ -61,13 +61,13 @@
         </el-descriptions-item>
         <el-descriptions-item>
           <template #label><span style="white-space: nowrap">熟悉语言</span> </template>
-          <Icon style=" margin-right: 8px;font-size: 20px" icon="devicon:c" />
-          <Icon style=" margin-right: 8px;font-size: 20px" icon="devicon:cplusplus" />
-          <Icon style=" margin-right: 8px;font-size: 20px" icon="devicon:php" />
-          <Icon style=" margin-right: 8px;font-size: 20px" icon="devicon:java" />
-          <Icon style=" margin-right: 8px;font-size: 20px" icon="devicon:python" />
-          <Icon style=" margin-right: 8px;font-size: 20px" icon="devicon:javascript" />
-          <Icon style=" margin-right: 8px;font-size: 20px" icon="devicon:typescript" />
+          <Icon style="margin-right: 8px; font-size: 20px" icon="devicon:c" />
+          <Icon style="margin-right: 8px; font-size: 20px" icon="devicon:cplusplus" />
+          <Icon style="margin-right: 8px; font-size: 20px" icon="devicon:php" />
+          <Icon style="margin-right: 8px; font-size: 20px" icon="devicon:java" />
+          <Icon style="margin-right: 8px; font-size: 20px" icon="devicon:python" />
+          <Icon style="margin-right: 8px; font-size: 20px" icon="devicon:javascript" />
+          <Icon style="margin-right: 8px; font-size: 20px" icon="devicon:typescript" />
         </el-descriptions-item>
         <el-descriptions-item>
           <template #label><span style="white-space: nowrap">兴趣爱好</span> </template>
