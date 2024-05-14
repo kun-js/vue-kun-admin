@@ -13,9 +13,12 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import i18n from "./locales";
-import print from "vue3-print-nb";
 import pinia from "./stores/index";
 import { registerDirectives } from "./directive";
+
+import print from "vue3-print-nb";
+import StarfishEditor from "starfish-editor";
+import "starfish-editor/src/styles/index.scss";
 
 const app = createApp(App);
 
@@ -27,6 +30,7 @@ app.use(pinia);
 app.use(router);
 app.use(i18n);
 app.use(print);
+app.use(StarfishEditor);
 registerDirectives(app); // 注册所有自定义指令
 
 app.mount("#app");

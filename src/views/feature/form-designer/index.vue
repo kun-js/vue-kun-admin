@@ -1,0 +1,22 @@
+<template>
+  <div class="form-designer-feature-container">
+    <starfish-editor class="starfish-editor" />
+  </div>
+</template>
+
+<script setup lang="ts">
+defineOptions({
+  name: "FromDesigner",
+});
+</script>
+
+<style lang="scss" scoped>
+.form-designer-feature-container {
+  height: 100%;
+}
+
+.starfish-editor {
+  width: 100%;
+  height: 100%;
+}
+</style>
