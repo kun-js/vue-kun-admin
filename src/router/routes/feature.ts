@@ -60,6 +60,14 @@ const featureRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/feature/form-designer",
+        name: "FormDesigner",
+        component: () => import("@/views/feature/form-designer/index.vue"),
+        meta: {
+          title: "formDesigner",
+        },
+      },
+      {
         path: "/feature/image-clipper",
         name: "ImageClipper",
         component: () => import("@/views/feature/image-clipper/index.vue"),
