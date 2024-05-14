@@ -162,6 +162,11 @@ export const menuList = Mock.mock({
           path: "/json-editor",
         },
         {
+          name: "formDesigner",
+          title: "表单设计器",
+          path: "/form-designer",
+        },
+        {
           name: "imageClipper",
           title: "图片裁剪",
           path: "/image-clipper",
