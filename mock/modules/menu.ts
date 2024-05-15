@@ -242,6 +242,11 @@ export const menuList = Mock.mock({
           path: "/flow-chart",
         },
         {
+          name: "mindMap",
+          title: "思维导图",
+          path: "/mind-map",
+        },
+        {
           name: "polling",
           title: "轮询",
           path: "/polling",

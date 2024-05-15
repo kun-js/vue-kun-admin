@@ -42,6 +42,7 @@
   "signature": "Signature",
   "watermark": "Watermark",
   "flowChart": "Flow Chart",
+  "mindMap": "Mind Map",
   "polling": "Polling",
   "debounce": "Debounce",
   "sensitive": "Sensitive Word Filtering",

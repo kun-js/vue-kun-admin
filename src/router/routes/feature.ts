@@ -188,6 +188,14 @@ const featureRoutes: RouteRecordRaw[] = [
         },
       },
       {
+        path: "/feature/mind-map",
+        name: "MindMap",
+        component: () => import("@/views/feature/mind-map/index.vue"),
+        meta: {
+          title: "mindMap",
+        },
+      },
+      {
         path: "/feature/polling",
         name: "Polling",
         component: () => import("@/views/feature/polling/index.vue"),

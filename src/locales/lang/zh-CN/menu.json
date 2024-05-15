@@ -42,6 +42,7 @@
   "signature": "签名",
   "watermark": "水印",
   "flowChart": "流程图",
+  "mindMap": "思维导图",
   "polling": "轮询",
   "debounce": "防抖节流",
   "sensitive": "敏感词过滤",
