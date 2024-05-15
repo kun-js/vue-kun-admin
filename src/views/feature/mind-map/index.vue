@@ -140,10 +140,10 @@ const initMindMap = () => {
   });
 
   // 前进回退事件
-  mindMap.on("back_forward", (index: number, len: number) => {
-    isStart.value = index <= 0;
-    isEnd.value = index >= len - 1;
-  });
+  //   mindMap.on("back_forward", (index: number, len: number) => {
+  //     isStart.value = index <= 0;
+  //     isEnd.value = index >= len - 1;
+  //   });
 };
 
 onMounted(() => {
