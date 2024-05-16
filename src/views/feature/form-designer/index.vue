@@ -5,9 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import StarfishEditor from "starfish-editor";
-import "starfish-editor/src/styles/index.scss";
-
 defineOptions({
   name: "FromDesigner",
 });
