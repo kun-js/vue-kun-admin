@@ -75,6 +75,7 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "qrcode.vue": "^3.4.1",
     "rollup": "^4.16.1",
+    "simple-mind-map": "^0.9.12",
     "stable": "^0.1.8",
     "starfish-editor": "^1.1.21",
     "uc.micro": "^2.1.0",
