@@ -20,6 +20,8 @@
           <el-button @click="insertLink" :disabled="activeNodes.length <= 0">插入超链接</el-button>
           <el-button @click="insertNote" :disabled="activeNodes.length <= 0">插入备注</el-button>
           <el-button @click="insertTag" :disabled="activeNodes.length <= 0">插入标签</el-button>
+          <el-button @click="insertGa" :disabled="activeNodes.length <= 0">插入概要</el-button>
+          <el-button @click="insertLine" :disabled="activeNodes.length <= 0">插入关联线</el-button>
         </div>
       </div>
     </el-card>
@@ -107,6 +109,18 @@ const insertTag = () => {
   activeNodes.value.forEach((node) => {
     node.setTag(["标签1", "标签2"]);
   });
+};
+
+// 插入概要
+const insertGa = () => {
+  mindMap.execCommand("ADD_GENERALIZATION", {
+    text: "自定义概要内容",
+  });
+};
+
+// 插入关联线
+const insertLine = () => {
+  mindMap.associativeLine.createLineFromActiveNode();
 };
 
 const initMindMap = () => {
