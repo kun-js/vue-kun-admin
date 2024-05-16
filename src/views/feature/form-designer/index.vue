@@ -1,6 +1,12 @@
 <template>
   <div class="form-designer-feature-container">
-    <starfish-editor class="starfish-editor" />
+    <el-card style="max-width: 100%; height: calc(100vh - 48px)" :body-style="{ height: '100%', padding: 0 }">
+      <iframe
+        src="https://haixin-fang.github.io/vue-form-design/playground/index.html"
+        width="100%"
+        height="100%"
+      ></iframe>
+    </el-card>
   </div>
 </template>
 
