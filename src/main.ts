@@ -5,6 +5,8 @@ import "element-plus/dist/index.css";
 //  elementplus实现的dark模式的样式文件
 import "element-plus/theme-chalk/dark/css-vars.css";
 
+import "@/types/declaretions.d.ts";
+
 // 样式
 import "@/styles/index.scss";
 import "uno.css";
