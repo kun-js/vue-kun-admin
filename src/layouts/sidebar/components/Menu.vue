@@ -84,7 +84,7 @@ const activePath = computed(() => {
 });
 
 const sidebarScrollHeight = computed(() => {
-  return props.isShowLogo ? "100vh" : "calc(100vh - 48px)";
+  return props.isShowLogo ? "calc(100vh - 48px)" : "100vh";
 });
 
 const fetchData = async () => {
