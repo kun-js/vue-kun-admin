@@ -5,6 +5,8 @@ import "element-plus/dist/index.css";
 //  elementplus实现的dark模式的样式文件
 import "element-plus/theme-chalk/dark/css-vars.css";
 
+import "@/types/shims-bmapgl.d.ts";
+import "@/types/shims-tmap.d.ts";
 import "@/types/declaretions.d.ts";
 
 // 样式

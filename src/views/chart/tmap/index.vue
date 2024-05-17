@@ -15,10 +15,12 @@ defineOptions({
   name: "TMap",
 });
 
-const mapContainer = ref(null);
+const mapContainer = ref<HTMLElement | null>(null);
 
 const initMap = () => {
   //创建map对象，初始化地图
+  if (!mapContainer.value) return;
+
   const map = new TMap.Map(mapContainer.value, {
     center: new TMap.LatLng(39.908832, 116.397479), //设置地图中心点坐标
     zoom: 11, //设置地图缩放级别

@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, Ref } from "vue";
 
 /**
  * 轮询函数的类型定义
@@ -22,8 +22,8 @@ type PollingOptions = {
  * @returns {Object} 包含轮询数据、错误信息以及启动和停止轮询的函数的对象
  */
 export function usePolling<T>(pollingFn: PollingFunction<T>, options: PollingOptions) {
-  const data = ref<T | null>(null);
-  const error = ref<any | null>(null);
+  const data: Ref<T | null> = ref(null);
+  const error: Ref<any | null> = ref(null);
   let timer: NodeJS.Timeout;
 
   const fetchData = async () => {

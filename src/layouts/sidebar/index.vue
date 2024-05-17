@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar-container">
     <Logo :isShowLogo="isShowLogo" :isCollapse="isCollapse" />
-    <Menu :isCollapse="isCollapse" />
+    <Menu :isShowLogo="isShowLogo" :isCollapse="isCollapse" />
   </div>
 </template>
 
