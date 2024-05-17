@@ -1,4 +1,6 @@
-const ExternalPageRoutes = [
+import { RouteRecordRaw } from "vue-router";
+
+const ExternalPageRoutes: RouteRecordRaw[] = [
   {
     path: "/external-page",
     name: "外部页面",
@@ -38,6 +40,7 @@ const ExternalPageRoutes = [
       {
         path: "/external-page/outerchain/element",
         name: "outerchainelement",
+        component: () => import("@/views/external-page/outerchain/index.vue"),
         beforeEnter: (to: any, from: any, next: (arg0: boolean) => void) => {
           window.open("https://element-plus.org/zh-CN/#/zh-CN", "_blank");
           // 需要调用 next() 函数来结束路由导航
@@ -47,6 +50,7 @@ const ExternalPageRoutes = [
       {
         path: "/external-page/outerchain/vue",
         name: "outerchainvue",
+        component: () => import("@/views/external-page/outerchain/index.vue"),
         beforeEnter: (to: any, from: any, next: (arg0: boolean) => void) => {
           window.open("https://cn.vuejs.org/", "_blank");
           // 需要调用 next() 函数来结束路由导航
@@ -56,6 +60,7 @@ const ExternalPageRoutes = [
       {
         path: "/external-page/outerchain/baidu",
         name: "outerchainbaidu",
+        component: () => import("@/views/external-page/outerchain/index.vue"),
         beforeEnter: (to: any, from: any, next: (arg0: boolean) => void) => {
           window.open("https://www.baidu.com", "_blank");
           // 需要调用 next() 函数来结束路由导航

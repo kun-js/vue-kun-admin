@@ -52,7 +52,7 @@ export const getAccountList = async (page: number = 1, pageSize: number = 10, ke
 
   let filteredData = data.accountList;
   if (typeof keyword === "string" && keyword.trim() !== "") {
-    filteredData = filteredData.filter((account) => account.name.includes(keyword.trim()));
+    filteredData = filteredData.filter((account: { name: string | string[] }) => account.name.includes(keyword.trim()));
   }
 
   const start = (page - 1) * pageSize;
