@@ -10,11 +10,11 @@
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 0; margin: 0"
         ></div>
         <div class="toolbar">
-          <!-- <el-button @click="back" v-if="!isStart">回退</el-button>
+          <el-button @click="back" v-if="!isStart">回退</el-button>
           <el-button @click="forward" v-if="!isEnd">前进</el-button>
           <el-button @click="insertNode" v-if="activeNodes.length > 0">插入兄弟节点</el-button>
           <el-button @click="insertChildNode" v-if="activeNodes.length > 0">插入子节点</el-button>
-          <el-button @click="deleteNode" v-if="activeNodes.length > 0">删除节点</el-button> -->
+          <el-button @click="deleteNode" v-if="activeNodes.length > 0">删除节点</el-button>
           <el-button @click="insertImage" :disabled="activeNodes.length <= 0">插入图片</el-button>
           <el-button @click="insertIcon" :disabled="activeNodes.length <= 0">插入图标</el-button>
           <el-button @click="insertLink" :disabled="activeNodes.length <= 0">插入超链接</el-button>
@@ -29,46 +29,49 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, shallowRef } from "vue";
 import MindMap from "simple-mind-map";
-import { onMounted, ref, shallowRef } from "vue";
+import AssociativeLine from "simple-mind-map/src/plugins/AssociativeLine.js";
+
+MindMap.usePlugin(AssociativeLine);
 
 defineOptions({
   name: "MindMap",
 });
 
+let mindMap: MindMap | null = null;
+
+// 记录前进回退
+const isStart = ref(true);
+const isEnd = ref(true);
+
 // 当前激活的节点列表
 const activeNodes = shallowRef([]);
 
-let mindMap = null;
+// 回退
+const back = () => {
+  mindMap.execCommand("BACK");
+};
 
-// // 记录前进回退
-// const isStart = ref(true);
-// const isEnd = ref(true);
+// 前进
+const forward = () => {
+  mindMap.execCommand("FORWARD");
+};
 
-// // 回退
-// const back = () => {
-//   mindMap.execCommand("BACK");
-// };
+// 插入兄弟节点
+const insertNode = () => {
+  mindMap.execCommand("INSERT_NODE");
+};
 
-// // 前进
-// const forward = () => {
-//   mindMap.execCommand("FORWARD");
-// };
+// 插入子节点
+const insertChildNode = () => {
+  mindMap.execCommand("INSERT_CHILD_NODE");
+};
 
-// // 插入兄弟节点
-// const insertNode = () => {
-//   mindMap.execCommand("INSERT_NODE");
-// };
-
-// // 插入子节点
-// const insertChildNode = () => {
-//   mindMap.execCommand("INSERT_CHILD_NODE");
-// };
-
-// // 删除节点
-// const deleteNode = () => {
-//   mindMap.execCommand("REMOVE_NODE");
-// };
+// 删除节点
+const deleteNode = () => {
+  mindMap.execCommand("REMOVE_NODE");
+};
 
 // 插入图片
 const insertImage = () => {
@@ -124,7 +127,7 @@ const insertLine = () => {
 };
 
 const initMindMap = () => {
-  const mindMap = new MindMap({
+  mindMap = new MindMap({
     el: document.getElementById("mindMapContainer"),
     data: {
       data: {
@@ -154,10 +157,10 @@ const initMindMap = () => {
   });
 
   // 前进回退事件
-  //   mindMap.on("back_forward", (index: number, len: number) => {
-  //     isStart.value = index <= 0;
-  //     isEnd.value = index >= len - 1;
-  //   });
+  mindMap.on("back_forward", (index: number, len: number) => {
+    isStart.value = index <= 0;
+    isEnd.value = index >= len - 1;
+  });
 };
 
 onMounted(() => {
