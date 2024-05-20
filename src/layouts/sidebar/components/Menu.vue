@@ -17,7 +17,9 @@
               <el-icon>
                 <Icon style="font-size: 24px" :icon="route.icon" />
               </el-icon>
-              <span style="margin-left: 12px">{{ $t("menu." + route.name) }}</span>
+              <div class="menu-title" style="margin-left: 8px">
+                <EllipsisTooltip :text="$t(`menu.${route.name}`)" />
+              </div>
             </template>
             <template v-for="child in route.children">
               <template v-if="child.children">
@@ -28,7 +30,9 @@
                   style="background-color: var(--menu-item-background)"
                 >
                   <template #title>
-                    <span>{{ $t("menu." + child.name) }}</span>
+                    <div class="menu-title">
+                      <EllipsisTooltip :text="$t(`menu.${child.name}`)" />
+                    </div>
                   </template>
                   <el-menu-item
                     v-for="subChild in child.children"
@@ -36,7 +40,9 @@
                     :key="route.path + child.path + subChild.path"
                   >
                     <template #title>
-                      {{ $t("menu." + subChild.name) }}
+                      <div class="menu-title">
+                        <EllipsisTooltip :text="$t(`menu.${subChild.name}`)" />
+                      </div>
                     </template>
                   </el-menu-item>
                 </el-sub-menu>
@@ -44,7 +50,9 @@
               <template v-else>
                 <!-- 二级菜单不存在子菜单 -->
                 <el-menu-item :index="route.path + child.path" :key="route.path + child.path">
-                  <span>{{ $t("menu." + child.name) }}</span>
+                  <div class="menu-title">
+                    <EllipsisTooltip :text="$t(`menu.${child.name}`)" />
+                  </div>
                 </el-menu-item>
               </template>
             </template>
@@ -53,8 +61,12 @@
         <template v-else>
           <!-- 一级菜单不存在子菜单 -->
           <el-menu-item :index="route.path" :key="route.path" style="background-color: #001529">
-            <el-icon><component :is="route.icon" /></el-icon>
-            <span>{{ $t("menu." + route.name) }}</span>
+            <el-icon>
+              <Icon style="font-size: 24px" :icon="route.icon" />
+            </el-icon>
+            <div class="menu-title">
+              <EllipsisTooltip :text="$t(`menu.${route.name}`)" />
+            </div>
           </el-menu-item>
         </template>
       </template>
@@ -63,6 +75,7 @@
 </template>
 
 <script setup lang="ts">
+import EllipsisTooltip from "@/components/EllipsisTooltip.vue";
 import { computed, onMounted, ref } from "vue";
 import { getMenuList } from "@/api/index";
 import { Icon } from "@iconify/vue";
@@ -110,11 +123,11 @@ onMounted(() => {
   border: none;
 
   .el-sub-menu__title {
-    span {
+    display: flex;
+    align-items: center;
+
+    .menu-title {
       width: 106px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
     }
 
     &:hover {
@@ -130,11 +143,8 @@ onMounted(() => {
   .el-menu-item {
     background-color: var(--menu-item-background);
 
-    span {
-      width: 136px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+    .menu-title {
+      width: 130px;
     }
 
     &:hover {
@@ -147,4 +157,3 @@ onMounted(() => {
   }
 }
 </style>
-@/stores/modules/menu@/stores/modules/user @/stores/user
