@@ -18,6 +18,7 @@ declare module "vue" {
     ElContainer: (typeof import("element-plus/es"))["ElContainer"];
     ElDescriptions: (typeof import("element-plus/es"))["ElDescriptions"];
     ElDescriptionsItem: (typeof import("element-plus/es"))["ElDescriptionsItem"];
+    ElDialog: (typeof import("element-plus/es"))["ElDialog"];
     ElDivider: (typeof import("element-plus/es"))["ElDivider"];
     ElDrawer: (typeof import("element-plus/es"))["ElDrawer"];
     ElDropdown: (typeof import("element-plus/es"))["ElDropdown"];
@@ -33,10 +34,13 @@ declare module "vue" {
     ElMain: (typeof import("element-plus/es"))["ElMain"];
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
+    ElOption: (typeof import("element-plus/es"))["ElOption"];
+    ElPagination: (typeof import("element-plus/es"))["ElPagination"];
     ElPopover: (typeof import("element-plus/es"))["ElPopover"];
     ElProgress: (typeof import("element-plus/es"))["ElProgress"];
     ElRow: (typeof import("element-plus/es"))["ElRow"];
     ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
+    ElSelect: (typeof import("element-plus/es"))["ElSelect"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
     ElSwitch: (typeof import("element-plus/es"))["ElSwitch"];
     ElTable: (typeof import("element-plus/es"))["ElTable"];
@@ -53,5 +57,8 @@ declare module "vue" {
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
     ThemeColorSwitch: (typeof import("./src/components/ThemeColorSwitch.vue"))["default"];
+  }
+  export interface ComponentCustomProperties {
+    vLoading: (typeof import("element-plus/es"))["ElLoadingDirective"];
   }
 }

@@ -61,7 +61,9 @@
         <template v-else>
           <!-- 一级菜单不存在子菜单 -->
           <el-menu-item :index="route.path" :key="route.path" style="background-color: #001529">
-            <el-icon><component :is="route.icon" /></el-icon>
+            <el-icon>
+              <Icon style="font-size: 24px" :icon="route.icon" />
+            </el-icon>
             <div class="menu-title">
               <EllipsisTooltip :text="$t(`menu.${route.name}`)" />
             </div>
