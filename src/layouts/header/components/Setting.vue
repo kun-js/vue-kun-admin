@@ -6,11 +6,15 @@
   <el-drawer v-model="drawer" :title="$t('header.setting')" direction="rtl" size="280px">
     <div class="drawer-container">
       <div class="drawer-body">
-        <el-divider>{{ $t("header.themeColor") }}</el-divider>
+        <el-divider>
+          <span>{{ $t("header.themeColor") }}</span>
+        </el-divider>
         <div class="switch-dark">
           <ThemeColorSwitch />
         </div>
-        <el-divider>{{ $t("header.faceShow") }}</el-divider>
+        <el-divider>
+          <span>{{ $t("header.faceShow") }}</span>
+        </el-divider>
         <div class="action-btn">
           菜单Logo<el-switch v-model="isShowLogo" inline-prompt active-text="开" inactive-text="关" />
         </div>
@@ -102,5 +106,9 @@ const clearCacheAndExit = () => {
       width: 100%;
     }
   }
+}
+
+span {
+  white-space: nowrap;
 }
 </style>

@@ -31,12 +31,6 @@ const router = createRouter({
   routes,
 });
 
-// 设置默认语言
-router.beforeEach((to, from, next) => {
-  useLocaleStore().getLocale("zh-CN");
-  next();
-});
-
 // el-menu 高亮
 router.beforeEach((to, from, next) => {
   useMenuStore().getActivePath(to.path);
