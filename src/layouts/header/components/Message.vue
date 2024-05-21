@@ -1,6 +1,6 @@
 <template>
   <el-popover placement="bottom" :width="300" trigger="click">
-    <el-tabs v-model="tabActiveName" @tab-click="handleClick" stretch>
+    <el-tabs v-model="tabActiveName" stretch>
       <el-tab-pane name="notice">
         <template #label> 通知({{ noticeList.length }}) </template>
         <el-scrollbar height="260px">
@@ -113,10 +113,6 @@ const getTagType = (status: string) => {
 };
 
 const tabActiveName = ref("notice");
-
-const handleClick = (tab: TabsPaneContext, event: Event) => {
-  console.log(tab, event);
-};
 
 onMounted(() => {
   fetchData();
