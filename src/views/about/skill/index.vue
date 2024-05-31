@@ -4,7 +4,7 @@
   </el-card>
   <div class="dependency-description-container">
     <el-card style="max-width: 100%">
-      <el-descriptions v-if="!isEmpty(dependencies)" title="生产环境依赖" :column="3" border="true">
+      <el-descriptions v-if="!isEmpty(dependencies)" title="生产环境依赖" :column="3" border>
         <el-descriptions-item v-for="(version, name) in dependencies" :key="name">
           <template #label> {{ name }} </template>
           {{ version }}
@@ -14,7 +14,7 @@
   </div>
   <div class="dependency-description-container" style="padding-bottom: 20px">
     <el-card style="max-width: 100%">
-      <el-descriptions v-if="!isEmpty(devDependencies)" title="开发环境依赖" :column="3" border="true">
+      <el-descriptions v-if="!isEmpty(devDependencies)" title="开发环境依赖" :column="3" border>
         <el-descriptions-item v-for="(version, name) in devDependencies" :key="name">
           <template #label> {{ name }} </template>
           {{ version }}
