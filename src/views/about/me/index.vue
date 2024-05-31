@@ -7,7 +7,7 @@
   </el-card>
   <div class="project-info-container">
     <el-card style="max-width: 100%">
-      <el-descriptions title="项目信息" :column="4" border="true">
+      <el-descriptions title="项目信息" :column="4" border>
         <el-descriptions-item>
           <template #label> <span style="white-space: nowrap">当前版本</span> </template>
           <el-tag>0.0.1</el-tag>
@@ -42,7 +42,7 @@
   </div>
   <div class="personal-info-container">
     <el-card style="max-width: 100%">
-      <el-descriptions title="个人介绍" :column="3" border="true">
+      <el-descriptions title="个人介绍" :column="3" border>
         <el-descriptions-item>
           <template #label> <span style="white-space: nowrap">姓名</span> </template>
           <el-tag>张三</el-tag>

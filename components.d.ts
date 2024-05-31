@@ -30,6 +30,7 @@ declare module "vue" {
     ElHeader: (typeof import("element-plus/es"))["ElHeader"];
     ElIcon: (typeof import("element-plus/es"))["ElIcon"];
     ElInput: (typeof import("element-plus/es"))["ElInput"];
+    ElLink: (typeof import("element-plus/es"))["ElLink"];
     EllipsisTooltip: (typeof import("./src/components/EllipsisTooltip.vue"))["default"];
     ElMain: (typeof import("element-plus/es"))["ElMain"];
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
