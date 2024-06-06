@@ -1,7 +1,9 @@
 <template>
   <div class="popular-content-container">
     <el-card :body-style="{ height: '540px' }">
-      <template #header> <span style="white-space: nowrap">热点内容</span> </template>
+      <template #header>
+        <span style="white-space: nowrap">热点内容</span>
+      </template>
       <el-table v-loading="loading" :data="newsList" style="width: 100%" fit stripe show-overflow-tooltip>
         <el-table-column align="center" prop="title" label="标题" />
         <el-table-column align="center" prop="source" label="作者" width="120">
@@ -19,9 +21,7 @@
         <el-table-column align="center" prop="ptime" label="出版时间" width="180" sortable />
         <el-table-column align="center" label="操作" width="80">
           <template #default="action">
-            <el-link type="primary" :href="action.row.url" target="_blank" :disabled="action.row.url === ''">
-              查看
-            </el-link>
+            <el-link type="primary" :href="action.row.url" target="_blank" :disabled="!action.row.url"> 查看 </el-link>
           </template>
         </el-table-column>
       </el-table>
@@ -33,7 +33,16 @@
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
-const newsList = ref();
+// 定义接口以描述新闻数据的结构
+interface NewsItem {
+  title: string;
+  source: string;
+  digest: string;
+  ptime: string;
+  url: string;
+}
+
+const newsList = ref<NewsItem[]>([]);
 const loading = ref(false);
 
 const fetchData = async () => {
@@ -45,25 +54,16 @@ const fetchData = async () => {
         page: 0,
       },
     });
-    // console.log("response: ", response);
     if (response.status === 200) {
       newsList.value = response.data.data;
+    } else {
+      console.error("Failed to fetch data:", response.statusText);
     }
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching data:", error);
   } finally {
     loading.value = false;
   }
-};
-
-const timeChange = (timestamp: string) => {
-  const timeValue = timestamp;
-  const dateTime = new Date(timeValue);
-  // 提取日期和时间
-  const date = dateTime.toLocaleDateString(); // 日期
-  const time = dateTime.toLocaleTimeString(); // 时间
-
-  return date + " " + time;
 };
 
 onMounted(() => {

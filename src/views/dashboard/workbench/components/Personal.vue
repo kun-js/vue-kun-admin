@@ -7,10 +7,11 @@
         </div>
         <div class="personal-info-right">
           <div class="personal-info-right-greeting">
-            <span>你好,{{ userStore.userInfo.name }},祝您今日工作愉快!</span>
+            <span>你好, {{ userStore.userInfo.name }}, 祝您今日工作愉快!</span>
           </div>
           <div class="personal-info-right-weather">
-            偶像练习生<span v-if="weather && temperature"> | 当前天气:{{ weather }},温度:{{ temperature }}</span>
+            偶像练习生
+            <span v-if="weather && temperature"> | 当前天气: {{ weather }}, 温度: {{ temperature }}°C </span>
           </div>
         </div>
       </div>
@@ -37,14 +38,23 @@ import { useUserStore } from "@/stores/modules/user";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
+interface WeatherResponse {
+  results: {
+    now: {
+      text: string;
+      temperature: string;
+    };
+  }[];
+}
+
 const userStore = useUserStore();
 
-const weather = ref();
-const temperature = ref();
+const weather = ref<string>();
+const temperature = ref<string>();
 
 const fetchData = async () => {
   try {
-    const response = await axios.get("https://api.seniverse.com/v3/weather/now.json", {
+    const response = await axios.get<WeatherResponse>("https://api.seniverse.com/v3/weather/now.json", {
       params: {
         key: "SLoH6H86MEago-1B3",
         location: "shenzhen",
@@ -52,11 +62,10 @@ const fetchData = async () => {
         unit: "c",
       },
     });
-    // console.log("response: ", response);
     weather.value = response.data.results[0].now.text;
     temperature.value = response.data.results[0].now.temperature;
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching weather data:", error);
   }
 };
 
@@ -73,7 +82,6 @@ onMounted(() => {
   .personal-info {
     display: flex;
     align-items: center;
-    justify-content: center;
 
     &-left {
       margin-right: 18px;
@@ -117,4 +125,3 @@ onMounted(() => {
   }
 }
 </style>
-@/stores/modules/user @/stores/modules/user
