@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "noEmit": true, // 只进行类型检查，不生成输出文件
     "target": "esnext",
     "allowJs": true,
     "useDefineForClassFields": true,

@@ -35,13 +35,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       // VueDevTools(),
       AutoImport({
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
-        imports: [
-          "vue",
-          // "@vueuse/core",
-          "pinia",
-          "vue-router",
-          // "vue-i18n"
-        ],
+        imports: ["vue", "@vueuse/core", "pinia", "vue-router", "vue-i18n"],
         resolvers: [ElementPlusResolver()],
       }),
       Components({

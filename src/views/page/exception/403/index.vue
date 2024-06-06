@@ -25,9 +25,6 @@ const router = useRouter();
 const handleToBackHome = () => {
   router.push("/dashboard");
   sessionStorage.setItem("currentIndex", "/dashboard");
-  setTimeout(() => {
-    window.location.reload();
-  });
 };
 </script>
 

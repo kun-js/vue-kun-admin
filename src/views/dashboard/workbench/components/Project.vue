@@ -24,9 +24,19 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import { Icon } from "@iconify/vue";
 
-const projectList = [
+interface Project {
+  id: number;
+  icon: string;
+  name: string;
+  introduce: string;
+  team: string;
+  time: string;
+}
+
+const projectList = ref<Project[]>([
   {
     id: 1,
     icon: "logos:vue",
@@ -67,8 +77,15 @@ const projectList = [
     team: "前端开发",
     time: "2020-09-14",
   },
-  { id: 6, icon: "devicon:qwik", name: "Qwik", introduce: "为edge而生的框架", team: "前端开发", time: "2020-04-27" },
-];
+  {
+    id: 6,
+    icon: "devicon:qwik",
+    name: "Qwik",
+    introduce: "为edge而生的框架",
+    team: "前端开发",
+    time: "2020-04-27",
+  },
+]);
 </script>
 
 <style lang="scss" scoped>
