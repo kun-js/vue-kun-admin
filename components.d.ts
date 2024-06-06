@@ -33,6 +33,7 @@ declare module "vue" {
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
     ElPopover: (typeof import("element-plus/es"))["ElPopover"];
     ElProgress: (typeof import("element-plus/es"))["ElProgress"];
+    ElResult: (typeof import("element-plus/es"))["ElResult"];
     ElRow: (typeof import("element-plus/es"))["ElRow"];
     ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];

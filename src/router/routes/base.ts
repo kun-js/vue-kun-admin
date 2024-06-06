@@ -1,4 +1,5 @@
 import { RouteRecordRaw } from "vue-router";
+import NotFound from "@/views/page/exception/404/index.vue";
 
 const baseRoutes: RouteRecordRaw[] = [
   {
@@ -10,6 +11,11 @@ const baseRoutes: RouteRecordRaw[] = [
     path: "/",
     name: "Home",
     redirect: "/dashboard",
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 
