@@ -128,6 +128,10 @@ onMounted(() => {
 
     .menu-title {
       width: 106px;
+
+      span {
+        margin-left: 12px;
+      }
     }
 
     &:hover {
