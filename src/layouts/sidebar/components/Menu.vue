@@ -17,7 +17,7 @@
               <el-icon>
                 <Icon style="font-size: 24px" :icon="route.icon" />
               </el-icon>
-              <div class="menu-title" style="margin-left: 8px">
+              <div class="menu-title" style="margin-left: 20px">
                 <EllipsisTooltip :text="$t(`menu.${route.name}`)" />
               </div>
             </template>
@@ -128,10 +128,6 @@ onMounted(() => {
 
     .menu-title {
       width: 106px;
-
-      span {
-        margin-left: 12px;
-      }
     }
 
     &:hover {
